@@ -24,6 +24,7 @@ export class PostOffice {
     if (POST_OFFICE_SETTINGS.receipt.email) {
       return this.emailOffice.sendReceipt(recipients, options);
     }
+    return Promise.reject('not implemented');
   }
 
   /**
@@ -38,5 +39,6 @@ export class PostOffice {
     if (POST_OFFICE_SETTINGS.reminder.email) {
       return this.emailOffice.sendReminder(recipients, options);
     }
+    return Promise.reject('not implemented');
   }
 }

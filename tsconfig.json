@@ -1,9 +1,12 @@
 {
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "noImplicitAny": true,
-    "target": "esj",
-    "module": "commonjs"
+    "strictNullChecks": true,
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "lib": ["es6"]
   }
 }

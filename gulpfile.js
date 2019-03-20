@@ -1,9 +1,14 @@
-var gulp = require('gulp');
-var ts = require('gulp-typescript');
-var tsProject = ts.createProject('tsconfig.json');
+const gulp = require('gulp');
+const ts = require('gulp-typescript');
+const tsProject = ts.createProject('tsconfig.build.json');
 
-gulp.task('default', () => {
-  return tsProject.src()
+gulp.task('build', () => {
+  return tsProject
+    .src()
     .pipe(tsProject())
     .js.pipe(gulp.dest('dist'));
+});
+
+gulp.task('unit', () => {
+  gulp.src('src/**/*.spec.ts');
 });
