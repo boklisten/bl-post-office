@@ -1,22 +1,17 @@
 import {ReceiptHandler} from './handlers/receipt.handler';
 import {MessageOptions} from '../interfaces/message-options';
-import {ReminderHandler} from './handlers/reminder.handler';
+import {EmailReminder} from './handlers/reminder/email-reminder';
 import {Recipient} from '../interfaces/reciptient';
 //const heml = require('heml');
 
 export class EmailOffice {
-  private receiptHandler: ReceiptHandler;
-  private reminderHandler: ReminderHandler;
-
-  constructor() {
-    this.receiptHandler = new ReceiptHandler();
-    this.reminderHandler = new ReminderHandler();
-  }
+  constructor(public reminder: EmailReminder) {}
 
   public async sendReceipt(
     recipients: Recipient[],
     options: MessageOptions,
   ): Promise<any> {
+    /*
     const htmlString = this.receiptHandler.generateHtml(options);
 
     try {
@@ -24,6 +19,7 @@ export class EmailOffice {
     } catch (e) {
       return Promise.reject(`could not send receipt: ${e}`);
     }
+     */
   }
 
   public sendReminder(

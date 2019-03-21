@@ -38,6 +38,7 @@
   "ava": {
     "compileEnhancements": false,
     "extensions": ["ts", "tsx"],
-    "require": ["ts-node/register"]
+    "require": ["ts-node/register"],
+    "sources": ["**/*.ts", "**/*.spec.ts"]
   }
 }

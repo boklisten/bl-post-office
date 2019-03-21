@@ -5,5 +5,12 @@ export interface Recipient {
   phone?: string;
   name?: string;
   dob?: string;
+  itemList?: {
+    id: string;
+    title: string;
+    status: string;
+    amountLeftToPay: string;
+    deadline: string;
+  }[];
   messageMediumOverrides?: MessageMediums;
 }
