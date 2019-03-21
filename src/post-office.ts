@@ -2,15 +2,40 @@ import {POST_OFFICE_SETTINGS} from './settings/post-office-settings';
 import {EmailOffice} from './email/email-office';
 import {MessageOptions} from './interfaces/message-options';
 import {Recipient} from './interfaces/reciptient';
+import {ReceiptDepartment} from './departments/receipt.department';
+import {injectable, inject} from 'inversify';
+import {TYPES} from '../TYPES';
+import {Department} from './departments/department';
+import 'reflect-metadata';
 
 /**
  * A single point for sending and reciving messages to and from a customer
  */
+@injectable()
 export class PostOffice {
   private emailOffice: EmailOffice;
 
-  constructor() {
+  constructor(private _receiptDepartment: ReceiptDepartment) {
     this.emailOffice = new EmailOffice();
+  }
+
+  public send(
+    recipients: Recipient[],
+    options: MessageOptions,
+  ): Promise<boolean> {
+    return this.delegateSendRequest(recipients, options);
+  }
+
+  private delegateSendRequest(
+    recipients: Recipient[],
+    options: MessageOptions,
+  ): Promise<boolean> {
+    switch (options.type) {
+      case 'receipt':
+        return this._receiptDepartment.send(recipients, options);
+      default:
+        return Promise.reject('message type not supported');
+    }
   }
 
   /**

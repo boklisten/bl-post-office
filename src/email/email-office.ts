@@ -2,7 +2,7 @@ import {ReceiptHandler} from './handlers/receipt.handler';
 import {MessageOptions} from '../interfaces/message-options';
 import {ReminderHandler} from './handlers/reminder.handler';
 import {Recipient} from '../interfaces/reciptient';
-const heml = require('heml');
+//const heml = require('heml');
 
 export class EmailOffice {
   private receiptHandler: ReceiptHandler;
@@ -21,7 +21,6 @@ export class EmailOffice {
 
     try {
       const template = await this.generateTemplate(htmlString);
-      console.log('html template', template);
     } catch (e) {
       return Promise.reject(`could not send receipt: ${e}`);
     }
@@ -44,12 +43,14 @@ export class EmailOffice {
     };
 
     return new Promise((resolve, reject) => {
+      /*
       heml(htmlString, options).then(({html, metadata, errors}: any) => {
         if (errors) {
           return reject(errors);
         }
         resolve(html);
       });
+       */
     });
   }
 }

@@ -1,12 +1,15 @@
 {
-  "include": ["src/**/*.ts"],
+  "include": ["types.ts", "src/**/*.ts"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "types": ["reflect-metadata"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "target": "es6",
     "module": "commonjs",
     "sourceMap": true,
-    "lib": ["es6"]
+    "lib": ["es6", "dom"]
   }
 }
