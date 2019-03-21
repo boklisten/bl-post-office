@@ -4,6 +4,7 @@
   "description": "a single module for sending messages to a customer",
   "main": "index.js",
   "scripts": {
+    "test": "ava-ts src/**/*.spec.ts",
     "watch:test:unit:ts": "ava-ts src/**/*.spec.ts --watch",
     "test:unit:ts": "ava-ts src/**/*.spec.ts"
   },
@@ -36,12 +37,7 @@
   },
   "ava": {
     "compileEnhancements": false,
-    "extensions": [
-      "ts",
-      "tsx"
-    ],
-    "require": [
-      "ts-node/register"
-    ]
+    "extensions": ["ts", "tsx"],
+    "require": ["ts-node/register"]
   }
 }
