@@ -19,10 +19,19 @@ export class PostOffice {
     this.emailOffice = new EmailOffice();
   }
 
+  /**
+   *  Tries to send message to one or more recipients
+   *
+   *  @param recipients - the recipients of the message
+   *  @param options - the options to the message, option.type must be specified
+   */
   public send(
     recipients: Recipient[],
     options: MessageOptions,
   ): Promise<boolean> {
+    if (recipients.length <= 0) {
+      return Promise.reject(`recipients array is empty`);
+    }
     return this.delegateSendRequest(recipients, options);
   }
 
@@ -34,36 +43,7 @@ export class PostOffice {
       case 'receipt':
         return this._receiptDepartment.send(recipients, options);
       default:
-        return Promise.reject('message type not supported');
+        return Promise.reject(`message type "${options.type}" not supported`);
     }
-  }
-
-  /**
-   * sends a receipt to a recipient using the corresponding medium
-   * @param MessageOptions
-   */
-  public sendReceipt(
-    recipients: Recipient[],
-    options: MessageOptions,
-  ): Promise<boolean> {
-    if (POST_OFFICE_SETTINGS.receipt.email) {
-      return this.emailOffice.sendReceipt(recipients, options);
-    }
-    return Promise.reject('not implemented');
-  }
-
-  /**
-   * sends a reminder to a recipient using the corresponding medium
-   * @param MessageOptions
-   * @returns Promise
-   */
-  public sendReminder(
-    recipients: Recipient[],
-    options: MessageOptions,
-  ): Promise<boolean> {
-    if (POST_OFFICE_SETTINGS.reminder.email) {
-      return this.emailOffice.sendReminder(recipients, options);
-    }
-    return Promise.reject('not implemented');
   }
 }
