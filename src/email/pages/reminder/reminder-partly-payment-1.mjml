@@ -1,0 +1,196 @@
+ 
+<mjml> 
+<mj-head>
+<mj-style>
+  bl-container {
+    background-color: white;
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+  } 
+
+  .bl-header {
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:  #26768f;
+  }
+
+  .bl-content {
+    background-color: white;
+  }
+  .bl-footer{
+    margin-top: 40px;
+    background-color:  #26768f;
+    color: white;
+  }
+
+  .header-logo {
+    padding: 20px;
+  }
+
+  .header-icon {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .align-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+  .bl-table-style {
+
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: center;
+  }
+
+
+  .bl-table-header {
+    padding: 10px;
+    font-size: 12px;
+    border-top: 3px solid #f18f01;
+    border-bottom: 3px solid #f18f01;
+  } 
+
+  .bl-table-row {
+    font-size: 12px;
+
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .alert-row {
+    border: 3px dotted red;
+    padding: 10px;
+  }
+
+  .content-row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .btn {
+    background-color: #26768f;
+  }
+
+  .text-block-alert {
+    border: 3px dashed red;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+  }
+  .text-block-warning {
+    border: 3px dashed orange;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+  }
+
+
+  .text-block-secondary {
+    border: 3px dashed gray;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+  }
+
+
+  .text-block {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+  }
+
+  .testitest {
+    background-color: orange;
+  }
+  </mj-style>
+
+</mj-head>
+  <mj-body css-class="bl-body" background-color="#757780">
+    <mj-section css-class="bl-header">
+      <mj-column>
+          <mj-image src="https://www.boklisten.no/assets/img/boklisten_logo_v2_icon_white_lg.png" height="50px" width="50px" css-class="header-icon"></mj-image>
+      </mj-column>
+    </mj-section>
+
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h3>På tide å gjøre noe med bøkene dine!</h3>
+          <p>  
+            Hei fra oss i Boklisten.no, nå er det snart frist for å betale det resterende beløpet på dine bøker.
+            Dette kan du enkelt gjøre på en av våre stands eller på nettsidene våre. Har du spørsmål så
+            er det bare å kontakte oss på epost info@boklisten.no. Vi ønkser deg lykke til med lesingen.
+          </p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>Dine bøker som snart har frist:</mj-text>
+        <mj-table css-class="bl-table-style">
+          <tr style="border-bottom: 3px solid #f18f01;">
+            <th>#</th>
+            <th>Tittel</th>
+            <th>Frist</th>
+            <th>Igjen å betale</th>
+          </tr>
+          <tr css-class="bl-table-row">
+            <td>82183481381</td>
+            <td>En ny dag truer</td>
+            <td>01.01.2019</td>
+            <td>340 kr</td>
+          </tr> 
+          <tr css-class="bl-table-row">
+            <td>92123481381</td>
+            <td>Jesusboken 1</td>
+            <td>01.01.2019</td>
+            <td>540 kr</td>
+          </tr> 
+          <tr css-class="bl-table-row">
+            <th colspan="2"></th>
+            <th>Sum</th>
+            <th style="border-top: 1px solid #f18f01; border-bottom: 5px double #f18f01;">2480 kr</th>
+          </tr> 
+        </mj-table>
+      </mj-column>
+    </mj-section>
+
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>Hvorfor har jeg penger igjen å betale?</h4>
+          <p>
+            Da du bestilte bøker hos oss valgte du å delbetale bøkene dine. Det som står som "igjen å betale" er
+            det resterende beløpet på denne summen.
+          </p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>Hva gjør jeg nå?</h4>
+          <p>
+            Du kan komme til oss på stand. Der vil du kunne betale inn det resterende beløpet. Hvis vi ser at vi vil ha boken inn igjen, så kan vi kjøpe av deg boken til samme 
+            pris som det du har som utestående beløp. Du kan også betale her på nett, men da vil du ikke ha muligheten til å selge boken til oss.
+          </p>
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+    <mj-section css-class="bl-footer">
+      <mj-column>
+        <mj-text color="white" align="center">info@boklisten.no</mj-text>
+      </mj-column>
+      <mj-column>
+        <mj-text color="white" align="center">www.boklisten.no</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

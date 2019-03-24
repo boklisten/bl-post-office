@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/holskil/bl-post-office#readme",
   "dependencies": {
-    "heml": "^1.1.3",
     "inversify": "^5.0.1",
     "reflect-metadata": "^0.1.13"
   },
@@ -29,7 +28,9 @@
     "ava-ts": "^1.0.0-rc",
     "gulp": "^4.0.0",
     "gulp-ava": "^1.0.0",
+    "gulp-mjml": "^3.0.0",
     "gulp-typescript": "^5.0.1",
+    "mjml": "^4.4.0-beta.1",
     "prettier": "^1.16.4",
     "ts-mockito": "^2.3.1",
     "ts-node": "^8.0.3",
@@ -37,8 +38,16 @@
   },
   "ava": {
     "compileEnhancements": false,
-    "extensions": ["ts", "tsx"],
-    "require": ["ts-node/register"],
-    "sources": ["**/*.ts", "**/*.spec.ts"]
+    "extensions": [
+      "ts",
+      "tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "sources": [
+      "**/*.ts",
+      "**/*.spec.ts"
+    ]
   }
 }

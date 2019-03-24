@@ -1,4 +1,3 @@
-import {reminderPage} from '../../pages/reminder/reminder-page';
 import {MessageOptions} from '../../../interfaces/message-options';
 import {EmailHandler} from '../email-handler';
 import {injectable} from 'inversify';
@@ -21,7 +20,7 @@ export class EmailReminder {
   }
 
   private generateHtml(options: MessageOptions): string {
-    return reminderPage;
+    return ``;
   }
 
   private validateEmail(email: string): boolean {
