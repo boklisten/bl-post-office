@@ -71,33 +71,20 @@
         </style>
         <style type="text/css">bl-container {
     background-color: white;
-    border-left: 1px solid #f0f0f0;
-    border-right: 1px solid #f0f0f0;
   } 
 
   .bl-header {
     color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
     background-color:  #26768f;
+  }
+
+  .bl-header-icon {
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .bl-content {
-    background-color: white;
-  }
-  .bl-footer{
-    margin-top: 40px;
-    background-color:  #26768f;
-    color: white;
-  }
-
-  .header-logo {
-    padding: 20px;
-  }
-
-  .header-icon {
-    margin-right: auto;
-    margin-left: auto;
+    background-color: #ffffff;
   }
 
   .align-center {
@@ -105,42 +92,15 @@
     margin-right: auto;
   }
 
-
-
-  .bl-table-style {
-
+  .bl-table {
     width: 100%; 
     border-collapse: collapse; 
     text-align: center;
   }
 
-
-  .bl-table-header {
-    padding: 10px;
-    font-size: 12px;
-    border-top: 3px solid #f18f01;
-    border-bottom: 3px solid #f18f01;
-  } 
-
-  .bl-table-row {
-    font-size: 12px;
-
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-
   .alert-row {
     border: 3px dotted red;
     padding: 10px;
-  }
-
-  .content-row {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .btn {
-    background-color: #26768f;
   }
 
   .text-block-alert {
@@ -149,6 +109,7 @@
     padding-right: 20px;
     margin: 10px;
   }
+
   .text-block-warning {
     border: 3px dashed orange;
     padding-left: 20px;
@@ -169,34 +130,30 @@
     padding-left: 20px;
     padding-right: 20px;
     margin: 10px;
-  }
-
-  .testitest {
-    background-color: orange;
   }</style>
         
       </head>
-      <body style="background-color:#757780;">
+      <body style="background-color:#313951;">
         
         
       <div
-         class="bl-body" style="background-color:#757780;"
+         class="bl-body" style="background-color:#313951;"
       >
         
       
       <!--[if mso | IE]>
       <table
-         align="center" border="0" cellpadding="0" cellspacing="0" class="bl-header-outlook" style="width:600px;" width="600"
+         align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
       >
         <tr>
           <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
       <![endif]-->
     
       
-      <div  class="bl-header" style="Margin:0px auto;max-width:600px;">
+      <div  style="background:#26768f;background-color:#26768f;Margin:0px auto;max-width:600px;">
         
         <table
-           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#26768f;background-color:#26768f;width:100%;"
         >
           <tbody>
             <tr>
@@ -223,7 +180,7 @@
         
             <tr>
               <td
-                 align="center" class="header-icon" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                 align="center" class="bl-header-icon" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
                 
       <table
@@ -234,7 +191,7 @@
             <td  style="width:50px;">
               
       <img
-         height="50" src="https://www.boklisten.no/assets/img/boklisten_logo_v2_icon_white_lg.png" style="border:0;display:block;outline:none;text-decoration:none;height:50px;width:100%;font-size:13px;" width="50"
+         alt="Boklisten.no" height="50" src="https://www.boklisten.no/assets/img/boklisten_logo_v2_icon_white_lg.png" style="border:0;display:block;outline:none;text-decoration:none;height:50px;width:100%;font-size:13px;" width="50"
       />
     
             </td>
@@ -313,11 +270,14 @@
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       >
-        <h3>På tide å gjøre noe med bøkene dine!</h3>
+        <h2>På tide å gjøre noe med bøkene dine!!</h2>
+          <p>
+            <mj-raw>{{hello}}</mj-raw>
+          </p>
           <p>  
             Hei fra oss i Boklisten.no, nå er det snart frist for å betale det resterende beløpet på dine bøker.
             Dette kan du enkelt gjøre på en av våre stands eller på nettsidene våre. Har du spørsmål så
-            er det bare å kontakte oss på epost info@boklisten.no. Vi ønkser deg lykke til med lesingen.
+            er det bare å kontakte oss på epost info@boklisten.no. Vi ønkser deg lykke til med lesingen opp mot eksamen.
           </p>
       </div>
     
@@ -400,35 +360,37 @@
           
             <tr>
               <td
-                 align="left" class="bl-table-style" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                 align="left" class="bl-table" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
                 
       <table
          cellpadding="0" cellspacing="0" width="100%" border="0" style="cellspacing:0;color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:100%;"
       >
-        <tr style="border-bottom: 3px solid #f18f01;">
-            <th>#</th>
-            <th>Tittel</th>
-            <th>Frist</th>
-            <th>Igjen å betale</th>
-          </tr>
-          <tr css-class="bl-table-row">
-            <td>82183481381</td>
-            <td>En ny dag truer</td>
-            <td>01.01.2019</td>
-            <td>340 kr</td>
-          </tr> 
-          <tr css-class="bl-table-row">
-            <td>92123481381</td>
-            <td>Jesusboken 1</td>
-            <td>01.01.2019</td>
-            <td>540 kr</td>
-          </tr> 
-          <tr css-class="bl-table-row">
-            <th colspan="2"></th>
-            <th>Sum</th>
-            <th style="border-top: 1px solid #f18f01; border-bottom: 5px double #f18f01;">2480 kr</th>
-          </tr>
+        <tr style="border-bottom: 5px solid #26768f">
+              <th>#</th>
+              <th>Tittel</th>
+              <th>Frist</th>
+              <th>Igjen å betale</th>
+            </tr>
+
+            <mj-raw>{{#itemList.items}}</mj-raw>
+            <tr>
+              <td>{{id}}</td>
+              <td>{{title}}</td>
+              <td>{{deadline}}</td>
+              <td>{{leftToPay}}</td>
+            </tr>
+            <mj-raw>{{/itemList.items}}</mj-raw>
+            <tr>
+              <th colspan="2"></th>
+              <th>Sum</th>
+              <th style="border-top: 1px solid #26768f; border-bottom: 5px double #26768f;">{{itemList.summary.total}}</th>
+            </tr>
+            <tr style="font-size: 10px;">
+              <th colspan="2"></th>
+              <th>MVA ({{itemList.summary.taxPercentage}}%)</th>
+              <th>{{itemList.summary.totalTax}}</th>
+            </tr>
       </table>
     
               </td>
@@ -512,6 +474,24 @@
               </td>
             </tr>
           
+            <tr>
+              <td
+                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
+      >
+        <h4>Hva gjør jeg nå?</h4>
+          <p>
+            Du kan komme til oss på stand. Der vil du kunne betale inn det resterende beløpet. Hvis vi ser at vi vil ha boken inn igjen, så kan vi kjøpe av deg boken til samme 
+            pris som det du har som utestående beløp. Du kan også betale her på nett, men da vil du ikke ha muligheten til å selge boken til oss.
+          </p>
+      </div>
+    
+              </td>
+            </tr>
+          
       </table>
     
       </div>
@@ -560,12 +540,68 @@
         <tr>
       
             <td
-               class="" style="vertical-align:top;width:600px;"
+               class="" style="width:600px;"
             >
           <![endif]-->
             
       <div
-         class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+         class="mj-column-per-100 outlook-group-fix" style="font-size:0;line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr;"
+      >
+        <!--[if mso | IE]>
+        <table  role="presentation" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+        
+              <td
+                 style="vertical-align:top;width:300px;"
+              >
+              <![endif]-->
+                
+      <div
+         class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;"
+      >
+        
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+      >
+        
+            <tr>
+              <td
+                 align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+              >
+                
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"
+      >
+        <tbody>
+          <tr>
+            <td  style="width:100px;">
+              
+      <img
+         alt="Du kan også levere" height="100" src="https://www.boklisten.no/assets/img/deliver_items.png" style="border:0;display:block;outline:none;text-decoration:none;height:100px;width:100%;font-size:13px;" width="100"
+      />
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+              </td>
+            </tr>
+          
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]>
+              </td>
+              
+              <td
+                 style="vertical-align:top;width:300px;"
+              >
+              <![endif]-->
+                
+      <div
+         class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;"
       >
         
       <table
@@ -580,11 +616,277 @@
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       >
-        <h4>Hva gjør jeg nå?</h4>
-          <p>
-            Du kan komme til oss på stand. Der vil du kunne betale inn det resterende beløpet. Hvis vi ser at vi vil ha boken inn igjen, så kan vi kjøpe av deg boken til samme 
-            pris som det du har som utestående beløp. Du kan også betale her på nett, men da vil du ikke ha muligheten til å selge boken til oss.
-          </p>
+        <h4>Du kan også levere isteden for å betale</h4>
+            <p>
+              Visste du at du kan i noen tilfeller kan levere boken til oss og dermed slipper å betale andre avdrag.
+            </p>
+      </div>
+    
+              </td>
+            </tr>
+          
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]>
+              </td>
+              
+          </tr>
+          </table>
+        <![endif]-->
+      </div>
+    
+          <!--[if mso | IE]>
+            </td>
+          
+        </tr>
+      
+                  </table>
+                <![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]>
+          </td>
+        </tr>
+      </table>
+      
+      <table
+         align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+      >
+        <tr>
+          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![endif]-->
+    
+      
+      <div  style="Margin:0px auto;max-width:600px;">
+        
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style="direction:ltr;font-size:0px;padding:0;text-align:center;vertical-align:top;"
+              >
+                <!--[if mso | IE]>
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                
+        <tr>
+      
+            <td
+               class="" style=""
+            >
+          
+      <table
+         align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+      >
+        <tr>
+          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![endif]-->
+    
+      
+      <div  style="background:#26768f;background-color:#26768f;Margin:0px auto;max-width:600px;">
+        
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#26768f;background-color:#26768f;width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;"
+              >
+                <!--[if mso | IE]>
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                
+        <tr>
+      
+            <td
+               class="" style="width:600px;"
+            >
+          <![endif]-->
+            
+      <div
+         class="mj-column-per-100 outlook-group-fix" style="font-size:0;line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr;"
+      >
+        <!--[if mso | IE]>
+        <table  role="presentation" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+        
+              <td
+                 style="vertical-align:top;width:300px;"
+              >
+              <![endif]-->
+                
+      <div
+         class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;"
+      >
+        
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+      >
+        
+            <tr>
+              <td
+                 align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:white;"
+      >
+        info@boklisten.no
+      </div>
+    
+              </td>
+            </tr>
+          
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]>
+              </td>
+              
+              <td
+                 style="vertical-align:top;width:300px;"
+              >
+              <![endif]-->
+                
+      <div
+         class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;"
+      >
+        
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+      >
+        
+            <tr>
+              <td
+                 align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:white;"
+      >
+        www.boklisten.no
+      </div>
+    
+              </td>
+            </tr>
+          
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]>
+              </td>
+              
+          </tr>
+          </table>
+        <![endif]-->
+      </div>
+    
+          <!--[if mso | IE]>
+            </td>
+          
+        </tr>
+      
+                  </table>
+                <![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]>
+          </td>
+        </tr>
+      </table>
+      
+            </td>
+          
+            <td
+               class="" style=""
+            >
+          
+      <table
+         align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+      >
+        <tr>
+          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![endif]-->
+    
+      
+      <div  style="Margin:0px auto;max-width:600px;">
+        
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;"
+              >
+                <!--[if mso | IE]>
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                
+        <tr>
+      
+            <td
+               class="" style="vertical-align:top;width:600px;"
+            >
+          <![endif]-->
+            
+      <div
+         class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+      >
+        
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+      >
+        
+            <tr>
+              <td
+                 align="center" class="bl-header-icon" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+              >
+                
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"
+      >
+        <tbody>
+          <tr>
+            <td  style="width:25px;">
+              
+      <img
+         alt="Boklisten.no" height="25" src="https://www.boklisten.no/assets/img/boklisten_logo_v2_icon_blue.png" style="border:0;display:block;outline:none;text-decoration:none;height:25px;width:100%;font-size:13px;" width="25"
+      />
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+              </td>
+            </tr>
+          
+            <tr>
+              <td
+                 align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:8px;line-height:1;text-align:center;color:white;"
+      >
+        Boklisten.no AS © 2019
       </div>
     
               </td>
@@ -614,95 +916,6 @@
         </tr>
       </table>
       
-      <table
-         align="center" border="0" cellpadding="0" cellspacing="0" class="bl-footer-outlook" style="width:600px;" width="600"
-      >
-        <tr>
-          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
-      <![endif]-->
-    
-      
-      <div  class="bl-footer" style="Margin:0px auto;max-width:600px;">
-        
-        <table
-           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
-        >
-          <tbody>
-            <tr>
-              <td
-                 style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;"
-              >
-                <!--[if mso | IE]>
-                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                
-        <tr>
-      
-            <td
-               class="" style="vertical-align:top;width:300px;"
-            >
-          <![endif]-->
-            
-      <div
-         class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
-      >
-        
-      <table
-         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
-      >
-        
-            <tr>
-              <td
-                 align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
-              >
-                
-      <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:white;"
-      >
-        info@boklisten.no
-      </div>
-    
-              </td>
-            </tr>
-          
-      </table>
-    
-      </div>
-    
-          <!--[if mso | IE]>
-            </td>
-          
-            <td
-               class="" style="vertical-align:top;width:300px;"
-            >
-          <![endif]-->
-            
-      <div
-         class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
-      >
-        
-      <table
-         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
-      >
-        
-            <tr>
-              <td
-                 align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
-              >
-                
-      <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:white;"
-      >
-        www.boklisten.no
-      </div>
-    
-              </td>
-            </tr>
-          
-      </table>
-    
-      </div>
-    
-          <!--[if mso | IE]>
             </td>
           
         </tr>
