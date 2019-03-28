@@ -12,14 +12,13 @@ import * as mjml from 'gulp-mjml';
 import {registerComponent} from 'mjml-core';
 import log from 'fancy-log';
 import * as browserSync from 'browser-sync';
-//import * as mustache from 'gulp-mustache';
+const extReplace = require('gulp-ext-replace');
+const tap = require('gulp-tap');
 var mustache = require('gulp-mustache');
-
-gulp.task('default', () => {
-  return '';
-});
-
-//registerComponent(BlFooter);
+const es = require('event-stream');
+const through = require('through2');
+const del = require('del');
+import copy from 'gulp-copy';
 
 const walkSync = (dir, filelist = []) => {
   fs.readdirSync(dir).forEach(file => {
@@ -32,81 +31,86 @@ const walkSync = (dir, filelist = []) => {
 
 const watchedComponents = walkSync('./src/email/components');
 
-const compileMjml = () => {
+function read(path) {
+  fs.readFile(path, (err, data) => {
+    if (err) throw err;
+    return data;
+  });
+}
+
+function compileMustache() {
+  return through.obj((file, encoding, cb) => {
+    let jsonFilePath = file.path.replace(/html/g, 'json');
+    jsonFilePath = jsonFilePath.replace('mustache', 'json');
+    jsonFilePath = jsonFilePath.replace('tmp', 'src');
+    const jsonFile = require(jsonFilePath);
+    const destPath = file.path.replace('mustache', 'pages');
+    log(destPath);
+    gulp
+      .src(file.path)
+      .pipe(mustache(jsonFile))
+      .pipe(gulp.dest('server/email/pages/'));
+    cb();
+  });
+}
+
+function cleanTmp() {
+  return del(['tmp']);
+}
+
+function compileMjmlMustachePagesToHtml() {
+  return gulp
+    .src('./tmp/email/mustache/**/*.html')
+    .pipe(compileMustache())
+    .pipe(gulp.dest('./tmp/email/html/'));
+}
+
+function linkMjmlComponents() {
   return gulp
     .src(path.normalize('./src/email/components/**/*.js'))
     .pipe(babel())
     .on('error', log)
-    .pipe(gulp.dest('./src/email/lib/'))
+    .pipe(gulp.dest('./tmp/email/lib/'))
     .on('end', () => {
       watchedComponents.forEach(compPath => {
-        const fullPath = path.join(
-          process.cwd(),
-          compPath.replace('components', 'lib'),
-        );
+        let p = compPath.replace('components', 'lib');
+        p = p.replace('src', 'tmp');
+        const fullPath = path.join(process.cwd(), p);
         delete require.cache[fullPath];
-        log(require(fullPath).default);
         registerComponent(require(fullPath).default);
       });
-
-      fs.readFile(
-        path.normalize(
-          './src/email/pages/reminder/reminder-partly-payment-1.mjml',
-        ),
-        'utf8',
-        (err, data) => {
-          if (err) throw err;
-          const result = mjml2html(data);
-          fs.writeFileSync(
-            path.normalize(
-              './src/email/lib/pages/reminder/reminder-partly-payment-1.html',
-            ),
-            result.html,
-          );
-          compileMustache();
-          browserSync.reload();
-        },
-      );
     });
-};
+}
 
-const compileMustache = () => {
-  gulp
-    .src('./src/email/lib/pages/reminder/reminder-partly-payment-1.html')
+function compileMjmlPages() {
+  return gulp
+    .src('./src/email/pages/**/*.mjml')
     .pipe(
-      mustache(
-        {
-          hello: 'HEllo from GULP',
-          itemList: {
-            summary: {total: '2710 kr', totalTax: '0 kr', taxPercentage: '20'},
-            items: [
-              {
-                id: '12838199',
-                title: 'Book of JOB',
-                deadline: '01.07.2019',
-                leftToPay: '2050 kr',
-              },
-              {
-                id: '12882139',
-                title: 'The HOLY bible',
-                deadline: '01.07.2019',
-                leftToPay: '110 kr',
-              },
-              {
-                id: '12830001',
-                title: 'Upside down, inside out',
-                deadline: '01.07.2019',
-                leftToPay: '550 kr',
-              },
-            ],
-          },
-        },
-        {},
-        {},
-      ),
+      tap((file, t) => {
+        const mjmlFile = mjml2html(file.contents.toString('utf8'));
+        file.contents = new Buffer(mjmlFile.html);
+      }),
     )
-    .pipe(gulp.dest('./tmp/email/pages/reminder/'));
-};
+    .pipe(extReplace('.html'))
+    .pipe(gulp.dest('./tmp/email/mustache/'));
+}
+
+function buildMjml(done) {
+  return gulp.series(
+    copyConfig,
+    linkMjmlComponents,
+    compileMjmlPages,
+    cleanTmp,
+  )(done);
+}
+
+function buildMjmlTest(done) {
+  return gulp.series(buildMjml, compileMjmlMustachePagesToHtml, cleanTmp)(done);
+}
+
+function copyConfig() {
+  return gulp.src('src/email/config/**/*').pipe(gulp.dest('tmp/email/config/'));
+}
 
 gulp.task('build', () => {
   return tsProject
@@ -119,28 +123,23 @@ gulp.task('unit', () => {
   gulp.src('src/**/*.spec.ts');
 });
 
-gulp.task('mjml:build', () => {
-  return compileMjml();
+gulp.task('email:build', done => {
+  return buildMjml(done);
 });
 
-gulp.task('mjml:watch', () => {
-  compileMjml();
-
-  return watch(
-    [
-      path.normalize('./src/email/components/**/*.js'),
-      path.normalize('./src/email/pages/**/*.mjml'),
-    ],
-    compileMjml,
-  );
+gulp.task('email:build:test', done => {
+  return buildMjmlTest(done);
 });
 
-gulp.task('mjml:serve', () => {
+gulp.task('email:serve', () => {
   browserSync.init({
-    server: './tmp/email/pages',
+    server: './server/email/pages',
   });
-
-  compileMjml();
-  gulp.watch('./src/email/components/**/*.js').on('change', compileMjml);
-  gulp.watch('./src/email/pages/**/*.mjml').on('change', compileMjml);
+  gulp.series(buildMjmlTest);
+  gulp.watch(['./src/**/*']).on(
+    'change',
+    gulp.series(buildMjmlTest, cleanTmp, () => {
+      browserSync.reload();
+    }),
+  );
 });

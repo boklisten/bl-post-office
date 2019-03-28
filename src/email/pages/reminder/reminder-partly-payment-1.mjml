@@ -76,11 +76,8 @@
       <mj-column>
         <mj-text>
           <h2>På tide å gjøre noe med bøkene dine!!</h2>
-          <p>
-            <mj-raw>{{hello}}</mj-raw>
-          </p>
           <p>  
-            Hei fra oss i Boklisten.no, nå er det snart frist for å betale det resterende beløpet på dine bøker.
+            Sveisann fra oss i Boklisten.no, nå er det snart frist for å betale det resterende beløpet på dine bøker.
             Dette kan du enkelt gjøre på en av våre stands eller på nettsidene våre. Har du spørsmål så
             er det bare å kontakte oss på epost info@boklisten.no. Vi ønkser deg lykke til med lesingen opp mot eksamen.
           </p>
