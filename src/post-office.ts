@@ -4,7 +4,6 @@ import {MessageOptions} from './interfaces/message-options';
 import {Recipient} from './interfaces/reciptient';
 import {ReceiptDepartment} from './departments/receipt/receipt.department';
 import {injectable, inject} from 'inversify';
-import {TYPES} from '../TYPES';
 import {Department} from './departments/department';
 import 'reflect-metadata';
 import {ReminderDepartment} from './departments/reminder/reminder.department';
