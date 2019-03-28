@@ -87,6 +87,8 @@
 
     <bl-item-list-component></bl-item-list-component>
 
+    <bl-text-block-component></bl-text-block-component>
+
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>

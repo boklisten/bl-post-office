@@ -1,7 +1,7 @@
 {
   "itemList": {
     "summary": {
-      "total": "2710 kr",
+      "total": "2011 kr",
       "totalTax": "0 kr",
       "taxPercentage": "20"
     },
@@ -14,7 +14,7 @@
       },
       {
         "id": "12882139",
-        "title": "The HOLY bible",
+        "title": "The HOLY biblee",
         "deadline": "01.07.2019",
         "leftToPay": "110 kr"
       },
@@ -25,5 +25,13 @@
         "leftToPay": "550 kr"
       }
     ]
-  }
+  },
+  "textBlocks": [
+    {
+      "text": "Dette er en text!"
+    },
+    {
+      "text": "Dette er en annen texxt!!"
+    }
+  ]
 }

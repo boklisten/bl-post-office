@@ -38,20 +38,16 @@ function read(path) {
   });
 }
 
-function compileMustache() {
-  return through.obj((file, encoding, cb) => {
-    let jsonFilePath = file.path.replace(/html/g, 'json');
-    jsonFilePath = jsonFilePath.replace('mustache', 'json');
-    jsonFilePath = jsonFilePath.replace('tmp', 'src');
-    const jsonFile = require(jsonFilePath);
-    const destPath = file.path.replace('mustache', 'pages');
-    log(destPath);
-    gulp
-      .src(file.path)
-      .pipe(mustache(jsonFile))
-      .pipe(gulp.dest('server/email/pages/'));
-    cb();
-  });
+function joinJsonToMustacheFile(path) {
+  let jsonFilePath = path.replace(/html/g, 'json');
+  jsonFilePath = jsonFilePath.replace('mustache', 'json');
+  jsonFilePath = jsonFilePath.replace('tmp', 'src');
+  const jsonFile = require(jsonFilePath);
+  const destPath = path.replace('mustache', 'pages');
+  gulp
+    .src(path)
+    .pipe(mustache(jsonFile))
+    .pipe(gulp.dest('server/email/pages/'));
 }
 
 function cleanTmp() {
@@ -61,7 +57,12 @@ function cleanTmp() {
 function compileMjmlMustachePagesToHtml() {
   return gulp
     .src('./tmp/email/mustache/**/*.html')
-    .pipe(compileMustache())
+    .pipe(
+      through.obj((file, encoding, done) => {
+        joinJsonToMustacheFile(file.path);
+        done();
+      }),
+    )
     .pipe(gulp.dest('./tmp/email/html/'));
 }
 
@@ -96,12 +97,7 @@ function compileMjmlPages() {
 }
 
 function buildMjml(done) {
-  return gulp.series(
-    copyConfig,
-    linkMjmlComponents,
-    compileMjmlPages,
-    cleanTmp,
-  )(done);
+  return gulp.series(copyConfig, linkMjmlComponents, compileMjmlPages)(done);
 }
 
 function buildMjmlTest(done) {
@@ -135,8 +131,8 @@ gulp.task('email:serve', () => {
   browserSync.init({
     server: './server/email/pages',
   });
-  gulp.series(buildMjmlTest);
-  gulp.watch(['./src/**/*']).on(
+  buildMjmlTest;
+  gulp.watch('./src/email/**/*.{js,html,json}').on(
     'change',
     gulp.series(buildMjmlTest, cleanTmp, () => {
       browserSync.reload();
