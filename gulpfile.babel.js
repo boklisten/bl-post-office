@@ -50,10 +50,6 @@ function joinJsonToMustacheFile(path) {
     .pipe(gulp.dest('server/email/pages/'));
 }
 
-function cleanTmp() {
-  return del(['tmp']);
-}
-
 function compileMjmlMustachePagesToHtml() {
   return gulp
     .src('./tmp/email/mustache/**/*.html')
@@ -100,6 +96,11 @@ function buildMjml(done) {
   return gulp.series(copyConfig, linkMjmlComponents, compileMjmlPages)(done);
 }
 
+function cleanTmp(done) {
+  //del(['tmp']);
+  done();
+}
+
 function buildMjmlTest(done) {
   return gulp.series(buildMjml, compileMjmlMustachePagesToHtml, cleanTmp)(done);
 }
@@ -131,7 +132,7 @@ gulp.task('email:serve', () => {
   browserSync.init({
     server: './server/email/pages',
   });
-  buildMjmlTest;
+  buildMjmlTest();
   gulp.watch('./src/email/**/*.{js,html,json}').on(
     'change',
     gulp.series(buildMjmlTest, cleanTmp, () => {

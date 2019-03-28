@@ -23,13 +23,32 @@ export default class BlTextBlockComponent extends BodyComponent {
   */
   render() {
     return this.renderMJML(`
-      <mj-section>
-        <mj-column>
-          <mj-text>Dette er textblocks!</mj-text>
-          <mj-raw>{{#textBlocks}}</mj-raw>
-            <mj-text>{{text}}</mj-text>
-          <mj-raw>{{/textBlocks}}</mj-raw>
-        </mj-column>
+      <mj-section background-color="white">
+        <mj-raw>{{#textBlocks}}</mj-raw>
+
+          <mj-raw>{{#alert}}</mj-raw>
+            <mj-column border="1px solid red" background-color="white">
+          <mj-raw>{{/alert}}</mj-raw>
+
+          <mj-raw>{{#warning}}</mj-raw>
+            <mj-column background-color="orange">
+          <mj-raw>{{/warning}}</mj-raw>
+
+
+          <mj-raw>{{#regular}}</mj-raw>
+            <mj-column background-color="white">
+          <mj-raw>{{/regular}}</mj-raw>
+
+          <mj-text>
+            <mj-raw>{{#title}}</mj-raw>
+              <h4>{{title}}</h4>
+            <mj-raw>{{/title}}</mj-raw>
+            {{text}}
+          </mj-text>
+
+          </mj-column>
+
+        <mj-raw>{{/textBlocks}}</mj-raw>
       </mj-section>
 		`);
   }

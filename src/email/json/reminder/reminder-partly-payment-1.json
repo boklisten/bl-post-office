@@ -28,10 +28,14 @@
   },
   "textBlocks": [
     {
-      "text": "Dette er en text!"
+      "text": "Dette er en text!",
+      "alert": true
     },
     {
-      "text": "Dette er en annen texxt!!"
+      "title": "Some Title goes here",
+      "text": "Dette er en annen texxt!!",
+      "alert": false,
+      "regular": true
     }
   ]
 }
