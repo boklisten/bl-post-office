@@ -25,7 +25,6 @@ export default class BlItemListComponent extends BodyComponent {
     return this.renderMJML(`
       <mj-section css-class="bl-content">
         <mj-column>
-          <mj-text>Dine bøker som snart har frist:</mj-text>
           <mj-table css-class="bl-table">
             <tr style="border-bottom: 5px solid ${BL_STYLES.color.main}">
               <th>#</th>

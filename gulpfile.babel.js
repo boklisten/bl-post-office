@@ -42,8 +42,8 @@ function joinJsonToMustacheFile(path) {
   let jsonFilePath = path.replace(/html/g, 'json');
   jsonFilePath = jsonFilePath.replace('mustache', 'json');
   jsonFilePath = jsonFilePath.replace('tmp', 'src');
-  const jsonFile = require(jsonFilePath);
-  const destPath = path.replace('mustache', 'pages');
+  const jsonFile = JSON.parse(fs.readFileSync(jsonFilePath, 'utf8'));
+
   gulp
     .src(path)
     .pipe(mustache(jsonFile))
@@ -97,7 +97,7 @@ function buildMjml(done) {
 }
 
 function cleanTmp(done) {
-  //del(['tmp']);
+  del(['tmp']);
   done();
 }
 
@@ -133,9 +133,9 @@ gulp.task('email:serve', () => {
     server: './server/email/pages',
   });
   buildMjmlTest();
-  gulp.watch('./src/email/**/*.{js,html,json}').on(
+  gulp.watch('./src/email/**/*.{js,html,json,mjml}').on(
     'change',
-    gulp.series(buildMjmlTest, cleanTmp, () => {
+    gulp.series(buildMjmlTest, () => {
       browserSync.reload();
     }),
   );

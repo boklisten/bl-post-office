@@ -28,13 +28,8 @@
   },
   "textBlocks": [
     {
-      "text": "Dette er en text!",
-      "alert": true
-    },
-    {
-      "title": "Some Title goes here",
-      "text": "Dette er en annen texxt!!",
-      "alert": false,
+      "title": "Her kan du skrive en tittel",
+      "text": "Dette er plassen for en lengere tekst. Skriv hva du vil i denne bolken.",
       "regular": true
     }
   ]

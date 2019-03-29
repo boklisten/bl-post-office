@@ -27,13 +27,16 @@ export default class BlTextBlockComponent extends BodyComponent {
         <mj-raw>{{#textBlocks}}</mj-raw>
 
           <mj-raw>{{#alert}}</mj-raw>
-            <mj-column border="1px solid red" background-color="white">
+            <mj-column border-left="10px solid red" border-bottom="2px solid red" border-top="2px solid red" border-right="10px solid red" padding="0px">
           <mj-raw>{{/alert}}</mj-raw>
 
-          <mj-raw>{{#warning}}</mj-raw>
-            <mj-column background-color="orange">
-          <mj-raw>{{/warning}}</mj-raw>
+          <mj-raw>{{#secondary}}</mj-raw>
+            <mj-column border-left="10px solid gray" border-bottom="2px solid gray" border-top="2px solid gray" border-right="10px solid gray" padding="0px">
+          <mj-raw>{{/secondary}}</mj-raw>
 
+          <mj-raw>{{#warning}}</mj-raw>
+            <mj-column border-left="10px solid orange" border-bottom="2px solid orange" border-top="2px solid orange" border-right="10px solid orange" padding="0px">
+          <mj-raw>{{/warning}}</mj-raw>
 
           <mj-raw>{{#regular}}</mj-raw>
             <mj-column background-color="white">
