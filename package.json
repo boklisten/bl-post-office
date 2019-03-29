@@ -5,18 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "ava-ts src/**/*.spec.ts",
-    "test:unit:ts": "ava-ts src/**/*.spec.ts",
-    "watch:test:unit:ts": "ava-ts src/**/*.spec.ts --watch",
+    "build": "npm run run build:email",
+    "test:unit:ts": "ava-ts \"src/**/*.spec.ts\"",
+    "watch:test:unit:ts": "ava-ts \"src/**/*.spec.ts\" --watch",
     "serve:email": "gulp email:serve",
     "build:email": "gulp email:build"
   },
   "babel": {
-    "presets": [
-      "@babel/env"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
+    "presets": ["@babel/env"],
+    "plugins": ["@babel/plugin-proposal-class-properties"]
   },
   "repository": {
     "type": "git",
@@ -29,6 +26,7 @@
   },
   "homepage": "https://github.com/holskil/bl-post-office#readme",
   "dependencies": {
+    "@types/node": "^11.12.1",
     "inversify": "^5.0.1",
     "reflect-metadata": "^0.1.13"
   },
@@ -69,16 +67,8 @@
   },
   "ava": {
     "compileEnhancements": false,
-    "extensions": [
-      "ts",
-      "tsx"
-    ],
-    "require": [
-      "ts-node/register"
-    ],
-    "sources": [
-      "**/*.ts",
-      "**/*.spec.ts"
-    ]
+    "extensions": ["ts", "tsx"],
+    "require": ["ts-node/register"],
+    "sources": ["**/*.ts", "**/*.spec.ts"]
   }
 }
