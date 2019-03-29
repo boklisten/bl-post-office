@@ -1,24 +1,19 @@
 import {POST_OFFICE_SETTINGS} from './settings/post-office-settings';
-import {EmailOffice} from './email/email-office';
+import {EmailDepartment} from './email/email.department';
 import {MessageOptions} from './interfaces/message-options';
 import {Recipient} from './interfaces/reciptient';
-import {ReceiptDepartment} from './departments/receipt/receipt.department';
 import {injectable, inject} from 'inversify';
 import {Department} from './departments/department';
 import 'reflect-metadata';
-import {ReminderDepartment} from './departments/reminder/reminder.department';
 
 /**
  * A single point for sending and reciving messages to and from a customer
  */
 @injectable()
 export class PostOffice {
-  private emailOffice: EmailOffice;
+  private emailDepartment: EmailDepartment;
 
-  constructor(
-    private _receiptDepartment: ReceiptDepartment,
-    private _reminderDepartment: ReminderDepartment,
-  ) {}
+  constructor(private _emailDepartment: EmailDepartment) {}
 
   /**
    *  Tries to send message to one or more recipients
@@ -40,13 +35,31 @@ export class PostOffice {
     recipients: Recipient[],
     options: MessageOptions,
   ): Promise<boolean> {
-    switch (options.type) {
-      case 'receipt':
-        return this._receiptDepartment.send(recipients, options);
-      case 'reminder':
-        return this._reminderDepartment.send(recipients, options);
-      default:
-        return Promise.reject(`message type "${options.type}" not supported`);
+    if (!this.isTypeSupported(options.type)) {
+      return Promise.reject(`message type "${options.type}" not supported`);
     }
+    return this.delegateToDepartments(recipients, options);
+  }
+
+  private isTypeSupported(type: any): boolean {
+    if (['reminder'].indexOf(type) >= 0) {
+      return true;
+    }
+    return false;
+  }
+
+  private delegateToDepartments(
+    recipients: Recipient[],
+    options: MessageOptions,
+  ): Promise<boolean> {
+    for (let medium of POST_OFFICE_SETTINGS.messageTypes.reminder.mediums) {
+      switch (medium) {
+        case 'email':
+          return this._emailDepartment.send(recipients, options);
+      }
+    }
+    return Promise.reject(
+      `type "${options.type}" does not have any supported message mediums`,
+    );
   }
 }

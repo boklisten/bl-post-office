@@ -29,7 +29,7 @@ const walkSync = (dir, filelist = []) => {
   return filelist;
 };
 
-const watchedComponents = walkSync('./src/email/components');
+const watchedComponents = walkSync('./src/email/template/components');
 
 function read(path) {
   fs.readFile(path, (err, data) => {
@@ -47,27 +47,27 @@ function joinJsonToMustacheFile(path) {
   gulp
     .src(path)
     .pipe(mustache(jsonFile))
-    .pipe(gulp.dest('server/email/pages/'));
+    .pipe(gulp.dest('server/email/template/pages/'));
 }
 
 function compileMjmlMustachePagesToHtml() {
   return gulp
-    .src('./tmp/email/mustache/**/*.html')
+    .src('./tmp/email/template/mustache/**/*.html')
     .pipe(
       through.obj((file, encoding, done) => {
         joinJsonToMustacheFile(file.path);
         done();
       }),
     )
-    .pipe(gulp.dest('./tmp/email/html/'));
+    .pipe(gulp.dest('./tmp/email/template/html/'));
 }
 
 function linkMjmlComponents() {
   return gulp
-    .src(path.normalize('./src/email/components/**/*.js'))
+    .src(path.normalize('./src/email/template/components/**/*.js'))
     .pipe(babel())
     .on('error', log)
-    .pipe(gulp.dest('./tmp/email/lib/'))
+    .pipe(gulp.dest('./tmp/email/template/lib/'))
     .on('end', () => {
       watchedComponents.forEach(compPath => {
         let p = compPath.replace('components', 'lib');
@@ -81,7 +81,7 @@ function linkMjmlComponents() {
 
 function compileMjmlPages() {
   return gulp
-    .src('./src/email/pages/**/*.mjml')
+    .src('./src/email/template/pages/**/*.mjml')
     .pipe(
       tap((file, t) => {
         const mjmlFile = mjml2html(file.contents.toString('utf8'));
@@ -90,8 +90,8 @@ function compileMjmlPages() {
     )
     .pipe(extReplace('.html'))
     .pipe(htmlmin({collapseWhitespace: true, minifyCSS: true}))
-    .pipe(gulp.dest('./tmp/email/mustache/'))
-    .pipe(gulp.dest('./lib/email/')); // compiled mjml pages with mustache syntax is put here for use in prod
+    .pipe(gulp.dest('./tmp/email/template/mustache/'))
+    .pipe(gulp.dest('./lib/email/template/')); // compiled mjml pages with mustache syntax is put here for use in prod
 }
 
 function buildMjml(done) {
@@ -108,7 +108,9 @@ function buildMjmlTest(done) {
 }
 
 function copyConfig() {
-  return gulp.src('src/email/config/**/*').pipe(gulp.dest('tmp/email/config/'));
+  return gulp
+    .src('src/email/template/config/**/*')
+    .pipe(gulp.dest('tmp/email/template/config/'));
 }
 
 gulp.task('build', () => {
@@ -132,10 +134,10 @@ gulp.task('email:build:test', done => {
 
 gulp.task('email:serve', () => {
   browserSync.init({
-    server: './server/email/pages',
+    server: './server/email/template/pages',
   });
   buildMjmlTest();
-  gulp.watch('./src/email/**/*.{js,html,json,mjml}').on(
+  gulp.watch('./src/email/template/**/*.{js,html,json,mjml}').on(
     'change',
     gulp.series(buildMjmlTest, () => {
       browserSync.reload();

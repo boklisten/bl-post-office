@@ -1,5 +1,12 @@
 export interface MessageOptions {
-  type: 'receipt' | 'reminder';
-  messages?: any[];
-  textBlocks?: {text: string}[];
+  type: 'reminder' | 'receipt';
+  subtype?: 'partly-payment' | 'rent' | 'loan';
+  textBlocks?: {
+    text: string;
+    title?: string;
+    regular?: boolean;
+    secondary?: boolean;
+    warning?: boolean;
+    alert?: boolean;
+  }[];
 }

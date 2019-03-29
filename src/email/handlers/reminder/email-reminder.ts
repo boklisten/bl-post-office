@@ -1,19 +1,20 @@
 import {MessageOptions} from '../../../interfaces/message-options';
-import {EmailHandler} from '../email-handler';
 import {injectable} from 'inversify';
+import {Recipient} from '../../../interfaces/reciptient';
+import {DepartmentHandler} from '../../../departments/department-handler';
 import 'reflect-metadata';
 
 @injectable()
-export class EmailReminder {
-  constructor(private _emailHandler: EmailHandler) {}
+export class EmailReminder implements DepartmentHandler {
+  constructor() {}
 
-  public send(toEmail: string, options: {itemList: any[]}): Promise<boolean> {
-    if (!this.validateEmail(toEmail)) {
+  public send(recipient: Recipient, options: MessageOptions): Promise<boolean> {
+    if (!recipient.email || !this.validateEmail(recipient.email)) {
       return Promise.reject(`toEmail must be a valid email`);
     }
 
-    if (options.itemList.length <= 0) {
-      return Promise.reject(`options.itemList is empty`);
+    if (!recipient.itemList || recipient.itemList.items.length <= 0) {
+      return Promise.reject(`recipient.itemList.items is empty or undefined`);
     }
 
     return Promise.reject('not implemented');
