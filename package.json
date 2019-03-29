@@ -11,8 +11,12 @@
     "build:email": "gulp email:build"
   },
   "babel": {
-    "presets": ["@babel/env"],
-    "plugins": ["@babel/plugin-proposal-class-properties"]
+    "presets": [
+      "@babel/env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
   },
   "repository": {
     "type": "git",
@@ -46,6 +50,7 @@
     "gulp-copy": "^4.0.1",
     "gulp-ext-replace": "^0.3.0",
     "gulp-filenames": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-mjml": "^3.0.0",
     "gulp-mustache": "^4.1.1",
     "gulp-rename": "^1.4.0",
@@ -64,8 +69,16 @@
   },
   "ava": {
     "compileEnhancements": false,
-    "extensions": ["ts", "tsx"],
-    "require": ["ts-node/register"],
-    "sources": ["**/*.ts", "**/*.spec.ts"]
+    "extensions": [
+      "ts",
+      "tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "sources": [
+      "**/*.ts",
+      "**/*.spec.ts"
+    ]
   }
 }

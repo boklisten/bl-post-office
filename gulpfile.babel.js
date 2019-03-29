@@ -1,4 +1,3 @@
-//const gulp = require('gulp');
 import gulp from 'gulp';
 import * as ts from 'gulp-typescript';
 import * as tsProject from './tsconfig.build.json';
@@ -18,7 +17,8 @@ var mustache = require('gulp-mustache');
 const es = require('event-stream');
 const through = require('through2');
 const del = require('del');
-import copy from 'gulp-copy';
+const gulpCopy = require('gulp-copy');
+const htmlmin = require('gulp-htmlmin');
 
 const walkSync = (dir, filelist = []) => {
   fs.readdirSync(dir).forEach(file => {
@@ -89,7 +89,9 @@ function compileMjmlPages() {
       }),
     )
     .pipe(extReplace('.html'))
-    .pipe(gulp.dest('./tmp/email/mustache/'));
+    .pipe(htmlmin({collapseWhitespace: true, minifyCSS: true}))
+    .pipe(gulp.dest('./tmp/email/mustache/'))
+    .pipe(gulp.dest('./lib/email/')); // compiled mjml pages with mustache syntax is put here for use in prod
 }
 
 function buildMjml(done) {
