@@ -4,7 +4,7 @@
   "description": "a single module for sending messages to a customer",
   "main": "index.js",
   "scripts": {
-    "test": "ava-ts src/**/*.spec.ts",
+    "test": "ava-ts \"src/**/*.spec.ts\"",
     "build": "npm run build:email",
     "test:unit:ts": "ava-ts \"src/**/*.spec.ts\"",
     "watch:test:unit:ts": "ava-ts \"src/**/*.spec.ts\" --watch",
