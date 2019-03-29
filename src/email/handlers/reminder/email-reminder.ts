@@ -1,7 +1,7 @@
 import {MessageOptions} from '../../../interfaces/message-options';
 import {injectable} from 'inversify';
 import {Recipient} from '../../../interfaces/reciptient';
-import {DepartmentHandler} from '../../../departments/department-handler';
+import {DepartmentHandler} from '../../../interfaces/department-handler';
 import 'reflect-metadata';
 
 @injectable()

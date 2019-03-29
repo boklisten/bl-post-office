@@ -1,7 +1,7 @@
 import {MessageOptions} from '../interfaces/message-options';
 import {EmailReminder} from './handlers/reminder/email-reminder';
 import {Recipient} from '../interfaces/reciptient';
-import {Department} from '../departments/department';
+import {Department} from '../interfaces/department';
 import {injectable} from 'inversify';
 import 'reflect-metadata';
 

@@ -3,7 +3,7 @@ import {EmailDepartment} from './email/email.department';
 import {MessageOptions} from './interfaces/message-options';
 import {Recipient} from './interfaces/reciptient';
 import {injectable, inject} from 'inversify';
-import {Department} from './departments/department';
+import {Department} from './interfaces/department';
 import 'reflect-metadata';
 
 /**
