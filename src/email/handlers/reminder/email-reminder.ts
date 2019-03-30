@@ -2,6 +2,7 @@ import {MessageOptions} from '../../../interfaces/message-options';
 import {injectable} from 'inversify';
 import {Recipient} from '../../../interfaces/reciptient';
 import {DepartmentHandler} from '../../../interfaces/department-handler';
+import {util} from '../../../util';
 import 'reflect-metadata';
 
 @injectable()
@@ -9,7 +10,7 @@ export class EmailReminder implements DepartmentHandler {
   constructor() {}
 
   public send(recipient: Recipient, options: MessageOptions): Promise<boolean> {
-    if (!recipient.email || !this.validateEmail(recipient.email)) {
+    if (!recipient.email || !util.isEmailValid(recipient.email)) {
       return Promise.reject(`toEmail must be a valid email`);
     }
 
@@ -22,10 +23,5 @@ export class EmailReminder implements DepartmentHandler {
 
   private generateHtml(options: MessageOptions): string {
     return ``;
-  }
-
-  private validateEmail(email: string): boolean {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
   }
 }

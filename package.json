@@ -4,10 +4,10 @@
   "description": "a single module for sending messages to a customer",
   "main": "index.js",
   "scripts": {
-    "test": "ava-ts \"src/**/*.spec.ts\"",
+    "test": "npm run test:unit",
     "build": "npm run build:email",
-    "test:unit:ts": "ava-ts \"src/**/*.spec.ts\"",
-    "watch:test:unit:ts": "ava-ts \"src/**/*.spec.ts\" --watch",
+    "test:unit": "ava-ts \"src/**/*.spec.ts\"",
+    "watch:test": "ava-ts \"src/**/*.spec.ts\" --watch",
     "serve:email": "gulp email:serve",
     "build:email": "gulp email:build"
   },

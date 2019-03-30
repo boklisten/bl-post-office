@@ -3,7 +3,7 @@ import {mock, when, instance, capture} from 'ts-mockito';
 
 import {EmailDepartment} from './email.department';
 import {EmailReminder} from './handlers/reminder/email-reminder';
-import {EmailBroker} from './email.broker';
+import {EmailBroker} from './broker/email.broker';
 import {Recipient} from '../interfaces/reciptient';
 import {MessageOptions} from '../interfaces/message-options';
 import {TestEnvironment} from '../../test/test-environment';

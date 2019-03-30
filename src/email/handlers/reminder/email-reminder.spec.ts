@@ -2,7 +2,7 @@ import test from 'ava';
 import {EmailReminder} from './email-reminder';
 import {mock, instance} from 'ts-mockito';
 import {TestEnvironment} from '../../../../test/test-environment';
-import {EmailBroker} from '../../email.broker';
+import {EmailBroker} from '../../broker/email.broker';
 
 const mockedEmailHandler = mock(EmailBroker);
 let testEnvironment: TestEnvironment;
