@@ -6,6 +6,7 @@ import {util} from '../../../util';
 import {EmailTemplateResolver} from '../../email-template-resolver';
 import {EmailBroker} from '../../broker/email.broker';
 import {EMAIL_SETTINGS} from '../../email-settings';
+import {EmailTemplateInput} from '../../../interfaces/emailTemplateInput';
 import 'reflect-metadata';
 
 @injectable()
@@ -24,7 +25,15 @@ export class EmailReminder implements DepartmentHandler {
     this.validateOptions(options);
     this.validateRecipient(recipient);
 
-    const template = this._emailTemplateResolver.generate(options);
+    const emailTemplateInput = this.createEmailTemplateInput(
+      recipient,
+      options,
+    );
+
+    const template = this._emailTemplateResolver.generate(
+      options,
+      emailTemplateInput,
+    );
 
     return await this._emailBroker.send(
       recipient.email as string,
@@ -32,6 +41,16 @@ export class EmailReminder implements DepartmentHandler {
       EMAIL_SETTINGS.reminder.subject,
       template,
     );
+  }
+
+  private createEmailTemplateInput(
+    recipient: Recipient,
+    messageOptions: MessageOptions,
+  ): EmailTemplateInput {
+    return {
+      itemList: recipient.itemList,
+      textBlocks: messageOptions.textBlocks,
+    };
   }
 
   private validateOptions(options: MessageOptions) {

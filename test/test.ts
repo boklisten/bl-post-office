@@ -1,12 +1,10 @@
 import {PostOffice} from '../src/post-office';
 import * as winston from 'winston';
-
 import {TestEnvironment} from './test-environment';
 import {Recipient} from '../src/interfaces/reciptient';
 import {logger} from '../src/logger';
 
 const testEnvironment = new TestEnvironment();
-
 const postOffice = testEnvironment.get<PostOffice>(PostOffice);
 
 const recipients: Recipient[] = [

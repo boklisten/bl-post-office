@@ -1,9 +1,18 @@
 import test from 'ava';
 import {EmailReminder} from './email-reminder';
-import {mock, instance, when, verify, capture} from 'ts-mockito';
+import {
+  mock,
+  instance,
+  when,
+  verify,
+  capture,
+  anyOfClass,
+  anything,
+} from 'ts-mockito';
 import {TestEnvironment} from '../../../../test/test-environment';
 import {EmailBroker} from '../../broker/email.broker';
 import {EmailTemplateResolver} from '../../email-template-resolver';
+import {EmailTemplateInput} from '../../../interfaces/emailTemplateInput';
 import {EMAIL_SETTINGS} from '../../email-settings';
 import {
   MessageOptions,
@@ -116,7 +125,12 @@ test('should call emailTemplateResolver with correct type and subtype', async t 
     subtype: 'partly-payment',
   };
 
-  when(mockedEmailTemplateResolver.generate(options)).thenReturn(
+  const emailTemplateInput = {
+    itemList: recipient.itemList,
+    textBlocks: options.textBlocks,
+  };
+
+  when(mockedEmailTemplateResolver.generate(options, anything())).thenReturn(
     mockedTemplate,
   );
 

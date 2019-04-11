@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import 'reflect-metadata';
 import * as mustache from 'mustache';
+import {EmailTemplateInput} from '../interfaces/emailTemplateInput';
 
 import {
   MessageSubtype,
@@ -27,14 +28,17 @@ const templatePaths = {
 
 @injectable()
 export class EmailTemplateResolver {
-  public generate(messageOptions: MessageOptions): string {
+  public generate(
+    messageOptions: MessageOptions,
+    emailTemplateInput: EmailTemplateInput,
+  ): string {
     const template = this.getTemplate(
       messageOptions.type,
       messageOptions.subtype,
     );
 
     try {
-      return mustache.render(template, messageOptions);
+      return mustache.render(template, emailTemplateInput);
     } catch (e) {
       throw `Mustache could not render template: ${e}`;
     }

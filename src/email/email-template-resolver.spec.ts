@@ -21,8 +21,10 @@ test('should throw error if messageOptions.type is not supported', t => {
     subtype: 'partly-payment',
   };
 
+  const emailTemplateInput = {};
+
   try {
-    emailTemplateResolver.generate(messageOptions);
+    emailTemplateResolver.generate(messageOptions, emailTemplateInput);
     t.fail();
   } catch (e) {
     t.is(e, `type "${messageOptions.type}" not supported`);
@@ -39,8 +41,10 @@ test('should throw error if messageOptions.subtype is not supported', t => {
     subtype: 'randomVal' as MessageSubtype,
   };
 
+  const emailTemplateInput = {};
+
   try {
-    emailTemplateResolver.generate(messageOptions);
+    emailTemplateResolver.generate(messageOptions, emailTemplateInput);
     t.fail();
   } catch (e) {
     t.is(e, `subtype "${messageOptions.subtype}" not supported`);
@@ -57,8 +61,13 @@ test('should return file if messageOptions.type and messageOptions.subtype is su
     subtype: 'partly-payment',
   };
 
+  const emailTemplateInput = {};
+
   try {
-    const file = emailTemplateResolver.generate(messageOptions);
+    const file = emailTemplateResolver.generate(
+      messageOptions,
+      emailTemplateInput,
+    );
     t.truthy(file);
   } catch (e) {
     t.fail('file is not found');
