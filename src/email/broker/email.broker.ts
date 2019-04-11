@@ -9,6 +9,7 @@ export class EmailBroker {
 
   public async send(
     toEmail: string,
+    fromEmail: string,
     subject: string,
     html: string,
   ): Promise<boolean> {
@@ -25,7 +26,7 @@ export class EmailBroker {
     }
 
     try {
-      return await this._connecter.send(toEmail, subject, html);
+      return await this._connecter.send(toEmail, fromEmail, subject, html);
     } catch (e) {
       throw `connecter failed to send: ${e}`;
     }

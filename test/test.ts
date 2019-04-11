@@ -1,7 +1,9 @@
 import {PostOffice} from '../src/post-office';
+import * as winston from 'winston';
 
 import {TestEnvironment} from './test-environment';
 import {Recipient} from '../src/interfaces/reciptient';
+import {logger} from '../src/logger';
 
 const testEnvironment = new TestEnvironment();
 
@@ -28,14 +30,23 @@ const recipients: Recipient[] = [
   },
 ];
 
+logger.add(
+  new winston.transports.Console({
+    format: winston.format.combine(
+      winston.format.colorize(),
+      winston.format.simple(),
+    ),
+  }),
+);
+
 postOffice
   .send(recipients, {
     type: 'reminder',
     subtype: 'partly-payment',
   })
   .then(res => {
-    console.log('yey!', res);
+    logger.warn('email sent: ', res);
   })
   .catch(e => {
-    console.log('err...', e);
+    logger.error(e);
   });

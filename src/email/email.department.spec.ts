@@ -20,9 +20,11 @@ const dummyHtml = '<html></html>';
 const dummySubject = 'a reminder';
 const dummyEmail = 'valid@email.com';
 
-when(mockedEmailBroker.send(dummySubject, dummySubject, dummyHtml)).thenResolve(
-  true,
-);
+const dummyFromEmail = 'some@email.com';
+
+when(
+  mockedEmailBroker.send(dummySubject, dummyFromEmail, dummySubject, dummyHtml),
+).thenResolve(true);
 when(mockedEmailReminder.send(dummyRecipients[0], dummyOptions)).thenResolve(
   true,
 );

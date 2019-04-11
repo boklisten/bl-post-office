@@ -28,6 +28,7 @@ export class EmailReminder implements DepartmentHandler {
 
     return await this._emailBroker.send(
       recipient.email as string,
+      EMAIL_SETTINGS.reminder.fromEmail,
       EMAIL_SETTINGS.reminder.subject,
       template,
     );

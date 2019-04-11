@@ -123,6 +123,7 @@ test('should call emailTemplateResolver with correct type and subtype', async t 
   when(
     mockedEmailBroker.send(
       recipient.email as string,
+      EMAIL_SETTINGS.reminder.fromEmail,
       EMAIL_SETTINGS.reminder.subject,
       mockedTemplate,
     ),
@@ -138,12 +139,13 @@ test('should call emailTemplateResolver with correct type and subtype', async t 
     mockedEmailTemplateResolver.generate,
   ).last();
 
-  const [toEmailArg, subjectArg, templateArg] = capture(
+  const [toEmailArg, fromEmailArg, subjectArg, templateArg] = capture(
     mockedEmailBroker.send,
   ).last();
 
   t.is(emailTemplateResolverArg, options);
   t.is(toEmailArg, recipient.email);
+  t.is(fromEmailArg, EMAIL_SETTINGS.reminder.fromEmail);
   t.is(subjectArg, EMAIL_SETTINGS.reminder.subject);
   t.is(templateArg, mockedTemplate);
 });

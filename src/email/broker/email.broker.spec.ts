@@ -7,11 +7,17 @@ import {SendgridConnecter} from './sendgrid/sendgrid.connecter';
 const mockedSendgridConnecter = mock(SendgridConnecter);
 
 const dummyToEmail = 'valid@email.com';
+const dummyFromEmail = 'some@email.com';
 const dummySubject = 'Some valid subject';
 const dummyHtml = '<html></html>';
 
 when(
-  mockedSendgridConnecter.send(dummyToEmail, dummySubject, dummyHtml),
+  mockedSendgridConnecter.send(
+    dummyToEmail,
+    dummyFromEmail,
+    dummySubject,
+    dummyHtml,
+  ),
 ).thenResolve(true);
 
 const testEnvironment = new TestEnvironment({
@@ -27,7 +33,12 @@ test('should reject if toEmail is not a valid email', async t => {
 
   await randomValues.forEach(async (randomVal: any) => {
     try {
-      await emailBroker.send(randomVal, dummySubject, dummyHtml);
+      await emailBroker.send(
+        randomVal,
+        dummyFromEmail,
+        dummySubject,
+        dummyHtml,
+      );
       t.fail();
     } catch (e) {
       t.is(e, `toEmail "${randomVal}" must be a valid email`);
@@ -41,7 +52,12 @@ test('should reject if subject is empty or undefined', async t => {
 
   await randomValues.forEach(async (randomVal: any) => {
     try {
-      await emailBroker.send(dummyToEmail, randomVal, dummyHtml);
+      await emailBroker.send(
+        dummyToEmail,
+        dummyFromEmail,
+        randomVal,
+        dummyHtml,
+      );
       t.fail();
     } catch (e) {
       t.is(e, `subject "${randomVal}" can not be empty or undefined`);
@@ -55,7 +71,12 @@ test('should reject if html is empty or undefined', async t => {
 
   await randomValues.forEach(async (randomVal: any) => {
     try {
-      await emailBroker.send(dummyToEmail, dummySubject, randomVal);
+      await emailBroker.send(
+        dummyToEmail,
+        dummyFromEmail,
+        dummySubject,
+        randomVal,
+      );
       t.fail();
     } catch (e) {
       t.is(e, `html can not be empty or undefined`);
@@ -68,11 +89,21 @@ test('should call connecter if all values are valid', async t => {
   const mockedResponse = 'valid!';
 
   when(
-    mockedSendgridConnecter.send(dummyToEmail, dummySubject, dummyHtml),
+    mockedSendgridConnecter.send(
+      dummyToEmail,
+      dummyFromEmail,
+      dummySubject,
+      dummyHtml,
+    ),
   ).thenResolve(mockedResponse as any);
 
   try {
-    const res = await emailBroker.send(dummyToEmail, dummySubject, dummyHtml);
+    const res = await emailBroker.send(
+      dummyToEmail,
+      dummyFromEmail,
+      dummySubject,
+      dummyHtml,
+    );
     t.is(res, mockedResponse as any);
   } catch (e) {
     t.fail(e);
@@ -84,11 +115,21 @@ test('should reject if connecter rejects', async t => {
   const mockedRejection = 'not good';
 
   when(
-    mockedSendgridConnecter.send(dummyToEmail, dummySubject, dummyHtml),
+    mockedSendgridConnecter.send(
+      dummyToEmail,
+      dummyFromEmail,
+      dummySubject,
+      dummyHtml,
+    ),
   ).thenReject(mockedRejection);
 
   try {
-    const res = await emailBroker.send(dummyToEmail, dummySubject, dummyHtml);
+    const res = await emailBroker.send(
+      dummyToEmail,
+      dummyFromEmail,
+      dummySubject,
+      dummyHtml,
+    );
     t.fail();
   } catch (e) {
     t.is(e, 'connecter failed to send: ' + mockedRejection);

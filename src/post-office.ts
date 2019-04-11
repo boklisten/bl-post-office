@@ -5,7 +5,6 @@ import {Recipient} from './interfaces/reciptient';
 import {injectable, inject} from 'inversify';
 import {Department} from './interfaces/department';
 import 'reflect-metadata';
-import {logger} from './logger';
 
 /**
  * A single point for sending and reciving messages to and from a customer
@@ -26,11 +25,8 @@ export class PostOffice {
     recipients: Recipient[],
     options: MessageOptions,
   ): Promise<boolean> {
-    logger.info('Sending');
-    logger.error('ERR! ERR!');
-
     if (recipients.length <= 0) {
-      return Promise.reject(`recipients array is empty`);
+      throw `recipients array is empty`;
     }
     return this.delegateSendRequest(recipients, options);
   }
@@ -40,18 +36,9 @@ export class PostOffice {
     options: MessageOptions,
   ): Promise<boolean> {
     if (!this.isTypeSupported(options.type)) {
-      const logMsg = `message type "${options.type}" not supported`;
-      logger.error(logMsg);
-      return Promise.reject(logMsg);
+      throw `message type "${options.type}" not supported`;
     }
     return this.delegateToDepartments(recipients, options);
-  }
-
-  private isTypeSupported(type: any): boolean {
-    if (['reminder'].indexOf(type) >= 0) {
-      return true;
-    }
-    return false;
   }
 
   private delegateToDepartments(
@@ -64,12 +51,13 @@ export class PostOffice {
           return this._emailDepartment.send(recipients, options);
       }
     }
+    throw `type "${options.type}" does not have any supported message mediums`;
+  }
 
-    const logMsg = `type "${
-      options.type
-    }" does not have any supported message mediums`;
-    logger.error(logMsg);
-
-    return Promise.reject(logMsg);
+  private isTypeSupported(type: any): boolean {
+    if (['reminder'].indexOf(type) >= 0) {
+      return true;
+    }
+    return false;
   }
 }
