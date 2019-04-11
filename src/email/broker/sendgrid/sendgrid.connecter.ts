@@ -1,6 +1,7 @@
 import {injectable} from 'inversify';
 import * as sendgrid from '@sendgrid/mail';
 import 'reflect-metadata';
+import {logger} from '../../../logger';
 
 @injectable()
 export class SendgridConnecter {
@@ -26,6 +27,9 @@ export class SendgridConnecter {
             if (err) {
               return reject(`Sendgrid.send() failed to send: ${err}`);
             }
+            logger.info(
+              `Sendgrid.send() successfully sent msg to "${toEmail}"`,
+            );
             resolve(result);
           },
         );

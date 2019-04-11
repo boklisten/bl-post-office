@@ -9,6 +9,24 @@ const postOffice = testEnvironment.get<PostOffice>(PostOffice);
 
 const recipients: Recipient[] = [
   {
+    email: 'andreasholskil@protonmail.com',
+    itemList: {
+      summary: {
+        total: '560 kr',
+        totalTax: '0 kr',
+        taxPercentage: '0',
+      },
+      items: [
+        {
+          id: '83290832',
+          title: 'Some title',
+          leftToPay: '100 kr',
+          deadline: '20.12.2011',
+        },
+      ],
+    },
+  },
+  {
     email: 'aholskil@gmail.com',
     itemList: {
       summary: {
