@@ -5,6 +5,7 @@ import {Recipient} from './interfaces/reciptient';
 import {injectable, inject} from 'inversify';
 import {Department} from './interfaces/department';
 import 'reflect-metadata';
+import {logger} from './logger';
 
 /**
  * A single point for sending and reciving messages to and from a customer
@@ -25,6 +26,9 @@ export class PostOffice {
     recipients: Recipient[],
     options: MessageOptions,
   ): Promise<boolean> {
+    logger.info('Sending');
+    logger.error('ERR! ERR!');
+
     if (recipients.length <= 0) {
       return Promise.reject(`recipients array is empty`);
     }
@@ -36,7 +40,9 @@ export class PostOffice {
     options: MessageOptions,
   ): Promise<boolean> {
     if (!this.isTypeSupported(options.type)) {
-      return Promise.reject(`message type "${options.type}" not supported`);
+      const logMsg = `message type "${options.type}" not supported`;
+      logger.error(logMsg);
+      return Promise.reject(logMsg);
     }
     return this.delegateToDepartments(recipients, options);
   }
@@ -58,8 +64,12 @@ export class PostOffice {
           return this._emailDepartment.send(recipients, options);
       }
     }
-    return Promise.reject(
-      `type "${options.type}" does not have any supported message mediums`,
-    );
+
+    const logMsg = `type "${
+      options.type
+    }" does not have any supported message mediums`;
+    logger.error(logMsg);
+
+    return Promise.reject(logMsg);
   }
 }

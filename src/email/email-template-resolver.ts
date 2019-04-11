@@ -2,6 +2,13 @@ import {injectable} from 'inversify';
 import * as fs from 'fs';
 import * as path from 'path';
 import 'reflect-metadata';
+import * as mustache from 'mustache';
+
+import {
+  MessageSubtype,
+  MessageType,
+  MessageOptions,
+} from '../interfaces/message-options';
 
 // approx 30 kb in memory
 const reminderPartlyPaymentTemplate = fs.readFileSync(
@@ -20,7 +27,20 @@ const templatePaths = {
 
 @injectable()
 export class EmailTemplateResolver {
-  public getTemplate(type: string, subtype: string): string {
+  public generate(messageOptions: MessageOptions): string {
+    const template = this.getTemplate(
+      messageOptions.type,
+      messageOptions.subtype,
+    );
+
+    try {
+      return mustache.render(template, messageOptions);
+    } catch (e) {
+      throw `Mustache could not render template: ${e}`;
+    }
+  }
+
+  private getTemplate(type: MessageType, subtype: MessageSubtype): string {
     switch (type) {
       case 'reminder':
         return this.getTemplateTypeReminder(subtype);
@@ -29,7 +49,7 @@ export class EmailTemplateResolver {
     }
   }
 
-  private getTemplateTypeReminder(subtype: string): string {
+  private getTemplateTypeReminder(subtype: MessageSubtype): string {
     switch (subtype) {
       case 'partly-payment':
         return reminderPartlyPaymentTemplate;

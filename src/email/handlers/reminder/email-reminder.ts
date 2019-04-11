@@ -3,25 +3,53 @@ import {injectable} from 'inversify';
 import {Recipient} from '../../../interfaces/reciptient';
 import {DepartmentHandler} from '../../../interfaces/department-handler';
 import {util} from '../../../util';
+import {EmailTemplateResolver} from '../../email-template-resolver';
+import {EmailBroker} from '../../broker/email.broker';
+import {EMAIL_SETTINGS} from '../../email-settings';
 import 'reflect-metadata';
 
 @injectable()
 export class EmailReminder implements DepartmentHandler {
-  constructor() {}
+  private supportedSubtypes = ['partly-payment'];
 
-  public send(recipient: Recipient, options: MessageOptions): Promise<boolean> {
+  constructor(
+    private _emailTemplateResolver: EmailTemplateResolver,
+    private _emailBroker: EmailBroker,
+  ) {}
+
+  public async send(
+    recipient: Recipient,
+    options: MessageOptions,
+  ): Promise<boolean> {
+    this.validateOptions(options);
+    this.validateRecipient(recipient);
+
+    const template = this._emailTemplateResolver.generate(options);
+
+    return await this._emailBroker.send(
+      recipient.email as string,
+      EMAIL_SETTINGS.reminder.subject,
+      template,
+    );
+  }
+
+  private validateOptions(options: MessageOptions) {
+    if (!options.type || options.type !== 'reminder') {
+      throw `type "${options.type}" is not "reminder"`;
+    }
+
+    if (this.supportedSubtypes.indexOf(options.subtype) <= -1) {
+      throw `subtype "${options.subtype}" not supported`;
+    }
+  }
+
+  private validateRecipient(recipient: Recipient) {
     if (!recipient.email || !util.isEmailValid(recipient.email)) {
-      return Promise.reject(`toEmail must be a valid email`);
+      throw `toEmail must be a valid email`;
     }
 
     if (!recipient.itemList || recipient.itemList.items.length <= 0) {
-      return Promise.reject(`recipient.itemList.items is empty or undefined`);
+      throw `recipient.itemList.items is empty or undefined`;
     }
-
-    return Promise.reject('not implemented');
-  }
-
-  private generateHtml(options: MessageOptions): string {
-    return ``;
   }
 }

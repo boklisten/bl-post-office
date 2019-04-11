@@ -9,7 +9,10 @@ import {TestEnvironment} from '../test/test-environment';
 
 const mockedEmailDepartment = mock(EmailDepartment);
 const recipients: Recipient[] = [{email: 'some@email.com'}];
-const messageOptions: MessageOptions = {type: 'reminder'};
+const messageOptions: MessageOptions = {
+  type: 'reminder',
+  subtype: 'partly-payment',
+};
 
 when(mockedEmailDepartment.send(recipients, messageOptions)).thenResolve(true);
 
@@ -24,7 +27,7 @@ test('should reject if recipients array is empty', async t => {
   const postOffice = testEnvironment.get<PostOffice>(PostOffice);
 
   try {
-    await postOffice.send([], {type: 'receipt'});
+    await postOffice.send([], {type: 'receipt', subtype: 'partly-payment'});
     t.fail();
   } catch (e) {
     t.is(e, `recipients array is empty`);
@@ -37,7 +40,10 @@ test('should reject if option.type is not supported', async t => {
 
   await randomVals.forEach(async (randomVal: any) => {
     try {
-      await postOffice.send(recipients, {type: randomVal});
+      await postOffice.send(recipients, {
+        type: randomVal,
+        subtype: 'partly-payment',
+      });
       t.fail();
     } catch (e) {
       t.is(e, `message type "${randomVal}" not supported`);

@@ -1,6 +1,9 @@
+export type MessageSubtype = 'partly-payment' | 'rent' | 'loan';
+export type MessageType = 'reminder' | 'receipt';
+
 export interface MessageOptions {
-  type: 'reminder' | 'receipt';
-  subtype?: 'partly-payment' | 'rent' | 'loan';
+  type: MessageType;
+  subtype: MessageSubtype;
   textBlocks?: {
     text: string;
     title?: string;

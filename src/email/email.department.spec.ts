@@ -12,7 +12,10 @@ const mockedEmailBroker = mock(EmailBroker);
 const mockedEmailReminder = mock(EmailReminder);
 
 const dummyRecipients: Recipient[] = [{email: 'valid@email.com'}];
-const dummyOptions: MessageOptions = {type: 'reminder'};
+const dummyOptions: MessageOptions = {
+  type: 'reminder',
+  subtype: 'partly-payment',
+};
 const dummyHtml = '<html></html>';
 const dummySubject = 'a reminder';
 const dummyEmail = 'valid@email.com';
@@ -38,7 +41,10 @@ test('should reject if "options.type" is not supported', async t => {
 
   await notSupportedTypes.forEach(async (randomType: any) => {
     try {
-      await emailDepartment.send(dummyRecipients, {type: randomType});
+      await emailDepartment.send(dummyRecipients, {
+        type: randomType,
+        subtype: 'partly-payment',
+      });
       t.fail();
     } catch (e) {
       t.is(e, `options.type "${randomType}" not supported`);
