@@ -36,6 +36,7 @@
     "inversify": "^5.0.1",
     "mustache": "^3.0.1",
     "reflect-metadata": "^0.1.13",
+    "twilio": "^3.30.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {

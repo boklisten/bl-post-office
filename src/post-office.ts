@@ -3,7 +3,8 @@ import {EmailDepartment} from './email/email.department';
 import {MessageOptions} from './interfaces/message-options';
 import {Recipient} from './interfaces/reciptient';
 import {injectable, inject} from 'inversify';
-import {Department} from './interfaces/department';
+import {SmsDepartment} from './sms/sms.department';
+import {logger} from './logger';
 import 'reflect-metadata';
 
 /**
@@ -13,7 +14,10 @@ import 'reflect-metadata';
 export class PostOffice {
   private emailDepartment: EmailDepartment;
 
-  constructor(private _emailDepartment: EmailDepartment) {}
+  constructor(
+    private _emailDepartment: EmailDepartment,
+    private _smsDepartment: SmsDepartment,
+  ) {}
 
   /**
    *  Tries to send message to one or more recipients
@@ -41,17 +45,23 @@ export class PostOffice {
     return this.delegateToDepartments(recipients, options);
   }
 
-  private delegateToDepartments(
+  private async delegateToDepartments(
     recipients: Recipient[],
     options: MessageOptions,
   ): Promise<boolean> {
-    for (let medium of POST_OFFICE_SETTINGS.messageTypes.reminder.mediums) {
-      switch (medium) {
-        case 'email':
-          return this._emailDepartment.send(recipients, options);
-      }
+    try {
+      await this._emailDepartment.send(recipients, options);
+    } catch (e) {
+      logger.error(e);
     }
-    throw `type "${options.type}" does not have any supported message mediums`;
+
+    try {
+      await this._smsDepartment.send(recipients, options);
+    } catch (e) {
+      logger.error(e);
+    }
+
+    return true;
   }
 
   private isTypeSupported(type: any): boolean {

@@ -71,6 +71,7 @@ test('should call EmailReminder if option.type = "reminder"', async t => {
   ).thenResolve(true);
 
   const emailReminderResponse = 'this is the response';
+
   when(mockedEmailReminder.send(recipients[0], dummyOptions)).thenResolve(
     emailReminderResponse as any,
   );
@@ -82,7 +83,7 @@ test('should call EmailReminder if option.type = "reminder"', async t => {
 
   t.is(recipientArg, recipients[0]);
   t.is(optionsArg, dummyOptions);
-  t.is(res[0], emailReminderResponse);
+  t.true(res);
 });
 
 test('should send reminder to all recipients', async t => {
