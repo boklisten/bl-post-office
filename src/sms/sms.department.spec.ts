@@ -1,5 +1,5 @@
 import test from 'ava';
-import {mock, when, instance, capture, anything} from 'ts-mockito';
+import {mock, when, verify, instance, capture, anything} from 'ts-mockito';
 import {SmsDepartment} from './sms.department';
 import {Recipient} from '../interfaces/reciptient';
 import {
@@ -104,4 +104,30 @@ test('should call SmsReminder if type is reminder', async t => {
 
   t.is(recipientArg, recipients[0]);
   t.is(messageOptionsArg, messageOptions);
+});
+
+test('should not call SmsReminder if recipient has mediumOverride.sms set to false', async t => {
+  const smsDepartment = testEnvironment.get<SmsDepartment>(SmsDepartment);
+  const recipients: Recipient[] = [
+    {
+      phone: '12345678',
+      mediumOverrides: {
+        sms: false,
+      },
+    },
+  ];
+  const messageOptions: MessageOptions = {
+    type: 'reminder',
+    subtype: 'partly-payment',
+  };
+
+  when(mockedSmsReminder.send(anything(), anything())).thenResolve(true);
+
+  try {
+    await smsDepartment.send(recipients, messageOptions);
+  } catch (e) {}
+
+  verify(mockedSmsReminder.send(recipients[0], messageOptions)).never();
+
+  t.pass();
 });

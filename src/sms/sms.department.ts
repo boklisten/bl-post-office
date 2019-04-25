@@ -33,6 +33,12 @@ export class SmsDepartment implements Department {
     const promiseArr: Promise<any>[] = [];
 
     for (let recipient of recipients) {
+      if (
+        recipient.mediumOverrides &&
+        recipient.mediumOverrides.sms === false
+      ) {
+        continue;
+      }
       promiseArr.push(this._smsReminder.send(recipient, messageOptions));
     }
 

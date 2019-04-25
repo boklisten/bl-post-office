@@ -21,5 +21,5 @@ export interface Recipient {
   name?: string;
   dob?: string;
   itemList?: ItemList;
-  messageMediumOverrides?: MessageMediums;
+  mediumOverrides?: MessageMediums;
 }

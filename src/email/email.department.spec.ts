@@ -1,5 +1,13 @@
 import test from 'ava';
-import {mock, when, instance, capture, reset, resetCalls} from 'ts-mockito';
+import {
+  mock,
+  when,
+  verify,
+  instance,
+  capture,
+  reset,
+  resetCalls,
+} from 'ts-mockito';
 
 import {EmailDepartment} from './email.department';
 import {EmailReminder} from './handlers/reminder/email-reminder';
@@ -8,9 +16,8 @@ import {Recipient} from '../interfaces/reciptient';
 import {MessageOptions} from '../interfaces/message-options';
 import {TestEnvironment} from '../../test/test-environment';
 
-const mockedEmailBroker = mock(EmailBroker);
-const mockedEmailReminder = mock(EmailReminder);
-
+let mockedEmailBroker: EmailBroker;
+let mockedEmailReminder: EmailReminder;
 const dummyRecipients: Recipient[] = [{email: 'valid@email.com'}];
 const dummyOptions: MessageOptions = {
   type: 'reminder',
@@ -20,13 +27,19 @@ const dummyHtml = '<html></html>';
 const dummySubject = 'a reminder';
 const dummyEmail = 'dummy@email.com';
 const dummyFromEmail = 'some@email.com';
+let testEnvironment: TestEnvironment;
 
-const testEnvironment = new TestEnvironment({
-  classesToBind: [EmailDepartment],
-  classesToMock: [
-    {real: EmailBroker, mock: instance(mockedEmailBroker)},
-    {real: EmailReminder, mock: instance(mockedEmailReminder)},
-  ],
+test.beforeEach(() => {
+  mockedEmailBroker = mock(EmailBroker);
+  mockedEmailReminder = mock(EmailReminder);
+
+  testEnvironment = new TestEnvironment({
+    classesToBind: [EmailDepartment],
+    classesToMock: [
+      {real: EmailBroker, mock: instance(mockedEmailBroker)},
+      {real: EmailReminder, mock: instance(mockedEmailReminder)},
+    ],
+  });
 });
 
 test('should reject if "options.type" is not supported', async t => {
@@ -58,37 +71,71 @@ test('should reject if "options.type" is not supported', async t => {
   });
 });
 
-test('should call EmailReminder if option.type = "reminder"', async t => {
-  let recipients = [{email: 'test@email.com'}];
+test.serial(
+  'should call EmailReminder if option.type = "reminder"',
+  async t => {
+    let recipients = [{email: 'test@email.com'}];
 
-  when(
-    mockedEmailBroker.send(
-      dummySubject,
-      dummyFromEmail,
-      dummySubject,
-      dummyHtml,
-    ),
-  ).thenResolve(true);
+    when(
+      mockedEmailBroker.send(
+        dummySubject,
+        dummyFromEmail,
+        dummySubject,
+        dummyHtml,
+      ),
+    ).thenResolve(true);
 
-  const emailReminderResponse = 'this is the response';
+    const emailReminderResponse = 'this is the response';
 
-  when(mockedEmailReminder.send(recipients[0], dummyOptions)).thenResolve(
-    emailReminderResponse as any,
-  );
+    reset(mockedEmailReminder);
 
+    when(mockedEmailReminder.send(recipients[0], dummyOptions)).thenResolve(
+      emailReminderResponse as any,
+    );
+
+    const emailDepartment = testEnvironment.get<EmailDepartment>(
+      EmailDepartment,
+    );
+    const res = await emailDepartment.send(recipients, dummyOptions);
+
+    const [recipientArg, optionsArg] = capture(mockedEmailReminder.send).last();
+
+    t.is(recipientArg, recipients[0]);
+    t.is(optionsArg, dummyOptions);
+    t.true(res);
+  },
+);
+
+test.serial(
+  'should not send email to recipient if it has mediumOverride.email set to false',
+  async t => {
+    const emailDepartment = testEnvironment.get<EmailDepartment>(
+      EmailDepartment,
+    );
+    let recipients = [
+      {email: 'tester@email.com', mediumOverrides: {email: false}},
+    ];
+
+    const messageOptions: MessageOptions = {
+      type: 'reminder',
+      subtype: 'partly-payment',
+    };
+
+    when(mockedEmailReminder.send(recipients[0], messageOptions)).thenResolve(
+      `this is a response` as any,
+    );
+
+    try {
+      await emailDepartment.send(recipients, messageOptions);
+    } catch (e) {}
+
+    verify(mockedEmailReminder.send(recipients[0], messageOptions)).never();
+    t.pass();
+  },
+);
+
+test.serial('should send reminder to all recipients', async t => {
   const emailDepartment = testEnvironment.get<EmailDepartment>(EmailDepartment);
-  const res = await emailDepartment.send(recipients, dummyOptions);
-
-  const [recipientArg, optionsArg] = capture(mockedEmailReminder.send).first();
-
-  t.is(recipientArg, recipients[0]);
-  t.is(optionsArg, dummyOptions);
-  t.true(res);
-});
-
-test('should send reminder to all recipients', async t => {
-  const emailDepartment = testEnvironment.get<EmailDepartment>(EmailDepartment);
-
   const recipients: Recipient[] = [
     {
       email: 'thisIsEmail1@email.com',
@@ -120,15 +167,15 @@ test('should send reminder to all recipients', async t => {
 
   const [recipient1, messageOptions1] = capture(
     mockedEmailReminder.send,
-  ).byCallIndex(1);
+  ).byCallIndex(0);
 
   const [recipient2, messageOptions2] = capture(
     mockedEmailReminder.send,
-  ).byCallIndex(2);
+  ).byCallIndex(1);
 
   const [recipient3, messageOptions3] = capture(
     mockedEmailReminder.send,
-  ).byCallIndex(3);
+  ).byCallIndex(2);
 
   t.is(recipient1, recipients[0]);
   t.is(recipient2, recipients[1]);

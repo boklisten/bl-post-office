@@ -26,7 +26,12 @@ export class EmailDepartment implements Department {
     let promiseArr: Promise<any>[] = [];
 
     recipients.forEach(recipient => {
-      promiseArr.push(this._emailReminder.send(recipient, options));
+      if (
+        !recipient.mediumOverrides ||
+        recipient.mediumOverrides.email !== false
+      ) {
+        promiseArr.push(this._emailReminder.send(recipient, options));
+      }
     });
 
     try {
