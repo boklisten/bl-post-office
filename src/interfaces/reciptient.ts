@@ -16,6 +16,8 @@ export type ItemList = {
 };
 
 export interface Recipient {
+  user_id: string;
+  message_id: string;
   email?: string;
   phone?: string;
   name?: string;

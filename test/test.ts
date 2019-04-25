@@ -28,8 +28,8 @@ const recipients: Recipient[] = [
     },
   },
   {
-    email: 'aholskil@gmail.com',
-    phone: '+4791804211',
+    // email: 'aholskil@gmail.com',
+    //phone: '+4791804211',
     itemList: {
       summary: {
         total: '560 kr',

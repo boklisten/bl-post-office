@@ -25,7 +25,11 @@ const testEnvironment = new TestEnvironment({
 
 test('should call SmsBroker.send() with correct input', async t => {
   const smsReminder = testEnvironment.get<SmsReminder>(SmsReminder);
-  const recipient: Recipient = {phone: '12345678'};
+  const recipient: Recipient = {
+    phone: '12345678',
+    user_id: '123',
+    message_id: '123',
+  };
   const messageOptions: MessageOptions = {
     type: 'reminder',
     subtype: 'partly-payment',

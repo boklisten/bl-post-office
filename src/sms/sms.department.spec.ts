@@ -87,6 +87,8 @@ test('should call SmsReminder if type is reminder', async t => {
   const recipients: Recipient[] = [
     {
       phone: '1234',
+      user_id: '123',
+      message_id: '123',
     },
   ];
   const messageOptions: MessageOptions = {
@@ -111,6 +113,8 @@ test('should not call SmsReminder if recipient has mediumOverride.sms set to fal
   const recipients: Recipient[] = [
     {
       phone: '12345678',
+      user_id: '123',
+      message_id: '123',
       mediumOverrides: {
         sms: false,
       },

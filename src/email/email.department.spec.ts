@@ -15,10 +15,13 @@ import {EmailBroker} from './broker/email.broker';
 import {Recipient} from '../interfaces/reciptient';
 import {MessageOptions} from '../interfaces/message-options';
 import {TestEnvironment} from '../../test/test-environment';
+import {EMAIL_SETTINGS} from './email-settings';
 
 let mockedEmailBroker: EmailBroker;
 let mockedEmailReminder: EmailReminder;
-const dummyRecipients: Recipient[] = [{email: 'valid@email.com'}];
+const dummyRecipients: Recipient[] = [
+  {email: 'valid@email.com', message_id: '123', user_id: '123'},
+];
 const dummyOptions: MessageOptions = {
   type: 'reminder',
   subtype: 'partly-payment',
@@ -27,6 +30,18 @@ const dummyHtml = '<html></html>';
 const dummySubject = 'a reminder';
 const dummyEmail = 'dummy@email.com';
 const dummyFromEmail = 'some@email.com';
+const dummyContent = {
+  to: 'valid@email.com',
+  from: 'some@email.com',
+  fromName: EMAIL_SETTINGS.name,
+  subject: 'some valid subject',
+  html: '<html></html>',
+  message_id: '123',
+  user_id: '123',
+  type: 'reminder',
+  subtype: 'partly-payment',
+};
+
 let testEnvironment: TestEnvironment;
 
 test.beforeEach(() => {
@@ -43,14 +58,7 @@ test.beforeEach(() => {
 });
 
 test('should reject if "options.type" is not supported', async t => {
-  when(
-    mockedEmailBroker.send(
-      dummySubject,
-      dummyFromEmail,
-      dummySubject,
-      dummyHtml,
-    ),
-  ).thenResolve(true);
+  when(mockedEmailBroker.send(dummyContent)).thenResolve(true);
 
   when(mockedEmailReminder.send(dummyRecipients[0], dummyOptions)).thenResolve(
     true,
@@ -74,16 +82,11 @@ test('should reject if "options.type" is not supported', async t => {
 test.serial(
   'should call EmailReminder if option.type = "reminder"',
   async t => {
-    let recipients = [{email: 'test@email.com'}];
+    let recipients: Recipient[] = [
+      {email: 'test@email.com', user_id: '123', message_id: '123'},
+    ];
 
-    when(
-      mockedEmailBroker.send(
-        dummySubject,
-        dummyFromEmail,
-        dummySubject,
-        dummyHtml,
-      ),
-    ).thenResolve(true);
+    when(mockedEmailBroker.send(dummyContent)).thenResolve(true);
 
     const emailReminderResponse = 'this is the response';
 
@@ -112,8 +115,13 @@ test.serial(
     const emailDepartment = testEnvironment.get<EmailDepartment>(
       EmailDepartment,
     );
-    let recipients = [
-      {email: 'tester@email.com', mediumOverrides: {email: false}},
+    let recipients: Recipient[] = [
+      {
+        email: 'tester@email.com',
+        mediumOverrides: {email: false},
+        user_id: '123',
+        message_id: '123',
+      },
     ];
 
     const messageOptions: MessageOptions = {
@@ -139,12 +147,18 @@ test.serial('should send reminder to all recipients', async t => {
   const recipients: Recipient[] = [
     {
       email: 'thisIsEmail1@email.com',
+      user_id: '123',
+      message_id: '123',
     },
     {
       email: 'thisIsEmail2@email.com',
+      user_id: '124',
+      message_id: '124',
     },
     {
       email: 'thisIsEmail3@email.com',
+      user_id: '125',
+      message_id: '125',
     },
   ];
 

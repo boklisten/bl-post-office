@@ -20,7 +20,9 @@ import {SmsDepartment} from './sms/sms.department';
 const mockedEmailDepartment = mock(EmailDepartment);
 const mockedSmsDepartment = mock(SmsDepartment);
 
-const recipients: Recipient[] = [{email: 'some@email.com'}];
+const recipients: Recipient[] = [
+  {email: 'some@email.com', user_id: '123', message_id: '123'},
+];
 const messageOptions: MessageOptions = {
   type: 'reminder',
   subtype: 'partly-payment',
@@ -52,7 +54,9 @@ test('should not call SmsDepartment for type reminder if medium.sms is false', a
 
   postOffice.setConfig(config);
 
-  const recipients: Recipient[] = [{email: 'some@email.com'}];
+  const recipients: Recipient[] = [
+    {email: 'some@email.com', user_id: '123', message_id: '123'},
+  ];
   const options: MessageOptions = {
     type: 'reminder',
     subtype: 'partly-payment',
@@ -85,7 +89,9 @@ test('should not call EmailDepartment for type reminder if medium.email is false
 
   postOffice.setConfig(config);
 
-  const recipients: Recipient[] = [{email: 'some@email.com'}];
+  const recipients: Recipient[] = [
+    {email: 'some@email.com', user_id: '123', message_id: '123'},
+  ];
   const options: MessageOptions = {
     type: 'reminder',
     subtype: 'partly-payment',

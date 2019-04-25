@@ -7,6 +7,7 @@ import {EmailTemplateResolver} from '../../email-template-resolver';
 import {EmailBroker} from '../../broker/email.broker';
 import {EMAIL_SETTINGS} from '../../email-settings';
 import {EmailTemplateInput} from '../../../interfaces/emailTemplateInput';
+import {EmailContent} from '../../email-content';
 import 'reflect-metadata';
 
 @injectable()
@@ -35,12 +36,19 @@ export class EmailReminder implements DepartmentHandler {
       emailTemplateInput,
     );
 
-    return await this._emailBroker.send(
-      recipient.email as string,
-      EMAIL_SETTINGS.reminder.fromEmail,
-      EMAIL_SETTINGS.reminder.subject,
-      template,
-    );
+    const emailContent: EmailContent = {
+      to: recipient.email as string,
+      from: EMAIL_SETTINGS.reminder.fromEmail,
+      fromName: EMAIL_SETTINGS.name,
+      subject: EMAIL_SETTINGS.reminder.subject,
+      html: template,
+      message_id: recipient.message_id as string,
+      user_id: recipient.user_id as string,
+      type: options.type,
+      subtype: options.subtype,
+    };
+
+    return await this._emailBroker.send(emailContent);
   }
 
   private createEmailTemplateInput(
