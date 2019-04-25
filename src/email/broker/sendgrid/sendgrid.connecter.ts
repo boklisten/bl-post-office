@@ -27,7 +27,7 @@ export class SendgridConnecter {
             if (err) {
               return reject(`Sendgrid.send() failed to send: ${err}`);
             }
-            logger.info(
+            logger.verbose(
               `Sendgrid.send() successfully sent msg to "${toEmail}"`,
             );
             resolve(result);

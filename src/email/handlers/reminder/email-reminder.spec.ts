@@ -50,7 +50,7 @@ test('should reject if toEmail is not an email', async t => {
       );
       t.fail();
     } catch (e) {
-      t.is(e, `toEmail must be a valid email`);
+      t.is(e, `toEmail "${invalidEmail}" is not a valid email`);
     }
   });
 });

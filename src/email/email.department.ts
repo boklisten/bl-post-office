@@ -4,6 +4,7 @@ import {Recipient} from '../interfaces/reciptient';
 import {Department} from '../interfaces/department';
 import {injectable} from 'inversify';
 import 'reflect-metadata';
+import {logger} from '../logger';
 
 @injectable()
 export class EmailDepartment implements Department {
@@ -28,6 +29,36 @@ export class EmailDepartment implements Department {
       promiseArr.push(this._emailReminder.send(recipient, options));
     });
 
-    return true;
+    try {
+      const results = await Promise.all(promiseArr.map(this.reflect));
+
+      const successes = results.filter(x => x.status === 'resolved');
+
+      if (successes.length <= 0) {
+        throw `None of the email requests was a success`;
+      }
+
+      logger.info(
+        `successfully sent ${successes.length} out of ${
+          promiseArr.length
+        } email requests`,
+      );
+      return true;
+    } catch (e) {
+      throw `Something went wrong when trying to send email requests: ${e}`;
+    }
+  }
+
+  private reflect(promise: Promise<any>) {
+    return promise.then(
+      res => {
+        logger.debug(`Sent email request: ${JSON.stringify(res)}`);
+        return {result: res, status: 'resolved'};
+      },
+      err => {
+        logger.error('Could not send email: ' + err);
+        return {error: err, status: 'rejected'};
+      },
+    );
   }
 }

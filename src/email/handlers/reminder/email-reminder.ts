@@ -65,7 +65,7 @@ export class EmailReminder implements DepartmentHandler {
 
   private validateRecipient(recipient: Recipient) {
     if (!recipient.email || !util.isEmailValid(recipient.email)) {
-      throw `toEmail must be a valid email`;
+      throw `toEmail "${recipient.email}" is not a valid email`;
     }
 
     if (!recipient.itemList || recipient.itemList.items.length <= 0) {

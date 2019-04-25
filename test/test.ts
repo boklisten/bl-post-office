@@ -27,16 +27,28 @@ const recipients: Recipient[] = [
       ],
     },
   },
+  {
+    email: 'aholskil@gmail.com',
+    phone: '+4791804211',
+    itemList: {
+      summary: {
+        total: '560 kr',
+        totalTax: '0 kr',
+        taxPercentage: '0',
+      },
+      items: [
+        {
+          id: '83290832',
+          title: 'Some title',
+          leftToPay: '100 kr',
+          deadline: '20.12.2011',
+        },
+      ],
+    },
+  },
 ];
 
-logger.add(
-  new winston.transports.Console({
-    format: winston.format.combine(
-      winston.format.colorize(),
-      winston.format.simple(),
-    ),
-  }),
-);
+postOffice.setConfig({reminder: {mediums: {email: true, sms: false}}});
 
 postOffice
   .send(recipients, {
