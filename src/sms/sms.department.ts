@@ -84,11 +84,11 @@ export class SmsDepartment implements Department {
   private reflect(promise: Promise<any>) {
     return promise.then(
       res => {
-        logger.debug(`Sent sms request: ${JSON.stringify(res)}`);
+        logger.debug(`sent sms request: ${JSON.stringify(res)}`);
         return {result: res, status: 'resolved'};
       },
       err => {
-        logger.error('Could not send sms: ' + err);
+        logger.error(err);
         return {error: err, status: 'rejected'};
       },
     );

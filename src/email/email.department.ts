@@ -40,7 +40,7 @@ export class EmailDepartment implements Department {
       const successes = results.filter(x => x.status === 'resolved');
 
       if (successes.length <= 0) {
-        throw `None of the email requests was a success`;
+        throw `none of the email requests was a success`;
       }
 
       logger.info(
@@ -50,18 +50,18 @@ export class EmailDepartment implements Department {
       );
       return true;
     } catch (e) {
-      throw `Something went wrong when trying to send email requests: ${e}`;
+      throw `something went wrong when trying to send email requests: ${e}`;
     }
   }
 
   private reflect(promise: Promise<any>) {
     return promise.then(
       res => {
-        logger.debug(`Sent email request: ${JSON.stringify(res)}`);
+        logger.debug(`sent email request: ${JSON.stringify(res)}`);
         return {result: res, status: 'resolved'};
       },
       err => {
-        logger.error('Could not send email: ' + err);
+        logger.error(err);
         return {error: err, status: 'rejected'};
       },
     );

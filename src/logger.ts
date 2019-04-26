@@ -7,7 +7,7 @@ if (JSON.stringify(winston.transports) === '{}' || !winston.transports) {
         winston.format.colorize(),
         winston.format.simple(),
       ),
-      level: 'verbose',
+      level: 'silly',
     }),
   );
 }

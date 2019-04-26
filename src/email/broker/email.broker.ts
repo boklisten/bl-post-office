@@ -2,7 +2,6 @@ import {injectable} from 'inversify';
 import {SendgridConnecter} from './sendgrid/sendgrid.connecter';
 import {util} from '../../util';
 import 'reflect-metadata';
-import {SendgridSendObject} from './sendgrid/sendgrid-send-object';
 import {EmailContent} from '../email-content';
 
 @injectable()

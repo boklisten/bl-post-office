@@ -19,7 +19,11 @@ export class SmsReminder implements DepartmentHandler {
       return await this.delegateBySubtype(recipient, messageOptions);
     } catch (e) {
       logger.error(
-        `SmsReminder: failed to send reminder to: ${JSON.stringify(recipient)}`,
+        `[message_id: ${
+          recipient.message_id
+        }]: failed to send reminder to: "${JSON.stringify(
+          recipient.phone,
+        )}": ${e}`,
       );
       throw `failed to send sms: ${e}`;
     }
