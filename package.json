@@ -6,6 +6,7 @@
   "scripts": {
     "test": "npm run test:unit",
     "build": "npm run build:email && tsc && gulp copy:lib-to-dist",
+    "prepublishOnly": "npm run test && npm run build",
     "test:unit": "ava-ts \"src/**/*.spec.ts\"",
     "watch:test": "ava-ts \"src/**/*.spec.ts\" --watch",
     "serve:email": "gulp email:serve",
@@ -13,12 +14,8 @@
   },
   "types": "dist/index.d.ts",
   "babel": {
-    "presets": [
-      "@babel/env"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
+    "presets": ["@babel/env"],
+    "plugins": ["@babel/plugin-proposal-class-properties"]
   },
   "repository": {
     "type": "git",
@@ -77,16 +74,8 @@
   },
   "ava": {
     "compileEnhancements": false,
-    "extensions": [
-      "ts",
-      "tsx"
-    ],
-    "require": [
-      "ts-node/register"
-    ],
-    "sources": [
-      "**/*.ts",
-      "**/*.spec.ts"
-    ]
+    "extensions": ["ts", "tsx"],
+    "require": ["ts-node/register"],
+    "sources": ["**/*.ts", "**/*.spec.ts"]
   }
 }
