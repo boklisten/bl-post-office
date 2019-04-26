@@ -2,15 +2,16 @@
   "name": "bl-post-office",
   "version": "0.0.1",
   "description": "a single module for sending messages to a customer",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "npm run test:unit",
-    "build": "npm run build:email",
+    "build": "npm run build:email && tsc && gulp copy:lib-to-dist",
     "test:unit": "ava-ts \"src/**/*.spec.ts\"",
     "watch:test": "ava-ts \"src/**/*.spec.ts\" --watch",
     "serve:email": "gulp email:serve",
     "build:email": "gulp email:build"
   },
+  "types": "dist/index.d.ts",
   "babel": {
     "presets": ["@babel/env"],
     "plugins": ["@babel/plugin-proposal-class-properties"]

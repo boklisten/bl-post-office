@@ -113,6 +113,10 @@ function copyConfig() {
     .pipe(gulp.dest('tmp/email/template/config/'));
 }
 
+function copyLibToDist() {
+  return gulp.src('lib/**/*').pipe(gulp.dest('dist/lib/'));
+}
+
 gulp.task('build', () => {
   return tsProject
     .src()
@@ -122,6 +126,10 @@ gulp.task('build', () => {
 
 gulp.task('unit', () => {
   gulp.src('src/**/*.spec.ts');
+});
+
+gulp.task('copy:lib-to-dist', () => {
+  return copyLibToDist();
 });
 
 gulp.task('email:build', done => {

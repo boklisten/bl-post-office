@@ -1,7 +1,8 @@
 {
-  "include": ["types.ts", "src/**/*.ts"],
-  "exclude": ["node_modules"],
+  "include": ["index.ts", "src/**/*.ts"],
+  "exclude": ["node_modules", "test", "lib", "dist", "tmp"],
   "compilerOptions": {
+    "declaration": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "types": ["reflect-metadata", "node"],
@@ -10,6 +11,7 @@
     "target": "es6",
     "module": "commonjs",
     "sourceMap": true,
-    "lib": ["es6", "dom"]
+    "lib": ["es6", "dom"],
+    "outDir": "dist"
   }
 }
