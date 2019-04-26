@@ -68,7 +68,7 @@
 </mj-style>
 
 </mj-head>
-  <mj-body css-class="bl-body" background-color="#313951">
+  <mj-body css-class="bl-body">
 
     <bl-header-component></bl-header-component>
     
