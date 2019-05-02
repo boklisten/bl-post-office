@@ -1,6 +1,6 @@
 {
   "name": "@wizardcoder/bl-post-office",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "a single module for sending messages to a customer",
   "main": "dist/index.js",
   "scripts": {
@@ -15,8 +15,12 @@
   },
   "types": "dist/index.d.ts",
   "babel": {
-    "presets": ["@babel/env"],
-    "plugins": ["@babel/plugin-proposal-class-properties"]
+    "presets": [
+      "@babel/env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
   },
   "repository": {
     "type": "git",
@@ -75,8 +79,16 @@
   },
   "ava": {
     "compileEnhancements": false,
-    "extensions": ["ts", "tsx"],
-    "require": ["ts-node/register"],
-    "sources": ["**/*.ts", "**/*.spec.ts"]
+    "extensions": [
+      "ts",
+      "tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "sources": [
+      "**/*.ts",
+      "**/*.spec.ts"
+    ]
   }
 }
