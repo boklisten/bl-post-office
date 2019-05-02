@@ -10,8 +10,9 @@ export type ItemList = {
   items: {
     id: string; // the id of the item
     title: string; // the title of the item
-    deadline: string; // the deadline of the item
-    leftToPay: string; // amount left to pay
+    deadline?: string; // the deadline of the item
+    leftToPay?: string; // amount left to pay
+    total?: string; // amount total
   }[];
 };
 
