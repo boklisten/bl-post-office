@@ -26,6 +26,7 @@ export class SendgridConnecter {
               bl_message_user_id: content.user_id,
               bl_message_type: content.type,
               bl_message_subtype: content.subtype,
+              bl_message_sequence_number: content.sequence_number ? content.sequence_number : 0,
             },
           } as any,
           false,

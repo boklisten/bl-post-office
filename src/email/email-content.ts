@@ -6,6 +6,7 @@ export interface EmailContent {
   html: string;
   message_id: string;
   user_id: string;
+  sequence_number?: number;
   type: any;
   subtype: any;
 }

@@ -44,6 +44,7 @@ export class EmailReminder implements DepartmentHandler {
       html: template,
       message_id: recipient.message_id as string,
       user_id: recipient.user_id as string,
+      sequence_number: options.sequence_number,
       type: options.type,
       subtype: options.subtype,
     };

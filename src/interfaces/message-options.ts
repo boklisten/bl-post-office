@@ -12,5 +12,6 @@ export type TextBlock = {
 export interface MessageOptions {
   type: MessageType;
   subtype: MessageSubtype;
+  sequence_number?: number;
   textBlocks?: TextBlock[];
 }
