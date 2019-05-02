@@ -1,3 +1,4 @@
+
 <mjml> 
 <mj-head>
 <mj-style>
@@ -74,10 +75,9 @@
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h2>(1) Ditt andre avdrag har snart frist. </h2>
+          <h2>(0) Dine leiebøker skal snart leveres!</h2>
           <p>
-            Heisann Sveisann fra oss i Boklisten.no. Nå er det snart frist for å betale det resterende beløpet på dine bøker.
-            Dette kan du enkelt gjøre på en av våre stands eller på nettsidene våre.
+            Hei du, nå er det snart tid for å levere de bøkene du har leid av oss i Boklisten.no
           </p>
         </mj-text>
       </mj-column>

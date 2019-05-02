@@ -9,7 +9,7 @@ import {logger} from '../logger';
 @injectable()
 export class SmsDepartment implements Department {
   private supportedTypes = ['reminder'];
-  private supportedSubtypes = ['partly-payment'];
+  private supportedSubtypes = ['partly-payment', 'rent', 'loan'];
 
   constructor(private _smsReminder: SmsReminder) {}
 

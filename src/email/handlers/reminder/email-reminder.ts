@@ -12,7 +12,7 @@ import 'reflect-metadata';
 
 @injectable()
 export class EmailReminder implements DepartmentHandler {
-  private supportedSubtypes = ['partly-payment'];
+  private supportedSubtypes = ['partly-payment', 'rent', 'loan'];
 
   constructor(
     private _emailTemplateResolver: EmailTemplateResolver,

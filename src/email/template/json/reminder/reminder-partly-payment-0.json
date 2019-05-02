@@ -31,11 +31,6 @@
       "title": "Her kan du skrive en tittel",
       "text": "Dette er plassen for en lengere tekst. Skriv hva du vil i denne bolken.",
       "regular": true
-    },
-    {
-      "title": "Dette er andre advarsel",
-      "text": "her kan det stå litt mer agresivt",
-      "warning": true
     }
   ]
 }

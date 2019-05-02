@@ -40,6 +40,18 @@ export class SmsReminder implements DepartmentHandler {
           SMS_SETTINGS.reminder.fromNumber,
           SMS_SETTINGS.reminder.text,
         );
+      case 'rent':
+        return await this._smsBroker.send(
+          recipient.phone as string,
+          SMS_SETTINGS.reminder.fromNumber,
+          SMS_SETTINGS.reminder.text,
+        );
+      case 'loan':
+        return await this._smsBroker.send(
+          recipient.phone as string,
+          SMS_SETTINGS.reminder.fromNumber,
+          SMS_SETTINGS.reminder.text,
+        );
       default:
         throw `subtype "${messageOptions.subtype}" not supported`;
     }

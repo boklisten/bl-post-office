@@ -29,7 +29,8 @@ const recipients: Recipient[] = [
 
 const messageOptions: MessageOptions = {
   type: 'reminder',
-  subtype: 'partly-payment',
+  subtype: 'rent',
+  sequence_number: 0,
 };
 
 postOffice.setConfig({reminder: {mediums: {email: true}}});
