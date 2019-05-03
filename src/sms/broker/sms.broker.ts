@@ -10,12 +10,18 @@ export class SmsBroker {
     toPhoneNumber: string,
     fromPhoneNumber: string,
     text: string,
+    blMessageId: string,
   ): Promise<any> {
     this.validatePhoneNumber(toPhoneNumber);
     this.validatePhoneNumber(fromPhoneNumber);
     this.validateText(text);
 
-    return await this._connecter.send(toPhoneNumber, fromPhoneNumber, text);
+    return await this._connecter.send(
+      toPhoneNumber,
+      fromPhoneNumber,
+      text,
+      blMessageId,
+    );
   }
 
   private validatePhoneNumber(phoneNumber: any) {

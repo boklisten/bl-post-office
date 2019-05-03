@@ -27,9 +27,9 @@ const testEnvironment = new TestEnvironment({
   ],
 });
 
-when(mockedSmsBroker.send(anything(), anything(), anything())).thenResolve(
-  true,
-);
+when(
+  mockedSmsBroker.send(anything(), anything(), anything(), anything()),
+).thenResolve(true);
 
 test('should reject if option.type is not supported', async t => {
   const smsDepartment = testEnvironment.get<SmsDepartment>(SmsDepartment);

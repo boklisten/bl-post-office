@@ -33,19 +33,26 @@ test('should call SmsBroker.send() with correct input', async t => {
   const messageOptions: MessageOptions = {
     type: 'reminder',
     subtype: 'partly-payment',
+    sequence_number: 1,
   };
 
-  when(mockedSmsBroker.send(anything(), anything(), anything())).thenResolve(
-    true,
-  );
+  when(
+    mockedSmsBroker.send(anything(), anything(), anything(), anything()),
+  ).thenResolve(true);
 
   await smsReminder.send(recipient, messageOptions);
 
-  const [toNumberArg, fromNumberArg, textArg] = capture(
+  const [toNumberArg, fromNumberArg, textArg, blMessageIdArg] = capture(
     mockedSmsBroker.send,
   ).last();
 
   t.is(toNumberArg, recipient.phone);
-  t.is(fromNumberArg, SMS_SETTINGS.reminder.fromNumber);
-  t.is(textArg, SMS_SETTINGS.reminder.text);
+  t.is(fromNumberArg, SMS_SETTINGS.fromNumber);
+  t.is(
+    textArg,
+    SMS_SETTINGS.text.reminder['partly-payment'][
+      messageOptions.sequence_number as number
+    ],
+  );
+  t.is(blMessageIdArg, recipient.message_id);
 });

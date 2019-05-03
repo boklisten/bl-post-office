@@ -21,7 +21,7 @@ test('should call TwilioConnecter.send() if args is valid', async t => {
   const smsBroker = testEnvironment.get<SmsBroker>(SmsBroker);
   const mockedResult = 'this is a mocked twilio result';
   when(
-    mockedTwilioConnecter.send(anything(), anything(), anything()),
+    mockedTwilioConnecter.send(anything(), anything(), anything(), anything()),
   ).thenResolve(mockedResult);
 
   let res = null;
@@ -29,7 +29,8 @@ test('should call TwilioConnecter.send() if args is valid', async t => {
     res = await smsBroker.send(
       SMS_SETTINGS.dymmy.number,
       SMS_SETTINGS.dymmy.number,
-      SMS_SETTINGS.reminder.text,
+      SMS_SETTINGS.text.reminder['partly-payment'][0],
+      'blMessage1',
     );
   } catch (e) {
     t.fail(e);
@@ -41,7 +42,7 @@ test('should call TwilioConnecter.send() if args is valid', async t => {
 
   t.is(toNumberArg, SMS_SETTINGS.dymmy.number);
   t.is(fromNumberArg, SMS_SETTINGS.dymmy.number);
-  t.is(textArg, SMS_SETTINGS.reminder.text);
+  t.is(textArg, SMS_SETTINGS.text.reminder['partly-payment'][0]);
   t.is(res, mockedResult);
 });
 
@@ -55,6 +56,7 @@ test('should reject if text is not valid', async t => {
         SMS_SETTINGS.dymmy.number,
         SMS_SETTINGS.dymmy.number,
         invalidText,
+        'blMessage1',
       );
     } catch (e) {
       t.regex(e, /sms text is not valid:/);
@@ -79,7 +81,8 @@ test('should reject if toNumber is not a phone number', async t => {
       await smsBroker.send(
         invalidNumber,
         SMS_SETTINGS.dymmy.number,
-        SMS_SETTINGS.reminder.text,
+        SMS_SETTINGS.text.reminder['partly-payment'][0],
+        'blMessage1',
       );
     } catch (e) {
       t.is(e, `phone number "${invalidNumber}" is not a valid phone number`);
@@ -104,7 +107,8 @@ test('should reject if fromNumber is not a phone number', async t => {
       await smsBroker.send(
         SMS_SETTINGS.dymmy.number,
         invalidNumber,
-        SMS_SETTINGS.reminder.text,
+        SMS_SETTINGS.text.reminder['partly-payment'][0],
+        'blMessage1',
       );
     } catch (e) {
       t.is(e, `phone number "${invalidNumber}" is not a valid phone number`);

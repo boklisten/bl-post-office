@@ -26,6 +26,9 @@ const recipients: Recipient[] = [
 const messageOptions: MessageOptions = {
   type: 'reminder',
   subtype: 'partly-payment',
+  mediums: {
+    email: true,
+  },
 };
 
 const testEnvironment = new TestEnvironment({
@@ -60,6 +63,43 @@ test('should not call SmsDepartment for type reminder if medium.sms is false', a
   const options: MessageOptions = {
     type: 'reminder',
     subtype: 'partly-payment',
+  };
+
+  try {
+    const res = await postOffice.send(recipients, messageOptions);
+  } catch (e) {
+    t.fail(e);
+  }
+
+  verify(mockedSmsDepartment.send(recipients, messageOptions)).never();
+  t.pass();
+});
+
+test('should not call SmsDepartment if messageOptions.mediums.sms is false', async t => {
+  reset(mockedEmailDepartment);
+  when(mockedSmsDepartment.send(anything(), anything())).thenResolve(true);
+  when(mockedEmailDepartment.send(anything(), anything())).thenResolve(true);
+
+  const postOffice = testEnvironment.get<PostOffice>(PostOffice);
+
+  const config = {
+    reminder: {
+      mediums: {
+        email: true,
+        sms: true,
+      },
+    },
+  };
+
+  postOffice.setConfig(config);
+
+  const recipients: Recipient[] = [
+    {email: 'some@email.com', user_id: '123', message_id: '123'},
+  ];
+  const options: MessageOptions = {
+    type: 'reminder',
+    subtype: 'partly-payment',
+    mediums: {email: true, sms: false},
   };
 
   try {
@@ -107,6 +147,45 @@ test('should not call EmailDepartment for type reminder if medium.email is false
   t.pass();
 });
 
+test('should not call EmailDepartment messageOptions.mediums.email is false', async t => {
+  reset(mockedEmailDepartment);
+  when(mockedSmsDepartment.send(anything(), anything())).thenResolve(true);
+  when(mockedEmailDepartment.send(anything(), anything())).thenResolve(true);
+
+  const postOffice = testEnvironment.get<PostOffice>(PostOffice);
+
+  const config = {
+    reminder: {
+      mediums: {
+        email: true,
+      },
+    },
+  };
+
+  postOffice.setConfig(config);
+
+  const recipients: Recipient[] = [
+    {email: 'some@email.com', user_id: '123', message_id: '123'},
+  ];
+  const options: MessageOptions = {
+    type: 'reminder',
+    subtype: 'partly-payment',
+    mediums: {
+      email: false,
+      sms: false,
+    },
+  };
+
+  try {
+    const res = await postOffice.send(recipients, options);
+  } catch (e) {
+    t.fail(e);
+  }
+
+  verify(mockedEmailDepartment.send(recipients, options)).never();
+  t.pass();
+});
+
 test('should reject if recipients array is empty', async t => {
   const postOffice = testEnvironment.get<PostOffice>(PostOffice);
 
@@ -115,7 +194,11 @@ test('should reject if recipients array is empty', async t => {
   );
 
   try {
-    await postOffice.send([], {type: 'receipt', subtype: 'partly-payment'});
+    await postOffice.send([], {
+      type: 'receipt',
+      subtype: 'partly-payment',
+      mediums: {email: true},
+    });
     t.fail();
   } catch (e) {
     t.is(e, `recipients array is empty`);

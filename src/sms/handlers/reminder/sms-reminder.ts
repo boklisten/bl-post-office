@@ -33,24 +33,30 @@ export class SmsReminder implements DepartmentHandler {
     recipient: Recipient,
     messageOptions: MessageOptions,
   ): Promise<any> {
+    let seqNum = messageOptions.sequence_number
+      ? messageOptions.sequence_number
+      : 0;
     switch (messageOptions.subtype) {
       case 'partly-payment':
         return await this._smsBroker.send(
           recipient.phone as string,
-          SMS_SETTINGS.reminder.fromNumber,
-          SMS_SETTINGS.reminder.text,
+          SMS_SETTINGS.fromNumber,
+          SMS_SETTINGS.text.reminder['partly-payment'][seqNum],
+          recipient.message_id,
         );
       case 'rent':
         return await this._smsBroker.send(
           recipient.phone as string,
-          SMS_SETTINGS.reminder.fromNumber,
-          SMS_SETTINGS.reminder.text,
+          SMS_SETTINGS.fromNumber,
+          SMS_SETTINGS.text.reminder.rent[seqNum],
+          recipient.message_id,
         );
       case 'loan':
         return await this._smsBroker.send(
           recipient.phone as string,
-          SMS_SETTINGS.reminder.fromNumber,
-          SMS_SETTINGS.reminder.text,
+          SMS_SETTINGS.fromNumber,
+          SMS_SETTINGS.text.reminder.loan[seqNum],
+          recipient.message_id,
         );
       default:
         throw `subtype "${messageOptions.subtype}" not supported`;

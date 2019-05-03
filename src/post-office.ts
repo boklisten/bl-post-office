@@ -81,7 +81,7 @@ export class PostOffice {
     options: MessageOptions,
     mediums: MessageMediums,
   ): Promise<boolean> {
-    if (mediums.email) {
+    if (mediums.email && (options.mediums && options.mediums.email)) {
       try {
         await this._emailDepartment.send(recipients, options);
       } catch (e) {
@@ -89,7 +89,7 @@ export class PostOffice {
       }
     }
 
-    if (mediums.sms) {
+    if (mediums.sms && (options.mediums && options.mediums.sms)) {
       try {
         await this._smsDepartment.send(recipients, options);
       } catch (e) {

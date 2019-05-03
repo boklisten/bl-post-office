@@ -8,10 +8,8 @@ export class TwilioConnecter {
     toNumber: string,
     fromNumber: string,
     text: string,
+    blMessageId: string,
   ): Promise<any> {
-    logger.info(process.env.TWILIO_SMS_SID);
-    logger.info(process.env.TWILIO_SMS_AUTH_TOKEN);
-
     const twilioClient = require('twilio')(
       process.env.TWILIO_SMS_SID,
       process.env.TWILIO_SMS_AUTH_TOKEN,
@@ -22,11 +20,14 @@ export class TwilioConnecter {
         body: text,
         from: fromNumber,
         to: toNumber,
+        statusCallback:
+          process.env.TWILIO_STATUS_CALLBACK_URL +
+          `?bl_message_id=${blMessageId}`,
       });
-      logger.info(`Successfully sent SMS to "${toNumber}"`);
+      logger.info(`successfully sent SMS to "${toNumber}"`);
       return res;
     } catch (e) {
-      logger.error(`Failed to send SMS to "${toNumber}", reason: ${e}`);
+      logger.error(`failed to send SMS to "${toNumber}", reason: ${e}`);
       throw e;
     }
   }

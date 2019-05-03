@@ -26,6 +26,9 @@ const recipients: Recipient[] = [
 const messageOptions: MessageOptions = {
   type: 'reminder',
   subtype: 'partly-payment',
+  mediums: {
+    email: true,
+  },
 };
 
 const testEnvironment = new TestEnvironment({
@@ -80,6 +83,9 @@ test.serial('should call EmailBroker with all the correct input', async t => {
   const options: MessageOptions = {
     type: 'reminder',
     subtype: 'partly-payment',
+    mediums: {
+      email: true,
+    },
   };
 
   try {
@@ -147,6 +153,9 @@ test.serial(
     const options: MessageOptions = {
       type: 'reminder',
       subtype: 'partly-payment',
+      mediums: {
+        email: true,
+      },
     };
 
     try {
