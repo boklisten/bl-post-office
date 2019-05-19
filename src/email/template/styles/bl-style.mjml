@@ -1,0 +1,65 @@
+<mj-style>
+  bl-container {
+    background-color: white;
+  } 
+
+  .bl-header {
+    color: white;
+    background-color:  #26768f;
+  }
+
+  .bl-header-icon {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .bl-content {
+    background-color: #ffffff;
+  }
+
+  .align-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bl-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: center;
+  }
+
+  .alert-row {
+    border: 3px dotted red;
+    padding: 10px;
+  }
+
+  .text-block-alert {
+    border: 3px dashed red;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+  }
+
+  .text-block-warning {
+    border: 3px dashed orange;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+  }
+
+
+  .text-block-secondary {
+    border: 3px dashed gray;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+  }
+
+
+  .text-block {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+  }
+
+</mj-style>
