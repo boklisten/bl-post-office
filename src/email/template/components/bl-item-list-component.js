@@ -34,7 +34,7 @@ export default class BlItemListComponent extends BodyComponent {
             </tr>
 
             <mj-raw>{{#itemList.items}}</mj-raw>
-            <tr>
+            <tr style="text-align:center;">
               <td>{{id}}</td>
               <td>{{title}}</td>
               <td>{{deadline}}</td>
