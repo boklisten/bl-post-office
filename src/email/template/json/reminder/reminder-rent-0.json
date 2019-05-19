@@ -1,4 +1,5 @@
 {
+  "name": "Jens Jensemann",
   "itemList": {
     "summary": {
       "total": "2011 kr",
@@ -9,33 +10,19 @@
       {
         "id": "12838199",
         "title": "Book of JOB",
-        "deadline": "01.07.2019",
-        "leftToPay": "2050 kr"
+        "deadline": "01.07.2019"
       },
       {
         "id": "12882139",
         "title": "The HOLY biblee",
-        "deadline": "01.07.2019",
-        "leftToPay": "110 kr"
+        "deadline": "01.07.2019"
       },
       {
         "id": "12830001",
         "title": "Upside down, inside out",
-        "deadline": "01.07.2019",
-        "leftToPay": "550 kr"
+        "deadline": "01.07.2019"
       }
     ]
   },
-  "textBlocks": [
-    {
-      "title": "Her kan du skrive en tittel",
-      "text": "Dette er plassen for en lengere tekst. Skriv hva du vil i denne bolken.",
-      "regular": true
-    },
-    {
-      "title": "Dette er andre advarsel",
-      "text": "her kan det stå litt mer agresivt",
-      "warning": true
-    }
-  ]
+  "textBlocks": []
 }

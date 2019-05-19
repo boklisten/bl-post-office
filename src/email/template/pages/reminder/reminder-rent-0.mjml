@@ -75,57 +75,44 @@
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h2>(0) Dine leiebøker skal snart leveres!</h2>
+          <h4>
+            Hei {{ name }}
+          </h4>
           <p>
-            Hei du, nå er det snart tid for å levere de bøkene du har leid av oss i Boklisten.no
+            Det begynner å nærme seg innlevering av lærebøker som har blitt leid av Boklisten.no. Under kan du se en liste over de bøkene du har leid hos oss som snart har frist.
           </p>
         </mj-text>
       </mj-column>
     </mj-section>
 
-    <bl-item-list-component></bl-item-list-component>
-
-    <bl-text-block-component></bl-text-block-component>
+    <bl-item-list-rent-component></bl-item-list-rent-component>
 
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h4>Hvorfor har jeg penger igjen å betale?</h4>
-          <p>
-            Da du bestilte bøker hos oss valgte du å delbetale bøkene dine. Det som står som "igjen å betale" er
-            det resterende beløpet på denne summen.
-          </p>
-        </mj-text>
-
-        <mj-text>
-          <h4>Hva gjør jeg nå?</h4>
-          <p>
-            Du kan komme til oss på stand. Der vil du kunne betale inn det resterende beløpet. Hvis vi ser at vi vil ha boken inn igjen, så kan vi kjøpe av deg boken til samme 
-            pris som det du har som utestående beløp. Du kan også betale her på nett, men da vil du ikke ha muligheten til å selge boken til oss.
-          </p>
+          <h4>Innlevering av bøker</h4>
+          <p>Siste frist er 1. Juli. Vi vil være tilstede på skolen din ved flere anledninger før denne datoen – sjekk www.boklisten.no for mer spesifiserte åpningstider.</p>
+          <p>OBS: Vi tar kun imot bøker i våre åpningstider. Skolen har ikke ansvar for å ta imot bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal kontaktes dersom du lurer på noe angående innlevering.</p>
+          <p>Innlevering av bøker kan også skje ved å sende dem til: Boklisten.no AS, Postboks 8, 1316 Eiksmarka. Husk å legge ved et ark hvor du skriver ditt navn, telefonnummer, og hvilke bøker du leverer. Du bør også sende en pakke med sporing, og beholde sporingen inntil leveringen er registrert. Mer informasjon om levering i posten kan finnes på nettsiden.</p>
+          <p>Vi kommer til å sende ytterligere e-post og SMS med påminnelser når fristen nærmer seg, men du har selv ansvaret for å levere innen fristen!</p> 
+          <h4>Forlengelse</h4> 
+          <p>Det er ikke mulig å forlenge leien på bøker dette semesteret.</p>
+          <h4>Kjøpe boken du har leid</h4>
+          <p>Dersom du ønsker å beholde boken du har leid lenger enn dette, kan du kjøpe deg ut av leieavtalen ved å betale 50% av bokens fullpris før fristens utløp. Du vil da bli eier av boken.</p> 
+          <p>Utkjøp kan gjøres på nettsiden, på stand, eller via Vipps. Dersom du ønsker utkjøp via Vipps, kan du overføre utkjøpssummen til vårt Vipps-nummer 33415. Det er svært viktig at du også sender en mail om at du har gjort dette til info@boklisten.no. Utkjøp via Vipps går ikke automatisk.</p> 
+          <h4>Erstatning</h4>
+          <p>Dersom du ikke leverer, forlenger eller kjøper boken/bøkene innen fristen 1.juli, sender vi ut faktura for ikke-leverte bøker. Du vil da bli fakturert hele bokens verdi + 10% + et administrasjonsgebyr på 90 kroner. Det anbefales derfor på det sterkeste å komme innom stand eller ta kontakt før fristen 1.juli!</p> 
+          <h4>Skriv navn i bøkene dine!</h4>
+          <p>Vi anbefaler å skrive navn og årstall på innsiden av permen på alle bøkene dine. Dette vil kontrolleres ved innlevering, og du kan ikke levere inn andre bøker enn de med ditt eget navn på vegne av deg selv.</p>
+          <h4>Spørsmål</h4>
+          <p>Hvis du har spørsmål eller lurer på hvorfor du fikk denne e-posten, kan du ta kontakt med Boklisten.no på e-post: info@boklisten.no</p> 
+          <p>Vi ønsker deg lykke til på eksamen!</p> 
+          <p>Med vennlig hilsen oss i Boklisten.no</p>
         </mj-text>
       </mj-column>
     </mj-section>
 
-    <mj-section css-class="bl-content">
-      <mj-group>
-        <mj-column>
-            <mj-image 
-              src="https://www.boklisten.no/assets/img/deliver_items.png" 
-              height="100px" 
-              width="100px" 
-              alt="Du kan også levere">
-        </mj-column>
-        <mj-column>
-          <mj-text>
-            <h4>Du kan også levere isteden for å betale</h4>
-            <p>
-              Visste du at du kan i noen tilfeller kan levere boken til oss og dermed slipper å betale andre avdrag.
-            </p>
-          </mj-text>
-        </mj-column>
-      </mj-group>
-    </mj-section>
+    <bl-text-block-component></bl-text-block-component>
 
     <bl-footer-component></bl-footer-component>
 

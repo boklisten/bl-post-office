@@ -1,4 +1,5 @@
 {
+  "name": "Jens Jensen",
   "itemList": {
     "summary": {
       "total": "2011 kr",
@@ -26,11 +27,5 @@
       }
     ]
   },
-  "textBlocks": [
-    {
-      "title": "Her kan du skrive en tittel",
-      "text": "Dette er plassen for en lengere tekst. Skriv hva du vil i denne bolken.",
-      "regular": true
-    }
-  ]
+  "textBlocks": []
 }
