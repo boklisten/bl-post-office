@@ -26,6 +26,21 @@
           <p>Dersom du ønsker å selge bøkene dine tilbake til oss, slipper du å betale andre avdrag – men pass på at du gjør dette før 1.juli. Da slipper du også fakturagebyret. Kom innom vår stand! Vi vil være tilstede på skolen din ved flere anledninger frem mot fristen, samt på et felles mottak mot slutten av perioden. Sjekk www.boklisten.no for komplette åpningstider på din skole!</p>
           <p>Tilbakekjøp av bøker kan også skje hvis du sender dem til: Boklisten.no AS, Postboks 8, 1316 Eiksmarka. Husk å legge ved et ark hvor du skriver ditt navn, telefonnummer, og hvilke bøker du selger til oss. Du bør også sende en pakke med sporing, og beholde sporingen inntil leveringen er registrert. Vi kan ikke garantere at vi kjøper inn bøkene dine bare fordi du har sendt dem til oss. Dersom du er usikker på om boken din kan kjøpes tilbake, viser vi til innkjøpslisten. Vi krever også at boken er i god nok stand til at vi kan bruke den igjen. Tror du boken din kanskje er i grenseland, kan du sende oss et bilde av den for godkjennelse før du sender boken.</p>
           <p>Vi kommer til å sende ytterligere e-post og SMS med påminnelser når fristen nærmer seg, men hvis du er ferdig med eksamen er det ikke noe å vente på, med mindre du tror du kommer til å trenge boken igjen.</p>
+          </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-button href="http://www.boklisten.no/info?tab=buyback" background-color="#26768f">
+          Klikk her for å se vår innkjøpsliste
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
           <h4>Betale andre avdrag</h4>
           <p>Dersom du ønsker å beholde boken din, kan du betale andre avdrag nå. Dette kan du gjøre ved å logge deg inn på våre nettsider og betale der. Du kan også betale på stand, eller via Vipps-nummer 33415. Ønsker du å bruke Vipps, kan du sende oss en mail om dette. Andre avdrag er på 33% av bokens nypris, så lenge du betaler før fristen 1.juli.</p>
           <h4>Faktura</h4>
