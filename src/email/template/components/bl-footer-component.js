@@ -39,14 +39,13 @@ export default class BlFooterComponent extends BodyComponent {
   render() {
     return this.renderMJML(`
       <mj-section padding="0">
-
-        <mj-section background-color="#26768f" style="margin-top: 80px; color: white">
+        <mj-section style="margin-top: 80px" border="5px solid #26768f">
           <mj-group>
             <mj-column>
-              <mj-text color="white" align="center">info@boklisten.no</mj-text>
+              <mj-text align="center">info@boklisten.no</mj-text>
             </mj-column>
             <mj-column>
-              <mj-text color="white" align="center">www.boklisten.no</mj-text>
+              <mj-text align="center">www.boklisten.no</mj-text>
             </mj-column>
           </mj-group>
         </mj-section>
