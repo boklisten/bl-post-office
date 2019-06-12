@@ -40,7 +40,7 @@ const reminderRentTemplate0 = fs.readFileSync(
 const reminderRentTemplate1 = fs.readFileSync(
   path.join(
     __dirname,
-    '../../lib/email/template/reminder/reminder-rent-0.html',
+    '../../lib/email/template/reminder/reminder-rent-1.html',
   ),
   'utf8',
 );
