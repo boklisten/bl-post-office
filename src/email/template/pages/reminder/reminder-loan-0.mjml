@@ -10,56 +10,45 @@
       <mj-column>
         <mj-text>
           <h4>Hei {{name}}</h4>          
-          <p>Hei du, nå er det snart tid for å levere de bøkene du har lånt av oss i Boklisten.no</p>
+          <p>Det nærmer seg nå slutten av skoleåret og bøkene du har lånt skal snart leveres tilbake. Siste frist for innlevering er 1. juli. Vi kommer til å komme på din skole i løpet av juni for å samle inn bøker. Følg med på vår nettside for nøyaktige tidspunkter (www.boklisten.no).</p>
         </mj-text>
       </mj-column>
     </mj-section>
 
-    <bl-item-list-component></bl-item-list-component>
+    <bl-item-list-rent-component></bl-item-list-rent-component>
 
-    <bl-text-block-component></bl-text-block-component>
 
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h4>Hvorfor har jeg penger igjen å betale?</h4>
-          <p>
-            Da du bestilte bøker hos oss valgte du å delbetale bøkene dine. Det som står som "igjen å betale" er
-            det resterende beløpet på denne summen.
-          </p>
-        </mj-text>
-
-        <mj-text>
-          <h4>Hva gjør jeg nå?</h4>
-          <p>
-            Du kan komme til oss på stand. Der vil du kunne betale inn det resterende beløpet. Hvis vi ser at vi vil ha boken inn igjen, så kan vi kjøpe av deg boken til samme 
-            pris som det du har som utestående beløp. Du kan også betale her på nett, men da vil du ikke ha muligheten til å selge boken til oss.
-          </p>
+          <h4>Her er noen råd og svar på vanlig spørsmåø rundt tilbakeleverin av bøker</h4>
+          <ul>
+            <li>
+              <p><b>Skriv navn i bøkene!</b></p> 
+              <p>For å unngå tyveri anbefaler vi at du skriver fullt navn og årstall på innsiden av bokens perm (for eksempel ”Ola Normann 2018/19”)</p>
+            </li>
+            <li>
+              <p><b>Kan noen andre levere bøker for meg?</b></p> 
+              <p>Du kan la andre levere bøkene din hvis du ikke selv kan møte. Husk da at de må si i fra hvem de leverer bøkene for.</p>
+            </li>
+            <li>
+              <p><b>Kan jeg sende bøker i posten?</b></p> 
+              <p>Du kan sende bøker i posten, men det er dyrt og anbefales ikke. Vår adresse er Boklisten.no AS, Postboks 8, 1316 Eiksmarka. Husk å legge ved et ark med ditt navn og kontaktinformasjon samt liste over bøkene du sender. Det er lurt å ha sporing på pakken.</p>
+            </li> 
+            <li>
+              <p><b>Hvordan kan jeg IKKE levere?</b></p>
+              <p>Du kan ikke levere boken til en lærer eller andre på skolen. I noen tilfeller vil du kunne levere bøker til våre kontaktelever på skolene. Alle andre bøker må leveres direkte til Boklisten.no</p>
+            </li> 
+          </ul>
+          <p>Til slutt vil vi i Boklisten ønske deg en god semesteravslutning og sommer!<p> 
+          <p>Med vennlig hilsen</p>
+          <i>Boklisten.no</i>
         </mj-text>
       </mj-column>
     </mj-section>
 
-    <mj-section css-class="bl-content">
-      <mj-group>
-        <mj-column>
-            <mj-image 
-              src="https://www.boklisten.no/assets/img/deliver_items.png" 
-              height="100px" 
-              width="100px" 
-              alt="Du kan også levere">
-        </mj-column>
-        <mj-column>
-          <mj-text>
-            <h4>Du kan også levere isteden for å betale</h4>
-            <p>
-              Visste du at du kan i noen tilfeller kan levere boken til oss og dermed slipper å betale andre avdrag.
-            </p>
-          </mj-text>
-        </mj-column>
-      </mj-group>
-    </mj-section>
+    <bl-text-block-component></bl-text-block-component>
 
     <bl-footer-component></bl-footer-component>
-
   </mj-body>
 </mjml>

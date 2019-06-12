@@ -1,0 +1,52 @@
+<mjml> 
+  <mj-head>
+      <mj-include path="../../styles/bl-style.mjml"/>
+  </mj-head>
+
+  <mj-body css-class="bl-body">
+    <bl-header-component></bl-header-component>
+    
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>
+            Hei {{ name }}
+          </h4>
+          <p>Du er registrert som privatist som har leid bøker av Boklisten.no dette semesteret. Vi har per dags dato ikke registrert at alle dine bøker som er leid fram til sommeren er innlevert.</p>
+          <p>Bøker som ikke er levert på stand eller sendt i posten innen 1.juli må erstattes. Erstatningsbeløpet er på 100% av bokens nypris + 10% + 90 kroner i administrasjonsgebyr per bok.</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <bl-item-list-rent-component></bl-item-list-rent-component>
+
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>Steder og tidspunkter der du kan selge bøkene tilbake til oss:</h4>
+          <ul>
+            <li>
+              Bøkene kan leveres på stand på skolen din eller andre steder vi har åpent. Åpningstider for resterende dager kan du finne på www.boklisten.no 
+            </li>
+            <li>
+              Bøker kan også sendes per post til Boklisten.no. 
+              Vår adresse er: Boklisten.no, Postboks 8, 1316 Eiksmarka.
+              Husk å legge ved liste over bøkene og ditt navn og telefonnummer i pakken med bøkene. Vi tar kun imot bøker som er på vår innkjøpsliste.
+            </li>
+          </ul>
+          <i>OBS: Vi tar kun imot bøker i våre åpningstider. Skolen har ikke ansvar for å ta imot bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal kontaktes dersom du lurer på noe angående innlevering.</i>
+          <p>Du kan kjøpe ut bøkene før fristen for 50% av nypris. Dette kan du gjøre på nett, på stand, eller via vårt Vipps-nummer 33415. Ytterligere informasjon finner du i vår første informasjonsmail, sendt ut i mai.</p>
+          <p>Husk at innleveringsfristen er 1.juli – vi tar ikke imot bøker etter dette tidspunktet, med mindre de er sendt i posten før denne datoen. Det er heller ikke mulig å levere til resepsjonen på privatistskolen du går på.</p>
+          <i>Det er alltid bedre å være tidlig enn sent ute – da blir det lettere for deg å ordne opp om noe skulle gå galt!</i>
+          <p>Dersom du ikke leverer antar vi at du vil beholde bøkene, og sender erstatningsfaktura som avtalt i leievilkårene.</p>
+          <p>Med vennlig hilsen</p>
+          <i>Boklisten.no</i>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <bl-text-block-component></bl-text-block-component>
+
+    <bl-footer-component></bl-footer-component>
+  </mj-body>
+</mjml>

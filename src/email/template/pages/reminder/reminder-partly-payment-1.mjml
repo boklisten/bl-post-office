@@ -1,133 +1,61 @@
 <mjml> 
-<mj-head>
-<mj-style>
-  bl-container {
-    background-color: white;
-  } 
+  <mj-head>
+    <mj-include path="../../styles/bl-style.mjml"/>
+  </mj-head>
 
-  .bl-header {
-    color: white;
-    background-color:  #26768f;
-  }
-
-  .bl-header-icon {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .bl-content {
-    background-color: #ffffff;
-  }
-
-  .align-center {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .bl-table {
-    width: 100%; 
-    border-collapse: collapse; 
-    text-align: center;
-  }
-
-  .alert-row {
-    border: 3px dotted red;
-    padding: 10px;
-  }
-
-  .text-block-alert {
-    border: 3px dashed red;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 10px;
-  }
-
-  .text-block-warning {
-    border: 3px dashed orange;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 10px;
-  }
-
-
-  .text-block-secondary {
-    border: 3px dashed gray;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 10px;
-  }
-
-
-  .text-block {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 10px;
-  }
-
-</mj-style>
-
-</mj-head>
   <mj-body css-class="bl-body">
-
     <bl-header-component></bl-header-component>
-    
+
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h2>(1) Ditt andre avdrag har snart frist. </h2>
-          <p>
-            Heisann Sveisann fra oss i Boklisten.no. Nå er det snart frist for å betale det resterende beløpet på dine bøker.
-            Dette kan du enkelt gjøre på en av våre stands eller på nettsidene våre.
-          </p>
+          <h4>Hei {{ name }}</h4>
+          <p>Du er registrert som privatist som har bøker hvor andre avdrag skal betales innen 1.juli. Vi har per dags dato ikke registrert tilbakesalg eller utkjøp fra deg.</p> 
+          <p>Bøker som ikke er solgt tilbake til Boklisten (enten via stand eller posten) eller utkjøpt innen 1.juli mottar faktura fra oss. Fakturagebyret på 150 kroner per bok kommer i tillegg til prisen for andre avdrag, og det anbefales derfor at du kommer innom oss før fristen.</p>
+          <i>Dersom du allerede har sendt bøkene dine i posten kan du se bort fra denne henvendelsen.</i>  
         </mj-text>
       </mj-column>
     </mj-section>
 
     <bl-item-list-component></bl-item-list-component>
 
-    <bl-text-block-component></bl-text-block-component>
-
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h4>Hvorfor har jeg penger igjen å betale?</h4>
-          <p>
-            Da du bestilte bøker hos oss valgte du å delbetale bøkene dine. Det som står som "igjen å betale" er
-            det resterende beløpet på denne summen.
-          </p>
-        </mj-text>
-
-        <mj-text>
-          <h4>Hva gjør jeg nå?</h4>
-          <p>
-            Du kan komme til oss på stand. Der vil du kunne betale inn det resterende beløpet. Hvis vi ser at vi vil ha boken inn igjen, så kan vi kjøpe av deg boken til samme 
-            pris som det du har som utestående beløp. Du kan også betale her på nett, men da vil du ikke ha muligheten til å selge boken til oss.
-          </p>
-        </mj-text>
+          <h4>Steder og tidspunkter der du kan selge bøkene tilbake til oss:</h4>
+          <ul>
+            <li>
+                Bøkene kan selges på stand på skolen din eller andre steder vi har åpent. Åpningstider for resterende dagerkan du finne www.boklisten.no 
+            </li>
+            <li>
+              Bøker kan også sendes per post til Boklisten.no. 
+              Vår adresse er: Boklisten.no, Postboks 8, 1316 Eiksmarka.
+              Husk å legge ved liste over bøkene og ditt navn og telefonnummer i pakken med bøkene. Vi tar kun imot bøker som er på vår innkjøpsliste.
+              Bøken  kan selges på stand på skolen din eller andre steder vi har åpent. Åpningstider for resterende dagerkan du finne www.boklisten.no 
+            </li>
+          </ul>
+          <i>
+            OBS: Kun Boklisten.no sine ansatte kan kjøpe tilbake bøker eller ta imot betaling for andre avdrag. Skolen har ikke ansvar for å ta imot bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal kontaktes dersom du har spørsmål om bøker. 
+          </i>
+          <p>Du kan betale andre avdrag ved å logge deg på våre nettsider og betale der. Du kan også ordne dette på stand eller via Vipps-nummer 33415. Ytterligere informasjon finner du i vår første informasjonsmail, sendt ut i mai.</p>
+          <p>Husk at fristen for å selge tilbake uten faktura er 1.juli – vi tar imot bøker også etter dette tidspunktet, men du må da fortsatt betale fakturagebyret. Det er ikke mulig å selge bøker til oss via resepsjonen på privatistskolen du går på.</p>
+          <i>Det er alltid bedre å være tidlig enn sent ute – da blir det lettere for deg å ordne opp om noe skulle gå galt! Vi ser frem til å se deg på en av våre stands!</i>
+          <p>Med vennlig hilsen</p>
+          <i>Boklisten.no</i>
+          </mj-text>
       </mj-column>
     </mj-section>
 
-    <mj-section css-class="bl-content">
-      <mj-group>
-        <mj-column>
-            <mj-image 
-              src="https://www.boklisten.no/assets/img/deliver_items.png" 
-              height="100px" 
-              width="100px" 
-              alt="Du kan også levere">
-        </mj-column>
-        <mj-column>
-          <mj-text>
-            <h4>Du kan også levere isteden for å betale</h4>
-            <p>
-              Visste du at du kan i noen tilfeller kan levere boken til oss og dermed slipper å betale andre avdrag.
-            </p>
-          </mj-text>
-        </mj-column>
-      </mj-group>
+    <mj-section>
+      <mj-column>
+        <mj-button href="http://www.boklisten.no/info?tab=buyback" background-color="#26768f">
+          Klikk her for å se vår innkjøpsliste
+        </mj-button>
+      </mj-column>
     </mj-section>
 
-    <bl-footer-component></bl-footer-component>
+    <bl-text-block-component></bl-text-block-component>
 
+    <bl-footer-component></bl-footer-component>
   </mj-body>
 </mjml>
