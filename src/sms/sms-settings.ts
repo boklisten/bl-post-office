@@ -1,6 +1,6 @@
 export const SMS_SETTINGS = {
   minLength: 5,
-  maxLength: 120,
+  maxLength: 260,
   fromNumber: '+4759447665',
   dymmy: {
     number: '+4712345678',
@@ -8,11 +8,12 @@ export const SMS_SETTINGS = {
   text: {
     reminder: {
       'partly-payment': [
-        'Hei fra oss i Boklisten.no. Snart er det klart for andre delbetaling av dine bøker',
-        'Hei fra oss i Boklisten.no. Fristen er snart her for andre delbetaling av dine bøker.',
+        'Hei - det nærmer seg frist for bøkene dine! Mange steder begynner å stenge før fristen 1.juli. Kun Boklistens ansatte kan ta imot bøker. Sjekk nettsiden for åpningstider og postadresse, samt informasjonsmailene vi har sendt ut. Mvh Boklisten.no',
+        'Hei - det nærmer seg frist for bøkene dine! Mange steder begynner å stenge før fristen 1.juli. Kun Boklistens ansatte kan ta imot bøker. Sjekk nettsiden for åpningstider og postadresse, samt informasjonsmailene vi har sendt ut. Mvh Boklisten.no',
       ],
       rent: [
-        'Hei fra oss i Boklisten.no. Du har bøker som snart skal leveres inn',
+        'Hei - det nærmer seg frist for bøkene dine! Mange steder begynner å stenge før fristen 1.juli. Kun Boklistens ansatte kan ta imot bøker. Sjekk nettsiden for åpningstider og postadresse, samt informasjonsmailene vi har sendt ut. Mvh Boklisten.no',
+        'Hei - det nærmer seg frist for bøkene dine! Mange steder begynner å stenge før fristen 1.juli. Kun Boklistens ansatte kan ta imot bøker. Sjekk nettsiden for åpningstider og postadresse, samt informasjonsmailene vi har sendt ut. Mvh Boklisten.no',
       ],
       loan: [
         'Hei fra oss i Boklisten.no. Snart er det tid for å levere bøkene du lånte',

@@ -20,9 +20,11 @@ export class TwilioConnecter {
         body: text,
         from: fromNumber,
         to: toNumber,
+        /*
         statusCallback:
           process.env.TWILIO_STATUS_CALLBACK_URL +
           `?bl_message_id=${blMessageId}`,
+         */
       });
       logger.info(`successfully sent SMS to "${toNumber}"`);
       return res;
