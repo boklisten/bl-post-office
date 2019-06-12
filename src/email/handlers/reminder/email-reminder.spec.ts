@@ -101,7 +101,83 @@ test('should reject if options.itemList is empty', async t => {
   }
 });
 
-test('should call emailTemplateResolver with correct type and subtype', async t => {
+test.serial(
+  'should call emailTemplateResolver with correct type and subtype',
+  async t => {
+    const emailReminder = testEnvironment.get<EmailReminder>(EmailReminder);
+    const mockedTemplate =
+      '<html><head></head><body><p>email reminder test</p></body</html>';
+
+    const recipient: Recipient = {
+      email: 'some@email.com',
+      user_id: '123',
+      message_id: '123',
+      itemList: {
+        summary: {total: '0', totalTax: '0', taxPercentage: '20%'},
+        items: [
+          {
+            id: '123',
+            title: 'some title',
+            deadline: '10.10.2010',
+            leftToPay: '0kr',
+          },
+        ],
+      },
+    };
+
+    const options: MessageOptions = {
+      type: 'reminder',
+      subtype: 'partly-payment',
+      sequence_number: 0,
+    };
+
+    const emailTemplateInput = {
+      itemList: recipient.itemList,
+      textBlocks: options.textBlocks,
+    };
+
+    when(mockedEmailTemplateResolver.generate(options, anything())).thenReturn(
+      mockedTemplate,
+    );
+
+    const emailContent: EmailContent = {
+      to: recipient.email as string,
+      from: EMAIL_SETTINGS.reminder.fromEmail,
+      fromName: EMAIL_SETTINGS.name,
+      subject: EMAIL_SETTINGS.subjects.reminder['partly-payment'][0],
+      html: mockedTemplate,
+      message_id: recipient.message_id,
+      user_id: recipient.user_id,
+      type: options.type,
+      subtype: options.subtype,
+    };
+
+    when(mockedEmailBroker.send(emailContent)).thenResolve(true);
+
+    try {
+      const res = await emailReminder.send(recipient, options);
+    } catch (e) {
+      t.fail(e);
+    }
+
+    const [emailTemplateResolverArg] = capture(
+      mockedEmailTemplateResolver.generate,
+    ).last();
+
+    const [emailContentArg] = capture(mockedEmailBroker.send).last();
+
+    t.is(emailTemplateResolverArg, options);
+    t.is(emailContentArg.to, recipient.email);
+    t.is(emailContentArg.from, EMAIL_SETTINGS.reminder.fromEmail);
+    t.is(
+      emailContentArg.subject,
+      EMAIL_SETTINGS.subjects.reminder['partly-payment'][0],
+    );
+    t.is(emailContent.html, mockedTemplate);
+  },
+);
+
+test('should call emailBroker with correct subject', async t => {
   const emailReminder = testEnvironment.get<EmailReminder>(EmailReminder);
   const mockedTemplate =
     '<html><head></head><body><p>email reminder test</p></body</html>';
@@ -126,6 +202,7 @@ test('should call emailTemplateResolver with correct type and subtype', async t 
   const options: MessageOptions = {
     type: 'reminder',
     subtype: 'partly-payment',
+    sequence_number: 1,
   };
 
   const emailTemplateInput = {
@@ -149,7 +226,7 @@ test('should call emailTemplateResolver with correct type and subtype', async t 
     subtype: options.subtype,
   };
 
-  when(mockedEmailBroker.send(emailContent)).thenResolve(true);
+  when(mockedEmailBroker.send(anything())).thenResolve(true);
 
   try {
     const res = await emailReminder.send(recipient, options);
@@ -157,15 +234,13 @@ test('should call emailTemplateResolver with correct type and subtype', async t 
     t.fail(e);
   }
 
-  const [emailTemplateResolverArg] = capture(
-    mockedEmailTemplateResolver.generate,
-  ).last();
-
   const [emailContentArg] = capture(mockedEmailBroker.send).last();
 
-  t.is(emailTemplateResolverArg, options);
   t.is(emailContentArg.to, recipient.email);
   t.is(emailContentArg.from, EMAIL_SETTINGS.reminder.fromEmail);
-  t.is(emailContentArg.subject, EMAIL_SETTINGS.reminder.subject);
+  t.is(
+    emailContentArg.subject,
+    EMAIL_SETTINGS.subjects.reminder['partly-payment'][1],
+  );
   t.is(emailContent.html, mockedTemplate);
 });

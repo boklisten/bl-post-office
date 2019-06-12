@@ -35,12 +35,13 @@ export class EmailReminder implements DepartmentHandler {
       options,
       emailTemplateInput,
     );
+    const emailSubject = this.getEmailSubject(options);
 
     const emailContent: EmailContent = {
       to: recipient.email as string,
       from: EMAIL_SETTINGS.reminder.fromEmail,
       fromName: EMAIL_SETTINGS.name,
-      subject: EMAIL_SETTINGS.reminder.subject,
+      subject: emailSubject,
       html: template,
       message_id: recipient.message_id as string,
       user_id: recipient.user_id as string,
@@ -81,5 +82,10 @@ export class EmailReminder implements DepartmentHandler {
     if (!recipient.itemList || recipient.itemList.items.length <= 0) {
       throw `recipient.itemList.items is empty or undefined`;
     }
+  }
+  private getEmailSubject(messageOption: MessageOptions): string {
+    return EMAIL_SETTINGS.subjects.reminder[messageOption.subtype][
+      messageOption.sequence_number as number
+    ] as any;
   }
 }
