@@ -37,6 +37,14 @@ const reminderRentTemplate0 = fs.readFileSync(
   'utf8',
 );
 
+const reminderRentTemplate1 = fs.readFileSync(
+  path.join(
+    __dirname,
+    '../../lib/email/template/reminder/reminder-rent-0.html',
+  ),
+  'utf8',
+);
+
 const reminderLoanTemplate0 = fs.readFileSync(
   path.join(
     __dirname,
@@ -50,7 +58,7 @@ const reminderPartlyPaymentTemplates = [
   reminderPartlyPaymentTemplate1,
 ];
 
-const reminderRentTemplates = [reminderRentTemplate0];
+const reminderRentTemplates = [reminderRentTemplate0, reminderRentTemplate1];
 const reminderLoadnTemplates = [reminderLoanTemplate0];
 
 @injectable()
