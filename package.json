@@ -4,7 +4,7 @@
   "description": "a single module for sending messages to a customer",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npm run build:email && tsc && gulp copy:lib-to-dist",
+    "build": "npm run email:build && tsc && gulp copy:lib-to-dist",
     "test": "npm run test:unit",
     "test:unit": "ava",
     "test:watch": "ava --watch --fail-fast",
