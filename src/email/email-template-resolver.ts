@@ -4,6 +4,7 @@ import * as path from 'path';
 import 'reflect-metadata';
 import * as mustache from 'mustache';
 import {EmailTemplateInput} from '../interfaces/emailTemplateInput';
+import {TEMPLATE_DIR, TEMPLATE_PATHS} from './template-paths';
 
 import {
   MessageSubtype,
@@ -11,55 +12,41 @@ import {
   MessageOptions,
 } from '../interfaces/message-options';
 
-// approx 30 kb in memory
+// approx 30 kb in memory each
+//
+let templates: any = {};
 
-const reminderPartlyPaymentTemplate0 = fs.readFileSync(
-  path.join(
-    __dirname,
-    '../../lib/email/template/reminder/reminder-partly-payment-0.html',
-  ),
-  'utf8',
-);
+function readTemplates() {
+  for (let templatePath of TEMPLATE_PATHS) {
+    if (!templates[templatePath.type]) {
+      templates[templatePath.type] = {};
+    }
+    if (!templates[templatePath.subtype]) {
+      templates[templatePath.type][templatePath.subtype] = [];
+    }
+    for (let sequence of templatePath.sequences) {
+      templates[templatePath.type][templatePath.subtype][
+        sequence
+      ] = fs.readFileSync(
+        path.join(
+          __dirname,
+          TEMPLATE_DIR +
+            templatePath.type +
+            '/' +
+            templatePath.type +
+            '-' +
+            templatePath.subtype +
+            '-' +
+            sequence +
+            '.html',
+        ),
+        'utf8',
+      );
+    }
+  }
+}
 
-const reminderPartlyPaymentTemplate1 = fs.readFileSync(
-  path.join(
-    __dirname,
-    '../../lib/email/template/reminder/reminder-partly-payment-1.html',
-  ),
-  'utf8',
-);
-
-const reminderRentTemplate0 = fs.readFileSync(
-  path.join(
-    __dirname,
-    '../../lib/email/template/reminder/reminder-rent-0.html',
-  ),
-  'utf8',
-);
-
-const reminderRentTemplate1 = fs.readFileSync(
-  path.join(
-    __dirname,
-    '../../lib/email/template/reminder/reminder-rent-1.html',
-  ),
-  'utf8',
-);
-
-const reminderLoanTemplate0 = fs.readFileSync(
-  path.join(
-    __dirname,
-    '../../lib/email/template/reminder/reminder-loan-0.html',
-  ),
-  'utf8',
-);
-
-const reminderPartlyPaymentTemplates = [
-  reminderPartlyPaymentTemplate0,
-  reminderPartlyPaymentTemplate1,
-];
-
-const reminderRentTemplates = [reminderRentTemplate0, reminderRentTemplate1];
-const reminderLoadnTemplates = [reminderLoanTemplate0];
+readTemplates();
 
 @injectable()
 export class EmailTemplateResolver {
@@ -85,28 +72,19 @@ export class EmailTemplateResolver {
     subtype: MessageSubtype,
     sequenceNumber?: number,
   ): string {
-    switch (type) {
-      case 'reminder':
-        return this.getTemplateTypeReminder(subtype, sequenceNumber);
-      default:
-        throw `type "${type}" not supported`;
-    }
-  }
-
-  private getTemplateTypeReminder(
-    subtype: MessageSubtype,
-    sequenceNumber?: number,
-  ): string {
     let seqNumber = sequenceNumber ? sequenceNumber : 0;
-    switch (subtype) {
-      case 'partly-payment':
-        return reminderPartlyPaymentTemplates[seqNumber];
-      case 'rent':
-        return reminderRentTemplates[seqNumber];
-      case 'loan':
-        return reminderLoadnTemplates[seqNumber];
-      default:
-        throw `subtype "${subtype}" not supported`;
+    let template;
+    let errorText = `could not get template for type "${type}" subtype "${subtype}" and seq number "${seqNumber}"`;
+
+    try {
+      template = templates[type][subtype][seqNumber];
+    } catch (e) {
+      throw new ReferenceError(errorText);
     }
+
+    if (template) {
+      return template;
+    }
+    throw new ReferenceError(errorText);
   }
 }

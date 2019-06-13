@@ -1,5 +1,5 @@
-export type MessageSubtype = 'partly-payment' | 'rent' | 'loan';
-export type MessageType = 'reminder' | 'receipt';
+export type MessageSubtype = 'partly-payment' | 'rent' | 'loan' | 'all';
+export type MessageType = 'reminder' | 'receipt' | 'generic';
 import {MessageMediums} from './message-mediums';
 export type TextBlock = {
   text: string;

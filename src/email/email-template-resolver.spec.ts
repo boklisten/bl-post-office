@@ -23,12 +23,15 @@ test('should throw error if messageOptions.type is not supported', t => {
 
   const emailTemplateInput = {};
 
-  try {
-    emailTemplateResolver.generate(messageOptions, emailTemplateInput);
-    t.fail();
-  } catch (e) {
-    t.is(e, `type "${messageOptions.type}" not supported`);
-  }
+  t.throws(
+    () => {
+      emailTemplateResolver.generate(messageOptions, emailTemplateInput);
+    },
+    {
+      instanceOf: ReferenceError,
+      message: /could not get template for type "randomVal"/,
+    },
+  );
 });
 
 test('should throw error if messageOptions.subtype is not supported', t => {
@@ -43,12 +46,15 @@ test('should throw error if messageOptions.subtype is not supported', t => {
 
   const emailTemplateInput = {};
 
-  try {
-    emailTemplateResolver.generate(messageOptions, emailTemplateInput);
-    t.fail();
-  } catch (e) {
-    t.is(e, `subtype "${messageOptions.subtype}" not supported`);
-  }
+  t.throws(
+    () => {
+      emailTemplateResolver.generate(messageOptions, emailTemplateInput);
+    },
+    {
+      instanceOf: ReferenceError,
+      message: /could not get template for type "reminder" subtype "randomVal"/,
+    },
+  );
 });
 
 test('should return file if messageOptions.type and messageOptions.subtype is supported', t => {
@@ -63,13 +69,37 @@ test('should return file if messageOptions.type and messageOptions.subtype is su
 
   const emailTemplateInput = {};
 
-  try {
-    const file = emailTemplateResolver.generate(
-      messageOptions,
-      emailTemplateInput,
-    );
-    t.truthy(file);
-  } catch (e) {
-    t.fail('file is not found');
-  }
+  t.truthy(emailTemplateResolver.generate(messageOptions, emailTemplateInput));
+});
+
+test('should return file if messageOptions.type is "reminder" and messageOptions.subtype is "rent"', t => {
+  const emailTemplateResolver = testEnvironment.get<EmailTemplateResolver>(
+    EmailTemplateResolver,
+  );
+
+  const messageOptions: MessageOptions = {
+    type: 'reminder',
+    subtype: 'rent',
+    sequence_number: 1,
+  };
+
+  const emailTemplateInput = {};
+
+  t.truthy(emailTemplateResolver.generate(messageOptions, emailTemplateInput));
+});
+
+test('should return file if messageOptions.type is "generic" and messageOptions.subtype is "all"', t => {
+  const emailTemplateResolver = testEnvironment.get<EmailTemplateResolver>(
+    EmailTemplateResolver,
+  );
+
+  const messageOptions: MessageOptions = {
+    type: 'generic',
+    subtype: 'all',
+    sequence_number: 0,
+  };
+
+  const emailTemplateInput = {};
+
+  t.truthy(emailTemplateResolver.generate(messageOptions, emailTemplateInput));
 });

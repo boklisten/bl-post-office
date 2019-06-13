@@ -1,4 +1,4 @@
-export const EMAIL_SETTINGS = {
+export const EMAIL_SETTINGS: any = {
   name: 'Boklisten.no',
 
   reminder: {
