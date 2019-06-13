@@ -15,5 +15,7 @@ export interface MessageOptions {
   subtype: MessageSubtype;
   sequence_number?: number;
   mediums?: MessageMediums;
+  htmlContent?: string;
+  subject?: string;
   textBlocks?: TextBlock[];
 }

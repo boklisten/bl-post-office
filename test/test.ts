@@ -13,22 +13,8 @@ const recipients: Recipient[] = [
     //    phone: '+4791804211',
     user_id: '123',
     message_id: 'aA891AAsdjkldfa19289x',
-    itemList: {
-      summary: {
-        total: '560 kr',
-        totalTax: '0 kr',
-        taxPercentage: '0',
-      },
-      items: [
-        {
-          id: '83290832',
-          title: 'Some title',
-          leftToPay: '100 kr',
-          deadline: '20.12.2011',
-        },
-      ],
-    },
   },
+  /*
   {
     email: 'aholskil@gmail',
     //phone: '+4791804211',
@@ -50,17 +36,24 @@ const recipients: Recipient[] = [
       ],
     },
   },
+   */
 ];
 
-postOffice.setConfig({reminder: {mediums: {email: true, sms: false}}});
+postOffice.setConfig({
+  reminder: {mediums: {email: true, sms: false}},
+  generic: {mediums: {email: true}},
+});
 
 postOffice
   .send(recipients, {
-    type: 'reminder',
-    subtype: 'partly-payment',
+    type: 'generic',
+    subtype: 'all',
+    subject: 'Hei fra oss',
+    mediums: {email: true},
+    htmlContent: '<p>Dette er en generisk melding</p>',
   })
   .then(res => {
-    logger.info('reminder sent: ', res);
+    logger.info('sent: ' + res);
   })
   .catch(e => {
     logger.error(e);

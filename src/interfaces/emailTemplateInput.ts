@@ -5,4 +5,5 @@ export interface EmailTemplateInput {
   textBlocks?: TextBlock[];
   name?: string;
   itemList?: ItemList;
+  htmlContent?: string;
 }

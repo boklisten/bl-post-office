@@ -12,6 +12,9 @@ export type PostOfficeConfig = {
   reminder: {
     mediums: MessageMediums;
   };
+  generic: {
+    mediums: MessageMediums;
+  };
 };
 
 /**
@@ -28,6 +31,12 @@ export class PostOffice {
   ) {
     this.config = {
       reminder: {
+        mediums: {
+          email: false,
+          sms: false,
+        },
+      },
+      generic: {
         mediums: {
           email: false,
           sms: false,
@@ -71,6 +80,12 @@ export class PostOffice {
           options,
           this.config.reminder.mediums,
         );
+      case 'generic':
+        return await this.delegateToDepartments(
+          recipients,
+          options,
+          this.config.generic.mediums,
+        );
       default:
         throw `options.type "${options.type}" is not supported`;
     }
@@ -101,7 +116,7 @@ export class PostOffice {
   }
 
   private isTypeSupported(type: any): boolean {
-    if (['reminder'].indexOf(type) >= 0) {
+    if (['reminder', 'generic'].indexOf(type) >= 0) {
       return true;
     }
     return false;

@@ -10,6 +10,9 @@ export const EMAIL_SETTINGS: any = {
       {subject: '', fromEmail: ''},
     ],
   },
+  generic: {
+    fromEmail: 'info@boklisten.no',
+  },
   subjects: {
     reminder: {
       rent: [

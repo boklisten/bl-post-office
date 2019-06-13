@@ -3,5 +3,8 @@ export const POST_OFFICE_SETTINGS = {
     reminder: {
       mediums: ['email', 'sms'],
     },
+    generic: {
+      mediums: ['email'],
+    },
   },
 };

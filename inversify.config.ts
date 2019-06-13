@@ -9,6 +9,7 @@ import {SmsDepartment} from './src/sms/sms.department';
 import {SmsReminder} from './src/sms/handlers/reminder/sms-reminder';
 import {SmsBroker} from './src/sms/broker/sms.broker';
 import {TwilioConnecter} from './src/sms/broker/twilio/twilio.connecter';
+import {EmailGeneric} from './src/email/handlers/generic/email-generic';
 
 const inversifyContainer = new Container();
 
@@ -18,6 +19,7 @@ inversifyContainer.bind<SendgridConnecter>(SendgridConnecter).toSelf();
 inversifyContainer.bind<EmailDepartment>(EmailDepartment).toSelf();
 inversifyContainer.bind<EmailReminder>(EmailReminder).toSelf();
 inversifyContainer.bind<EmailTemplateResolver>(EmailTemplateResolver).toSelf();
+inversifyContainer.bind<EmailGeneric>(EmailGeneric).toSelf();
 
 inversifyContainer.bind<SmsDepartment>(SmsDepartment).toSelf();
 inversifyContainer.bind<SmsReminder>(SmsReminder).toSelf();

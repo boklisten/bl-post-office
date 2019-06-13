@@ -5,15 +5,22 @@ import {Department} from '../interfaces/department';
 import {injectable} from 'inversify';
 import 'reflect-metadata';
 import {logger} from '../logger';
+import {EmailGeneric} from './handlers/generic/email-generic';
+import {DepartmentHandler} from '../interfaces/department-handler';
 
 @injectable()
 export class EmailDepartment implements Department {
-  constructor(private _emailReminder: EmailReminder) {}
+  constructor(
+    private _emailReminder: EmailReminder,
+    private _emailGeneric: EmailGeneric,
+  ) {}
 
   public send(recipients: Recipient[], options: MessageOptions): Promise<any> {
     switch (options.type) {
       case 'reminder':
-        return this.sendToMany(recipients, options);
+        return this.sendToMany(recipients, options, this._emailReminder);
+      case 'generic':
+        return this.sendToMany(recipients, options, this._emailGeneric);
       default:
         throw `options.type "${options.type}" not supported`;
     }
@@ -22,6 +29,7 @@ export class EmailDepartment implements Department {
   private async sendToMany(
     recipients: Recipient[],
     options: MessageOptions,
+    handler: DepartmentHandler,
   ): Promise<any> {
     let promiseArr: Promise<any>[] = [];
 
@@ -30,7 +38,7 @@ export class EmailDepartment implements Department {
         !recipient.mediumOverrides ||
         recipient.mediumOverrides.email !== false
       ) {
-        promiseArr.push(this._emailReminder.send(recipient, options));
+        promiseArr.push(handler.send(recipient, options));
       }
     });
 

@@ -53,6 +53,9 @@ test('should not call SmsDepartment for type reminder if medium.sms is false', a
         sms: false,
       },
     },
+    generic: {
+      mediums: {},
+    },
   };
 
   postOffice.setConfig(config);
@@ -87,6 +90,11 @@ test('should not call SmsDepartment if messageOptions.mediums.sms is false', asy
       mediums: {
         email: true,
         sms: true,
+      },
+    },
+    generic: {
+      mediums: {
+        email: true,
       },
     },
   };
@@ -125,6 +133,11 @@ test('should not call EmailDepartment for type reminder if medium.email is false
         email: false,
       },
     },
+    generic: {
+      mediums: {
+        email: false,
+      },
+    },
   };
 
   postOffice.setConfig(config);
@@ -159,6 +172,9 @@ test('should not call EmailDepartment messageOptions.mediums.email is false', as
       mediums: {
         email: true,
       },
+    },
+    generic: {
+      mediums: {},
     },
   };
 
@@ -228,7 +244,10 @@ test('should reject if option.type is not supported', async t => {
 
 test('should call emailDepartment if option.type === "reminder"', async t => {
   const postOffice = testEnvironment.get<PostOffice>(PostOffice);
-  postOffice.setConfig({reminder: {mediums: {email: true}}});
+  postOffice.setConfig({
+    reminder: {mediums: {email: true}},
+    generic: {mediums: {}},
+  });
   const res = await postOffice.send(recipients, messageOptions);
   const args = capture(mockedEmailDepartment.send).last();
 
@@ -238,6 +257,32 @@ test('should call emailDepartment if option.type === "reminder"', async t => {
 
   t.is(args[0], recipients);
   t.is(args[1], messageOptions);
+  t.true(res);
+
+  reset(mockedEmailDepartment);
+});
+
+test('should call emailDepartment if option.type === "generic"', async t => {
+  const postOffice = testEnvironment.get<PostOffice>(PostOffice);
+  postOffice.setConfig({
+    reminder: {mediums: {}},
+    generic: {mediums: {email: true}},
+  });
+  const options: MessageOptions = {
+    type: 'generic',
+    subtype: 'all',
+    subject: 'Some subject',
+    htmlContent: '<p>Hi</p>',
+  };
+  const res = await postOffice.send(recipients, options);
+  const args = capture(mockedEmailDepartment.send).last();
+
+  when(mockedEmailDepartment.send(recipients, messageOptions)).thenResolve(
+    true,
+  );
+
+  t.is(args[0], recipients);
+  t.is(args[1], options);
   t.true(res);
 
   reset(mockedEmailDepartment);

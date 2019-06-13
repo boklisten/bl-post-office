@@ -38,7 +38,10 @@ const testEnvironment = new TestEnvironment({
 
 test.serial('should call EmailBroker with all the correct input', async t => {
   const postOffice = testEnvironment.get<PostOffice>(PostOffice);
-  postOffice.setConfig({reminder: {mediums: {email: true}}});
+  postOffice.setConfig({
+    reminder: {mediums: {email: true}},
+    generic: {mediums: {}},
+  });
 
   when(mockedEmailBroker.send(anything())).thenResolve(true);
 
@@ -108,7 +111,10 @@ test.serial(
   'should call EmailBroker with all recipients that are not failing',
   async t => {
     const postOffice = testEnvironment.get<PostOffice>(PostOffice);
-    postOffice.setConfig({reminder: {mediums: {email: true}}});
+    postOffice.setConfig({
+      reminder: {mediums: {email: true}},
+      generic: {mediums: {}},
+    });
     reset(mockedEmailBroker);
 
     when(mockedEmailBroker.send(anything())).thenResolve(true);
