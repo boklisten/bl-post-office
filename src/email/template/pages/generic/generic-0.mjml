@@ -1,0 +1,22 @@
+<mjml> 
+  <mj-head>
+    <mj-include path="../../styles/bl-style.mjml"/>
+  </mj-head>
+
+  <mj-body css-class="bl-body">
+    <bl-header-component></bl-header-component>
+
+    <mj-section>
+      <mj-column>
+        <mj-text>
+          <h4>Hei {{name}}</h4>          
+          {{{htmlContent}}}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <bl-text-block-component></bl-text-block-component>
+
+    <bl-footer-component></bl-footer-component>
+  </mj-body>
+</mjml>
