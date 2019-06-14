@@ -4,7 +4,7 @@ import {MessageOptions} from './interfaces/message-options';
 import {Recipient} from './interfaces/reciptient';
 import {injectable, inject} from 'inversify';
 import {SmsDepartment} from './sms/sms.department';
-import {logger} from './logger';
+import {logger, setLogger} from './logger';
 import {MessageMediums} from './interfaces/message-mediums';
 import 'reflect-metadata';
 
@@ -43,6 +43,10 @@ export class PostOffice {
         },
       },
     };
+  }
+
+  public overrideLogger(logger: any) {
+    setLogger(logger);
   }
 
   public setConfig(config: PostOfficeConfig) {
@@ -120,7 +124,7 @@ export class PostOffice {
         logger.error('Failed to send emails: ' + e);
       }
     } else {
-      logger.info('options.mediums.email is false, should not send mail');
+      logger.silly('options.mediums.email is false, should not send mail');
     }
 
     if (
@@ -134,7 +138,7 @@ export class PostOffice {
         logger.error('Failed to send sms: ' + e);
       }
     } else {
-      logger.info('options.mediums.sms is false, should not send sms');
+      logger.silly('options.mediums.sms is false, should not send sms');
     }
 
     return true;

@@ -12,4 +12,10 @@ if (JSON.stringify(winston.transports) === '{}' || !winston.transports) {
   );
 }
 
-export const logger = winston;
+let logger = winston;
+
+function setLogger(newLogger: any) {
+  logger = newLogger;
+}
+
+export {logger, setLogger};
