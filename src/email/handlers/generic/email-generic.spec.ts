@@ -48,7 +48,7 @@ test('should reject if toEmail is not an email', async t => {
     t.throwsAsync(
       emailGeneric.send(
         {email: invalidEmail, user_id: '123', message_id: '123'},
-        {type: 'generic', subtype: 'all'},
+        {type: 'generic', subtype: 'none'},
       ),
       {
         instanceOf: TypeError,
@@ -67,7 +67,7 @@ test('should reject if options.htmlContent is undefined', async t => {
   };
   const options: MessageOptions = {
     type: 'generic',
-    subtype: 'all',
+    subtype: 'none',
     subject: 'hello',
   };
 
@@ -106,7 +106,7 @@ test('should reject if options.subject is not defined', async t => {
   };
   const options: MessageOptions = {
     type: 'generic',
-    subtype: 'all',
+    subtype: 'none',
     htmlContent: '<p></p>',
   };
 
@@ -127,7 +127,7 @@ test.serial('should call emailBroker with correct input', async t => {
 
   const options: MessageOptions = {
     type: 'generic',
-    subtype: 'all',
+    subtype: 'none',
     sequence_number: 0,
     htmlContent: '<p>Hello this is a html content</p>',
     subject: 'Hello from us',

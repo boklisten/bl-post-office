@@ -73,6 +73,19 @@ export class PostOffice {
       throw `message type "${options.type}" not supported`;
     }
 
+    if (!options.mediums) {
+      throw new ReferenceError('options.mediums is not defined');
+    }
+
+    if (
+      options.mediums &&
+      !options.mediums.email &&
+      !options.mediums.sms &&
+      !options.mediums.voice
+    ) {
+      throw new ReferenceError('none of options.mediums is set to true');
+    }
+
     switch (options.type) {
       case 'reminder':
         return await this.delegateToDepartments(
@@ -96,20 +109,32 @@ export class PostOffice {
     options: MessageOptions,
     mediums: MessageMediums,
   ): Promise<boolean> {
-    if (mediums.email && (options.mediums && options.mediums.email)) {
+    if (
+      mediums.email &&
+      ((options.mediums && options.mediums.email) ||
+        (options.mediums === undefined || options.mediums.email === undefined))
+    ) {
       try {
         await this._emailDepartment.send(recipients, options);
       } catch (e) {
         logger.error('Failed to send emails: ' + e);
       }
+    } else {
+      logger.info('options.mediums.email is false, should not send mail');
     }
 
-    if (mediums.sms && (options.mediums && options.mediums.sms)) {
+    if (
+      mediums.sms &&
+      ((options.mediums && options.mediums.sms) ||
+        (options.mediums === undefined || options.mediums.sms === undefined))
+    ) {
       try {
         await this._smsDepartment.send(recipients, options);
       } catch (e) {
         logger.error('Failed to send sms: ' + e);
       }
+    } else {
+      logger.info('options.mediums.sms is false, should not send sms');
     }
 
     return true;

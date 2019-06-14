@@ -21,7 +21,7 @@ export const TEMPLATE_PATHS: {
   },
   {
     type: 'generic',
-    subtype: 'all',
+    subtype: 'none',
     sequences: [0],
   },
 ];

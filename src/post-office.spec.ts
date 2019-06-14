@@ -39,44 +39,50 @@ const testEnvironment = new TestEnvironment({
   ],
 });
 
-test('should not call SmsDepartment for type reminder if medium.sms is false', async t => {
-  reset(mockedEmailDepartment);
-  when(mockedSmsDepartment.send(anything(), anything())).thenResolve(true);
-  when(mockedEmailDepartment.send(anything(), anything())).thenResolve(true);
+test.serial(
+  'should not call SmsDepartment for type reminder if config.reminder.mediums.sms is false',
+  async t => {
+    reset(mockedEmailDepartment);
+    reset(mockedSmsDepartment);
 
-  const postOffice = testEnvironment.get<PostOffice>(PostOffice);
+    const postOffice = testEnvironment.get<PostOffice>(PostOffice);
 
-  const config = {
-    reminder: {
-      mediums: {
-        email: true,
-        sms: false,
+    const config = {
+      reminder: {
+        mediums: {
+          email: true,
+          sms: false,
+        },
       },
-    },
-    generic: {
-      mediums: {},
-    },
-  };
+      generic: {
+        mediums: {},
+      },
+    };
 
-  postOffice.setConfig(config);
+    postOffice.setConfig(config);
 
-  const recipients: Recipient[] = [
-    {email: 'some@email.com', user_id: '123', message_id: '123'},
-  ];
-  const options: MessageOptions = {
-    type: 'reminder',
-    subtype: 'partly-payment',
-  };
+    const recipients: Recipient[] = [
+      {email: 'test@boklisten.co', user_id: 'abc2', message_id: 'abc1'},
+    ];
+    const options: MessageOptions = {
+      type: 'reminder',
+      subtype: 'partly-payment',
+    };
 
-  try {
-    const res = await postOffice.send(recipients, messageOptions);
-  } catch (e) {
-    t.fail(e);
-  }
+    when(mockedSmsDepartment.send(recipients, options)).thenResolve(true);
+    when(mockedEmailDepartment.send(anything(), anything())).thenResolve(true);
 
-  verify(mockedSmsDepartment.send(recipients, messageOptions)).never();
-  t.pass();
-});
+    try {
+      const res = await postOffice.send(recipients, messageOptions);
+      t.log('hi: ' + res);
+    } catch (e) {
+      t.fail(e);
+    }
+
+    verify(mockedSmsDepartment.send(recipients, messageOptions)).never();
+    t.pass();
+  },
+);
 
 test('should not call SmsDepartment if messageOptions.mediums.sms is false', async t => {
   reset(mockedEmailDepartment);
@@ -111,16 +117,58 @@ test('should not call SmsDepartment if messageOptions.mediums.sms is false', asy
   };
 
   try {
-    const res = await postOffice.send(recipients, messageOptions);
+    const res = await postOffice.send(recipients, options);
   } catch (e) {
     t.fail(e);
   }
 
-  verify(mockedSmsDepartment.send(recipients, messageOptions)).never();
+  verify(mockedSmsDepartment.send(recipients, options)).never();
   t.pass();
 });
 
-test('should not call EmailDepartment for type reminder if medium.email is false', async t => {
+test('should call SmsDepartment', async t => {
+  reset(mockedEmailDepartment);
+  when(mockedSmsDepartment.send(anything(), anything())).thenResolve(true);
+  when(mockedEmailDepartment.send(anything(), anything())).thenResolve(true);
+
+  const postOffice = testEnvironment.get<PostOffice>(PostOffice);
+
+  const config = {
+    reminder: {
+      mediums: {
+        email: true,
+        sms: true,
+      },
+    },
+    generic: {
+      mediums: {
+        email: true,
+      },
+    },
+  };
+
+  postOffice.setConfig(config);
+
+  const recipients: Recipient[] = [
+    {email: 'some@email.com', user_id: '123', message_id: '123'},
+  ];
+  const options: MessageOptions = {
+    type: 'reminder',
+    subtype: 'partly-payment',
+    mediums: {email: true, sms: true},
+  };
+
+  try {
+    const res = await postOffice.send(recipients, options);
+  } catch (e) {
+    t.fail(e);
+  }
+
+  verify(mockedSmsDepartment.send(recipients, options)).once();
+  t.pass();
+});
+
+test('should not call EmailDepartment for type reminder if config.reminder.mediums.email is false', async t => {
   reset(mockedEmailDepartment);
   when(mockedSmsDepartment.send(anything(), anything())).thenResolve(true);
   when(mockedEmailDepartment.send(anything(), anything())).thenResolve(true);
@@ -148,6 +196,7 @@ test('should not call EmailDepartment for type reminder if medium.email is false
   const options: MessageOptions = {
     type: 'reminder',
     subtype: 'partly-payment',
+    mediums: {email: true},
   };
 
   try {
@@ -160,7 +209,7 @@ test('should not call EmailDepartment for type reminder if medium.email is false
   t.pass();
 });
 
-test('should not call EmailDepartment messageOptions.mediums.email is false', async t => {
+test('should not call EmailDepartment if messageOptions.mediums.email is false', async t => {
   reset(mockedEmailDepartment);
   when(mockedSmsDepartment.send(anything(), anything())).thenResolve(true);
   when(mockedEmailDepartment.send(anything(), anything())).thenResolve(true);
@@ -188,7 +237,7 @@ test('should not call EmailDepartment messageOptions.mediums.email is false', as
     subtype: 'partly-payment',
     mediums: {
       email: false,
-      sms: false,
+      sms: true,
     },
   };
 
@@ -242,48 +291,79 @@ test('should reject if option.type is not supported', async t => {
   }
 });
 
-test('should call emailDepartment if option.type === "reminder"', async t => {
+test('should reject if options.mediums is not defined', async t => {
   const postOffice = testEnvironment.get<PostOffice>(PostOffice);
-  postOffice.setConfig({
-    reminder: {mediums: {email: true}},
-    generic: {mediums: {}},
-  });
-  const res = await postOffice.send(recipients, messageOptions);
-  const args = capture(mockedEmailDepartment.send).last();
-
-  when(mockedEmailDepartment.send(recipients, messageOptions)).thenResolve(
-    true,
-  );
-
-  t.is(args[0], recipients);
-  t.is(args[1], messageOptions);
-  t.true(res);
-
-  reset(mockedEmailDepartment);
-});
-
-test('should call emailDepartment if option.type === "generic"', async t => {
-  const postOffice = testEnvironment.get<PostOffice>(PostOffice);
-  postOffice.setConfig({
-    reminder: {mediums: {}},
-    generic: {mediums: {email: true}},
-  });
   const options: MessageOptions = {
-    type: 'generic',
-    subtype: 'all',
-    subject: 'Some subject',
-    htmlContent: '<p>Hi</p>',
+    type: 'reminder',
+    subtype: 'partly-payment',
   };
-  const res = await postOffice.send(recipients, options);
-  const args = capture(mockedEmailDepartment.send).last();
 
-  when(mockedEmailDepartment.send(recipients, messageOptions)).thenResolve(
-    true,
-  );
-
-  t.is(args[0], recipients);
-  t.is(args[1], options);
-  t.true(res);
-
-  reset(mockedEmailDepartment);
+  await t.throwsAsync(postOffice.send(recipients, options), {
+    instanceOf: ReferenceError,
+    message: /options.mediums is not defined/,
+  });
 });
+
+test.serial(
+  'should call emailDepartment if option.type === "reminder"',
+  async t => {
+    const postOffice = testEnvironment.get<PostOffice>(PostOffice);
+
+    postOffice.setConfig({
+      reminder: {mediums: {email: true}},
+      generic: {mediums: {}},
+    });
+
+    const options: MessageOptions = {
+      type: 'reminder',
+      subtype: 'partly-payment',
+      mediums: {email: true},
+    };
+
+    when(mockedEmailDepartment.send(recipients, options)).thenResolve(true);
+
+    const res = await postOffice.send(recipients, options);
+
+    const args = capture(mockedEmailDepartment.send).last();
+
+    t.is(args[0], recipients);
+    t.is(args[1], options);
+    t.true(res);
+
+    reset(mockedEmailDepartment);
+  },
+);
+
+test.serial(
+  'should call emailDepartment if option.type === "generic"',
+  async t => {
+    const postOffice = testEnvironment.get<PostOffice>(PostOffice);
+
+    postOffice.setConfig({
+      reminder: {mediums: {}},
+      generic: {mediums: {email: true}},
+    });
+
+    const options: MessageOptions = {
+      type: 'generic',
+      subtype: 'none',
+      subject: 'Some subject',
+      htmlContent: '<p>Hi</p>',
+      mediums: {email: true},
+    };
+
+    when(mockedEmailDepartment.send(recipients, options)).thenResolve(true);
+
+    const res = await postOffice.send(recipients, options);
+
+    const [recipientsArg, optionArg] = capture(
+      mockedEmailDepartment.send,
+    ).last();
+
+    t.is(recipientsArg, recipients);
+    t.is(optionArg, options);
+    t.true(res);
+
+    reset(mockedEmailDepartment);
+  },
+);

@@ -15,7 +15,7 @@ import {util} from '../../../util';
 
 @injectable()
 export class EmailGeneric implements DepartmentHandler {
-  private supportedSubtypes: MessageSubtype[] = ['all'];
+  private supportedSubtypes: MessageSubtype[] = ['none'];
 
   constructor(
     private _emailTemplateResolver: EmailTemplateResolver,

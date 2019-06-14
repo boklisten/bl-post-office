@@ -88,14 +88,14 @@ test('should return file if messageOptions.type is "reminder" and messageOptions
   t.truthy(emailTemplateResolver.generate(messageOptions, emailTemplateInput));
 });
 
-test('should return file if messageOptions.type is "generic" and messageOptions.subtype is "all"', t => {
+test('should return file if messageOptions.type is "generic" and messageOptions.subtype is "none"', t => {
   const emailTemplateResolver = testEnvironment.get<EmailTemplateResolver>(
     EmailTemplateResolver,
   );
 
   const messageOptions: MessageOptions = {
     type: 'generic',
-    subtype: 'all',
+    subtype: 'none',
     sequence_number: 0,
   };
 

@@ -1,4 +1,4 @@
-export type MessageSubtype = 'partly-payment' | 'rent' | 'loan' | 'all';
+export type MessageSubtype = 'partly-payment' | 'rent' | 'loan' | 'none';
 export type MessageType = 'reminder' | 'receipt' | 'generic';
 import {MessageMediums} from './message-mediums';
 export type TextBlock = {
