@@ -40,6 +40,31 @@ test.beforeEach(() => {
   });
 });
 
+test('should reject if recipient is undefined', async t => {
+  const emailGeneric = testEnvironment.get<EmailGeneric>(EmailGeneric);
+  const options: MessageOptions = {
+    type: 'generic',
+    subtype: 'none',
+  };
+  await t.throwsAsync(emailGeneric.send(undefined as any, options), {
+    instanceOf: ReferenceError,
+    message: /recipient is undefined/,
+  });
+});
+
+test('should reject if options is undefined', async t => {
+  const emailGeneric = testEnvironment.get<EmailGeneric>(EmailGeneric);
+  const recipient = {
+    email: 'test@boklisten.co',
+    user_id: '123',
+    message_id: '123',
+  };
+  await t.throwsAsync(emailGeneric.send(recipient, undefined as any), {
+    instanceOf: ReferenceError,
+    message: /options is undefined/,
+  });
+});
+
 test('should reject if toEmail is not an email', async t => {
   const emailGeneric = testEnvironment.get<EmailGeneric>(EmailGeneric);
   const invalidEmails = ['ss.com', '@hotmail', 'aaa', '112345', 'i@b'];

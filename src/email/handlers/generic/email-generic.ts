@@ -12,6 +12,7 @@ import {EmailContent} from '../../email-content';
 import {EMAIL_SETTINGS} from '../../email-settings';
 import 'reflect-metadata';
 import {util} from '../../../util';
+import {logger} from '../../../logger';
 
 @injectable()
 export class EmailGeneric implements DepartmentHandler {
@@ -41,6 +42,13 @@ export class EmailGeneric implements DepartmentHandler {
 
     const emailContent = this.createEmailContent(recipient, options, template);
 
+    logger.silly(
+      `should send mail type "generic" subtype "${
+        options.subtype
+      }" and sequence number "${options.sequence_number}" to "${
+        recipient.email
+      }"`,
+    );
     return await this._emailBroker.send(emailContent);
   }
 
@@ -74,6 +82,9 @@ export class EmailGeneric implements DepartmentHandler {
   }
 
   private validateRecipient(recipient: Recipient): boolean {
+    if (!recipient) {
+      throw new ReferenceError('recipient is undefined');
+    }
     if (!recipient.email || !util.isEmailValid(recipient.email as string)) {
       throw new TypeError(`toEmail "${recipient.email}" is not a valid email`);
     }
@@ -81,6 +92,9 @@ export class EmailGeneric implements DepartmentHandler {
   }
 
   private validateOptions(options: MessageOptions): boolean {
+    if (!options) {
+      throw new ReferenceError('options is undefined');
+    }
     if (!options.htmlContent || options.htmlContent.length <= 0) {
       throw new ReferenceError('options.htmlContent is not defined');
     }
