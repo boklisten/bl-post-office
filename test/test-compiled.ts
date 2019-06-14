@@ -9,31 +9,21 @@ const recipients: Recipient[] = [
     //    phone: '+4791804211',
     user_id: '123',
     message_id: 'aA891AAsdjkldfa19289x',
-    itemList: {
-      summary: {
-        total: '560 kr',
-        totalTax: '0 kr',
-        taxPercentage: '0',
-      },
-      items: [
-        {
-          id: '83290832',
-          title: 'Some title',
-          leftToPay: '100 kr',
-          deadline: '20.12.2011',
-        },
-      ],
-    },
   },
 ];
 
 const messageOptions: MessageOptions = {
-  type: 'reminder',
-  subtype: 'rent',
-  sequence_number: 0,
+  type: 'generic',
+  subtype: 'none',
+  htmlContent: '<p>Hello there from test<p>',
+  mediums: {email: true},
+  subject: 'This is a test',
 };
 
-postOffice.setConfig({reminder: {mediums: {email: true}}});
+postOffice.setConfig({
+  reminder: {mediums: {email: true}},
+  generic: {mediums: {email: true}},
+});
 
 postOffice
   .send(recipients, messageOptions)
