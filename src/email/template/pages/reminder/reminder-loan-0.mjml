@@ -10,7 +10,8 @@
       <mj-column>
         <mj-text>
           <h4>Hei {{name}}</h4>          
-          <p>Det nærmer seg nå slutten av skoleåret og bøkene du har lånt skal snart leveres tilbake. Siste frist for innlevering er 1. juli. Vi kommer til å komme på din skole i løpet av juni for å samle inn bøker. Følg med på vår nettside for nøyaktige tidspunkter (www.boklisten.no).</p>
+          <p>Det nærmer seg nå slutten av skoleåret og bøkene du har lånt skal snart leveres tilbake. Siste frist for innlevering er 1. juli. Vi kommer til å komme på din skole i løpet av juni for å samle inn bøker. I siste del av juni er vi i tillegg på Bok og Media ved Akersgata 4. Følg med på vår nettside for nøyaktige tidspunkter (www.boklisten.no).</p>
+          <p>Under ser du en liste over dine bøker:</p>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -21,7 +22,7 @@
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h4>Her er noen råd og svar på vanlig spørsmåø rundt tilbakeleverin av bøker</h4>
+          <h4>Her er noen råd og svar på vanlige spørsmål rundt tilbakelevering av bøker</h4>
           <ul>
             <li>
               <p><b>Skriv navn i bøkene!</b></p> 
