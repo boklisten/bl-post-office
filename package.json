@@ -11,16 +11,13 @@
     "email:serve": "gulp email:serve",
     "email:build": "gulp email:build",
     "preversion": "npm run test",
-    "prepublishOnly": "npm run test && npm run build"
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run test"
   },
   "types": "dist/index.d.ts",
   "babel": {
-    "presets": [
-      "@babel/env"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
+    "presets": ["@babel/env"],
+    "plugins": ["@babel/plugin-proposal-class-properties"]
   },
   "repository": {
     "type": "git",
@@ -79,14 +76,8 @@
   "ava": {
     "compileEnhancements": false,
     "bable": false,
-    "files": [
-      "src/**/*.spec.ts"
-    ],
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ]
+    "files": ["src/**/*.spec.ts"],
+    "extensions": ["ts"],
+    "require": ["ts-node/register"]
   }
 }
