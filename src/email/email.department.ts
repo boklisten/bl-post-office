@@ -69,7 +69,7 @@ export class EmailDepartment implements Department {
         return {result: res, status: 'resolved'};
       },
       err => {
-        logger.error(err);
+        logger.error(`could not send email request: ${err}`);
         return {error: err, status: 'rejected'};
       },
     );
