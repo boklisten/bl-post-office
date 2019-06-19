@@ -1,0 +1,92 @@
+{
+  "name": "Birger Boom",
+  "id": "f81KL989kalZ12lbax",
+  "delivery": {
+    "method": "Bring",
+    "expectedDeliveryDate": "26.06.19",
+    "total": "80 kr",
+    "totalTax": "25 kr",
+    "taxPercentage": "10",
+    "id": "ba12ajK9XCkal82l1z3",
+    "address": "Trondheimsveien 10 D H0402, 0560 OSLO, Norway"
+  },
+  "paymentSummary": {
+    "total": "2240 NOK",
+    "payLater": false
+  },
+  "payments": [
+    {
+      "id": "a81kax91lz8aKL08",
+      "method": "VISA",
+      "cardNumber": "***0124",
+      "amount": "120 NOK",
+      "status": "Confirmed"
+    },
+    {
+      "id": "8kk0aBQWla0kx",
+      "method": "CASH",
+      "amount": "500 NOK",
+      "status": "Confirmed"
+    }
+  ],
+  "itemList": {
+    "summary": {
+      "total": "710 NOK",
+      "totalLeftToPay": "2160 NOK",
+      "totalTax": "0 NOK",
+      "totalTaxLeftToPay": "0 NOK",
+      "taxPercentage": "0",
+      "taxPercentageLeftToPay": "0"
+    },
+    "items": [
+      {
+        "id": "1821817140152",
+        "title": "Book of JOB",
+        "deadline": "01.07.2019",
+        "amount": "100 NOK",
+        "action": "partly-payment",
+        "leftToPay": "2050 NOK"
+      },
+      {
+        "id": "1721817140151",
+        "title": "The HOLY biblee",
+        "deadline": "01.07.2019",
+        "amount": "250 NOK",
+        "action": "partly-payment",
+        "leftToPay": "110 NOK"
+      },
+      {
+        "id": "4921817140165",
+        "title": "Upside down, inside out",
+        "amount": "130 NOK",
+        "deadline": "-",
+        "action": "buy",
+        "leftToPay": "-"
+      },
+      {
+        "id": "6721817140113",
+        "title": "Spinn",
+        "amount": "-",
+        "deadline": "-",
+        "action": "return",
+        "leftToPay": "-"
+      },
+      {
+        "id": "9221817140199",
+        "title": "Signatur 3: Tekstsammling",
+        "amount": "230 NOK",
+        "deadline": "20.12.2019",
+        "action": "rent",
+        "leftToPay": "-"
+      },
+      {
+        "id": "6721817140113",
+        "title": "Terra Nova",
+        "amount": "230 NOK",
+        "deadline": "-",
+        "action": "buyout",
+        "leftToPay": "-"
+      }
+    ]
+  }
+}

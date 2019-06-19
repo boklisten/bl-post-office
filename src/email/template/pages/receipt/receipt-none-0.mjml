@@ -1,0 +1,36 @@
+<mjml> 
+<mj-head>
+  <mj-include path="../../styles/bl-style.mjml"/>
+</mj-head>
+
+<mj-body css-class="bl-body">
+  <bl-header-component></bl-header-component>
+
+  <mj-section css-class="bl-content">
+    <mj-column>
+      <mj-text>
+        <h4>Hei {{ name }}</h4>
+        <h1>Kvittering for din transaksjon</h1>
+        Ordre-nummer: #{{id}}
+      </mj-text>
+    </mj-column>
+  </mj-section>
+
+  <bl-item-list-receipt-component></bl-item-list-receipt-component>
+
+  <bl-delivery-receipt-component></bl-delivery-receipt-component>
+
+  <bl-payment-receipt-component></bl-payment-receipt-component>
+
+  <mj-section css-class="bl-content">
+    <mj-column>
+      <mj-text>
+      </mj-text>
+    </mj-column>
+  </mj-section>
+
+  <bl-text-block-component></bl-text-block-component>
+
+  <bl-footer-component></bl-footer-component>
+</mj-body>
+</mjml>
