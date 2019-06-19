@@ -24,4 +24,9 @@ export const TEMPLATE_PATHS: {
     subtype: 'none',
     sequences: [0],
   },
+  {
+    type: 'receipt',
+    subtype: 'none',
+    sequences: [0],
+  },
 ];

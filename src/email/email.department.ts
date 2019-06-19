@@ -7,12 +7,14 @@ import 'reflect-metadata';
 import {logger} from '../logger';
 import {EmailGeneric} from './handlers/generic/email-generic';
 import {DepartmentHandler} from '../interfaces/department-handler';
+import {EmailReceipt} from './handlers/receipt/email-receipt';
 
 @injectable()
 export class EmailDepartment implements Department {
   constructor(
     private _emailReminder: EmailReminder,
     private _emailGeneric: EmailGeneric,
+    private _emailReceipt: EmailReceipt,
   ) {}
 
   public send(recipients: Recipient[], options: MessageOptions): Promise<any> {
@@ -21,6 +23,8 @@ export class EmailDepartment implements Department {
         return this.sendToMany(recipients, options, this._emailReminder);
       case 'generic':
         return this.sendToMany(recipients, options, this._emailGeneric);
+      case 'receipt':
+        return this.sendToMany(recipients, options, this._emailReceipt);
       default:
         throw `options.type "${options.type}" not supported`;
     }

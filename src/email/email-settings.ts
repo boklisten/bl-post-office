@@ -1,16 +1,17 @@
 export const EMAIL_SETTINGS: any = {
   name: 'Boklisten.no',
-
   reminder: {
     subject: 'Informasjon om bøker fra Boklisten.no',
     fromEmail: 'info@boklisten.no',
-
     rent: [
       {subject: 'Informasjon om bøker fra Boklisten.no'},
       {subject: '', fromEmail: ''},
     ],
   },
   generic: {
+    fromEmail: 'info@boklisten.no',
+  },
+  receipt: {
     fromEmail: 'info@boklisten.no',
   },
   subjects: {
@@ -24,6 +25,9 @@ export const EMAIL_SETTINGS: any = {
         'Andre påminnelse om bøker med frist 1.juli',
       ],
       loan: ['Informasjon om bøker fra Boklisten.no'],
+    },
+    receipt: {
+      none: ['Kvittering'],
     },
   },
 };

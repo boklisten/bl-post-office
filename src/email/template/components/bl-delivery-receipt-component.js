@@ -23,31 +23,35 @@ export default class BlDeliveryReceiptComponent extends BodyComponent {
   */
   render() {
     return this.renderMJML(`
-      <mj-section style="margin: 0">
-        <mj-column>
-          <mj-text>
-            <h2>Leveringsdetaljer</h2>
-          </mj-text>
-          <mj-table text-align="left">
-            <tr style="text-align: left">
-              <th>Leveres til</th>
-              <td>{{delivery.address}}</td>
-            </tr>
-            <tr style="text-align: left">
-              <th>Forventet ankomst innen</th>
-              <td>{{delivery.expectedDeliveryDate}}</td>
-            </tr>
-            <tr style="text-align: left">
-              <th>Leveransemetode</th>
-              <td>{{delivery.method}}</td>
-            </tr>
-            <tr style="text-align: left">
-              <th>Totalt inkl. mva</th>
-              <td>{{delivery.total}}</td>
-            </tr>
-          </mj-table>
-        </mj-column>
-      </mj-section>
+        <mj-section style="margin: 0">
+
+      <mj-raw>{{#delivery}}</mj-raw>
+          <mj-column>
+            <mj-text>
+              <h2>Leveringsdetaljer</h2>
+            </mj-text>
+            <mj-table text-align="left">
+              <tr style="text-align: left">
+                <th>Leveres til</th>
+                <td>{{delivery.address}}</td>
+              </tr>
+              <tr style="text-align: left">
+                <th>Forventet ankomst innen</th>
+                <td>{{delivery.expectedDeliveryDate}}</td>
+              </tr>
+              <tr style="text-align: left">
+                <th>Leveransemetode</th>
+                <td>{{delivery.method}}</td>
+              </tr>
+              <tr style="text-align: left">
+                <th>Totalt inkl. mva</th>
+                <td>{{delivery.total}}</td>
+              </tr>
+            </mj-table>
+          </mj-column>
+
+      <mj-raw>{{/delivery}}</mj-raw>
+        </mj-section>
 		`);
   }
 }

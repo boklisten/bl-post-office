@@ -6,5 +6,8 @@ export const POST_OFFICE_SETTINGS = {
     generic: {
       mediums: ['email'],
     },
+    receipt: {
+      mediums: ['email'],
+    },
   },
 };
