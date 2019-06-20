@@ -57,6 +57,9 @@ test.serial(
       generic: {
         mediums: {},
       },
+      receipt: {
+        mediums: {},
+      },
     };
 
     postOffice.setConfig(config);
@@ -103,6 +106,9 @@ test('should not call SmsDepartment if messageOptions.mediums.sms is false', asy
         email: true,
       },
     },
+    receipt: {
+      mediums: {},
+    },
   };
 
   postOffice.setConfig(config);
@@ -145,6 +151,9 @@ test('should call SmsDepartment', async t => {
         email: true,
       },
     },
+    receipt: {
+      mediums: {},
+    },
   };
 
   postOffice.setConfig(config);
@@ -186,6 +195,9 @@ test('should not call EmailDepartment for type reminder if config.reminder.mediu
         email: false,
       },
     },
+    receipt: {
+      mediums: {},
+    },
   };
 
   postOffice.setConfig(config);
@@ -223,6 +235,9 @@ test('should not call EmailDepartment if messageOptions.mediums.email is false',
       },
     },
     generic: {
+      mediums: {},
+    },
+    receipt: {
       mediums: {},
     },
   };
@@ -312,6 +327,7 @@ test.serial(
     postOffice.setConfig({
       reminder: {mediums: {email: true}},
       generic: {mediums: {}},
+      receipt: {mediums: {}},
     });
 
     const options: MessageOptions = {
@@ -342,6 +358,7 @@ test.serial(
     postOffice.setConfig({
       reminder: {mediums: {}},
       generic: {mediums: {email: true}},
+      receipt: {mediums: {}},
     });
 
     const options: MessageOptions = {

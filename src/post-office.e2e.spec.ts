@@ -41,6 +41,7 @@ test.serial('should call EmailBroker with all the correct input', async t => {
   postOffice.setConfig({
     reminder: {mediums: {email: true}},
     generic: {mediums: {}},
+    receipt: {mediums: {}},
   });
 
   when(mockedEmailBroker.send(anything())).thenResolve(true);
@@ -114,6 +115,7 @@ test.serial(
     postOffice.setConfig({
       reminder: {mediums: {email: true}},
       generic: {mediums: {}},
+      receipt: {mediums: {}},
     });
     reset(mockedEmailBroker);
 
