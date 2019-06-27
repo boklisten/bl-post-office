@@ -18,10 +18,12 @@ export const EMAIL_SETTINGS: any = {
       rent: [
         'Informasjon om bøker fra Boklisten.no',
         'Andre påminnelse om tilbakelevering av bøker',
+        'Siste påminnelse om tilbakelevering av bøker',
       ],
       'partly-payment': [
         'Informasjon om bøker fra Boklisten.no',
         'Andre påminnelse om bøker med frist 1.juli',
+        'Siste påminnelse om bøker med frist 1.juli',
       ],
       loan: ['Informasjon om bøker fra Boklisten.no'],
     },
