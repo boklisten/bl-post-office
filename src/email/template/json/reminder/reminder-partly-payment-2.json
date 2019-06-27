@@ -1,0 +1,30 @@
+{
+  "itemList": {
+    "summary": {
+      "total": "2011 kr",
+      "totalTax": "0 kr",
+      "taxPercentage": "20"
+    },
+    "items": [
+      {
+        "id": "1821817140152",
+        "title": "Book of JOB",
+        "deadline": "01.07.2019",
+        "leftToPay": "2050 kr"
+      },
+      {
+        "id": "1721817140151",
+        "title": "The HOLY biblee",
+        "deadline": "01.07.2019",
+        "leftToPay": "110 kr"
+      },
+      {
+        "id": "4921817140165",
+        "title": "Upside down, inside out",
+        "deadline": "01.07.2019",
+        "leftToPay": "550 kr"
+      }
+    ]
+  },
+  "textBlocks": []
+}
