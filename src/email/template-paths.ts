@@ -7,17 +7,17 @@ export const TEMPLATE_PATHS: {
   {
     type: 'reminder',
     subtype: 'partly-payment',
-    sequences: [0, 1],
+    sequences: [0, 1, 2],
   },
   {
     type: 'reminder',
     subtype: 'rent',
-    sequences: [0, 1],
+    sequences: [0, 1, 2],
   },
   {
     type: 'reminder',
     subtype: 'loan',
-    sequences: [0],
+    sequences: [0, 1],
   },
   {
     type: 'generic',
