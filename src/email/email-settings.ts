@@ -25,7 +25,10 @@ export const EMAIL_SETTINGS: any = {
         'Andre påminnelse om bøker med frist 1.juli',
         'Siste påminnelse om bøker med frist 1.juli',
       ],
-      loan: ['Informasjon om bøker fra Boklisten.no'],
+      loan: [
+        'Informasjon om bøker fra Boklisten.no',
+        'Siste påminnelse om tilbakelevering av bøker',
+      ],
     },
   },
 };
