@@ -52,6 +52,22 @@ postOffice
   .send(recipients, {
     type: 'receipt',
     subtype: 'none',
+    sequence_number: 2,
+    mediums: {email: true},
+  })
+  .then(res => {
+    logger.info('sent: ' + res);
+  })
+  .catch(e => {
+    logger.error('some error:', e);
+  });
+
+/*
+postOffice
+  .send(recipients, {
+    type: 'generic',
+    subtype: 'all',
+    subject: 'Hei fra oss',
     mediums: {email: true},
   })
   .then(res => {
@@ -60,3 +76,5 @@ postOffice
   .catch(e => {
     logger.error(e);
   });
+
+   */

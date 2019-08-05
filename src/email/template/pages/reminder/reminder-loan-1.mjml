@@ -1,0 +1,35 @@
+<mjml> 
+  <mj-head>
+    <mj-include path="../../styles/bl-style.mjml"/>
+  </mj-head>
+
+  <mj-body css-class="bl-body">
+    <bl-header-component></bl-header-component>
+    
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>Hei {{name}}</h4>          
+					<p>Boklisten.no har fortsatt ikke registrert din fulle innlevering av lærebøker! Fristen for å levere bøkene som du har fått av Boklisten.no er 1.juli. Denne fristen er absolutt, og vi vil ikke godta innlevering av bøker som er sendt etter denne datoen.</p> 
+          <p>De aller fleste stands er nå stengt, men vi har åpent på butikken Bok og Media i Akersgata 47 i Oslo fram til fristens slutt. Se www.boklisten.no for våre åpningstider der.</p>
+					<p>Det er dyrt å ikke levere, og anbefales ikke. Dersom du ikke leverer, vil du bli fakturert bokens nypris + 10% + 90 kroner i fakturagebyr per bok.</p> 
+					<p>Bøkene kan også kjøpes ut for 100% av nypris frem til fristen, dersom du har mistet boken. Dette er billigere enn å vente på faktura. Du kan kjøpe ut bøker ved å logge deg inn på din brukerprofil på www.boklisten.no, velge «Dine bøker» og utkjøp av aktuell bok.</p>
+					<p>Dersom du har planer om å levere i posten, må du være oppmerksom på at du bør ha sporing, og at du må legge ved et ark med informasjon om deg som leverer. Hvis vi ikke kan identifisere avsenderen kan vi heller ikke registrere innleveringen din. Vi kan ikke ta ansvar for bøker før de har kommet frem til oss. Ta derfor vare på sporingen, slik at du kan få erstatning fra Posten dersom de roter bort pakken din.</p>
+					<p>Hvis du har sendt bøker i posten den siste tiden kan du se bort fra denne mailen. Hvis du mener å ikke ha bøker fra Boklisten.no må du ta kontakt med oss så snart som mulig slik at vi kan undersøke saken før vi sender ut erstatningsfaktura.</p>
+					<p>Dersom du har ytterligere spørsmål er det bare å sende oss en mail på info@boklisten.no!</p>
+          <p>Med vennlig hilsen</p>
+          <i>Boklisten.no</i>
+          <br>
+          <br>
+          <p>Under ser du en liste over dine bøker:</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <bl-item-list-rent-component></bl-item-list-rent-component>
+
+    <bl-text-block-component></bl-text-block-component>
+
+    <bl-footer-component></bl-footer-component>
+  </mj-body>
+</mjml>

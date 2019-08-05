@@ -1,0 +1,44 @@
+<mjml> 
+  <mj-head>
+      <mj-include path="../../styles/bl-style.mjml"/>
+  </mj-head>
+
+  <mj-body css-class="bl-body">
+    <bl-header-component></bl-header-component>
+    
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>
+            Hei {{ name }}
+          </h4>
+          <p>Boklisten.no har fortsatt ikke registrert din fulle innlevering av lærebøker! Fristen for å levere bøkene som du har leid av Boklisten.no er 1.juli. Denne fristen er absolutt, og vi vil ikke godta innlevering av bøker som er sendt etter denne datoen.</p>
+          <p>De aller fleste stands er nå stengt, men vi har åpent på butikken Bok og Media i Akersgata 47 i Oslo fram til fristens slutt. Se www.boklisten.no for våre åpningstider der.</p>
+          <p>Det er dyrt å ikke levere, og anbefales ikke. Vi viser til leiebetingelsene:</p>
+          <i>"Leiebetingelser for privatister (oppdatert per 25.06.2016)
+          <br> 
+          <br> 
+          Det avtales herved at Boklisten.no AS (Adr: Pb 8, 1359 Eiksmarka, tlf: 91002211, epost info@boklisten.no), heretter kalt Boklisten leier ut bøker til kunden (for privatister) og låner bort bøkene (for elever). Elever låner bøker for et skoleår og tilbakeleveringsfristen er 1. juli. Privatister som leier bøker for et halvt år, må levere innen 20.desember for høstsemester, og 1.juli for vårsemester. Privatister som leier bøker for et helt år må levere innen 1.juli påfølgende år for leie om høsten, eller 20.desember samme år for leie på våren. Dersom forlengelse tilbys, kan bøkene forlenges for ett semester ved innbetaling av forlengelsesgebyret. Innlevering må da skje innen neste innleveringsfrist. Bøkene må erstattes med forlagenes listepris + prisjustering på 10% + gebyr på 90 kr per bok hvis de blir ødelagte, mistes eller av annen grunn ikke leveres innen fristen.
+          Ved tilbakelevering fra elever/privatister må bøkene være i god stand. Boklisten har ensidig rett til å avgjøre om en bok aksepteres eller må erstattes. Det anbefales derfor å behandle bøkene pent og bruke bokbind. Se mer informasjon på nettsidene til Boklisten.no om hva som godtas ved tilbakelevering av bøker.
+          Denne avtale reguleres av norsk rett. Eventuelle tvister med utspring i avtaleforholdet skal avgjøres ved behandling i de ordinære domstoler. Oslo tingrett skal være verneting."</i>
+          <p>Hvis du har planer om å sende oss bøker i posten, bør du påse at du har rett adresse samt informasjon om deg som avsender i pakken. Dersom vi ikke kan identifisere avsenderen kan vi heller ikke registrere bøkene dine. Vi kan ikke ta ansvar for bøker før de har kommet frem til oss. Ta derfor vare på sporingen, slik at du kan få erstatning fra Posten dersom de roter bort pakken din.</p>
+          <p>Det er også mulig å kjøpe ut bøkene. Utkjøp som gjøres før fristen 1.juli kan gjøres til 50% av nypris. Dette kan som tidligere informert gjøres på nettsiden, via Vipps-nummer 33415 eller på stand. Utkjøpsprisen på dine bøker kan du finne ved å logge deg inn på din bruker, og velge «Dine bøker». Bruker du Vipps til å betale trenger vi en bekreftelse på dette på e-post.</p>
+          <p>Hvis du har sendt bøker i posten den siste tiden kan du se bort fra denne mailen. Hvis du mener å ikke ha leiebøker fra Boklisten.no må du ta kontakt med oss så snart som mulig slik at vi kan undersøke saken før vi sender ut erstatningsfaktura.</p>
+          <p>Dersom du har ytterligere spørsmål er det bare å sende oss en mail på info@boklisten.no!</p>
+          <p>Med vennlig hilsen</p>
+          <i>Boklisten.no</i>
+          <br>
+          <br>
+          <p>Under ser du en liste over dine bøker:</p>
+
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <bl-item-list-rent-component></bl-item-list-rent-component>
+
+    <bl-text-block-component></bl-text-block-component>
+
+    <bl-footer-component></bl-footer-component>
+  </mj-body>
+</mjml>
