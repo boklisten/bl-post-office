@@ -7,6 +7,8 @@ export type ItemList = {
     totalTax: string; // the total tax of the list (with currency notation)
     totalLeftToPay?: string; // the total of all items.leftToPay
     taxPercentage: string; // the tax percentage of the list
+    taxPercentageLeftToPay?: string;
+    totalTaxLeftToPay?: string;
   };
   items: {
     id: string; // the id of the item
@@ -19,6 +21,19 @@ export type ItemList = {
   }[];
 };
 
+export type Order = {
+  id?: string;
+};
+
+export type EmailContentSettings = {
+  display?: {
+    leftToPay?: boolean;
+    payment?: boolean;
+    deadline?: boolean;
+    delivery?: boolean;
+  };
+};
+
 export type Delivery = {
   address: string;
   expectedDeliveryDate: string;
@@ -27,6 +42,18 @@ export type Delivery = {
   total: string;
   taxPercentage: string;
   totalTax: string;
+};
+
+export type Payment = {
+  total: string;
+  reservation: boolean; // if the order is just a reservation, and the customer has not payed anything
+  payments: {
+    id: string; // id of payment
+    method: string; // method of payment, ex: VISA
+    status: string; // status of payment, ex: Confirmed
+    amount: string; // amount payed
+    cardNumber?: string;
+  }[];
 };
 
 export interface Recipient {
@@ -38,5 +65,8 @@ export interface Recipient {
   dob?: string;
   itemList?: ItemList;
   delivery?: Delivery;
+  payment?: Payment;
+  order?: Order;
+  settings?: EmailContentSettings;
   mediumOverrides?: MessageMediums;
 }

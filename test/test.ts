@@ -21,12 +21,47 @@ const recipients: Recipient[] = [
     //phone: '+4791804211',
     user_id: '432',
     message_id: '889123hjhajsalkaks88cla80das',
+    settings: {
+      display: {
+        leftToPay: true,
+        payment: true,
+        deadline: true,
+        delivery: true,
+      },
+    },
+    payment: {
+      total: '560 NOK',
+      reservation: false,
+      payments: [
+        {
+          id: 'x81nda9ACXxLq',
+          method: 'VISA',
+          status: 'confirmed',
+          amount: '660 NOK',
+          cardNumber: '****0124',
+        },
+      ],
+    },
+    order: {
+      id: 'i8cLc18261vAl',
+    },
+    delivery: {
+      address: 'Trondheimsveien 10 G',
+      expectedDeliveryDate: '10.08.19',
+      method: 'BRING',
+      unitPrice: '75 NOK',
+      total: '100 NOK',
+      taxPercentage: '25',
+      totalTax: '25 NOK',
+    },
     itemList: {
       summary: {
         total: '560 NOK',
         totalTax: '0 NOK',
-        totalLeftToPay: '100 NOK',
+        totalLeftToPay: '120 NOK',
         taxPercentage: '0',
+        totalTaxLeftToPay: '0 NOK',
+        taxPercentageLeftToPay: '0',
       },
       items: [
         {
@@ -34,7 +69,7 @@ const recipients: Recipient[] = [
           title: 'A Song of Ice and Fire',
           action: 'delbetaling',
           amount: '560 NOK',
-          leftToPay: '100 NOK',
+          leftToPay: '120 NOK',
           deadline: '20.12.2011',
         },
       ],
@@ -52,7 +87,7 @@ postOffice
   .send(recipients, {
     type: 'receipt',
     subtype: 'none',
-    sequence_number: 2,
+    sequence_number: 0,
     mediums: {email: true},
   })
   .then(res => {

@@ -11,23 +11,25 @@
       <mj-text>
         <h4>Hei {{ name }}</h4>
         <h1>Kvittering for din transaksjon</h1>
-        Ordre-nummer: #{{id}}
+        <p>Ordre: # {{order.id}}</p>
       </mj-text>
     </mj-column>
   </mj-section>
 
   <bl-item-list-receipt-component></bl-item-list-receipt-component>
+  
 
-  <bl-delivery-receipt-component></bl-delivery-receipt-component>
+  <mj-raw>{{#settings.display.delivery}}</mj-raw>
+    <bl-delivery-receipt-component></bl-delivery-receipt-component>
+  <mj-raw>{{/settings.display.delivery}}</mj-raw>
 
-  <bl-payment-receipt-component></bl-payment-receipt-component>
+  <mj-raw>{{#settings.display.payment}}</mj-raw>
+    <bl-payment-receipt-component></bl-payment-receipt-component>
+  <mj-raw>{{/settings.display.payment}}</mj-raw>
 
-  <mj-section css-class="bl-content">
-    <mj-column>
-      <mj-text>
-      </mj-text>
-    </mj-column>
-  </mj-section>
+  <mj-raw>{{#settings.display.leftToPay}}</mj-raw>
+    <bl-pay-later-notice-component></bl-pay-later-notice-component>
+  <mj-raw>{{/settings.display.leftToPay}}</mj-raw>
 
   <bl-text-block-component></bl-text-block-component>
 

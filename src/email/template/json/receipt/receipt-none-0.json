@@ -10,25 +10,36 @@
     "id": "ba12ajK9XCkal82l1z3",
     "address": "Trondheimsveien 10 D H0402, 0560 OSLO, Norway"
   },
-  "paymentSummary": {
+  "payment": {
     "total": "2240 NOK",
-    "payLater": false
+    "reservation": false,
+    "payments": [
+      {
+        "id": "a81kax91lz8aKL08",
+        "method": "VISA",
+        "cardNumber": "***0124",
+        "amount": "120 NOK",
+        "status": "Confirmed"
+      },
+      {
+        "id": "8kk0aBQWla0kx",
+        "method": "CASH",
+        "amount": "500 NOK",
+        "status": "Confirmed"
+      }
+    ]
   },
-  "payments": [
-    {
-      "id": "a81kax91lz8aKL08",
-      "method": "VISA",
-      "cardNumber": "***0124",
-      "amount": "120 NOK",
-      "status": "Confirmed"
-    },
-    {
-      "id": "8kk0aBQWla0kx",
-      "method": "CASH",
-      "amount": "500 NOK",
-      "status": "Confirmed"
+  "order": {
+    "id": "8jdsal89cvll221LAS"
+  },
+  "settings": {
+    "display": {
+      "leftToPay": true,
+      "payment": true,
+      "deadline": true,
+      "delivery": false
     }
-  ],
+  },
   "itemList": {
     "summary": {
       "total": "710 NOK",

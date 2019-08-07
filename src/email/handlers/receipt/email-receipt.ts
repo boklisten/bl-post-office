@@ -67,6 +67,9 @@ export class EmailReceipt implements DepartmentHandler {
     return {
       name: recipient.name,
       itemList: recipient.itemList,
+      settings: recipient.settings,
+      payment: recipient.payment,
+      delivery: recipient.delivery,
     };
   }
 

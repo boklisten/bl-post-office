@@ -27,10 +27,10 @@ export default class BlPaymentReceiptComponent extends BodyComponent {
         <mj-column>
           <mj-divider border-width="1px" border-style="dashed" border-color="lightgrey" />
           <mj-text>
-            <h2 style="text-align: center">TOTALT: {{paymentSummary.total}}</h2>
+            <h2 style="text-align: center">TOTALT: {{payment.total}}</h2>
           </mj-text>
           <mj-divider border-width="1px" border-style="dashed" border-color="lightgrey" />
-          <mj-raw>{{^paymentSummary.payLater}}</mj-raw>
+          <mj-raw>{{^payment.reservation}}</mj-raw>
             <mj-text>
               <h2>Betalingsdetaljer</h2>
             </mj-text>
@@ -41,22 +41,24 @@ export default class BlPaymentReceiptComponent extends BodyComponent {
                 <th>Status</th>
                 <th>Betalt</th>
               </tr>
-              <mj-raw>{{#payments}}</mj-raw>
+              <mj-raw>{{#payment.payments}}</mj-raw>
                 <tr>
                   <td>{{id}}</td>
                   <td>{{method}} {{cardNumber}}</td>
                   <td>{{status}}</td>
                   <td>{{amount}}</td>
                 </tr>
-              <mj-raw>{{/payments}}</mj-raw>
+              <mj-raw>{{/payment.payments}}</mj-raw>
             </mj-table>
-          <mj-raw>{{/paymentSummary.payLater}}</mj-raw>
+          <mj-raw>{{/payment.reservation}}</mj-raw>
 
-          <mj-raw>{{#paymentSummary.payLater}}</mj-raw>
+          <mj-raw>{{#payment.reservation}}</mj-raw>
             <mj-text>
-              <h4>Dette er kun en reservasjon. Du har ikke betalt. Betaling skjer når du kommer på stand.</h4>
+              <div style="border: 5px solid orange; padding: 10px">
+              <h2>Dette er kun en reservasjon. Du har ikke betalt. Betaling skjer når du kommer på stand.</h2>
+              </div>
             </mj-text>
-          <mj-raw>{{/paymentSummary.payLater}}</mj-raw>
+          <mj-raw>{{/payment.reservation}}</mj-raw>
         </mj-column>
       </mj-section>
 		`);

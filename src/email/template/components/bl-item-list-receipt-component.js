@@ -29,46 +29,73 @@ export default class BlItemListReceiptComponent extends BodyComponent {
           <mj-text>
             <h2>Transaksjoner</h2>
           </mj-text>
+
           <mj-table css-class="bl-table">
-            <tr style="border-bottom: 5px solid ${BL_STYLES.color.main}">
+            <tr style="border-bottom: 5px solid">
               <th>#</th>
               <th>Tittel</th>
               <th>Handling</th>
-              <th>Frist</th>
-              <th>Pris</th>
-              <th>Igjen å betale</th>
+              <mj-raw>{{#settings.display.deadline}}</mj-raw>
+                <th>Frist</th>
+              <mj-raw>{{/settings.display.deadline}}</mj-raw>
+              <mj-raw>{{#settings.display.payment}}</mj-raw>
+                <th>Pris</th>
+              <mj-raw>{{/settings.display.payment}}</mj-raw>
+              <mj-raw>{{#settings.display.leftToPay}}</mj-raw>
+                <th>Igjen å betale</th>
+              <mj-raw>{{/settings.display.leftToPay}}</mj-raw>
             </tr>
 
             <mj-raw>{{#itemList.items}}</mj-raw>
-            <tr style="text-align: center; font-size: 9px">
-              <td>{{id}}</td>
-              <td>{{title}}</td>
-              <td>{{action}}</td>
-              <td>{{deadline}}</td>
-              <td>{{amount}}</td>
-              <td>{{leftToPay}}</td>
-            </tr>
+              <tr style="text-align: center; font-size: 9px">
+                <td>{{id}}</td>
+                <td>{{title}}</td>
+                <td>{{action}}</td>
+                <mj-raw>{{#settings.display.deadline}}</mj-raw>
+                  <td>{{deadline}}</td>
+                <mj-raw>{{/settings.display.deadline}}</mj-raw>
+                <mj-raw>{{#settings.display.payment}}</mj-raw>
+                  <td>{{amount}}</td>
+                <mj-raw>{{/settings.display.payment}}</mj-raw>
+                <mj-raw>{{#settings.display.leftToPay}}</mj-raw>
+                  <td>{{leftToPay}}</td>
+                <mj-raw>{{/settings.display.leftToPay}}</mj-raw>
+              </tr>
+
             <mj-raw>{{/itemList.items}}</mj-raw>
-            <tr>
-              <th colspan="3"></th>
-              <th>Sum</th>
-              <th style="border-top: 1px solid ${
-                BL_STYLES.color.main
-              }; border-bottom: 5px double ${
-      BL_STYLES.color.main
-    };">{{itemList.summary.total}}</th>
-              <th style="border-top: 1px solid ${
-                BL_STYLES.color.main
-              }; border-bottom: 5px double ${
-      BL_STYLES.color.main
-    };">{{itemList.summary.totalLeftToPay}}</th>
+
+            <mj-raw>{{#settings.display.payment}}</mj-raw>
+
+            <tr style="text-align: center;">
+              <td></td>
+              <td></td>
+              <mj-raw>{{#settings.display.deadline}}</mj-raw>
+                <td></td>
+              <mj-raw>{{/settings.display.deadline}}</mj-raw>
+
+              <td style="text-align: center">Sum</td>
+
+              <td style="text-align: center; border-top: 1px solid; border-bottom: 5px double;">{{itemList.summary.total}}</td>
+
+              <mj-raw>{{#settings.display.leftToPay}}</mj-raw>
+                <td style="text-align: center; border-top: 1px solid; border-bottom: 5px double;">{{itemList.summary.totalLeftToPay}}</td>
+              <mj-raw>{{/settings.display.leftToPay}}</mj-raw>
             </tr>
-            <tr style="font-size: 10px;">
-              <th colspan="3"></th>
-              <th>MVA</th>
-              <th>{{itemList.summary.taxPercentage}}% {{itemList.summary.totalTax}}</th>
-              <th>{{itemList.summary.taxPercentageLeftToPay}}% {{itemList.summary.totalTaxLeftToPay}}</th>
+
+            <tr style="font-size: 8px; text-align: center">
+              <td></td>
+              <td></td>
+              <mj-raw>{{#settings.display.deadline}}</mj-raw>
+                <td></td>
+              <mj-raw>{{/settings.display.deadline}}</mj-raw>
+              <td style="text-align: center">MVA</td>
+              <td>{{itemList.summary.taxPercentage}}% {{itemList.summary.totalTax}}</td>
+              <mj-raw>{{#settings.display.leftToPay}}</mj-raw>
+                <td>{{itemList.summary.taxPercentageLeftToPay}}% {{itemList.summary.totalTaxLeftToPay}}</td>
+              <mj-raw>{{/settings.display.leftToPay}}</mj-raw>
             </tr>
+
+            <mj-raw>{{/settings.display.payment}}</mj-raw>
           </mj-table>
         </mj-column>
         </mj-section>
