@@ -27,7 +27,13 @@ export default class BlPaymentReceiptComponent extends BodyComponent {
         <mj-column>
           <mj-divider border-width="1px" border-style="dashed" border-color="lightgrey" />
           <mj-text>
-            <h2 style="text-align: center">TOTALT: {{payment.total}}</h2>
+            <h2 style="text-align: center">TOTAL SUM: {{payment.total}}</h2>
+
+            <mj-raw>{{#settings.display.leftToPay}}</mj-raw>
+              <mj-raw>{{^payment.reservation}}</mj-raw>
+                <h3 style="text-align: center">Betalt: {{payment.totalPayed}}</h3>
+              <mj-raw>{{/payment.reservation}}</mj-raw>
+            <mj-raw>{{/settings.display.leftToPay}}</mj-raw>
           </mj-text>
           <mj-divider border-width="1px" border-style="dashed" border-color="lightgrey" />
           <mj-raw>{{^payment.reservation}}</mj-raw>

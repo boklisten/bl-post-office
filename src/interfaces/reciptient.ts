@@ -46,6 +46,7 @@ export type Delivery = {
 
 export type Payment = {
   total: string;
+  totalPayed: string; // the amount the customer has payed in total for this order
   reservation: boolean; // if the order is just a reservation, and the customer has not payed anything
   payments: {
     id: string; // id of payment

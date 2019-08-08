@@ -31,6 +31,7 @@ const recipients: Recipient[] = [
     },
     payment: {
       total: '560 NOK',
+      totalPayed: '100 NOK',
       reservation: false,
       payments: [
         {

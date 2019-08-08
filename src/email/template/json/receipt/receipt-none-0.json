@@ -11,14 +11,15 @@
     "address": "Trondheimsveien 10 D H0402, 0560 OSLO, Norway"
   },
   "payment": {
-    "total": "2240 NOK",
+    "total": "2970 NOK",
+    "totalPayed": "810 NOK",
     "reservation": false,
     "payments": [
       {
         "id": "a81kax91lz8aKL08",
         "method": "VISA",
         "cardNumber": "***0124",
-        "amount": "120 NOK",
+        "amount": "310 NOK",
         "status": "Confirmed"
       },
       {
@@ -34,10 +35,10 @@
   },
   "settings": {
     "display": {
-      "leftToPay": true,
+      "leftToPay": false,
       "payment": true,
       "deadline": true,
-      "delivery": false
+      "delivery": true
     }
   },
   "itemList": {
