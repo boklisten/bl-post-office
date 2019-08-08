@@ -4,6 +4,10 @@
 - npm i
 - to develop you must also do: npm i gulp-cli -g
 
+## Documentation
+### Email
+[Receipt](docs/email/receipt.md)
+
 
 ## folderstructure
 - to test json output with mustache, the name and folder structure in 
