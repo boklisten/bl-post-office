@@ -10,8 +10,8 @@
       <mj-column>
         <mj-text>
           <h4>Hei {{ name }}</h4>
-          <p>Du er registrert som privatist som har bøker hvor andre avdrag skal betales innen 1.juli. Vi har per dags dato ikke registrert tilbakesalg eller utkjøp fra deg.</p> 
-          <p>Bøker som ikke er solgt tilbake til Boklisten (enten via stand eller posten) eller utkjøpt innen 1.juli mottar faktura fra oss. Fakturagebyret på 150 kroner per bok kommer i tillegg til prisen for andre avdrag, og det anbefales derfor at du kommer innom oss før fristen.</p>
+          <p>Du er registrert som privatist som har bøker hvor andre avdrag skal betales innen {{ settings.text.deadline }}. Vi har per dags dato ikke registrert tilbakesalg eller utkjøp fra deg.</p> 
+          <p>Bøker som ikke er solgt tilbake til Boklisten (enten via stand eller posten) eller utkjøpt innen {{ settings.text.deadline }} mottar faktura fra oss. Fakturagebyret på 150 kroner per bok kommer i tillegg til prisen for andre avdrag, og det anbefales derfor at du kommer innom oss før fristen.</p>
           <i>Dersom du allerede har sendt bøkene dine i posten kan du se bort fra denne henvendelsen.</i>  
         </mj-text>
       </mj-column>
@@ -38,7 +38,7 @@
             OBS: Kun Boklisten.no sine ansatte kan kjøpe tilbake bøker eller ta imot betaling for andre avdrag. Skolen har ikke ansvar for å ta imot bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal kontaktes dersom du har spørsmål om bøker. 
           </i>
           <p>Du kan betale andre avdrag ved å logge deg på våre nettsider og betale der. Du kan også ordne dette på stand eller via Vipps-nummer 33415. Ytterligere informasjon finner du i vår første informasjonsmail, sendt ut i mai.</p>
-          <p>Husk at fristen for å selge tilbake uten faktura er 1.juli – vi tar imot bøker også etter dette tidspunktet, men du må da fortsatt betale fakturagebyret. Det er ikke mulig å selge bøker til oss via resepsjonen på privatistskolen du går på.</p>
+          <p>Husk at fristen for å selge tilbake uten faktura er {{ settings.text.deadline }} – vi tar imot bøker også etter dette tidspunktet, men du må da fortsatt betale fakturagebyret. Det er ikke mulig å selge bøker til oss via resepsjonen på privatistskolen du går på.</p>
           <i>Det er alltid bedre å være tidlig enn sent ute – da blir det lettere for deg å ordne opp om noe skulle gå galt! Vi ser frem til å se deg på en av våre stands!</i>
           <p>Med vennlig hilsen</p>
           <i>Boklisten.no</i>

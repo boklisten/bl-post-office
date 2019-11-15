@@ -22,6 +22,9 @@ const recipients: Recipient[] = [
     user_id: '432',
     message_id: '889123hjhajsalkaks88cla80das',
     settings: {
+      text: {
+        deadline: '20. Desember',
+      },
       display: {
         leftToPay: true,
         payment: true,

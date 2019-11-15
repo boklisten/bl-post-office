@@ -60,6 +60,7 @@ export class EmailReminder implements DepartmentHandler {
     return {
       itemList: recipient.itemList,
       name: recipient.name,
+      settings: recipient.settings,
       textBlocks: messageOptions.textBlocks,
     };
   }

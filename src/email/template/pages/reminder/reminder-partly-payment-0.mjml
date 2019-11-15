@@ -11,7 +11,7 @@
       <mj-column>
         <mj-text>
           <h4>Hei {{ name }}</h4>
-          <p>Det begynner å nærme seg fristen for å betale andre avdrag på bøkene du har kjøpt fra oss i Boklisten.no. Siste frist er 1.juli. Under ser du en liste over de bøkene du har som snart har frist.</p> 
+          <p>Det begynner å nærme seg fristen for å betale andre avdrag på bøkene du har kjøpt fra oss i Boklisten.no. Siste frist er {{ settings.text.deadline }}. Under ser du en liste over de bøkene du har som snart har frist.</p> 
         </mj-text>
       </mj-column>
     </mj-section>
@@ -23,7 +23,7 @@
         <mj-text>
           <h4>Tilbakekjøp av bøker</h4>
           <p>Vi ønsker å kjøpe svært mange bøker tilbake, såfremt de er godt tatt vare på. Vedlagt finner du vår innkjøpsliste for denne sesongen.</p>
-          <p>Dersom du ønsker å selge bøkene dine tilbake til oss, slipper du å betale andre avdrag – men pass på at du gjør dette før 1.juli. Da slipper du også fakturagebyret. Kom innom vår stand! Vi vil være tilstede på skolen din ved flere anledninger frem mot fristen, samt på et felles mottak mot slutten av perioden. Sjekk www.boklisten.no for komplette åpningstider på din skole!</p>
+          <p>Dersom du ønsker å selge bøkene dine tilbake til oss, slipper du å betale andre avdrag – men pass på at du gjør dette før {{ settings.text.deadline }}. Da slipper du også fakturagebyret. Kom innom vår stand! Vi vil være tilstede på skolen din ved flere anledninger frem mot fristen. Sjekk www.boklisten.no for komplette åpningstider på din skole!</p>
           <p>Tilbakekjøp av bøker kan også skje hvis du sender dem til: Boklisten.no AS, Postboks 8, 1316 Eiksmarka. Husk å legge ved et ark hvor du skriver ditt navn, telefonnummer, og hvilke bøker du selger til oss. Du bør også sende en pakke med sporing, og beholde sporingen inntil leveringen er registrert. Vi kan ikke garantere at vi kjøper inn bøkene dine bare fordi du har sendt dem til oss. Dersom du er usikker på om boken din kan kjøpes tilbake, viser vi til innkjøpslisten. Vi krever også at boken er i god nok stand til at vi kan bruke den igjen. Tror du boken din kanskje er i grenseland, kan du sende oss et bilde av den for godkjennelse før du sender boken.</p>
           <p>Vi kommer til å sende ytterligere e-post og SMS med påminnelser når fristen nærmer seg, men hvis du er ferdig med eksamen er det ikke noe å vente på, med mindre du tror du kommer til å trenge boken igjen.</p>
           </mj-text>
@@ -42,9 +42,9 @@
       <mj-column>
         <mj-text>
           <h4>Betale andre avdrag</h4>
-          <p>Dersom du ønsker å beholde boken din, kan du betale andre avdrag nå. Dette kan du gjøre ved å logge deg inn på våre nettsider og betale der. Du kan også betale på stand, eller via Vipps-nummer 33415. Ønsker du å bruke Vipps, kan du sende oss en mail om dette. Andre avdrag er på 33% av bokens nypris, så lenge du betaler før fristen 1.juli.</p>
+          <p>Dersom du ønsker å beholde boken din, kan du betale andre avdrag nå. Dette kan du gjøre ved å logge deg inn på våre nettsider og betale der. Du kan også betale på stand, eller via Vipps-nummer 33415. Ønsker du å bruke Vipps, kan du sende oss en mail om dette. Andre avdrag er på 33% av bokens nypris, så lenge du betaler før fristen {{ settings.text.deadline }}</p>
           <h4>Faktura</h4>
-          <p>Dersom du ikke selger tilbake boken til oss eller betaler andre avdrag innen 1.juli, sender vi ut faktura for andre avdrag. Du vil da måtte betale både avdrag og fakturagebyr. Vi håper derfor du ordner opp før dette – gjerne ved å komme innom og selge boken tilbake til oss!</p>
+          <p>Dersom du ikke selger tilbake boken til oss eller betaler andre avdrag innen {{ settings.text.deadline }}, sender vi ut faktura for andre avdrag. Du vil da måtte betale både avdrag og fakturagebyr. Vi håper derfor du ordner opp før dette – gjerne ved å komme innom og selge boken tilbake til oss!</p>
           <h4>Spørsmål</h4>
           <p>Hvis du har spørsmål eller lurer på hvorfor du fikk denne e-posten, kan du ta kontakt med Boklisten.no på e-post: info@boklisten.no</p>
           <p>Vi ønsker deg lykke til på eksamen!</p>

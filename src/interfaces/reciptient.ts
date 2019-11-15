@@ -26,6 +26,9 @@ export type Order = {
 };
 
 export type EmailContentSettings = {
+  text?: {
+    deadline: string;
+  };
   display?: {
     leftToPay?: boolean;
     payment?: boolean;
