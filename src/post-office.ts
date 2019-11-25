@@ -7,19 +7,7 @@ import {SmsDepartment} from './sms/sms.department';
 import {logger, setLogger} from './logger';
 import {MessageMediums} from './interfaces/message-mediums';
 import 'reflect-metadata';
-
-export type PostOfficeConfig = {
-  reminder: {
-    mediums: MessageMediums;
-  };
-  generic: {
-    mediums: MessageMediums;
-  };
-  receipt: {
-    mediums: MessageMediums;
-  };
-};
-
+import {PostOfficeConfig} from './post-office.config';
 /**
  * A single point for sending and reciving messages to and from a customer
  */
@@ -27,27 +15,22 @@ export type PostOfficeConfig = {
 export class PostOffice {
   private emailDepartment: EmailDepartment;
   private config: PostOfficeConfig;
+  private supportedTypes: string[];
 
   constructor(
     private _emailDepartment: EmailDepartment,
     private _smsDepartment: SmsDepartment,
   ) {
+    this.supportedTypes = ['receipt', 'reminder', 'generic', 'match'];
     this.config = {
-      reminder: {
-        mediums: {
-          email: false,
-          sms: false,
-        },
-      },
-      generic: {
-        mediums: {
-          email: false,
-          sms: false,
-        },
-      },
       receipt: {
         mediums: {
           email: true,
+        },
+      },
+      match: {
+        mediums: {
+          sms: true,
         },
       },
     };
@@ -103,19 +86,26 @@ export class PostOffice {
         return await this.delegateToDepartments(
           recipients,
           options,
-          this.config.reminder.mediums,
+          this.config.reminder ? this.config.reminder.mediums : {},
         );
       case 'generic':
         return await this.delegateToDepartments(
           recipients,
           options,
-          this.config.generic.mediums,
+          this.config.generic ? this.config.generic.mediums : {},
         );
       case 'receipt':
         return await this.delegateToDepartments(
           recipients,
           options,
-          this.config.receipt.mediums,
+          this.config.receipt ? this.config.receipt.mediums : {},
+        );
+      case 'match':
+        console.log('maaatch');
+        return await this.delegateToDepartments(
+          recipients,
+          options,
+          this.config.match ? this.config.match.mediums : {},
         );
       default:
         throw `options.type "${options.type}" is not supported`;
@@ -159,7 +149,7 @@ export class PostOffice {
   }
 
   private isTypeSupported(type: any): boolean {
-    if (['reminder', 'generic', 'receipt'].indexOf(type) >= 0) {
+    if (this.supportedTypes.indexOf(type) >= 0) {
       return true;
     }
     return false;

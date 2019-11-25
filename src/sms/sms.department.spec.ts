@@ -8,17 +8,17 @@ import {
   MessageSubtype,
 } from '../interfaces/message-options';
 import {TestEnvironment} from '../../test/test-environment';
-import {SmsReminder} from './handlers/reminder/sms-reminder';
 import {SmsBroker} from './broker/sms.broker';
+import {SmsHandler} from './handlers/sms.handler';
 
-const mockedSmsReminder = mock(SmsReminder);
+const mockedSmsHandler = mock(SmsHandler);
 const mockedSmsBroker = mock(SmsBroker);
 const testEnvironment = new TestEnvironment({
   classesToBind: [SmsDepartment],
   classesToMock: [
     {
-      real: SmsReminder,
-      mock: instance(mockedSmsReminder),
+      real: SmsHandler,
+      mock: instance(mockedSmsHandler),
     },
     {
       real: SmsBroker,
@@ -96,12 +96,12 @@ test('should call SmsReminder if type is reminder', async t => {
     subtype: 'partly-payment',
   };
 
-  when(mockedSmsReminder.send(anything(), anything())).thenResolve(true);
+  when(mockedSmsHandler.send(anything(), anything())).thenResolve(true);
 
   const res = await smsDepartment.send(recipients, messageOptions);
 
   const [recipientArg, messageOptionsArg] = capture(
-    mockedSmsReminder.send,
+    mockedSmsHandler.send,
   ).first();
 
   t.is(recipientArg, recipients[0]);
@@ -125,13 +125,13 @@ test('should not call SmsReminder if recipient has mediumOverride.sms set to fal
     subtype: 'partly-payment',
   };
 
-  when(mockedSmsReminder.send(anything(), anything())).thenResolve(true);
+  when(mockedSmsHandler.send(anything(), anything())).thenResolve(true);
 
   try {
     await smsDepartment.send(recipients, messageOptions);
   } catch (e) {}
 
-  verify(mockedSmsReminder.send(recipients[0], messageOptions)).never();
+  verify(mockedSmsHandler.send(recipients[0], messageOptions)).never();
 
   t.pass();
 });

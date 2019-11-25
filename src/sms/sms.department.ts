@@ -2,16 +2,16 @@ import {Department} from '../interfaces/department';
 import {Recipient} from '../interfaces/reciptient';
 import {MessageOptions} from '../interfaces/message-options';
 import {injectable} from 'inversify';
-import {SmsReminder} from './handlers/reminder/sms-reminder';
+import {SmsHandler} from './handlers/sms.handler';
 import 'reflect-metadata';
 import {logger} from '../logger';
 
 @injectable()
 export class SmsDepartment implements Department {
-  private supportedTypes = ['reminder'];
-  private supportedSubtypes = ['partly-payment', 'rent', 'loan'];
+  private supportedTypes = ['reminder', 'match'];
+  private supportedSubtypes = ['partly-payment', 'rent', 'loan', 'none'];
 
-  constructor(private _smsReminder: SmsReminder) {}
+  constructor(private _smsHandler: SmsHandler) {}
 
   public async send(
     recipients: Recipient[],
@@ -39,7 +39,7 @@ export class SmsDepartment implements Department {
       ) {
         continue;
       }
-      promiseArr.push(this._smsReminder.send(recipient, messageOptions));
+      promiseArr.push(this._smsHandler.send(recipient, messageOptions));
     }
 
     try {

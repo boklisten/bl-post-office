@@ -6,6 +6,11 @@ export const SMS_SETTINGS = {
     number: '+4712345678',
   },
   text: {
+    match: {
+      none: [
+        'Hei - Nå nærmer fristen seg. Klikk her: web.boklisten.co/match?deadline=201219',
+      ],
+    },
     reminder: {
       'partly-payment': [
         'Hei - det nærmer seg frist for bøkene dine! Mange steder begynner å stenge før fristen 1.juli. Kun Boklistens ansatte kan ta imot bøker. Sjekk nettsiden for åpningstider og postadresse, samt informasjonsmailene vi har sendt ut. Mvh Boklisten.no',
