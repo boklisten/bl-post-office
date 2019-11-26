@@ -101,7 +101,6 @@ export class PostOffice {
           this.config.receipt ? this.config.receipt.mediums : {},
         );
       case 'match':
-        console.log('maaatch');
         return await this.delegateToDepartments(
           recipients,
           options,

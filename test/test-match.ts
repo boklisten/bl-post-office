@@ -12,6 +12,7 @@ const recipients: Recipient[] = [
     user_id: '432',
     message_id: '889123hjhajsalkaks88cla80das',
     phone: '+4791804211',
+    mediumOverrides: {sms: false},
     settings: {
       text: {
         deadline: '20.12.19',

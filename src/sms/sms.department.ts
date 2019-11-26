@@ -37,6 +37,11 @@ export class SmsDepartment implements Department {
         recipient.mediumOverrides &&
         recipient.mediumOverrides.sms === false
       ) {
+        logger.debug(
+          `should not send sms: recipient "${
+            recipient.user_id
+          }" has mediumOverrides.sms set to false`,
+        );
         continue;
       }
       promiseArr.push(this._smsHandler.send(recipient, messageOptions));
