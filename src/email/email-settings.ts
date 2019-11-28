@@ -18,13 +18,13 @@ export const EMAIL_SETTINGS: any = {
     reminder: {
       rent: [
         'Informasjon om bøker fra Boklisten.no',
-        'Andre påminnelse om tilbakelevering av bøker',
+        'Påminnelse om tilbakelevering av bøker',
         'Siste påminnelse om tilbakelevering av bøker',
       ],
       'partly-payment': [
         'Informasjon om bøker fra Boklisten.no',
-        'Andre påminnelse om bøker med frist 1.juli',
-        'Siste påminnelse om bøker med frist 1.juli',
+        'Påminnelse om bøker fra Boklisten.no',
+        'Siste påminnelse om bøker fra Boklisten.no',
       ],
       loan: [
         'Informasjon om bøker fra Boklisten.no',
