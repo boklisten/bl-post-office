@@ -25,13 +25,13 @@
           <h4>Steder og tidspunkter der du kan selge bøkene tilbake til oss:</h4>
           <ul>
             <li>
-                Bøkene kan selges på stand på skolen din eller andre steder vi har åpent. Åpningstider for resterende dagerkan du finne www.boklisten.no 
+                Bøkene kan selges på stand på skolen din eller andre steder vi har åpent. Åpningstider for resterende dager kan du finne på www.boklisten.no/info/branch 
             </li>
             <li>
               Bøker kan også sendes per post til Boklisten.no. 
               Vår adresse er: Boklisten.no, Postboks 8, 1316 Eiksmarka.
               Husk å legge ved liste over bøkene og ditt navn og telefonnummer i pakken med bøkene. Vi tar kun imot bøker som er på vår innkjøpsliste.
-              Bøken  kan selges på stand på skolen din eller andre steder vi har åpent. Åpningstider for resterende dagerkan du finne www.boklisten.no 
+              Bøker kan selges på stand på skolen din eller andre steder vi har åpent.
             </li>
           </ul>
           <i>
@@ -48,7 +48,7 @@
 
     <mj-section>
       <mj-column>
-        <mj-button href="http://www.boklisten.no/info?tab=buyback" background-color="#26768f">
+        <mj-button href="http://www.boklisten.no/info/buyback" background-color="#26768f">
           Klikk her for å se vår innkjøpsliste
         </mj-button>
       </mj-column>
