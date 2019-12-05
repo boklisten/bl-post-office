@@ -25,6 +25,7 @@ export const SMS_SETTINGS = {
       loan: [
         'Det er ikke registrert din fulle levering av bøker. Se påminnelsesmailer for mer info. Mvh Boklisten.no',
         'Siste påminnelse! Det er ikke registrert din fulle levering av bøker, absolutt siste frist er snart. Se påminnelsesmailer for mer info. Mvh Boklisten.no',
+        'En liten påminnelse fra Boklisten.no: Husk å skrive navn og skoleår i bøkene dine, så er det større sjanse for at boken din kommer til rette dersom du mister den. Du sikrer deg også i større grad mot tyveri. Vi ønsker lykke til med resten av skoleåret! Med vennlig hilsen, Boklisten.no',
       ],
     },
   },
