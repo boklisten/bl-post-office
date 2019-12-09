@@ -9,7 +9,7 @@ export const SMS_SETTINGS = {
     match: {
       none: [
         'Melding til deg med kundeavtale hos Boklisten.no: Vennligst gi oss beskjed om hva som skal skje med bøkene dine: boklisten.no/m?d=201219',
-        'Hei fra oss i Boklisten.no. Minner om vår gjenbruksordning hvor du kan spare penger ved å levere til noen andre. Gi oss beskjed om hva som skal skje med bøkene dine: boklisten.no/m?d=201219',
+        'Hei fra oss i Boklisten.no. Minner om vår gjenbruksordning. Gi oss beskjed om hva som skal skje med bøkene dine: boklisten.no/m?d=201219',
       ],
     },
     reminder: {
