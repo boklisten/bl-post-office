@@ -30,7 +30,7 @@
 
     <mj-section>
       <mj-column>
-        <mj-button href="http://www.boklisten.no/info?tab=buyback" background-color="#26768f">
+        <mj-button href="http://www.boklisten.no/info/buyback" background-color="#26768f">
           Klikk her for å se vår innkjøpsliste
         </mj-button>
       </mj-column>
