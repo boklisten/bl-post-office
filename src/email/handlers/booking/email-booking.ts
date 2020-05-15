@@ -1,17 +1,22 @@
-import { DepartmentHandler } from "../../../interfaces/department-handler";
-import { MessageOptions } from "../../../interfaces/message-options";
-import { Recipient } from "../../../interfaces/reciptient";
-import "reflect-metadata";
 import { injectable } from "inversify";
-import { EmailContent } from "../../email-content";
-import { EmailBroker } from "../../broker/email.broker";
+import { DepartmentHandler } from "../../../interfaces/department-handler";
 import { EmailTemplateResolver } from "../../email-template-resolver";
+import { EmailBroker } from "../../broker/email.broker";
 import { EmailTemplateInput } from "../../../interfaces/emailTemplateInput";
+import { EmailContent } from "../../email-content";
+import {
+  MessageOptions,
+  MessageSubtype
+} from "../../../interfaces/message-options";
+import { Recipient } from "../../../interfaces/reciptient";
+import { EmailContent } from "../../email-content";
 import { EMAIL_SETTINGS } from "../../email-settings";
+import { logger } from "../../../logger";
+import { isNullOrUndefined } from "util";
 
 @injectable()
-export class EmailReceipt implements DepartmentHandler {
-  private supportedSubtypes = ["none"];
+export class EmailBooking implements DepartmentHandler {
+  private supportedSubtypes: MessageSubtype[] = ["confirmed", "canceled"];
 
   constructor(
     private _emailTemplateResolver: EmailTemplateResolver,
@@ -22,8 +27,17 @@ export class EmailReceipt implements DepartmentHandler {
     recipient: Recipient,
     options: MessageOptions
   ): Promise<boolean> {
-    this.validateOptions(options);
-    this.validateRecipient(recipient);
+    if (isNullOrUndefined(recipient)) {
+      throw new ReferenceError("recipient is undefined");
+    }
+
+    if (isNullOrUndefined(options)) {
+      throw new ReferenceError("options is undefined");
+    }
+
+    if (!this.supportedSubtypes.includes(options.subtype)) {
+      throw new TypeError(`subtype "${options.subtype}" is not supported`);
+    }
 
     const emailTemplateInput = this.createEmailTemplateInput(
       recipient,
@@ -65,27 +79,7 @@ export class EmailReceipt implements DepartmentHandler {
     options: MessageOptions
   ): EmailTemplateInput {
     return {
-      name: recipient.name,
-      itemList: recipient.itemList,
-      settings: recipient.settings,
-      payment: recipient.payment,
-      delivery: recipient.delivery
+      name: recipient.name
     };
-  }
-
-  private validateRecipient(recipient: Recipient) {
-    if (!recipient) {
-      throw new ReferenceError("recipient is not defined");
-    }
-
-    if (!recipient.itemList) {
-      throw new ReferenceError("recipient.itemList is not defined");
-    }
-  }
-
-  private validateOptions(options: MessageOptions) {
-    if (this.supportedSubtypes.indexOf(options.subtype) <= -1) {
-      throw new TypeError(`subtype "${options.subtype}" is not supported`);
-    }
   }
 }

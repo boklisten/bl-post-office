@@ -1,6 +1,17 @@
-export type MessageType = 'reminder' | 'receipt' | 'generic' | 'match';
-export type MessageSubtype = 'partly-payment' | 'rent' | 'loan' | 'none';
-import {MessageMediums} from './message-mediums';
+export type MessageType =
+  | "reminder"
+  | "receipt"
+  | "generic"
+  | "match"
+  | "booking";
+export type MessageSubtype =
+  | "partly-payment"
+  | "rent"
+  | "loan"
+  | "none"
+  | "confirmed"
+  | "canceled";
+import { MessageMediums } from "./message-mediums";
 export type TextBlock = {
   text: string;
   title?: string;
