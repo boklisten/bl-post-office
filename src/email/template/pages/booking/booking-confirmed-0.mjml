@@ -1,0 +1,43 @@
+<mjml>
+  <mj-head>
+    <mj-include path="../../styles/bl-style.mjml" />
+  </mj-head>
+
+  <mj-body css-class="bl-body">
+    <bl-header-component></bl-header-component>
+    <mj-section>
+      <mj-column>
+        <mj-text>
+          <h4>Hei {{ name }}</h4>
+          <h1>Bekreftelse på din booking</h1>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-table css-class="bl-table">
+          <tr>
+            <th>Dato</th>
+            <th>Tid</th>
+            <th>Sted</th>
+          </tr>
+          <tr style="text-align: center;" >
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.hour }}</td>
+            <td>{{ booking.branch }}, {{ booking.address }}</td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-button href="http://localhost:4200/bookings/customer/list" background-color="#26768f">
+          Klikk her for å se dine bookinger
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <bl-footer-component></bl-footer-component>
+  </mj-body>
+</mjml>

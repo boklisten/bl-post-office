@@ -3,7 +3,6 @@ import { DepartmentHandler } from "../../../interfaces/department-handler";
 import { EmailTemplateResolver } from "../../email-template-resolver";
 import { EmailBroker } from "../../broker/email.broker";
 import { EmailTemplateInput } from "../../../interfaces/emailTemplateInput";
-import { EmailContent } from "../../email-content";
 import {
   MessageOptions,
   MessageSubtype

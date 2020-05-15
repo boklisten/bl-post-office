@@ -1,0 +1,10 @@
+{
+  "name": "Billy Bob",
+  "id": "sadk812kxc8als",
+  "booking": {
+    "date": "Mandag 01.06.2020",
+    "hour": "kl. 10.10",
+    "branch": "Akademiet Drammen",
+    "address": "Signaturveien 4, 0321 Burunsand"
+  }
+}
