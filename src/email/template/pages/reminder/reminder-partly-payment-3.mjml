@@ -1,0 +1,62 @@
+<mjml> 
+  <mj-head>
+    <mj-include path="../../styles/bl-style.mjml"/>
+  </mj-head>
+
+  <mj-body css-class="bl-body">
+    <bl-header-component></bl-header-component>
+
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>Hei {{ name }}</h4>
+          <h2>Vi kan ikke se å ha motatt andre delbetaling for dine bøker med first {{ settings.text.deadline }}.</h2>
+          <p>Det har nå blitt generert en faktura for dine utestående bøker.</p>
+          <p>Siden vi gjerne vil slippe å sende ut faktura til deg har vi utsatt fristen til 05.01.2020. Dette er ABSOLUTT siste frist, og det vil etter dette bli sendt ut faktura.</p>
+          <b>Det er billigere å ordne opp nå enn senere – så vi anbefaler at du gjør dette umiddelbart!</b>
+          <br />
+          <h3>Selge tilbake bøker</h3>
+          <p>Det er mulig å selge bøker på vår innkjøpsliste tilbake til oss i januar. Vi tar inn en god del bøker og om dine bøker ligger på vår innkjøpsliste er det billigste for deg å selge de tilbake.</p>
+          
+ <p>Hvis du vil selge tilbake bøker til oss, anbefaler vi at du betaler andre avdrag nå – før 5.januar, og deretter får penger tilbake når du selger bøker til oss i januar. På denne måten slipper du fakturagebyret.</p>
+ 
+ <p>Du kan gjøre det samme ved å sende bøker til oss i posten:</p>
+ 
+ <p>Boklisten.no AS
+Postboks 8
+1316 Eiksmarka</p>
+
+<p>Dersom du sender i posten, må du legge ved ditt kontonummer, navn og adresse. Om du ikke har betalt andre avdrag innen 5.januar, vil vi fortsatt fakturere gebyr.</p>
+
+<p>Det er også viktig at du sjekker at bøkene du sender ligger på vår innkjøpsliste. Vi tar ikke inn bøker som ikke ligger på listen. Denne kan du sjekke ut her: www.boklisten.no/info/buyback</p>
+
+          <br />
+          <h3>Betale andre avdrag</h3>
+          <p>Hvis du velger å betale andre avdrag kan du også beholde boken selv. Du betaler andre avdrag enkelt ved å logge inn på www.boklisten.no og klikker deg inn på "Dine bøker".</p>
+
+          <br />
+          <p>Dersom du har ytterligere spørsmål er det bare å sende oss en mail på: info@boklisten.no !</p>
+          <p>Med vennlig hilsen</p>
+          <i>Boklisten.no</i>
+          <br>
+          <br>
+          <p>Under ser du en liste over dine bøker:</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <bl-item-list-component></bl-item-list-component>
+
+    <mj-section>
+      <mj-column>
+        <mj-button href="http://www.boklisten.no/info/buyback" background-color="#26768f">
+          Klikk her for å se vår innkjøpsliste
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <bl-text-block-component></bl-text-block-component>
+
+    <bl-footer-component></bl-footer-component>
+  </mj-body>
+</mjml>

@@ -25,10 +25,12 @@ export const EMAIL_SETTINGS: any = {
         'Informasjon om bøker fra Boklisten.no',
         'Påminnelse om bøker fra Boklisten.no',
         'Siste påminnelse om bøker fra Boklisten.no',
+        'Manglende delbetaling av bøker',
       ],
       loan: [
         'Informasjon om bøker fra Boklisten.no',
         'Siste påminnelse om tilbakelevering av bøker',
+        '',
       ],
     },
     receipt: {
