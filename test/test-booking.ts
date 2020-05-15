@@ -30,7 +30,7 @@ postOffice.setConfig({
 postOffice
   .send(recipients, {
     type: "booking",
-    subtype: "confirmed",
+    subtype: "canceled",
     sequence_number: 0,
     mediums: { email: true }
   })
