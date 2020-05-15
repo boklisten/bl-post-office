@@ -1,4 +1,4 @@
-import {MessageMediums} from './interfaces/message-mediums';
+import { MessageMediums } from "./interfaces/message-mediums";
 
 //
 // User of PostOffice must activly set message mediums to TRUE
@@ -14,6 +14,9 @@ export type PostOfficeConfig = {
     mediums: MessageMediums;
   };
   match?: {
+    mediums: MessageMediums;
+  };
+  booking?: {
     mediums: MessageMediums;
   };
 };

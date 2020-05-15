@@ -1,4 +1,4 @@
-import {MessageMediums} from './message-mediums';
+import { MessageMediums } from "./message-mediums";
 
 export type ItemList = {
   summary: {
@@ -23,6 +23,13 @@ export type ItemList = {
 
 export type Order = {
   id?: string;
+};
+
+export type Booking = {
+  date: string;
+  hour: string;
+  branch: string;
+  address: string;
 };
 
 export type EmailContentSettings = {
@@ -71,6 +78,7 @@ export interface Recipient {
   delivery?: Delivery;
   payment?: Payment;
   order?: Order;
+  booking?: Booking;
   settings?: EmailContentSettings;
   mediumOverrides?: MessageMediums;
 }

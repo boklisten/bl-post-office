@@ -38,10 +38,7 @@ export class EmailBooking implements DepartmentHandler {
       throw new TypeError(`subtype "${options.subtype}" is not supported`);
     }
 
-    const emailTemplateInput = this.createEmailTemplateInput(
-      recipient,
-      options
-    );
+    let emailTemplateInput = this.createEmailTemplateInput(recipient, options);
 
     const template = this._emailTemplateResolver.generate(
       options,
@@ -63,7 +60,7 @@ export class EmailBooking implements DepartmentHandler {
       to: recipient.email as string,
       from: EMAIL_SETTINGS.reminder.fromEmail,
       fromName: EMAIL_SETTINGS.name,
-      subject: EMAIL_SETTINGS.subjects.receipt[options.subtype][seqNum],
+      subject: EMAIL_SETTINGS.subjects.booking[options.subtype][seqNum],
       html: template,
       message_id: recipient.message_id as string,
       user_id: recipient.user_id as string,
@@ -78,7 +75,8 @@ export class EmailBooking implements DepartmentHandler {
     options: MessageOptions
   ): EmailTemplateInput {
     return {
-      name: recipient.name
+      name: recipient.name,
+      booking: recipient.booking
     };
   }
 }

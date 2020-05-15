@@ -1,13 +1,17 @@
 export const POST_OFFICE_SETTINGS = {
   messageTypes: {
     reminder: {
-      mediums: ['email', 'sms'],
+      mediums: ["email", "sms"]
     },
     generic: {
-      mediums: ['email'],
+      mediums: ["email"]
     },
     receipt: {
-      mediums: ['email'],
+      mediums: ["email"]
     },
+    booking: {
+      mediums: ["email"]
+    }
   },
+  supportedTypes: ["receipt", "reminder", "generic", "match", "booking"]
 };

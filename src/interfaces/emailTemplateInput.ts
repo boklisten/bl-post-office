@@ -1,11 +1,12 @@
-import {TextBlock} from './message-options';
+import { TextBlock } from "./message-options";
 import {
   Order,
   ItemList,
   EmailContentSettings,
   Delivery,
   Payment,
-} from './reciptient';
+  Booking
+} from "./reciptient";
 
 export interface EmailTemplateInput {
   textBlocks?: TextBlock[];
@@ -15,5 +16,6 @@ export interface EmailTemplateInput {
   payment?: Payment;
   delivery?: Delivery;
   order?: Order;
+  booking?: Booking;
   htmlContent?: string;
 }

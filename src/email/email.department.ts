@@ -1,13 +1,14 @@
-import {MessageOptions} from '../interfaces/message-options';
-import {EmailReminder} from './handlers/reminder/email-reminder';
-import {Recipient} from '../interfaces/reciptient';
-import {Department} from '../interfaces/department';
-import {injectable} from 'inversify';
-import 'reflect-metadata';
-import {logger} from '../logger';
-import {EmailGeneric} from './handlers/generic/email-generic';
-import {DepartmentHandler} from '../interfaces/department-handler';
-import {EmailReceipt} from './handlers/receipt/email-receipt';
+import { MessageOptions } from "../interfaces/message-options";
+import { EmailReminder } from "./handlers/reminder/email-reminder";
+import { Recipient } from "../interfaces/reciptient";
+import { Department } from "../interfaces/department";
+import { injectable } from "inversify";
+import "reflect-metadata";
+import { logger } from "../logger";
+import { EmailGeneric } from "./handlers/generic/email-generic";
+import { DepartmentHandler } from "../interfaces/department-handler";
+import { EmailReceipt } from "./handlers/receipt/email-receipt";
+import { EmailBooking } from "./handlers/booking/email-booking";
 
 @injectable()
 export class EmailDepartment implements Department {
@@ -15,16 +16,19 @@ export class EmailDepartment implements Department {
     private _emailReminder: EmailReminder,
     private _emailGeneric: EmailGeneric,
     private _emailReceipt: EmailReceipt,
+    private _emailBooking: EmailBooking
   ) {}
 
   public send(recipients: Recipient[], options: MessageOptions): Promise<any> {
     switch (options.type) {
-      case 'reminder':
+      case "reminder":
         return this.sendToMany(recipients, options, this._emailReminder);
-      case 'generic':
+      case "generic":
         return this.sendToMany(recipients, options, this._emailGeneric);
-      case 'receipt':
+      case "receipt":
         return this.sendToMany(recipients, options, this._emailReceipt);
+      case "booking":
+        return this.sendToMany(recipients, options, this._emailBooking);
       default:
         throw `options.type "${options.type}" not supported`;
     }
@@ -33,7 +37,7 @@ export class EmailDepartment implements Department {
   private async sendToMany(
     recipients: Recipient[],
     options: MessageOptions,
-    handler: DepartmentHandler,
+    handler: DepartmentHandler
   ): Promise<any> {
     let promiseArr: Promise<any>[] = [];
 
@@ -49,7 +53,7 @@ export class EmailDepartment implements Department {
     try {
       const results = await Promise.all(promiseArr.map(this.reflect));
 
-      const successes = results.filter(x => x.status === 'resolved');
+      const successes = results.filter(x => x.status === "resolved");
 
       if (successes.length <= 0) {
         throw `none of the email requests was a success`;
@@ -58,7 +62,7 @@ export class EmailDepartment implements Department {
       logger.info(
         `successfully sent ${successes.length} out of ${
           promiseArr.length
-        } email requests`,
+        } email requests`
       );
       return true;
     } catch (e) {
@@ -70,12 +74,12 @@ export class EmailDepartment implements Department {
     return promise.then(
       res => {
         logger.debug(`sent email request: ${JSON.stringify(res)}`);
-        return {result: res, status: 'resolved'};
+        return { result: res, status: "resolved" };
       },
       err => {
         logger.error(`could not send email request: ${err}`);
-        return {error: err, status: 'rejected'};
-      },
+        return { error: err, status: "rejected" };
+      }
     );
   }
 }
