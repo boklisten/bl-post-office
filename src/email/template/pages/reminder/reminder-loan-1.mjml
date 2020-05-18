@@ -30,6 +30,7 @@
 
     <bl-text-block-component></bl-text-block-component>
 
-    <bl-footer-component></bl-footer-component>
+    <bl-footer-contact-component></bl-footer-contact-component>
+    <bl-footer-logo-component></bl-footer-logo-component>
   </mj-body>
 </mjml>
