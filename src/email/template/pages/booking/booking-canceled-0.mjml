@@ -16,15 +16,17 @@
     <mj-section>
       <mj-column>
         <mj-table css-class="bl-table">
-          <tr>
+          <tr style="text-align: center; text-decoration: line-through; color: red">
             <th>Dato</th>
-            <th>Tid</th>
-            <th>Sted</th>
+            <td>{{booking.date}}</td>
           </tr>
-          <tr style="text-align: center; text-decoration: line-through; color: red" >
-            <td>{{ booking.date }}</td>
-            <td>{{ booking.hour }}</td>
-            <td>{{ booking.branch }}, {{ booking.address }} </td>
+          <tr style="text-align: center; text-decoration: line-through; color: red">
+            <th>Tid</th>
+            <td>{{booking.hour}}</td>
+          </tr>
+          <tr style="text-align: center; text-decoration: line-through; color: red">
+            <th>Sted</th>
+            <td>{{ booking.branch }}, {{ booking.address }}</td>
           </tr>
         </mj-table>
       </mj-column>
@@ -32,7 +34,7 @@
 
     <mj-section>
       <mj-column>
-        <mj-button href="http://localhost:4200/bookings/customer/list" background-color="#26768f">
+        <mj-button href="https://www.boklisten.no/bookings/customer/list" background-color="#26768f">
           Klikk her for å se dine bookinger
         </mj-button>
       </mj-column>
