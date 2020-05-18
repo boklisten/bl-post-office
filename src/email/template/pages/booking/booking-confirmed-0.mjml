@@ -5,6 +5,7 @@
 
   <mj-body css-class="bl-body">
     <bl-header-component></bl-header-component>
+
     <mj-section>
       <mj-column>
         <mj-text>
@@ -13,26 +14,36 @@
         </mj-text>
       </mj-column>
     </mj-section>
+
     <mj-section>
       <mj-column>
         <mj-table css-class="bl-table">
           <tr>
             <th>Dato</th>
-            <th>Tid</th>
-            <th>Sted</th>
+            <td>{{booking.date}}</td>
           </tr>
-          <tr style="text-align: center;" >
-            <td>{{ booking.date }}</td>
-            <td>{{ booking.hour }}</td>
+          <tr>
+            <th>Tid</th>
+            <td>{{booking.hour}}</td>
+          </tr>
+          <tr>
+            <th>Sted</th>
             <td>{{ booking.branch }}, {{ booking.address }}</td>
           </tr>
         </mj-table>
+
       </mj-column>
     </mj-section>
 
     <mj-section>
+      <mj-column direction="ttb">
+
+        <mj-text>
+          Du kan også avbestille og se dine bookinger på våre hjemmesider.
+        </mj-text>
+      </mj-column>
       <mj-column>
-        <mj-button href="http://localhost:4200/bookings/customer/list" background-color="#26768f">
+        <mj-button href="https://www.boklisten.no/bookings/customer/list" background-color="#26768f">
           Klikk her for å se dine bookinger
         </mj-button>
       </mj-column>
