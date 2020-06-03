@@ -10,9 +10,12 @@
       <mj-column>
         <mj-text>
           <h4>Hei {{ name }}</h4>
-          <p>Du er registrert som privatist som har bøker hvor andre avdrag skal betales innen {{ settings.text.deadline }}. Vi har per dags dato ikke registrert tilbakesalg eller utkjøp fra deg.</p> 
-          <p>Bøker som ikke er solgt tilbake til Boklisten (enten via stand eller posten) eller utkjøpt innen {{ settings.text.deadline }} mottar faktura fra oss. Fakturagebyret på 150 kroner per bok kommer i tillegg til prisen for andre avdrag, og det anbefales derfor at du kommer innom oss før fristen.</p>
-          <i>Dersom du allerede har sendt bøkene dine i posten kan du se bort fra denne henvendelsen.</i>  
+          <p>
+            Det begynner å nærme seg fristen for å betale andre avdrag på
+            bøkene du har kjøpt fra oss i Boklisten.no. Siste frist er 1. juli.
+            Under ser du en liste over de bøkene du har som snart har frist.
+          </p> 
+
         </mj-text>
       </mj-column>
     </mj-section>
@@ -22,35 +25,155 @@
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h4>Steder og tidspunkter der du kan selge bøkene tilbake til oss:</h4>
-          <ul>
-            <li>
-                Bøkene kan selges på stand på skolen din eller andre steder vi har åpent. Åpningstider for resterende dager kan du finne på www.boklisten.no/info/branch 
-            </li>
-            <li>
-              Bøker kan også sendes per post til Boklisten.no. 
-              Vår adresse er: Boklisten.no, Postboks 8, 1316 Eiksmarka.
-              Husk å legge ved liste over bøkene og ditt navn og telefonnummer i pakken med bøkene. Vi tar kun imot bøker som er på vår innkjøpsliste.
-              Bøker kan selges på stand på skolen din eller andre steder vi har åpent.
-            </li>
-          </ul>
-          <i>
-            OBS: Kun Boklisten.no sine ansatte kan kjøpe tilbake bøker eller ta imot betaling for andre avdrag. Skolen har ikke ansvar for å ta imot bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal kontaktes dersom du har spørsmål om bøker. 
-          </i>
-          <p>Du kan betale andre avdrag ved å logge deg på våre nettsider og betale der. Du kan også ordne dette på stand eller via Vipps-nummer 33415. Ytterligere informasjon finner du i vår første informasjonsmail, sendt ut i mai.</p>
-          <p>Husk at fristen for å selge tilbake uten faktura er {{ settings.text.deadline }} – vi tar imot bøker også etter dette tidspunktet, men du må da fortsatt betale fakturagebyret. Det er ikke mulig å selge bøker til oss via resepsjonen på privatistskolen du går på.</p>
-          <i>Det er alltid bedre å være tidlig enn sent ute – da blir det lettere for deg å ordne opp om noe skulle gå galt! Vi ser frem til å se deg på en av våre stands!</i>
-          <p>Med vennlig hilsen</p>
-          <i>Boklisten.no</i>
+          <h4>Tilbakekjøp av bøker</h4>
+          <p>
+            Vi ønsker å kjøpe svært mange bøker tilbake, såfremt de er godt
+            tatt vare på. Du finner en link til innkjøpslisten vår i denne
+            mailen.
+          </p>
+          <p>
+            Dersom du ønsker å selge bøkene dine tilbake til oss, slipper du å betale andre
+            avdrag – men pass på at du gjør dette før 1.juli. Da slipper du også
+            fakturagebyret.
+          </p>
+          <h4>Innkjøpsliste</h4>
+          <p>
+             Vi kjøper kun inn bøker som står på denne listen. Sjekk gjerne
+             listen før du booker tid, så slipper du å dra på stand med bøker vi
+             ikke tar imot.
+          </p>
           </mj-text>
       </mj-column>
     </mj-section>
 
     <mj-section>
       <mj-column>
-        <mj-button href="http://www.boklisten.no/info/buyback" background-color="#26768f">
+        <mj-button href="https://www.boklisten.no/info/buyback" background-color="#26768f">
           Klikk her for å se vår innkjøpsliste
         </mj-button>
+      </mj-column>
+    </mj-section>
+
+
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>Booking av tid for tilbakekjøp</h4>
+          <p>
+            Denne våren har vært annerledes for de fleste av oss, og på grunn
+            av det vedvarende utbruddet av korona, har vi i Boklisten.no måttet
+            gjøre endringer på hvordan vi tar imot bøker.
+          </p>
+          <p>
+            Den største endringen er at du nå må booke tid for å komme innom på stand. Alle
+            våre åpningstider har nå intervaller på 5 minutter der du kan komme innom med
+            bøkene dine. Booking er enkelt å gjøre på nettsiden vår – www.boklisten.no.
+            Dette sikrer at vi ikke får kødannelse på vår stand, og du kan være trygg på at
+            du ikke må være i nærheten av mange andre kunder samtidig.
+          </p>
+          <p>
+            Dersom du allikevel ikke kan komme på tidspunktet du har booket, blir vi glad
+            om du kansellerer bookingen din. Da åpner du tid for at noen andre kan komme
+            innom med bøkene sine!
+          </p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-button href="https://www.boklisten.no/bookings/select" background-color="#26768f">
+          Book deg time ved å klikke her
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+
+
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>Kan jeg komme uten booking?</h4>
+          <p>
+            Ja, du kan komme til vår stand uten booking. Hvis du er heldig, kan
+            du få levert bøkene dine på denne måten. Du må imidlertid belage
+            deg på å bli nedprioritert etter de som har booket. Du må også
+            passe på å holde god avstand til de som faktisk har booket tid.
+          </p>
+          <p>
+            Det er veldig enkelt å booke tid på nettsiden vår, så for å sikre
+            deg selv og andre anbefaler vi på det sterkeste at du gjør det!
+          </p>
+          <h4>Hvor er vi? Når er det åpent?</h4>
+          <p>
+            For å minimere smitterisiko på de forskjellige skolene, vil vi ha
+            et felles stand-område hele juni i Oslo-området. Dersom du vil
+            booke tid i Oslo, må du derfor booke tid via filialen «Oslo
+            innsamling». Vi vil stå i et godt markert telt utenfor Sonans,
+            adressen er Pilestredet 54.
+          </p>
+          <p>
+            I de andre byene er vi i hovedsak tilstede på alle skolene. Sjekk
+            våre åpningstider her for mer detaljer:
+          </p>
+          <p>
+            Ikke alle åpningstider er helt klare enda. De blir offentliggjort så
+            snart de er klare, og da åpner vi også for booking på disse skolene.
+          </p>
+          <h4>Sende bøker i posten</h4>
+          <p>
+            Tilbakekjøp av bøker kan også skje hvis du sender dem til: <b>Boklisten.no AS,
+            Postboks 8, 1316 Eiksmarka.</b> Husk å legge ved et ark hvor du skriver ditt navn,
+            telefonnummer, og hvilke bøker du selger til oss. Du bør også sende en pakke
+            med sporing, og beholde sporingen inntil leveringen er registrert. <i>Vi kan ikke
+            garantere at vi kjøper inn bøkene dine bare fordi du har sendt dem til oss.</i>
+            Dersom du er usikker på om boken din kan kjøpes tilbake, viser vi til
+            innkjøpslisten. Vi krever også at boken er i god nok stand til at vi kan bruke
+            den igjen. Tror du boken din kanskje er i grenseland, kan du sende oss et bilde
+            av den for godkjennelse før du sender boken.
+          </p>
+          <h4>Utsette betalingsfristen for andre avdrag</h4>
+          <p>
+            Ettersom en del av dere har måttet utsette eksamen som følge av
+            koronakrisen, har vi åpnet for å utsette fristen for å betale andre
+            avdrag. Dette koster 50 kroner per bok, og endrer fristen for å
+            betale andre avdrag fra 1.juli til 20.desember. Forlengelse kan
+            gjøres på nettsiden, eller ved å overføre 50 kroner til vårt
+            Vipps-nummer 33415 og sende en mail om hvilke bøker det gjelder til
+            info@boklisten.no.
+          </p>
+
+          <h4>Betale andre avdrag</h4>
+          <p>
+            Dersom du ønsker å beholde boken din, kan du betale andre avdrag nå. Dette kan
+            du gjøre ved å logge deg inn på våre nettsider og betale der. Du kan også
+            betale på stand, eller via Vipps-nummer 33415. Ønsker du å bruke Vipps, kan du
+            sende oss en mail om dette. Andre avdrag er på 33% av bokens nypris, så lenge
+            du betaler før fristen 1.juli. Sjekk «dine bøker» på nettsiden for nøyaktig
+            sum.
+          </p>
+          <h4>Faktura</h4>
+          <p>
+            Dersom du ikke selger tilbake boken til oss eller betaler andre
+            avdrag innen 1.juli, sender vi ut faktura for andre avdrag. Du vil da
+            måtte betale både avdrag og fakturagebyr. Vi håper derfor du ordner
+            opp før dette – gjerne ved å komme innom og selge boken tilbake til
+            oss!
+          </p>
+          <h4>Spørsmål</h4>
+          <p>
+            Det er sikkert mange som har spørsmål i disse tider, og du er
+            hjertelig velkommen til å spørre oss om alt! Vi foretrekker e-post
+            til info@boklisten.no.
+          </p>
+          <hr/>
+          <p>
+            Vi kommer til å sende ytterligere e-post og SMS med påminnelser når fristen
+            nærmer seg, men hvis du er ferdig med eksamen er det ikke noe å vente på!
+          </p>
+          <p>Vi ønsker deg lykke til på eksamen!</p>
+          <p>Med vennlig hilsen oss i Boklisten.no<p>
+        </mj-text>
       </mj-column>
     </mj-section>
 

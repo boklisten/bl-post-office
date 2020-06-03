@@ -16,6 +16,7 @@ export const SMS_SETTINGS = {
     reminder: {
       "partly-payment": [
         "Fristen for avdragsbøker 1.juli nærmer seg! Sjekk vår nettside www.boklisten.no for booking av tid for å komme innom med dine bøker, eller finn mer informasjon på mail vi har sendt ut i dag. Mvh Boklisten.no",
+        "Ferdig med eksamen? Book time for å komme innom med bøkene dine på www.boklisten.no! Du kan også sende bøker i posten. Med vennlig hilsen, Boklisten.no",
         "Hei! Du har bøker hvor andre avdrag straks forfaller. Kom innom for å selge bøkene tilbake til oss, eller betal andre avdrag på nettsidene våre. Se påminnelsesmailene våre for mer informasjon. Mvh Boklisten.no",
         "Siste påminnelse! Selg bøkene dine tilbake til Boklisten.no for å slippe andre avdrag. Vi sender ut faktura på andre avdrag ved fristen. Se påminnelsesmailer for mer informasjon. Mvh Boklisten.no",
         "Hei! Vi kan ikke se at du har betalt andre delbetaling av dine bøker. Vi har nå generert en faktura, men du kan slippe gebyr ved å betale på vår nettside innen utløpet av 5.januar. Du kan selge bøker til oss i januar. Se mail for mer informasjon. Mvh Boklisten.no"

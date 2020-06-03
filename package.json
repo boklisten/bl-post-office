@@ -16,12 +16,8 @@
   },
   "types": "dist/index.d.ts",
   "babel": {
-    "presets": [
-      "@babel/env"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
+    "presets": ["@babel/env"],
+    "plugins": ["@babel/plugin-proposal-class-properties"]
   },
   "repository": {
     "type": "git",
@@ -80,14 +76,8 @@
   "ava": {
     "compileEnhancements": false,
     "bable": false,
-    "files": [
-      "src/**/*.spec.ts"
-    ],
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ]
+    "files": ["src/**/*.spec.ts"],
+    "extensions": ["ts"],
+    "require": ["ts-node/register"]
   }
 }
