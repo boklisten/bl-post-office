@@ -12,9 +12,9 @@
           <h4>Hei {{ name }}</h4>
         
           <p>
-              Du er registrert som privatist som har bøker hvor andre avdrag skal betales
-              innen 1.juli. Vi har per dato(cirka 9.juni) ikke registrert tilbakesalg
-              eller utkjøp fra deg.
+              Du er registrert som privatist som har bøker hvor andre avdrag
+              skal betales innen 1.juli. Vi har per 8.juni ikke registrert
+              tilbakesalg eller utkjøp fra deg.
           </p>
           <p>Under ser du en liste over dine bøker:</p>
         </mj-text>

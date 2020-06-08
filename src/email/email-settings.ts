@@ -27,6 +27,7 @@ export const EMAIL_SETTINGS: any = {
       "partly-payment": [
         "Informasjon om bøker fra Boklisten.no",
         "Påminnelse om bøker fra Boklisten.no",
+        "Andre påminnelse om bøker med frist 1. Juli",
         "Siste påminnelse om bøker fra Boklisten.no",
         "Manglende delbetaling av bøker"
       ],
