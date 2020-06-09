@@ -10,7 +10,16 @@
       <mj-column>
         <mj-text>
           <h4>Hei {{name}}</h4>          
-          <p>Det nærmer seg nå slutten av skoleåret og bøkene du har lånt skal snart leveres tilbake. Siste frist for innlevering er 1. juli. Vi kommer til å komme på din skole i løpet av juni for å samle inn bøker. I siste del av juni er vi i tillegg på Bok og Media ved Akersgata 4. Følg med på vår nettside for nøyaktige tidspunkter (www.boklisten.no).</p>
+
+          <p> Det nærmer seg nå slutten av skoleåret og bøkene du har lånt skal
+          snart leveres tilbake. Siste frist for innlevering er 1. juli. Vi
+          kommer til skolen i juni for å samle inn bøker og siste del av juni
+          er vi i tillegg å finne på et felles innsamlingspunkt i Pilestredet i
+          Oslo. På det felles innsamlingspunktet må du eventuelt booke time for
+          å kunne komme innom. Følg med på vår nettside for nøyaktige
+          tidspunkter (    <a href="http://www.boklisten.no/"
+          target="_blank">www.boklisten.no</a>).  </p>
+          <p>
           <p>Under ser du en liste over dine bøker:</p>
         </mj-text>
       </mj-column>
@@ -22,26 +31,62 @@
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h4>Her er noen råd og svar på vanlige spørsmål rundt tilbakelevering av bøker</h4>
+
+              <strong>
+                  Her er noen råd og svar på vanlige spørsmål rundt tilbakelevering av
+                  bøker:
+              </strong>
+          </p>
           <ul>
-            <li>
-              <p><b>Skriv navn i bøkene!</b></p> 
-              <p>For å unngå tyveri anbefaler vi at du skriver fullt navn og årstall på innsiden av bokens perm (for eksempel ”Ola Normann 2018/19”)</p>
-            </li>
-            <li>
-              <p><b>Kan noen andre levere bøker for meg?</b></p> 
-              <p>Du kan la andre levere bøkene din hvis du ikke selv kan møte. Husk da at de må si i fra hvem de leverer bøkene for.</p>
-            </li>
-            <li>
-              <p><b>Kan jeg sende bøker i posten?</b></p> 
-              <p>Du kan sende bøker i posten, men det er dyrt og anbefales ikke. Vår adresse er Boklisten.no AS, Postboks 8, 1316 Eiksmarka. Husk å legge ved et ark med ditt navn og kontaktinformasjon samt liste over bøkene du sender. Det er lurt å ha sporing på pakken.</p>
-            </li> 
-            <li>
-              <p><b>Hvordan kan jeg IKKE levere?</b></p>
-              <p>Du kan ikke levere boken til en lærer eller andre på skolen. I noen tilfeller vil du kunne levere bøker til våre kontaktelever på skolene. Alle andre bøker må leveres direkte til Boklisten.no</p>
-            </li> 
+              <li>
+                  <p>
+                      <strong>Retningslinjer i forbindelse med koronapandemien</strong>
+                      <br/>
+                      Vi har utvidet våre åpningstider for å minimere smittefare. Pass på
+                      å holde god avstand i køen, både for å sikre deg selv, dine
+                      medelever og våre ansatte.
+                  </p>
+              </li>
+          </ul>
+          <ul>
+              <li>
+                  <p>
+                      <strong>Skriv navn i bøkene!</strong>
+                      <br/>
+                      For å unngå tyveri anbefaler vi at du skriver fullt navn og årstall
+                      på innsiden av bokens perm (for eksempel ”Ola Normann 2018/19”)
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      <strong>Kan noen andre levere bøker for meg?</strong>
+                      <br/>
+                      Du kan la andre levere bøkene dine hvis du ikke selv kan møte. Husk
+                      da at de må si i fra hvem de leverer bøkene for.
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      <strong>Kan jeg sende bøker i posten?</strong>
+                      <br/>
+                      Du kan sende bøker i posten, men det er dyrt og anbefales ikke. Vår
+                      adresse er Boklisten.no AS, Postboks 8, 1316 Eiksmarka. Husk å
+                      legge ved et ark med ditt navn og kontaktinformasjon samt liste
+                      over bøkene du sender. Det er lurt å ha sporing på pakken.
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      <strong>Hvordan kan jeg IKKE levere?</strong>
+                      <br/>
+                      Du kan ikke levere boken til en lærer eller andre på skolen. I noen
+                      tilfeller vil du kunne levere bøker til våre kontaktelever på
+                      skolene. Alle andre bøker må leveres direkte til Boklisten.no
+                  </p>
+              </li>
           </ul>
           <p>Til slutt vil vi i Boklisten ønske deg en god semesteravslutning og sommer!<p> 
+
           <p>Med vennlig hilsen</p>
           <i>Boklisten.no</i>
         </mj-text>
