@@ -11,11 +11,12 @@
         <mj-text>
           <h4>Hei {{ name }}</h4>
         
-          <p>
-              Du er registrert som privatist som har bøker hvor andre avdrag
-              skal betales innen 1.juli. Vi har per 8.juni ikke registrert
-              tilbakesalg eller utkjøp fra deg.
-          </p>
+<p>
+    Du har fortsatt bøker hos Boklisten.no som ikke er solgt tilbake eller
+kjøpt ut.    <strong>Fristen for å gjennomføre dette uten gebyr er 1.juli.</strong>
+    Denne fristen er absolutt, og etter dette vil du uansett måtte betale
+    fakturagebyret.
+</p>
           <p>Under ser du en liste over dine bøker:</p>
         </mj-text>
       </mj-column>
@@ -23,88 +24,42 @@
 
     <bl-item-list-component></bl-item-list-component>
 
-    <mj-section>
-      <mj-column>
-        <mj-button href="https://www.boklisten.no/bookings/select" background-color="#26768f">
-          Book deg time ved å klikke her
-        </mj-button>
-      </mj-column>
-    </mj-section>
-
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <p>
-              Bøker som ikke er solgt tilbake til Boklisten (enten via stand eller
-              posten) eller utkjøpt innen 1.juli mottar faktura fra oss. Fakturagebyret
-              på 150 kroner per bok kommer i tillegg til prisen for andre avdrag, og det
-              anbefales derfor at du kommer innom oss før fristen.
-          </p>
-          <p>
-              På grunn av koronapandemien har vi ekstra retningslinjer for årets
-          innsamling. Gå inn på    <a href="http://www.boklisten.no/">www.boklisten.no</a> for å booke time
-              for å komme innom med bøkene dine! Dersom du allerede har booket tid, kan
-              du se bort fra denne henvendelsen.
-          </p>
-          <p>
-              <em>
-                  Dersom du allerede har sendt bøkene dine i posten kan du se bort fra
-                  denne henvendelsen.
-              </em>
-          </p>
-          <p>
-              <strong>
-                  Steder og tidspunkter der du kan selge bøkene tilbake til oss:
-              </strong>
-          </p>
-          <ol>
-              <li>
-                  <p>
-                      Bøkene kan selges <strong>på stand</strong> på skolen din eller
-                      andre steder vi har åpent. Åpningstider for resterende dager kan du
-          finne på <a href="http://www.boklisten.no/">www.boklisten.no</a>            <u>. </u>Dersom du går på skole i Oslo velger du «Oslo innsamling».
-                  </p>
-              </li>
-              <li>
-                  <p>
-                      Bøker kan også sendes <strong>per post</strong> til Boklisten.no.
-                  </p>
-              </li>
-          </ol>
-          <p>
-              Vår adresse er Boklisten.no, Postboks 8, 1316 Eiksmarka
-          </p>
-          <p>
-              Husk å legge ved liste over bøkene og ditt navn og telefonnummer i pakken
-              med bøkene. Vi tar kun imot bøker som er på vår innkjøpsliste.
-          </p>
-          <p>
-              <em>
-                  OBS: Kun Boklisten.no sine ansatte kan kjøpe tilbake bøker eller ta
-                  imot betaling for andre avdrag. Skolen har ikke ansvar for å ta imot
-                  bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal
-                  kontaktes dersom du har spørsmål om bøker.
-              </em>
-          </p>
-          <p>
-              Du kan <strong>betale andre avdrag</strong> ved å logge deg på våre
-              nettsider og betale der. Du kan også ordne dette på stand eller via
-              Vipps-nummer 33415. Ytterligere informasjon finner du i vår første
-              informasjonsmail, sendt ut i mai.
-          </p>
-          <p>
-          Husk at    <strong>fristen for å selge tilbake uten faktura er 1.juli </strong>– vi
-              tar imot bøker også etter dette tidspunktet, men du må da fortsatt betale
-              fakturagebyret. Det er ikke mulig å selge bøker til oss via resepsjonen på
-              privatistskolen du går på.
-          </p>
-          <p>
-              <em>
-                  Det er alltid bedre å være tidlig enn sent ute – da blir det lettere
-                  for deg å ordne opp om noe skulle gå galt! Vi ser frem til å se deg på
-                  en av våre stands!
-              </em>
-          </p>
+
+<p>
+    Det er ikke flere åpningsdager for din skole, men du kan fortsatt sende
+    bøker i posten. Adressen er «Boklisten.no AS, Postboks 8, 1316 Eiksmarka».
+    Det finnes også innsamlingsdager i Oslo, Bergen, Drammen og Trondheim.
+</p>
+<p>
+    Det er billigere å ordne opp nå enn senere – så vi anbefaler at du gjør
+    dette umiddelbart!
+</p>
+<p>
+    Hvis du har planer om å sende oss bøker i posten, bør du påse at du har
+    rett adresse samt informasjon om deg som avsender i pakken. Dersom vi ikke
+    kan identifisere avsenderen kan vi heller ikke registrere bøkene dine. Vi
+    kan ikke ta ansvar for bøker før de har kommet frem til oss. Ta derfor vare
+    på sporingen, slik at du kan få erstatning fra Posten dersom de roter bort
+    pakken din.
+</p>
+<p>
+    Du kan frem til 1.juli gjøre betaling av andre avdrag på våre nettsider.
+    Resterende sum på dine bøker kan du finne ved å logge deg inn på din
+    bruker, og velge «Dine bøker». Bruker du vårt Vipps-nummer 33415 til å
+    betale trenger vi en bekreftelse på dette på e-post.
+</p>
+<p>
+    Hvis du har sendt bøker i posten den siste tiden kan du se bort fra denne
+    mailen. Hvis du mener å ikke ha flere utestående betalinger på bøker fra
+    Boklisten.no må du ta kontakt med oss så snart som mulig slik at vi kan
+    undersøke saken før vi sender ut faktura.
+</p>
+<p>
+Dersom du har ytterligere spørsmål er det bare å sende oss en mail på    <a href="mailto:info@boklisten.no">info@boklisten.no</a>!
+</p>
           <p>
               Med vennlig hilsen
           </p>
