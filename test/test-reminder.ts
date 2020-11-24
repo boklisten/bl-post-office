@@ -11,6 +11,7 @@ const recipients: Recipient[] = [
     email: 'aholskil@gmail.com',
     user_id: '432',
     message_id: '889123hjhajsalkaks88cla80das',
+    phone: '+4791804211',
     settings: {
       text: {
         deadline: '20.12.19',
@@ -40,7 +41,7 @@ const recipients: Recipient[] = [
 ];
 
 postOffice.setConfig({
-  reminder: {mediums: {email: true, sms: false}},
+  reminder: {mediums: {email: true, sms: true}},
   generic: {mediums: {email: true}},
   receipt: {mediums: {email: true}},
 });
@@ -50,7 +51,7 @@ postOffice
     type: 'reminder',
     subtype: 'partly-payment',
     sequence_number: 0,
-    mediums: {email: true},
+    mediums: {email: true, sms: true},
   })
   .then(res => {
     logger.info('sent: ' + res);
