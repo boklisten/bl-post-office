@@ -10,14 +10,9 @@
       <mj-column>
         <mj-text>
           <h4>Hei {{ name }}</h4>
-        
-<p>
-    Du har fortsatt bøker hos Boklisten.no som ikke er solgt tilbake eller
-kjøpt ut.    <strong>Fristen for å gjennomføre dette uten gebyr er 1.juli.</strong>
-    Denne fristen er absolutt, og etter dette vil du uansett måtte betale
-    fakturagebyret.
-</p>
-          <p>Under ser du en liste over dine bøker:</p>
+          <p>
+            Du har fortsatt bøker hos Boklisten.no som ikke er solgt tilbake eller kjøpt ut. Fristen for å gjennomføre dette uten gebyr er 20.desember. Denne fristen er absolutt, og etter dette vil du uansett måtte betale fakturagebyret.
+          </p> 
         </mj-text>
       </mj-column>
     </mj-section>
@@ -27,54 +22,47 @@ kjøpt ut.    <strong>Fristen for å gjennomføre dette uten gebyr er 1.juli.</s
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-
-<p>
-    Det er ikke flere åpningsdager for din skole, men du kan fortsatt sende
-    bøker i posten. Adressen er «Boklisten.no AS, Postboks 8, 1316 Eiksmarka».
-    Det finnes også innsamlingsdager i Oslo, Bergen, Drammen og Trondheim.
-</p>
-<p>
-    Det er billigere å ordne opp nå enn senere – så vi anbefaler at du gjør
-    dette umiddelbart!
-</p>
-<p>
-    Hvis du har planer om å sende oss bøker i posten, bør du påse at du har
-    rett adresse samt informasjon om deg som avsender i pakken. Dersom vi ikke
-    kan identifisere avsenderen kan vi heller ikke registrere bøkene dine. Vi
-    kan ikke ta ansvar for bøker før de har kommet frem til oss. Ta derfor vare
-    på sporingen, slik at du kan få erstatning fra Posten dersom de roter bort
-    pakken din.
-</p>
-<p>
-    Du kan frem til 1.juli gjøre betaling av andre avdrag på våre nettsider.
-    Resterende sum på dine bøker kan du finne ved å logge deg inn på din
-    bruker, og velge «Dine bøker». Bruker du vårt Vipps-nummer 33415 til å
-    betale trenger vi en bekreftelse på dette på e-post.
-</p>
-<p>
-    Hvis du har sendt bøker i posten den siste tiden kan du se bort fra denne
-    mailen. Hvis du mener å ikke ha flere utestående betalinger på bøker fra
-    Boklisten.no må du ta kontakt med oss så snart som mulig slik at vi kan
-    undersøke saken før vi sender ut faktura.
-</p>
-<p>
-Dersom du har ytterligere spørsmål er det bare å sende oss en mail på    <a href="mailto:info@boklisten.no">info@boklisten.no</a>!
-</p>
           <p>
-              Med vennlig hilsen
+          Mange steder nærmer seg eller har passert siste åpningsdag, men du har fortsatt mulighet til å ordne opp. Sjekk innom www.boklisten.no for å finne de resterende åpningstidene.
+          </p>
+          <b>
+            Det er billigere å ordne opp nå enn senere – så vi anbefaler at du gjør dette umiddelbart!
+          </b>
+          <p>
+            Hvis du har planer om å sende oss bøker i posten, bør du påse at du har rett adresse samt informasjon om deg som avsender i pakken. Dersom vi ikke kan identifisere avsenderen kan vi heller ikke registrere bøkene dine. Vi kan ikke ta ansvar for bøker før de har kommet frem til oss. Ta derfor vare på sporingen, slik at du kan få erstatning fra Posten dersom de roter bort pakken din.
           </p>
           <p>
-              <em>Boklisten.no</em>
+            Du kan frem til 20.desember gjøre betaling av andre avdrag på våre nettsider. Resterende sum på dine bøker kan du finne ved å logge deg inn på din bruker, og velge «Dine bøker». Bruker du vårt Vipps-nummer 33415 til å betale trenger vi en bekreftelse på dette på e-post.
           </p>
-        </mj-text>
+          <p>
+          Du kan også forlenge fristen for 50 kroner per bok. Ny frist blir da 1.juli 2021. Du kan forlenge fristen både via Vipps og på nettsiden.
+          </p>
+          <i>
+          Hvis du har sendt bøker i posten den siste tiden kan du se bort fra denne mailen. Hvis du mener å ikke ha flere utestående betalinger på bøker fra Boklisten.no må du ta kontakt med oss så snart som mulig slik at vi kan undersøke saken før vi sender ut faktura.
+          </i>
+          </mj-text>
       </mj-column>
     </mj-section>
 
     <mj-section>
       <mj-column>
-        <mj-button href="http://www.boklisten.no/info/buyback" background-color="#26768f">
+        <mj-button href="https://www.boklisten.no/info/buyback" background-color="#26768f">
           Klikk her for å se vår innkjøpsliste
         </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>Spørsmål</h4>
+          <p>
+            Dersom du har ytterligere spørsmål er det bare å sende oss en mail på info@boklisten.no!
+          </p>
+          <hr/>
+          <p>Med vennlig hilsen<p>
+          <i>Boklisten.no</i>
+        </mj-text>
       </mj-column>
     </mj-section>
 

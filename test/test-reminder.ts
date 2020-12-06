@@ -50,8 +50,8 @@ postOffice
   .send(recipients, {
     type: 'reminder',
     subtype: 'partly-payment',
-    sequence_number: 0,
-    mediums: {email: true, sms: true},
+    sequence_number: 3,
+    mediums: {email: false, sms: true},
   })
   .then(res => {
     logger.info('sent: ' + res);

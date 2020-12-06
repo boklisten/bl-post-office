@@ -1,6 +1,6 @@
 export const SMS_SETTINGS = {
   minLength: 5,
-  maxLength: 280,
+  maxLength: 350,
   fromNumber: "+4759447665",
   dymmy: {
     number: "+4712345678"
@@ -16,9 +16,9 @@ export const SMS_SETTINGS = {
     reminder: {
       "partly-payment": [
         "Hei, fristen for bøkene dine fra Boklisten.no nærmer seg. Vi har sendt deg en mail med informasjon du bør lese. Med vennlig hilsen, Boklisten.no",
-        "Ferdig med eksamen? Book time for å komme innom med bøkene dine på www.boklisten.no! Du kan også sende bøker i posten. Med vennlig hilsen, Boklisten.no",
-        "Påminnelse om dine bøker fra Boklisten.no! Selg bøkene dine tilbake til Boklisten.no for å slippe andre avdrag. Vi sender ut faktura på andre avdrag 1.juli. Se påminnelsesmailer eller nettsiden vår for mer informasjon.",
-        "Siste påminnelse! Selg bøkene dine tilbake til Boklisten.no for å slippe andre avdrag. Bøker kan leveres der vi har åpent, eller sendes i posten frem til 1.juli. Se påminnelsesmailer for mer informasjon. Vi sender ut faktura med gebyr etter 1.juli! Mvh Boklisten.no"
+        "Hei! Du har bøker hvor andre avdrag straks forfaller. Kom innom med bøkene, send dem i posten, eller betal andre avdrag på nettsidene våre. Se påminnelsesmailene våre for mer informasjon. Mvh Boklisten.no",
+        "Vi minner igjen om bøkene dine fra Boklisten.no med frist 20.desember. Sjekk informasjonsmailer og nettside for å slippe unødvendige gebyrer.",
+        "Siste mulighet for betaling av andre avdrag før vi sender ut faktura er 31.desember! Logg inn på nettsiden, og betal. Du kan også forlenge fristen til 1.juli ved å betale 50 kroner per bok. Du kan fortsatt selge bøkene tilbake til oss når vi har åpent i januar, men slipper gebyr om du betaler før nyttår. Mvh Boklisten.no"
       ],
       rent: [
         "Hei - det nærmer seg frist for bøkene dine! Mange steder begynner å stenge før fristen. Kun Boklistens ansatte kan ta imot bøker. Sjekk nettsiden for åpningstider og postadresse, samt informasjonsmailene vi har sendt ut. Mvh Boklisten.no",
