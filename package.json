@@ -1,6 +1,6 @@
 {
   "name": "@wizardcoder/bl-post-office",
-  "version": "0.5.13",
+  "version": "0.5.14",
   "description": "a single module for sending messages to a customer",
   "main": "dist/index.js",
   "scripts": {
