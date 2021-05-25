@@ -1,5 +1,5 @@
 {
-  "name": "@wizardcoder/bl-post-office",
+  "name": "@boklisten/bl-post-office",
   "version": "0.5.15",
   "description": "a single module for sending messages to a customer",
   "main": "dist/index.js",
