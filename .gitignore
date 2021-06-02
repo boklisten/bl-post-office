@@ -9,3 +9,4 @@ twilio.env
 *.swp
 lib/
 *.tgz
+.env

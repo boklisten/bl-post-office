@@ -10,12 +10,12 @@
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h4>
-            Hei {{ name }}
-          </h4>
+          <h4>Nyttig informasjon til deg som har bøker fra Boklisten.no</h4>
+          <p>Det nærmer seg nå slutten av skoleåret og bøkene du har lånt skal snart leveres tilbake. Siste frist for innlevering er 1. juli.</p>  
           <p>
-            Det begynner å nærme seg innlevering av lærebøker som har blitt leid av Boklisten.no. Under kan du se en liste over de bøkene du har leid hos oss som snart har frist.
+          Vi kommer til skolen i juni for å samle inn bøker og siste del av juni er vi i tillegg å finne på et felles innsamlingspunkt i Pilestredet i Oslo. På det felles innsamlingspunktet må du eventuelt booke time for å kunne komme innom. Følg med på vår nettside for nøyaktige tidspunkter (<a href="https://www.boklisten.no">www.boklisten.no</a>). 
           </p>
+          <p>Under kan du se en liste over de bøkene du har lånt hos oss som snart har frist.</p>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -25,24 +25,37 @@
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h4>Innlevering av bøker</h4>
-          <p>Siste frist er 1. Juli. Vi vil være tilstede på skolen din ved flere anledninger før denne datoen – sjekk www.boklisten.no for mer spesifiserte åpningstider.</p>
-          <p>OBS: Vi tar kun imot bøker i våre åpningstider. Skolen har ikke ansvar for å ta imot bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal kontaktes dersom du lurer på noe angående innlevering.</p>
-          <p>Innlevering av bøker kan også skje ved å sende dem til: Boklisten.no AS, Postboks 8, 1316 Eiksmarka. Husk å legge ved et ark hvor du skriver ditt navn, telefonnummer, og hvilke bøker du leverer. Du bør også sende en pakke med sporing, og beholde sporingen inntil leveringen er registrert. Mer informasjon om levering i posten kan finnes på nettsiden.</p>
-          <p>Vi kommer til å sende ytterligere e-post og SMS med påminnelser når fristen nærmer seg, men du har selv ansvaret for å levere innen fristen!</p> 
-          <h4>Forlengelse</h4> 
-          <p>Det er ikke mulig å forlenge leien på bøker dette semesteret.</p>
-          <h4>Kjøpe boken du har leid</h4>
-          <p>Dersom du ønsker å beholde boken du har leid lenger enn dette, kan du kjøpe deg ut av leieavtalen ved å betale 50% av bokens fullpris før fristens utløp. Du vil da bli eier av boken.</p> 
-          <p>Utkjøp kan gjøres på nettsiden, på stand, eller via Vipps. Dersom du ønsker utkjøp via Vipps, kan du overføre utkjøpssummen til vårt Vipps-nummer 33415. Det er svært viktig at du også sender en mail om at du har gjort dette til info@boklisten.no. Utkjøp via Vipps går ikke automatisk.</p> 
-          <h4>Erstatning</h4>
-          <p>Dersom du ikke leverer, forlenger eller kjøper boken/bøkene innen fristen 1.juli, sender vi ut faktura for ikke-leverte bøker. Du vil da bli fakturert hele bokens verdi + 10% + et administrasjonsgebyr på 90 kroner. Det anbefales derfor på det sterkeste å komme innom stand eller ta kontakt før fristen 1.juli!</p> 
-          <h4>Skriv navn i bøkene dine!</h4>
-          <p>Vi anbefaler å skrive navn og årstall på innsiden av permen på alle bøkene dine. Dette vil kontrolleres ved innlevering, og du kan ikke levere inn andre bøker enn de med ditt eget navn på vegne av deg selv.</p>
-          <h4>Spørsmål</h4>
-          <p>Hvis du har spørsmål eller lurer på hvorfor du fikk denne e-posten, kan du ta kontakt med Boklisten.no på e-post: info@boklisten.no</p> 
-          <p>Vi ønsker deg lykke til på eksamen!</p> 
-          <p>Med vennlig hilsen oss i Boklisten.no</p>
+          <h4>Her er noen råd og svar på vanlige spørsmål rundt tilbakelevering av bøker:</h4>
+          <ul>
+          
+          <li>
+          <i>Retningslinjer i forbindelse med koronapandemien</i>
+          <p>Vi har utvidet våre åpningstider for å minimere smittefare. Pass på å holde god avstand i køen, både for å sikre deg selv, dine medelever og våre ansatte.</p>
+          </li>
+          </li>
+          <li>
+          <i>Kan noen andre levere bøker for meg?</i>
+          <p>Du kan la andre levere bøkene dine hvis du ikke selv kan møte. Husk da at de må si i fra hvem de leverer bøkene for. </p>
+          </li>
+          <li>
+          <i>Jeg har byttet bøker med andre elever i løpet av året. Kan jeg levere disse?</i>
+          <p>Ja, lever inn de bøkene du har. Hver bok har en unik ID, men det er du som er ansvarlig for boken du selv fikk utlevert i fjor høst. Dersom du har byttet med noen andre, bør du forsikre deg om at de har levert.</p>
+          </li>
+          <li>
+          <i>Kan jeg sende bøker i posten?</i>
+          <p>Du kan sende bøker i posten, men det er dyrt og anbefales ikke. Vår adresse er <b>Boklisten.no AS, Postboks 8, 1316 Eiksmarka</b>. Husk å legge ved et ark med ditt navn og kontaktinformasjon samt liste over bøkene du sender. Det er lurt å ha sporing på pakken.</p>
+          </li>
+          <li>
+          <i>Hvordan kan jeg IKKE levere?</i>
+          <p>Du kan ikke levere boken til en lærer eller andre på skolen. I noen tilfeller vil du kunne levere bøker til våre kontaktelever på skolene. Alle andre bøker må leveres direkte til Boklisten.no</p>
+          </li>
+          </ul>
+
+          <h4>Andre spørsmål</h4>
+          <p>Hvis du har spørsmål eller lurer på hvorfor du fikk denne e-posten, kan du ta kontakt med Boklisten.no på e-post: <a href="mailto:info@boklisten.no">info@boklisten.no</a></p> 
+          <p>Til slutt vil vi i Boklisten ønske deg en god semesteravslutning og sommer!</p> 
+          <p>Med vennlig hilsen</p>
+          <p><i>Boklisten.no</i></p>
         </mj-text>
       </mj-column>
     </mj-section>

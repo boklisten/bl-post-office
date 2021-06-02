@@ -11,8 +11,20 @@
         <mj-text>
           <h4>Hei {{ name }}</h4>
           <p>
-            Du har fortsatt bøker hos Boklisten.no som ikke er solgt tilbake eller kjøpt ut. Fristen for å gjennomføre dette uten gebyr er 20.desember. Denne fristen er absolutt, og etter dette vil du uansett måtte betale fakturagebyret.
+          Dette er vår andre påminnelse om bøkene du har med frist 1. juli.
           </p> 
+          <p>Vi har per i dag ikke registrert at du har solgt tilbake eller kjøpt ut bøkene dine.</p>
+          <p>Du har nå flere valg:</p>
+          <ul>
+          <li>
+          <b>Selg bøkene tilbake til oss</b> på 
+          <b>stand</b> – alle åpningstider finner du på <a href="https://www.boklisten.no">www.boklisten.no</a>.
+          </li> 
+          <li>Selg bøkene dine til oss ved å <b>sende dem i posten.</b></li> 
+          <li><b>Kjøp ut bøkene</b> på nettsiden. Logg deg inn med din bruker og velg «kjøp ut» på dine bøker.</li> 
+          <li><b>Utsett fristen</b> ved å betale 50 kroner per bok.</li> 
+          <li>Gjør ingenting før fristen 1.juli, og få <b>faktura</b> med ekstra gebyr.</li> 
+          </ul>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -22,47 +34,23 @@
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <p>
-          Mange steder nærmer seg eller har passert siste åpningsdag, men du har fortsatt mulighet til å ordne opp. Sjekk innom www.boklisten.no for å finne de resterende åpningstidene.
-          </p>
-          <b>
-            Det er billigere å ordne opp nå enn senere – så vi anbefaler at du gjør dette umiddelbart!
-          </b>
-          <p>
-            Hvis du har planer om å sende oss bøker i posten, bør du påse at du har rett adresse samt informasjon om deg som avsender i pakken. Dersom vi ikke kan identifisere avsenderen kan vi heller ikke registrere bøkene dine. Vi kan ikke ta ansvar for bøker før de har kommet frem til oss. Ta derfor vare på sporingen, slik at du kan få erstatning fra Posten dersom de roter bort pakken din.
-          </p>
-          <p>
-            Du kan frem til 20.desember gjøre betaling av andre avdrag på våre nettsider. Resterende sum på dine bøker kan du finne ved å logge deg inn på din bruker, og velge «Dine bøker». Bruker du vårt Vipps-nummer 33415 til å betale trenger vi en bekreftelse på dette på e-post.
-          </p>
-          <p>
-          Du kan også forlenge fristen for 50 kroner per bok. Ny frist blir da 1.juli 2021. Du kan forlenge fristen både via Vipps og på nettsiden.
-          </p>
-          <i>
-          Hvis du har sendt bøker i posten den siste tiden kan du se bort fra denne mailen. Hvis du mener å ikke ha flere utestående betalinger på bøker fra Boklisten.no må du ta kontakt med oss så snart som mulig slik at vi kan undersøke saken før vi sender ut faktura.
-          </i>
-          </mj-text>
-      </mj-column>
-    </mj-section>
+        <p>Vi har tidligere sendt ut en hovedpåminnelse med mer detaljert informasjon. Ta gjerne kontakt dersom du ikke har fått denne.</p>
+        <p>Husk å booke tid dersom du skal innom en av våre filialer som har denne løsningen i år!</p>
+        <p><i>OBS: Det er kun Boklistens ansatte som kan ta imot bøker – ikke ansatte ved de forskjellige privatistskolene. Vi kan ikke ta ansvar for bøker som ikke er levert direkte til oss, og du vil kunne bli fakturert for disse.</i></p>
 
-    <mj-section>
-      <mj-column>
-        <mj-button href="https://www.boklisten.no/info/buyback" background-color="#26768f">
-          Klikk her for å se vår innkjøpsliste
-        </mj-button>
-      </mj-column>
-    </mj-section>
-
-    <mj-section css-class="bl-content">
-      <mj-column>
-        <mj-text>
-          <h4>Spørsmål</h4>
-          <p>
-            Dersom du har ytterligere spørsmål er det bare å sende oss en mail på info@boklisten.no!
-          </p>
-          <hr/>
+        <h4>Åpningstider</h4>
+        <p>Du finner våre gjenværende åpningstider her: <a href="https://www.boklisten.no/info/branch">https://www.boklisten.no/info/branch</a>. Ikke alle skoler har åpent helt til fristen 1.juli, etter siste åpningstid må du eventuelt benytte posten.</p>
+        
+        <h4>Sende bøker i posten</h4>
+        <p>Adressen vår er: <b>Boklisten.no AS, Postboks 8, 1316 Eiksmarka</b>. Legg ved informasjon om deg som avsender når du sender pakken</p> 
+        
+        <h4>Spørsmål</h4>
+        <p>Dersom du har spørsmål, send dem gjerne til oss på <a href="mailto:info@boklisten.no">info@boklisten.no</a>!</p>
+        <p>Er du usikker på noe i denne mailen bør du sjekke vår første påminnelse sendt ut i slutten av mai.</p>
+        <p>Vi kommer til å sende ytterligere e-post og SMS med påminnelser når fristen nærmer seg, men hvis du er ferdig med eksamen er det ikke noe å vente på!</p>
           <p>Med vennlig hilsen<p>
           <i>Boklisten.no</i>
-        </mj-text>
+          </mj-text>
       </mj-column>
     </mj-section>
 

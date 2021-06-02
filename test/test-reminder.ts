@@ -8,10 +8,11 @@ const postOffice = testEnvironment.get<PostOffice>(PostOffice);
 
 const recipients: Recipient[] = [
   {
-    email: 'aholskil@gmail.com',
+    email: 'adrianandersen@protonmail.com',
+    name: "Adrian Andersen",
     user_id: '432',
     message_id: '889123hjhajsalkaks88cla80das',
-    phone: '+4791804211',
+    phone: '+4792831582',
     settings: {
       text: {
         deadline: '20.12.19',
@@ -41,7 +42,7 @@ const recipients: Recipient[] = [
 ];
 
 postOffice.setConfig({
-  reminder: {mediums: {email: true, sms: true}},
+  reminder: {mediums: {email: true, sms: false}},
   generic: {mediums: {email: true}},
   receipt: {mediums: {email: true}},
 });
@@ -51,7 +52,7 @@ postOffice
     type: 'reminder',
     subtype: 'partly-payment',
     sequence_number: 3,
-    mediums: {email: false, sms: true},
+    mediums: {email: true, sms: true},
   })
   .then(res => {
     logger.info('sent: ' + res);

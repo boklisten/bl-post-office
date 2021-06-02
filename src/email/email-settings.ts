@@ -27,8 +27,8 @@ export const EMAIL_SETTINGS: any = {
       "partly-payment": [
         "Informasjon om bøker fra Boklisten.no",
         "Andre påminnelse om bøker fra Boklisten.no",
-        "Tredje påminnelse om avdragsbøker fra Boklisten.no",
-        "Fjerde påminnelse om avdragsbøker fra Boklisten.no"
+        "Andre påminnelse om avdragsbøker fra Boklisten.no",
+        "Tredje påminnelse om avdragsbøker fra Boklisten.no"
       ],
       loan: [
         "Informasjon om bøker fra Boklisten.no",
