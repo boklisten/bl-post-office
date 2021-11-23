@@ -25,7 +25,7 @@ export const EMAIL_SETTINGS: any = {
         "Siste påminnelse om tilbakelevering av bøker"
       ],
       "partly-payment": [
-        "Informasjon om bøker fra Boklisten.no",
+        "Informasjon til privatister med bøker med frist 20. desember 2021",
         "Andre påminnelse om bøker fra Boklisten.no",
         "Andre påminnelse om avdragsbøker fra Boklisten.no",
         "Tredje påminnelse om avdragsbøker fra Boklisten.no"
