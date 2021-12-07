@@ -1,4 +1,4 @@
-<mjml> 
+<mjml>
   <mj-head>
     <mj-include path="../../styles/bl-style.mjml"/>
   </mj-head>
@@ -11,17 +11,14 @@
         <mj-text>
           <h4>Hei {{ name }}</h4>
           <p>
-            Du er registrert som privatist som har bøker hvor andre avdrag skal betales innen 20.desember. Vi har per i dag ikke registrert tilbakesalg eller utkjøp fra deg.
-          </p> 
-          <p>
-            Enkelt forklart har du fire valg
+Det er per i dag ikke registrert at bøkene dine som har frist 20. desember er ordnet opp i. Du har fortsatt fire valg:
           </p>
-          <ul>
-            <li>Lever/selg tilbake bøkene dine</li>
-            <li>Betal andre avdrag før fristen</li>
-            <li>Ikke gjør noe, og få et stort gebyr på faktura</li>
-            <li>Utsett fristen til 1.juli for 50 kroner per bok</li>
-          </ul>
+          <ol>
+            <li>Lever bøkene dine til oss før fristen. Da slipper du å betale noe mer.</li>
+            <li>Betal andre avdrag før fristen. Da beholder du bøkene.</li>
+            <li>Ikke gjør noe, og få et stort gebyr i tillegg på fakturaen for andre avdrag.</li>
+            <li>Forleng fristen frem til neste sommer, for 50 kroner per bok.</li>
+          </ol>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -32,57 +29,46 @@
       <mj-column>
         <mj-text>
           <p>
-            Bøker som ikke er solgt tilbake til Boklisten (enten via stand eller posten) eller utkjøpt innen 20.desember mottar faktura fra oss. Fakturagebyret på 150 kroner per bok kommer i tillegg til prisen for andre avdrag, og det anbefales derfor at du kommer innom oss før fristen.
+            Bøker som ikke er ordnet opp i – enten ved å sende/levere bøker til oss, forlenge eller betale andre avdrag innen 20. desember mottar faktura fra oss. <strong>Fakturagebyret er på 400 kroner per bok,</strong> og kommer i tillegg til prisen for andre avdrag. Det anbefales derfor på det sterkeste at du kommer innom, sender bøker, forlenger eller kjøper ut før 20. desember.
           </p>
           <i>
             Dersom du allerede har sendt bøkene dine i posten kan du se bort fra denne henvendelsen.
           </i>
           <h4>
-            Steder og tidspunkter der du kan selge bøkene tilbake til oss: 
+Steder og tidspunkter du kan komme innom med bøkene dine:
           </h4>
-          <ul>
+          <ol>
             <li>
-             Bøkene kan selges på stand på skolen din eller andre steder vi har åpent. Åpningstider for resterende dager kan du finne på www.boklisten.no. Pass på at du booker time på de skolene som har denne løsningen. 
+Vi tar imot bøker <strong>på stand</strong> på skolen din eller andre steder vi har åpent. Åpningstider for resterende dager kan du finne på <a href="https://www.boklisten.no" target="_blank">www.boklisten.no</a>.
             </li>
             <li>
-              Bøker kan også sendes per post til Boklisten.no. Vår adresse er Boklisten.no, Postboks 8, 1316 Eiksmarka. Husk å legge ved liste over bøkene og ditt navn og telefonnummer i pakken med bøkene. Vi tar kun imot bøker som er på vår innkjøpsliste.
+ Bøker kan også sendes <strong>per post</strong> til Boklisten.no.
+Vår adresse er Boklisten.no, Postboks 8, 1316 Eiksmarka
+Husk å legge ved liste over bøkene og ditt navn og telefonnummer i pakken med bøkene.
             </li>
-          </ul>
+            <li>
+I Oslo har vi også satt ut innsamlingsskap på Sonans, Akademiet og Metis.
+Du kan levere bøker her helt frem til vi fjerner skapene 20. desember.
+            </li>
+          </ol>
           <i>
-            OBS: Kun Boklisten.no sin ansatte kan kjøpe tilbake bøker eller ta imot betaling for andre avdrag. Skolen har ikke ansvar for å ta imot bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal kontaktes dersom du har spørsmål om bøker.
+OBS: Kun Boklisten.no sine ansatte kan ta imot bøker eller betaling for andre avdrag. Skolen har ikke ansvar for å ta imot bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal kontaktes dersom du har spørsmål om bøker.
           </i>
           <p>
-            Du kan betale andre avdrag ved å logge deg på våre nettsider og betale der. Du kan også ordne dette på stand eller via Vipps-nummer 33415. Ytterligere informasjon finner du i vår første informasjonsmail, sendt ut i november.
+Du kan <strong>betale andre avdrag</strong> ved å logge deg på våre nettsider og betale der. Du kan også ordne dette på stand eller via Vipps-nummer 33415. Ytterligere informasjon finner du i vår første informasjonsmail, sendt ut i november. Du kan også <strong>forlenge</strong> både via nettsiden og Vipps.
           </p>
           <p>
-            Husk at fristen for å selge tilbake uten faktura er 20.desember – vi tar imot bøker også etter dette tidspunktet, men du må da fortsatt betale fakturagebyret. Det er ikke mulig å selge bøker til oss via resepsjonen på privatistskolen du går på.
+Du kan bare forlenge bøker som ikke har vært forlenget tidligere.
           </p>
+          <p>Husk at <strong>fristen for å unngå fakturagebyret er 20.desember</strong> – vi tar imot bøker også etter dette tidspunktet, men du må da fortsatt betale fakturagebyret. Det er ikke mulig å selge bøker til oss via resepsjonen på privatistskolen du går på.</p>
+          <p>Ta kontakt med oss på <a href="mailto:info@boklisten.no">info@boklisten.no</a> dersom du har spørsmål.</p>
           <i>
-            Det er alltid bedre å være tidlig enn sent ute – da blir det lettere for deg å ordne opp om noe skulle gå galt! Vi ser frem til å se deg på en av våre stands!
+Det er alltid bedre å være tidlig enn sent ute – da blir det lettere for deg å ordne opp om noe skulle gå galt! Vi ser frem til å se deg på en av våre stands!
           </i>
-          </mj-text>
-      </mj-column>
-    </mj-section>
 
-    <mj-section>
-      <mj-column>
-        <mj-button href="https://www.boklisten.no/info/buyback" background-color="#26768f">
-          Klikk her for å se vår innkjøpsliste
-        </mj-button>
-      </mj-column>
-    </mj-section>
-
-    <mj-section css-class="bl-content">
-      <mj-column>
-        <mj-text>
-          <h4>Spørsmål</h4>
-          <p>
-            Hvis du har spørsmål eller lurer på hvorfor du fikk denne e-posten, kan du ta kontakt med Boklisten.no på e-post: info@boklisten.no
-          </p>
-          <hr/>
           <p>Med vennlig hilsen<p>
           <i>Boklisten.no</i>
-        </mj-text>
+          </mj-text>
       </mj-column>
     </mj-section>
 
