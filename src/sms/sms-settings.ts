@@ -15,7 +15,7 @@ export const SMS_SETTINGS = {
     },
     reminder: {
       "partly-payment": [
-        "Hei, fristen for bøkene dine fra Boklisten.no nærmer seg. Kom innom med bøkene før fristen 20. desember, så slipper du andre avdrag. Sjekk åpningstider på www.boklisten.no. I Oslo kan du også bruke våre innsamlingsskap på skolene utenom åpningstidene. Vennlig hilsen, Boklisten.no",
+        "På grunn av restriksjoner er innsamling på Sonans Stavanger stengt 20. desember. Siste dag er dermed 17. desember. Kom innom med bøkene dine da, eller send bøker i posten før fristen! Mvh Boklisten.no",
         "Vi minner om bøker med frist 20. desember. Sjekk påminnelsesmailer for mer informasjon. Kom innom med bøkene, send dem i posten, eller betal andre avdrag på nettsidene våre. Mvh Boklisten.no",
         "Vi minner igjen om bøkene dine fra Boklisten.no med frist 20.desember. Sjekk informasjonsmailer og nettside for å slippe unødvendige gebyrer.",
         "Vi åpner opp for forlengelse og utkjøp på vår nettside frem til 31.desember. Logg inn på nettsiden og betal. Du kan fortsatt selge bøkene tilbake til oss når vi har åpent i januar, men slipper gebyr om du betaler før nyttår. Mvh Boklisten.no"
