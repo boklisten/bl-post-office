@@ -8,7 +8,7 @@ export const SMS_SETTINGS = {
   text: {
     match: {
       none: [
-        "Hei! Semesteret er nå snart slutt. Vennligst gi oss beskjed om hva som skal skje med bøkene dine: staging.boklisten.no/m?d=010722",
+        "Hei! Semesteret er snart slutt. Vennligst gi oss beskjed om hva som skal skje med bøkene dine: https://staging.boklisten.no/m?d=010722 Mvh. Boklisten.no",
         "Hei fra oss i Boklisten.no. Minner om vår gjenbruksordning. Gi oss beskjed om hva som skal skje med bøkene dine: boklisten.no/m?d=201219",
         "Vil du spare penger før jul? Trykk her: boklisten.no/m?d=201219 for å levere bøkene dine direkte til en annen privatist etter jul! Med vennlig hilsen fra Boklisten.no"
       ]
