@@ -17,7 +17,7 @@ export const SMS_SETTINGS = {
       "partly-payment": [
         "Fristen for avdragsbøker 1.juli nærmer seg! Sjekk vår nettside www.boklisten.no for åpningstider, \n" +
         "eller finn mer informasjon på mail vi har sendt ut i dag. Mvh Boklisten.no",
-        "Vi minner om bøker med frist 20. desember. Sjekk påminnelsesmailer for mer informasjon. Kom innom med bøkene, send dem i posten, eller betal andre avdrag på nettsidene våre. Mvh Boklisten.no",
+        "Vi minner om bøker med frist 1. juli. Sjekk påminnelsesmailer for mer informasjon. Kom innom med bøkene, send dem i posten, eller betal andre avdrag på nettsidene våre. Mvh Boklisten.no",
         "Vi minner igjen om bøkene dine fra Boklisten.no med frist 20.desember. Sjekk informasjonsmailer og nettside for å slippe unødvendige gebyrer.",
         "Vi åpner opp for forlengelse og utkjøp på vår nettside frem til 31.desember. Logg inn på nettsiden og betal. Du kan fortsatt selge bøkene tilbake til oss når vi har åpent i januar, men slipper gebyr om du betaler før nyttår. Mvh Boklisten.no"
       ],
