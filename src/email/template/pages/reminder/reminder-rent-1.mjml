@@ -12,8 +12,11 @@
           <h4>
             Hei {{ name }}
           </h4>
-          <p>Du er registrert som privatist som har leid bøker av Boklisten.no dette semesteret. Vi har per dags dato ikke registrert at alle dine bøker som er leid fram til sommeren er innlevert.</p>
-          <p>Bøker som ikke er levert på stand eller sendt i posten innen 1.juli må erstattes. Erstatningsbeløpet er på 100% av bokens nypris + 10% + 90 kroner i administrasjonsgebyr per bok.</p>
+          <h4>Manglende bøker som skal leveres til
+            Boklisten.no</h4>
+          <p>Vi har nå gjennomført innsamling av skolebøker på skolen din, men det er
+            ikke registrert at du har levert alle bøkene du fikk utdelt av oss ved
+            skolestart.</p>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -23,22 +26,38 @@
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h4>Steder og tidspunkter der du kan levere inn bøkene til oss:</h4>
-          <ul>
-            <li>
-              Bøkene kan leveres på stand på skolen din eller andre steder vi har åpent. Åpningstider for resterende dager kan du finne på www.boklisten.no 
-            </li>
-            <li>
-              Bøker kan også sendes per post til Boklisten.no. 
-              Vår adresse er: Boklisten.no, Postboks 8, 1316 Eiksmarka.
-              Husk å legge ved liste over bøkene og ditt navn og telefonnummer i pakken med bøkene. Vi tar kun imot bøker som er på vår innkjøpsliste.
-            </li>
-          </ul>
-          <i>OBS: Vi tar kun imot bøker i våre åpningstider. Skolen har ikke ansvar for å ta imot bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal kontaktes dersom du lurer på noe angående innlevering.</i>
-          <p>Du kan kjøpe ut bøkene før fristen for 50% av nypris. Dette kan du gjøre på nett, på stand, eller via vårt Vipps-nummer 33415. Ytterligere informasjon finner du i vår første informasjonsmail, sendt ut i mai.</p>
-          <p>Husk at innleveringsfristen er 1.juli – vi tar ikke imot bøker etter dette tidspunktet, med mindre de er sendt i posten før denne datoen. Det er heller ikke mulig å levere til resepsjonen på privatistskolen du går på.</p>
-          <i>Det er alltid bedre å være tidlig enn sent ute – da blir det lettere for deg å ordne opp om noe skulle gå galt!</i>
-          <p>Dersom du ikke leverer antar vi at du vil beholde bøkene, og sender erstatningsfaktura som avtalt i leievilkårene.</p>
+          <h4>Kan jeg fortsatt levere?</h4>
+          <p>Ja! Du kan levere bøker helt frem til fristen, som er 1. juli. Vi er ikke på
+            skolen din lenger, men vi har åpent innsamlingslokale i Oslo sentrum, se
+            åpningstider her:</p>
+          <a href="https://www.boklisten.no/info/branch/5ec28bf21ffe48001c194bc7">https://www.boklisten.no/info/branch/5ec28bf21ffe48001c194bc7</a>
+          <p>Du kan også sende bøker til oss i posten. Vi godtar innsendte bøker
+            såfremt de er sendt før fristen 1. juli. Adressen er:</p>
+          <p>Boklisten.no AS</p>
+          <p>Postboks 8</p>
+          <p>1316 Eiksmarka</p>
+          <p>Legg gjerne ved en lapp med ditt navn og telefonnummer. Vi anbefaler
+            sporing på pakken.</p>
+          <h4>Jeg har byttet bok med en medelev, og han/hun har ikke
+            levert boken min.</h4>
+          <p>Du er ansvarlig for å levere boken du fikk utdelt under utdelingen. Dersom
+            du har byttet bok, og den du har byttet bok med ikke har levert den, bør
+            du snarest ta kontakt med denne personen for å sørge for at boken blir
+            levert innen fristen.</p>
+          <h4>Jeg har mistet eller ødelagt boken jeg fikk fra dere.</h4>
+          <p>Hvis du har mistet eller ødelagt boken din, må du erstatte den. Det er
+            billigere å erstatte en mistet eller ødelagt bok hvis du betaler før fristen 1.
+            juli. Etter 1. juli sender vi faktura med påslag og fakturagebyr. Vi anbefaler
+            derfor på det sterkeste at du logger inn på nettsiden vår,
+            <a href="https://www.boklisten.no">www.boklisten.no</a> og betaler for utkjøp av boken der. Du kan også bruke
+            vårt Vipps-nummer 33415, eller komme innom vår stand for å betale.
+            Bruker du Vipps må du sende oss en bekreftelse på at du har betalt dit –
+            slik at vi får registrert dette.</p>
+          <h4>Andre spørsmål?</h4>
+          <p>Dersom du har andre spørsmål, eller mener at du allerede har levert
+            denne boken – ta gjerne kontakt med oss! Vi foretrekker e-post
+            <a href="mailto:info@boklisten.no">info@boklisten.no</a>.</p>
+
           <p>Med vennlig hilsen</p>
           <i>Boklisten.no</i>
         </mj-text>

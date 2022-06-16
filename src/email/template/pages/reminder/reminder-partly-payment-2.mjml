@@ -10,18 +10,24 @@
       <mj-column>
         <mj-text>
           <h4>Hei {{ name }}</h4>
-          <p>
-          Du har fortsatt bøker hos Boklisten.no som ikke er solgt tilbake eller kjøpt ut. Fristen for å gjennomføre dette uten gebyr er 20.desember. Denne fristen er absolutt, og etter dette vil du uansett måtte betale fakturagebyret.
-          </p>
-          <p>Dette er dine fire valg:</p>
-          <ol>
-          <li>
-Lever bøkene dine til oss før fristen. Da slipper du å betale noe mer.
-          </li>
-          <li>Betal andre avdrag før fristen. Da beholder du bøkene.</li>
-          <li>Ikke gjør noe, og få et stort gebyr i tillegg på fakturaen for andre avdrag.</li>
-          <li>Forleng fristen frem til neste sommer, for 50 kroner per bok.</li>
-          </ol>
+            <p>
+                Dette er vår tredje påminnelse om bøkene du har med frist 1. juli.
+            </p>
+            <p>
+                Vi har per i dag ikke registrert at du har solgt tilbake eller kjøpt ut bøkene
+                dine.
+            </p>
+            <p>Du har fire valg.</p>
+            <ul>
+                <li><b>Selg bøkene tilbake til oss</b> på <b>stand</b> – alle åpningstider finner du
+                    på <a href="http://www.boklisten.no/"
+                          target="_blank">www.boklisten.no</a>.</li>
+                <li>Selg bøkene dine til oss ved å <b>sende dem i posten</b>.</li>
+                <li><b>Kjøp ut bøkene</b> på nettsiden. Logg deg inn med din bruker og velg
+                    «kjøp ut» på dine bøker.</li>
+                <li><b>Utsett fristen</b> ved å betale 50 kroner per bok.</li>
+                <li>Gjør ingenting før fristen 1.juli, og få <b>faktura</b> med ekstra gebyr.</li>
+            </ul>
         </mj-text>
       </mj-column>
     </mj-section>
