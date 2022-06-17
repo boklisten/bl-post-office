@@ -10,6 +10,9 @@
       <mj-column>
         <mj-text>
           <h4>Hei {{ name }}</h4>
+          <hr/>
+          <b>Det skjedde en feil i forbindelse med utsendelsen av gårsdagens epost, som medførte at den inneholdt feil informasjon. Dette beklager vi, og du kan se bort ifra denne. Her er den riktige eposten.</b>
+          <hr/>
           <p>
           Dette er vår tredje og siste e-postpåminnelse om bøkene du har med frist 1. juli.
           </p> 

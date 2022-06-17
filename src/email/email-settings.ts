@@ -28,7 +28,7 @@ export const EMAIL_SETTINGS: any = {
         "Informasjon til privatister med bøker med frist 1. juli 2022",
         "Andre påminnelse om bøker med frist 1. juli 2022",
         "Siste påminnelse om bøker fra Boklisten.no",
-        "Tredje påminnelse om avdragsbøker fra Boklisten.no"
+        "RETTELSE: Siste påminnelse om bøker fra Boklisten.no"
       ],
       loan: [
         "Informasjon om bøker fra Boklisten.no",
