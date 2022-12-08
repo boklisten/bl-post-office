@@ -15,11 +15,9 @@ export const SMS_SETTINGS = {
     },
     reminder: {
       "partly-payment": [
-        // index 0 and 1 is the same message, but needed to divide it into two to fit smses
         "Hei, fristen for bøkene dine fra Boklisten.no nærmer seg. Kom innom med bøkene før fristen 20. desember, så slipper du andre avdrag. Sjekk åpningstider på www.boklisten.no.",
-        "På Sonans Oslo, Akademiet Oslo, Sonans Bergen, Metis Bergen og Sonans Trondheim kan du også bruke våre innsamlingsskap på skolene utenom åpningstidene. Vennlig hilsen, Boklisten.no",
-        // "Vi minner om fristen for bøkene dine 1.juli. I tillegg til stands og postsending, kan du på mange skoler levere i våre innsamlingsbokser. Pass på at du kun leverer bøker med unik ID evt. legg en lapp med navn og tlf i boken. Kontakt oss gjerne på e-post om skapet er fullt.",
-        "Siste påminnelse! Selg bøkene dine tilbake til Boklisten.no for å slippe andre avdrag. Bøker kan leveres der vi har åpent, eller sendes i posten frem til 1.juli. Se påminnelsesmailer for mer informasjon. Vi sender ut faktura med gebyr etter 1.juli! Mvh Boklisten.no",
+        "Vi minner om bøker med frist 20. desember. Sjekk påminnelsesmailer for mer informasjon. Kom innom med bøkene, send dem i posten, eller betal andre avdrag på nettsidene våre. Mvh Boklisten.no",
+        "Vi minner igjen om bøkene dine fra Boklisten.no med frist 20.desember. Sjekk informasjonsmailer og nettside for å slippe unødvendige gebyrer.",
         "Vi åpner opp for forlengelse og utkjøp på vår nettside frem til 31.desember. Logg inn på nettsiden og betal. Du kan fortsatt selge bøkene tilbake til oss når vi har åpent i januar, men slipper gebyr om du betaler før nyttår. Mvh Boklisten.no"
       ],
       rent: [
