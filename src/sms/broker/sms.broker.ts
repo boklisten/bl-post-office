@@ -1,6 +1,6 @@
-import {injectable} from 'inversify';
-import {TwilioConnecter} from './twilio/twilio.connecter';
-import {SMS_SETTINGS} from '../sms-settings';
+import { injectable } from "inversify";
+import { TwilioConnecter } from "./twilio/twilio.connecter";
+import { SMS_SETTINGS } from "../sms-settings";
 
 @injectable()
 export class SmsBroker {
@@ -10,7 +10,7 @@ export class SmsBroker {
     toPhoneNumber: string,
     fromPhoneNumber: string,
     text: string,
-    blMessageId: string,
+    blMessageId: string
   ): Promise<any> {
     this.validatePhoneNumber(toPhoneNumber);
     this.validatePhoneNumber(fromPhoneNumber);
@@ -20,7 +20,7 @@ export class SmsBroker {
       toPhoneNumber,
       fromPhoneNumber,
       text,
-      blMessageId,
+      blMessageId
     );
   }
 
@@ -36,7 +36,7 @@ export class SmsBroker {
     let reason = null;
 
     if (!text) {
-      reason = 'text is undefined';
+      reason = "text is undefined";
     } else if (text.length < SMS_SETTINGS.minLength) {
       reason = `text is to short, must be at least ${
         SMS_SETTINGS.minLength

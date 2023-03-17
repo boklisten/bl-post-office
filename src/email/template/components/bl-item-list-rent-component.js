@@ -1,12 +1,12 @@
-import {registerDependencies} from 'mjml-validator';
-import {BodyComponent} from 'mjml-core';
-import {BL_STYLES} from '../config/bl-styles.js';
+import { registerDependencies } from "mjml-validator";
+import { BodyComponent } from "mjml-core";
+import { BL_STYLES } from "../config/bl-styles.js";
 
 registerDependencies({
   // Tell the validator which tags are allowed as our component's parent
-  'mj-body': ['bl-item-list-rent-component'],
+  "mj-body": ["bl-item-list-rent-component"],
   // Tell the validator which tags are allowed as our component's children
-  'bl-item-list-rent-component': [],
+  "bl-item-list-rent-component": []
 });
 
 /*

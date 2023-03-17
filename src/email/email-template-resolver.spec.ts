@@ -1,24 +1,24 @@
-import test from 'ava';
-import {EmailTemplateResolver} from './email-template-resolver';
-import {TestEnvironment} from '../../test/test-environment';
+import test from "ava";
+import { EmailTemplateResolver } from "./email-template-resolver";
+import { TestEnvironment } from "../../test/test-environment";
 import {
   MessageType,
   MessageOptions,
-  MessageSubtype,
-} from '../interfaces/message-options';
+  MessageSubtype
+} from "../interfaces/message-options";
 
 const testEnvironment = new TestEnvironment({
-  classesToBind: [EmailTemplateResolver],
+  classesToBind: [EmailTemplateResolver]
 });
 
-test('should throw error if messageOptions.type is not supported', t => {
+test("should throw error if messageOptions.type is not supported", t => {
   const emailTemplateResolver = testEnvironment.get<EmailTemplateResolver>(
-    EmailTemplateResolver,
+    EmailTemplateResolver
   );
 
   const messageOptions: MessageOptions = {
-    type: 'randomVal' as MessageType,
-    subtype: 'partly-payment',
+    type: "randomVal" as MessageType,
+    subtype: "partly-payment"
   };
 
   const emailTemplateInput = {};
@@ -29,19 +29,19 @@ test('should throw error if messageOptions.type is not supported', t => {
     },
     {
       instanceOf: ReferenceError,
-      message: /could not get template for type "randomVal"/,
-    },
+      message: /could not get template for type "randomVal"/
+    }
   );
 });
 
-test('should throw error if messageOptions.subtype is not supported', t => {
+test("should throw error if messageOptions.subtype is not supported", t => {
   const emailTemplateResolver = testEnvironment.get<EmailTemplateResolver>(
-    EmailTemplateResolver,
+    EmailTemplateResolver
   );
 
   const messageOptions: MessageOptions = {
-    type: 'reminder',
-    subtype: 'randomVal' as MessageSubtype,
+    type: "reminder",
+    subtype: "randomVal" as MessageSubtype
   };
 
   const emailTemplateInput = {};
@@ -52,19 +52,19 @@ test('should throw error if messageOptions.subtype is not supported', t => {
     },
     {
       instanceOf: ReferenceError,
-      message: /could not get template for type "reminder" subtype "randomVal"/,
-    },
+      message: /could not get template for type "reminder" subtype "randomVal"/
+    }
   );
 });
 
-test('should return file if messageOptions.type and messageOptions.subtype is supported', t => {
+test("should return file if messageOptions.type and messageOptions.subtype is supported", t => {
   const emailTemplateResolver = testEnvironment.get<EmailTemplateResolver>(
-    EmailTemplateResolver,
+    EmailTemplateResolver
   );
 
   const messageOptions: MessageOptions = {
-    type: 'reminder',
-    subtype: 'partly-payment',
+    type: "reminder",
+    subtype: "partly-payment"
   };
 
   const emailTemplateInput = {};
@@ -74,13 +74,13 @@ test('should return file if messageOptions.type and messageOptions.subtype is su
 
 test('should return file if messageOptions.type is "reminder" and messageOptions.subtype is "rent"', t => {
   const emailTemplateResolver = testEnvironment.get<EmailTemplateResolver>(
-    EmailTemplateResolver,
+    EmailTemplateResolver
   );
 
   const messageOptions: MessageOptions = {
-    type: 'reminder',
-    subtype: 'rent',
-    sequence_number: 1,
+    type: "reminder",
+    subtype: "rent",
+    sequence_number: 1
   };
 
   const emailTemplateInput = {};
@@ -90,13 +90,13 @@ test('should return file if messageOptions.type is "reminder" and messageOptions
 
 test('should return file if messageOptions.type is "generic" and messageOptions.subtype is "none"', t => {
   const emailTemplateResolver = testEnvironment.get<EmailTemplateResolver>(
-    EmailTemplateResolver,
+    EmailTemplateResolver
   );
 
   const messageOptions: MessageOptions = {
-    type: 'generic',
-    subtype: 'none',
-    sequence_number: 0,
+    type: "generic",
+    subtype: "none",
+    sequence_number: 0
   };
 
   const emailTemplateInput = {};

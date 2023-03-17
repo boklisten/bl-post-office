@@ -1,6 +1,6 @@
-import {injectable} from 'inversify';
-import 'reflect-metadata';
-import {logger} from '../../../logger';
+import { injectable } from "inversify";
+import "reflect-metadata";
+import { logger } from "../../../logger";
 
 @injectable()
 export class TwilioConnecter {
@@ -8,18 +8,18 @@ export class TwilioConnecter {
     toNumber: string,
     fromNumber: string,
     text: string,
-    blMessageId: string,
+    blMessageId: string
   ): Promise<any> {
-    const twilioClient = require('twilio')(
+    const twilioClient = require("twilio")(
       process.env.TWILIO_SMS_SID,
-      process.env.TWILIO_SMS_AUTH_TOKEN,
+      process.env.TWILIO_SMS_AUTH_TOKEN
     );
 
     try {
       const res = twilioClient.messages.create({
         body: text,
         from: fromNumber,
-        to: toNumber,
+        to: toNumber
         /*
         statusCallback:
           process.env.TWILIO_STATUS_CALLBACK_URL +

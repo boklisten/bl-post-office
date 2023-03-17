@@ -1,39 +1,39 @@
-import {MessageOptions} from '../../../interfaces/message-options';
-import {injectable} from 'inversify';
-import {Recipient} from '../../../interfaces/reciptient';
-import {DepartmentHandler} from '../../../interfaces/department-handler';
-import {util} from '../../../util';
-import {EmailTemplateResolver} from '../../email-template-resolver';
-import {EmailBroker} from '../../broker/email.broker';
-import {EMAIL_SETTINGS} from '../../email-settings';
-import {EmailTemplateInput} from '../../../interfaces/emailTemplateInput';
-import {EmailContent} from '../../email-content';
-import 'reflect-metadata';
+import { MessageOptions } from "../../../interfaces/message-options";
+import { injectable } from "inversify";
+import { Recipient } from "../../../interfaces/reciptient";
+import { DepartmentHandler } from "../../../interfaces/department-handler";
+import { util } from "../../../util";
+import { EmailTemplateResolver } from "../../email-template-resolver";
+import { EmailBroker } from "../../broker/email.broker";
+import { EMAIL_SETTINGS } from "../../email-settings";
+import { EmailTemplateInput } from "../../../interfaces/emailTemplateInput";
+import { EmailContent } from "../../email-content";
+import "reflect-metadata";
 
 @injectable()
 export class EmailReminder implements DepartmentHandler {
-  private supportedSubtypes = ['partly-payment', 'rent', 'loan'];
+  private supportedSubtypes = ["partly-payment", "rent", "loan"];
 
   constructor(
     private _emailTemplateResolver: EmailTemplateResolver,
-    private _emailBroker: EmailBroker,
+    private _emailBroker: EmailBroker
   ) {}
 
   public async send(
     recipient: Recipient,
-    options: MessageOptions,
+    options: MessageOptions
   ): Promise<boolean> {
     this.validateOptions(options);
     this.validateRecipient(recipient);
 
     const emailTemplateInput = this.createEmailTemplateInput(
       recipient,
-      options,
+      options
     );
 
     const template = this._emailTemplateResolver.generate(
       options,
-      emailTemplateInput,
+      emailTemplateInput
     );
     const emailSubject = this.getEmailSubject(options);
 
@@ -47,7 +47,7 @@ export class EmailReminder implements DepartmentHandler {
       user_id: recipient.user_id as string,
       sequence_number: options.sequence_number,
       type: options.type,
-      subtype: options.subtype,
+      subtype: options.subtype
     };
 
     return await this._emailBroker.send(emailContent);
@@ -55,18 +55,18 @@ export class EmailReminder implements DepartmentHandler {
 
   private createEmailTemplateInput(
     recipient: Recipient,
-    messageOptions: MessageOptions,
+    messageOptions: MessageOptions
   ): EmailTemplateInput {
     return {
       itemList: recipient.itemList,
       name: recipient.name,
       settings: recipient.settings,
-      textBlocks: messageOptions.textBlocks,
+      textBlocks: messageOptions.textBlocks
     };
   }
 
   private validateOptions(options: MessageOptions) {
-    if (!options.type || options.type !== 'reminder') {
+    if (!options.type || options.type !== "reminder") {
       throw `type "${options.type}" is not "reminder"`;
     }
 

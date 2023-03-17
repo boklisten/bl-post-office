@@ -1,43 +1,43 @@
-import {injectable} from 'inversify';
-import {DepartmentHandler} from '../../../interfaces/department-handler';
-import {EmailTemplateResolver} from '../../email-template-resolver';
-import {EmailBroker} from '../../broker/email.broker';
-import {EmailTemplateInput} from '../../../interfaces/emailTemplateInput';
+import { injectable } from "inversify";
+import { DepartmentHandler } from "../../../interfaces/department-handler";
+import { EmailTemplateResolver } from "../../email-template-resolver";
+import { EmailBroker } from "../../broker/email.broker";
+import { EmailTemplateInput } from "../../../interfaces/emailTemplateInput";
 import {
   MessageOptions,
-  MessageSubtype,
-} from '../../../interfaces/message-options';
-import {Recipient} from '../../../interfaces/reciptient';
-import {EmailContent} from '../../email-content';
-import {EMAIL_SETTINGS} from '../../email-settings';
-import 'reflect-metadata';
-import {util} from '../../../util';
-import {logger} from '../../../logger';
+  MessageSubtype
+} from "../../../interfaces/message-options";
+import { Recipient } from "../../../interfaces/reciptient";
+import { EmailContent } from "../../email-content";
+import { EMAIL_SETTINGS } from "../../email-settings";
+import "reflect-metadata";
+import { util } from "../../../util";
+import { logger } from "../../../logger";
 
 @injectable()
 export class EmailGeneric implements DepartmentHandler {
-  private supportedSubtypes: MessageSubtype[] = ['none'];
+  private supportedSubtypes: MessageSubtype[] = ["none"];
 
   constructor(
     private _emailTemplateResolver: EmailTemplateResolver,
-    private _emailBroker: EmailBroker,
+    private _emailBroker: EmailBroker
   ) {}
 
   public async send(
     recipient: Recipient,
-    options: MessageOptions,
+    options: MessageOptions
   ): Promise<boolean> {
     this.validateRecipient(recipient);
     this.validateOptions(options);
 
     const emailTemplateInput = this.createEmailTemplateInput(
       recipient,
-      options,
+      options
     );
 
     const template = this._emailTemplateResolver.generate(
       options,
-      emailTemplateInput,
+      emailTemplateInput
     );
 
     const emailContent = this.createEmailContent(recipient, options, template);
@@ -47,7 +47,7 @@ export class EmailGeneric implements DepartmentHandler {
         options.subtype
       }" and sequence number "${options.sequence_number}" to "${
         recipient.email
-      }"`,
+      }"`
     );
     return await this._emailBroker.send(emailContent);
   }
@@ -55,7 +55,7 @@ export class EmailGeneric implements DepartmentHandler {
   private createEmailContent(
     recipient: Recipient,
     options: MessageOptions,
-    template: string,
+    template: string
   ): EmailContent {
     return {
       to: recipient.email as string,
@@ -67,23 +67,23 @@ export class EmailGeneric implements DepartmentHandler {
       user_id: recipient.user_id as string,
       sequence_number: options.sequence_number,
       type: options.type,
-      subtype: options.subtype,
+      subtype: options.subtype
     };
   }
 
   private createEmailTemplateInput(
     recipient: Recipient,
-    options: MessageOptions,
+    options: MessageOptions
   ): EmailTemplateInput {
     return {
       name: recipient.name as string,
-      htmlContent: options.htmlContent as string,
+      htmlContent: options.htmlContent as string
     };
   }
 
   private validateRecipient(recipient: Recipient): boolean {
     if (!recipient) {
-      throw new ReferenceError('recipient is undefined');
+      throw new ReferenceError("recipient is undefined");
     }
     if (!recipient.email || !util.isEmailValid(recipient.email as string)) {
       throw new TypeError(`toEmail "${recipient.email}" is not a valid email`);
@@ -93,21 +93,21 @@ export class EmailGeneric implements DepartmentHandler {
 
   private validateOptions(options: MessageOptions): boolean {
     if (!options) {
-      throw new ReferenceError('options is undefined');
+      throw new ReferenceError("options is undefined");
     }
     if (!options.htmlContent || options.htmlContent.length <= 0) {
-      throw new ReferenceError('options.htmlContent is not defined');
+      throw new ReferenceError("options.htmlContent is not defined");
     }
 
     if (!options.subject) {
-      throw new ReferenceError('options.subject is not defined');
+      throw new ReferenceError("options.subject is not defined");
     }
 
     if (this.supportedSubtypes.indexOf(options.subtype) <= -1) {
       throw new TypeError(
         `subtype "${options.subtype}" is not supported on type "${
           options.type
-        }"`,
+        }"`
       );
     }
     return true;
