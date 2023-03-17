@@ -1,12 +1,12 @@
-import {registerDependencies} from 'mjml-validator';
-import {BodyComponent} from 'mjml-core';
-import {BL_STYLES} from '../config/bl-styles.js';
+import { registerDependencies } from "mjml-validator";
+import { BodyComponent } from "mjml-core";
+import { BL_STYLES } from "../config/bl-styles.js";
 
 registerDependencies({
   // Tell the validator which tags are allowed as our component's parent
-  'mj-body': ['bl-header-component'],
+  "mj-body": ["bl-header-component"],
   // Tell the validator which tags are allowed as our component's children
-  'bl-header-component': [],
+  "bl-header-component": []
 });
 
 /*
@@ -19,18 +19,18 @@ export default class BlHeaderComponent extends BodyComponent {
 
   // Tells the validator which attributes are allowed for mj-layout
   static allowedAttributes = {
-    'stars-color': 'color',
-    color: 'color',
-    'font-size': 'unit(px)',
-    align: 'enum(left,right,center)',
+    "stars-color": "color",
+    color: "color",
+    "font-size": "unit(px)",
+    align: "enum(left,right,center)"
   };
 
   // What the name suggests. Fallback value for this.getAttribute('attribute-name').
   static defaultAttributes = {
-    'stars-color': 'yellow',
-    color: 'black',
-    'font-size': '12px',
-    align: 'center',
+    "stars-color": "yellow",
+    color: "black",
+    "font-size": "12px",
+    align: "center"
   };
 
   /*

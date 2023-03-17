@@ -1,5 +1,5 @@
-import {Container} from 'inversify';
-import {inversifyContainer} from '../inversify.config';
+import { Container } from "inversify";
+import { inversifyContainer } from "../inversify.config";
 
 export class TestEnvironment {
   private _container: Container;
@@ -11,7 +11,7 @@ export class TestEnvironment {
    */
   constructor(config?: {
     classesToBind?: any[];
-    classesToMock?: {real: any; mock: any}[];
+    classesToMock?: { real: any; mock: any }[];
   }) {
     this._container = inversifyContainer.createChild();
     if (config) {
@@ -40,7 +40,7 @@ export class TestEnvironment {
    *
    * @param mocks - a list of real classes with their mocked class
    */
-  public mockClass(mocks: {real: any; mock?: any; mockedClass?: any}[]) {
+  public mockClass(mocks: { real: any; mock?: any; mockedClass?: any }[]) {
     mocks.forEach(m => {
       if (m.mock) {
         this._container.bind(m.real).toConstantValue(m.mock);

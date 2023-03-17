@@ -1,8 +1,8 @@
-import {injectable} from 'inversify';
-import {SendgridConnecter} from './sendgrid/sendgrid.connecter';
-import {util} from '../../util';
-import 'reflect-metadata';
-import {EmailContent} from '../email-content';
+import { injectable } from "inversify";
+import { SendgridConnecter } from "./sendgrid/sendgrid.connecter";
+import { util } from "../../util";
+import "reflect-metadata";
+import { EmailContent } from "../email-content";
 
 @injectable()
 export class EmailBroker {

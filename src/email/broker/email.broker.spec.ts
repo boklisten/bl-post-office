@@ -1,10 +1,10 @@
-import test from 'ava';
-import {mock, when, instance, capture} from 'ts-mockito';
-import {EmailBroker} from './email.broker';
-import {TestEnvironment} from '../../../test/test-environment';
-import {SendgridConnecter} from './sendgrid/sendgrid.connecter';
-import {EMAIL_SETTINGS} from '../email-settings';
-import {EmailContent} from '../email-content';
+import test from "ava";
+import { mock, when, instance, capture } from "ts-mockito";
+import { EmailBroker } from "./email.broker";
+import { TestEnvironment } from "../../../test/test-environment";
+import { SendgridConnecter } from "./sendgrid/sendgrid.connecter";
+import { EMAIL_SETTINGS } from "../email-settings";
+import { EmailContent } from "../email-content";
 
 const mockedSendgridConnecter = mock(SendgridConnecter);
 
@@ -13,28 +13,28 @@ let testEnvironment: TestEnvironment;
 
 test.beforeEach(() => {
   dummyContent = {
-    to: 'valid@email.com',
-    from: 'some@email.com',
+    to: "valid@email.com",
+    from: "some@email.com",
     fromName: EMAIL_SETTINGS.name,
-    subject: 'some valid subject',
-    html: '<html></html>',
-    message_id: '123',
-    user_id: '123',
-    type: 'reminder',
-    subtype: 'partly-payment',
+    subject: "some valid subject",
+    html: "<html></html>",
+    message_id: "123",
+    user_id: "123",
+    type: "reminder",
+    subtype: "partly-payment"
   };
 
   testEnvironment = new TestEnvironment({
     classesToBind: [EmailBroker],
     classesToMock: [
-      {real: SendgridConnecter, mock: instance(mockedSendgridConnecter)},
-    ],
+      { real: SendgridConnecter, mock: instance(mockedSendgridConnecter) }
+    ]
   });
 });
 
-test.serial('should reject if toEmail is not a valid email', async t => {
+test.serial("should reject if toEmail is not a valid email", async t => {
   const emailBroker = testEnvironment.get<EmailBroker>(EmailBroker);
-  const randomValues = ['ss..sa', 'js8kla@', '@uu.com', undefined];
+  const randomValues = ["ss..sa", "js8kla@", "@uu.com", undefined];
 
   await randomValues.forEach(async (randomVal: any) => {
     try {
@@ -47,9 +47,9 @@ test.serial('should reject if toEmail is not a valid email', async t => {
   });
 });
 
-test.serial('should reject if subject is empty or undefined', async t => {
+test.serial("should reject if subject is empty or undefined", async t => {
   const emailBroker = testEnvironment.get<EmailBroker>(EmailBroker);
-  const randomValues = ['', undefined];
+  const randomValues = ["", undefined];
 
   await randomValues.forEach(async (randomVal: any) => {
     try {
@@ -62,9 +62,9 @@ test.serial('should reject if subject is empty or undefined', async t => {
   });
 });
 
-test.serial('should reject if html is empty or undefined', async t => {
+test.serial("should reject if html is empty or undefined", async t => {
   const emailBroker = testEnvironment.get<EmailBroker>(EmailBroker);
-  const randomValues = ['', undefined];
+  const randomValues = ["", undefined];
 
   await randomValues.forEach(async (randomVal: any) => {
     try {
@@ -77,12 +77,12 @@ test.serial('should reject if html is empty or undefined', async t => {
   });
 });
 
-test.serial('should call connecter if all values are valid', async t => {
+test.serial("should call connecter if all values are valid", async t => {
   const emailBroker = testEnvironment.get<EmailBroker>(EmailBroker);
-  const mockedResponse = 'valid!';
+  const mockedResponse = "valid!";
 
   when(mockedSendgridConnecter.send(dummyContent)).thenResolve(
-    mockedResponse as any,
+    mockedResponse as any
   );
 
   try {
@@ -93,9 +93,9 @@ test.serial('should call connecter if all values are valid', async t => {
   }
 });
 
-test.serial('should reject if connecter rejects', async t => {
+test.serial("should reject if connecter rejects", async t => {
   const emailBroker = testEnvironment.get<EmailBroker>(EmailBroker);
-  const mockedRejection = 'not good';
+  const mockedRejection = "not good";
 
   when(mockedSendgridConnecter.send(dummyContent)).thenReject(mockedRejection);
 
@@ -103,6 +103,6 @@ test.serial('should reject if connecter rejects', async t => {
     const res = await emailBroker.send(dummyContent);
     t.fail();
   } catch (e) {
-    t.is(e, 'connecter failed to send: ' + mockedRejection);
+    t.is(e, "connecter failed to send: " + mockedRejection);
   }
 });

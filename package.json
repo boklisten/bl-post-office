@@ -4,12 +4,12 @@
   "description": "a single module for sending messages to a customer",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npm run email:build && tsc && gulp copy:lib-to-dist",
-    "test": "npm run test:unit",
-    "test:unit": "ava",
+    "build": "gulp email:build && tsc && gulp copy:lib-to-dist",
+    "serve": "gulp email:serve",
+    "prettier": "prettier --write '**/*.{html,js,ts,tsx,md,json,yml,css,scss}' --ignore-path=.gitignore",
+    "prettier:check": "prettier --check '**/*.{html,js,ts,tsx,md,json,yml,css,scss}' --ignore-path=.gitignore",
+    "test": "ava",
     "test:watch": "ava --watch --fail-fast",
-    "email:serve": "gulp email:serve",
-    "email:build": "gulp email:build",
     "preversion": "npm run test",
     "prepack": "npm run build",
     "prepublishOnly": "npm run test"

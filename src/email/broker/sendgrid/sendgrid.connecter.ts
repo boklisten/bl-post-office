@@ -1,9 +1,9 @@
-import {injectable} from 'inversify';
-import * as sendgrid from '@sendgrid/mail';
-import 'reflect-metadata';
-import {logger} from '../../../logger';
-import {EMAIL_SETTINGS} from '../../email-settings';
-import {EmailContent} from '../../email-content';
+import { injectable } from "inversify";
+import * as sendgrid from "@sendgrid/mail";
+import "reflect-metadata";
+import { logger } from "../../../logger";
+import { EMAIL_SETTINGS } from "../../email-settings";
+import { EmailContent } from "../../email-content";
 
 @injectable()
 export class SendgridConnecter {
@@ -17,7 +17,7 @@ export class SendgridConnecter {
             to: content.to,
             from: {
               email: content.from,
-              name: content.fromName,
+              name: content.fromName
             },
             subject: content.subject,
             html: content.html,
@@ -26,8 +26,10 @@ export class SendgridConnecter {
               bl_message_user_id: content.user_id,
               bl_message_type: content.type,
               bl_message_subtype: content.subtype,
-              bl_message_sequence_number: content.sequence_number ? content.sequence_number : 0,
-            },
+              bl_message_sequence_number: content.sequence_number
+                ? content.sequence_number
+                : 0
+            }
           } as any,
           false,
           (err: any, result: any) => {
@@ -35,20 +37,20 @@ export class SendgridConnecter {
               return reject(
                 `[message_id: ${
                   content.message_id
-                }]: Sendgrid.send() failed to send: ${err}`,
+                }]: Sendgrid.send() failed to send: ${err}`
               );
             }
             logger.verbose(
               `[message_id: ${
                 content.message_id
-              }]: Sendgrid.send() successfully sent email request`,
+              }]: Sendgrid.send() successfully sent email request`
             );
             resolve(result);
-          },
+          }
         );
       } catch (e) {
         reject(
-          `[message_id: ${content.message_id}]: Sendgrid.send() failed: ${e}`,
+          `[message_id: ${content.message_id}]: Sendgrid.send() failed: ${e}`
         );
       }
     });
