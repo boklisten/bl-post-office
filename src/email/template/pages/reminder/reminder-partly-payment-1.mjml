@@ -10,51 +10,98 @@
       <mj-column>
         <mj-text>
           <h4>Hei {{ name }}</h4>
-          <p>
-              Det er per i dag ikke registrert at bøkene dine som har frist 20. desember er ordnet opp i. Du har fortsatt fire valg:
-          </p>
-            <ol>
-                <li>Lever bøkene dine til oss før fristen. Da slipper du å betale noe mer.</li>
-                <li>Betal andre avdrag før fristen. Da beholder du bøkene.</li>
-                <li>Ikke gjør noe, og få et stort gebyr i tillegg på fakturaen for andre avdrag.</li>
-                <li>Forleng fristen frem til sommeren, for 50 kroner per bok.</li>
-          </ol>
+
+            <p>
+                Dette er vår andre påminnelse om bøkene du har med frist 1. juli.
+            </p>
+
+            <p>
+                Vi har per i dag ikke registrert at du har solgt tilbake eller kjøpt ut bøkene
+                dine.
+            </p>
         </mj-text>
       </mj-column>
     </mj-section>
 
-    <bl-item-list-component></bl-item-list-component>
+      <bl-item-list-component></bl-item-list-component>
 
-    <mj-section css-class="bl-content">
-      <mj-column>
-        <mj-text>
-          <p>
-              Bøker som ikke er ordnet opp i – enten ved å sende/levere bøker til oss, forlenge eller betale andre avdrag innen 20. desember mottar faktura fra oss. <b>Fakturagebyret er på 400 kroner per bok</b>, og kommer i tillegg til prisen for andre avdrag. Det anbefales derfor på det sterkeste at du kommer innom, sender bøker, forlenger eller kjøper ut før 20. desember.
-          </p>
-            <i>Dersom du allerede har sendt bøkene dine i posten kan du se bort fra denne påminnelsen.</i>
-           <h4>Steder og tidspunkter du kan komme innom med bøkene dine:</h4>
-            <ol>
-                <li>Vi tar imot bøker på stand på skolen din eller andre steder vi har åpent. Åpningstider for resterende dager kan du finne på www.boklisten.no. </li>
-                <li>Bøker kan også sendes per post til Boklisten.no.</li>
-                <p>Vår adresse er Boklisten.no, Postboks 8, 1316 Eiksmarka</p>
-               <p>Husk å legge ved liste over bøkene og ditt navn og telefonnummer i pakken med bøkene.</p>
+      <mj-section>
+          <mj-column>
+              <mj-text>
 
-                <li>Vi har satt ut innsamlingsskap på noen skoler: Sonans Oslo, Akademiet Oslo, Sonans Bergen, Metis Bergen, Sonans Trondheim. Du kan levere bøker her helt frem til vi fjerner skapene 20. desember.</li>
-            </ol>
-            <i>OBS: Kun Boklisten.no sine ansatte kan ta imot bøker eller betaling for andre avdrag. Skolen har ikke ansvar for å ta imot bøker, og kommer heller ikke til å gjøre det. Boklisten.no skal kontaktes dersom du har spørsmål om bøker.</i>
-            <p>Du kan <b>betale andre avdrag</b> ved å logge deg på våre nettsider og betale der. Du kan også ordne dette på stand eller via Vipps-nummer 33415. Ytterligere informasjon finner du i vår første informasjonsmail, sendt ut i november. Du kan også forlenge både via nettsiden og Vipps.</p>
-            <p>Du kan bare forlenge bøker som ikke har vært forlenget tidligere.</p>
-            <p>Husk at <b>fristen for å unngå fakturagebyret er 20. desember</b> – vi tar imot bøker også etter dette tidspunktet, men du må da fortsatt betale fakturagebyret. Det er ikke mulig å selge bøker til oss via resepsjonen på privatistskolen du går på.</p>
-            <p>Ta kontakt med oss på <a href="mailto:info@boklisten.no">info@boklisten.no</a> dersom du har spørsmål.</p>
-            <i>Det er alltid bedre å være tidlig enn sent ute – da blir det lettere for deg å ordne opp om noe skulle gå galt! Vi ser frem til å se deg på en av våre stands!</i>
+            <p>
+                Du har flere valg.
+            </p>
 
-          <p>Med vennlig hilsen<p>
-          <i>Boklisten.no</i>
-          </mj-text>
+            <ul>
+                <li><b>Selg bøkene tilbake til oss</b> på
+                    <b>stand</b> – alle åpningstider finner du på <a href="https://www.boklisten.no" target="_blank">www
+                        .boklisten.no</a>.
+                </li>
+                <li>Selg bøkene dine til oss ved å <b>sende dem i posten</b>.</li>
+                <li><b>Kjøp ut bøkene</b> på nettsiden. Logg deg inn med din bruker og velg «kjøp ut» på dine bøker.</li>
+                <li><b>Utsett fristen</b> ved å betale 50 kroner per bok.</li>
+                <li>Gjør ingenting før fristen 1.juli, og få <b>faktura</b> med ekstra gebyr.</li>
+            </ul>
+
+            <p>
+                Vi har tidligere sendt ut en hovedpåminnelse med mer detaljert
+                informasjon. Ta gjerne kontakt dersom du ikke har fått denne.
+            </p>
+
+            <p><i>
+                OBS: Det er kun Boklistens ansatte som kan ta imot bøker – ikke ansatte
+                ved de forskjellige privatistskolene. Vi kan ikke ta ansvar for bøker som
+                ikke er levert direkte til oss, og du vil kunne bli fakturert for disse.
+                Unntaket er om du har levert i en av våre innsamlingsbokser.
+            </i></p>
+
+            <h4>Åpningstider</h4>
+
+            <p>
+                Du finner våre gjenværende åpningstider her:
+                <a href="https://www.boklisten.no/info/branch" target="_blank">https://www.boklisten.no/info/branch</a>
+                Ikke alle skoler har åpent helt til
+                fristen 1.juli, etter siste åpningstid må du eventuelt benytte posten.
+            </p>
+
+            <h4>Sende bøker i posten</h4>
+
+            <p>
+                Adressen vår er: <b>Boklisten.no AS, Postboks 8, 1316 Eiksmarka</b>. Legg
+                ved informasjon om deg som avsender når du sender pakken
+            </p>
+
+            <h4>Spørsmål</h4>
+
+            <p>
+                Dersom du har spørsmål, send dem gjerne til oss på <a href="mailto:info@boklisten.no" target="_blank">
+                info@boklisten.no</a>!
+            </p>
+
+            <p>
+                Er du usikker på noe i denne mailen bør du sjekke vår første påminnelse
+                sendt ut i slutten av mai.
+            </p>
+
+            <p>
+                Vi kommer til å sende ytterligere e-post og SMS med påminnelser når
+                fristen nærmer seg, men hvis du er ferdig med eksamen er det ikke noe å
+                vente på!
+            </p>
+
+            <p>
+                Med vennlig hilsen,
+            </p>
+            <p>
+                Boklisten.no
+            </p>
+
+        </mj-text>
       </mj-column>
     </mj-section>
 
-    <bl-text-block-component></bl-text-block-component>
+      <bl-text-block-component></bl-text-block-component>
 
     <bl-footer-contact-component></bl-footer-contact-component>
     <bl-footer-logo-component></bl-footer-logo-component>

@@ -15,15 +15,15 @@ export const SMS_SETTINGS = {
     },
     reminder: {
       "partly-payment": [
-        "Hei, fristen for bøkene dine fra Boklisten.no nærmer seg. Kom innom med bøkene før fristen 20. desember, så slipper du andre avdrag. Sjekk åpningstider på www.boklisten.no.",
-        "Vi minner om bøker med frist 20. desember. Sjekk påminnelsesmailer for mer informasjon. Kom innom med bøkene, send dem i posten, eller betal andre avdrag på nettsidene våre. Mvh Boklisten.no",
-        "Vi minner igjen om bøkene dine fra Boklisten.no med frist 20.desember. Sjekk informasjonsmailer og nettside for å slippe unødvendige gebyrer.",
-        "Vi åpner opp for forlengelse og utkjøp på vår nettside frem til 31.desember. Logg inn på nettsiden og betal. Du kan fortsatt selge bøkene tilbake til oss når vi har åpent i januar, men slipper gebyr om du betaler før nyttår. Mvh Boklisten.no"
+        "Fristen for avdragsbøker 1. juli nærmer seg! Sjekk vår nettside www.boklisten.no for åpningstider, eller finn mer informasjon på mail vi har sendt ut i dag. Mvh Boklisten.no",
+        "FIXME",
+        "Siste påminnelse! Selg bøkene dine tilbake til Boklisten.no for å slippe andre avdrag. Bøker kan leveres der vi har åpent, eller sendes i posten frem til 1. juli. Se påminnelsesmailer for mer informasjon. Vi sender ut faktura med gebyr etter 1. juli! Mvh Boklisten.no",
+        ""
       ],
       rent: [
+        "",
         "Det er ikke registrert din fulle levering av skolebøker etter innsamlingsdagen. Du kan levere per post eller på stand i Oslo, frem til fristen 1. juli. Ødelagte og mistede bøker må erstattes - det er billigere før 1. juli. Med vennlig hilsen, Boklisten.no",
-        "Det er ikke registrert din fulle levering av skolebøker etter innsamlingsdagen. Du kan levere per post eller på stand i Oslo, frem til fristen 1. juli. Ødelagte og mistede bøker må erstattes - det er billigere før 1. juli. Med vennlig hilsen, Boklisten.no",
-        "Boklisten har ikke registrert din fulle levering av skolebøker. Siste frist er 1.juli! Send bøker i posten eller kom innom i vårt telt. Sjekk nettsiden for mer informasjon. Mvh Boklisten.no"
+        "Boklisten har ikke registrert din fulle levering av skolebøker. Siste frist er 1. juli! Send bøker i posten eller kom innom i vårt telt. Sjekk nettsiden for mer informasjon. Mvh Boklisten.no"
       ],
       loan: [
         "På grunn av restriksjoner er innsamling på Sonans Stavanger stengt 20. desember. Siste dag er dermed 17. desember. Kom innom med bøkene dine da, eller send bøker i posten før fristen! Mvh Boklisten.no"
