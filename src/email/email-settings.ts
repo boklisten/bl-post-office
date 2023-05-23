@@ -20,15 +20,15 @@ export const EMAIL_SETTINGS: any = {
   subjects: {
     reminder: {
       rent: [
-        "Informasjon om bøker fra Boklisten.no",
         "Påminnelse om tilbakelevering av bøker",
-        "Siste påminnelse om tilbakelevering av bøker"
+        "Siste påminnelse om tilbakelevering av bøker",
+        "Informasjon om bøker fra Boklisten.no"
       ],
       "partly-payment": [
-        "Informasjon til privatister med bøker med frist 20. desember 2022",
-        "Andre påminnelse om bøker med frist 20. desember 2022",
+        "Informasjon til privatister med bøker med frist 1. juli 2023",
+        "Andre påminnelse om bøker med frist 1. juli 2023",
         "Siste påminnelse om bøker fra Boklisten.no",
-        "RETTELSE: Siste påminnelse om bøker fra Boklisten.no"
+        "Informasjon fra Boklisten"
       ],
       loan: [
         "Informasjon om bøker fra Boklisten.no",

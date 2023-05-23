@@ -19,7 +19,7 @@ export default class BlFooterLogoComponent extends BodyComponent {
             width="25px"
             css-class="bl-header-icon"
             alt="Boklisten.no"></mj-image>
-          <mj-text align="center" font-size="8px">Boklisten.no AS © 2020</mj-text>
+          <mj-text align="center" font-size="8px">Boklisten.no AS © 2023</mj-text>
         </mj-column>
       </mj-section>
 		`);

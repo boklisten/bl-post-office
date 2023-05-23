@@ -30,12 +30,11 @@
           <p>Ja! Du kan levere bøker helt frem til fristen, som er 1. juli. Vi er ikke på
             skolen din lenger, men vi har åpent innsamlingslokale i Oslo sentrum, se
             åpningstider her:</p>
-          <a href="https://www.boklisten.no/info/branch/5ec28bf21ffe48001c194bc7">https://www.boklisten.no/info/branch/5ec28bf21ffe48001c194bc7</a>
+          <a href="https://www.boklisten.no/info/branch/5ec28bf21ffe48001c194bc7" target="_blank">https://www.boklisten
+            .no/info/branch/5ec28bf21ffe48001c194bc7</a>
           <p>Du kan også sende bøker til oss i posten. Vi godtar innsendte bøker
             såfremt de er sendt før fristen 1. juli. Adressen er:</p>
-          <p>Boklisten.no AS</p>
-          <p>Postboks 8</p>
-          <p>1316 Eiksmarka</p>
+          <p>Boklisten.no AS<br/>Postboks 8<br/>1316 Eiksmarka</p>
           <p>Legg gjerne ved en lapp med ditt navn og telefonnummer. Vi anbefaler
             sporing på pakken.</p>
           <h4>Jeg har byttet bok med en medelev, og han/hun har ikke
@@ -49,17 +48,17 @@
             billigere å erstatte en mistet eller ødelagt bok hvis du betaler før fristen 1.
             juli. Etter 1. juli sender vi faktura med påslag og fakturagebyr. Vi anbefaler
             derfor på det sterkeste at du logger inn på nettsiden vår,
-            <a href="https://www.boklisten.no">www.boklisten.no</a> og betaler for utkjøp av boken der. Du kan også bruke
-            vårt Vipps-nummer 33415, eller komme innom vår stand for å betale.
+            <a href="https://www.boklisten.no" target="_blank">www.boklisten.no</a> og betaler for utkjøp av boken
+            der. Du kan også bruke vårt Vipps-nummer 33415, eller komme innom vår stand for å betale.
             Bruker du Vipps må du sende oss en bekreftelse på at du har betalt dit –
             slik at vi får registrert dette.</p>
           <h4>Andre spørsmål?</h4>
           <p>Dersom du har andre spørsmål, eller mener at du allerede har levert
             denne boken – ta gjerne kontakt med oss! Vi foretrekker e-post
-            <a href="mailto:info@boklisten.no">info@boklisten.no</a>.</p>
+            <a href="mailto:info@boklisten.no" target="_blank">info@boklisten.no</a>.</p>
 
           <p>Med vennlig hilsen</p>
-          <i>Boklisten.no</i>
+          <p>Boklisten.no</p>
         </mj-text>
       </mj-column>
     </mj-section>
