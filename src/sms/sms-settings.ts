@@ -21,7 +21,7 @@ export const SMS_SETTINGS = {
         ""
       ],
       rent: [
-        "",
+        "Hei, Boklisten åpner opp for at du kan få VG2-bøker allerede nå, hvis du bestiller bøkene i løpet av uka. Se informasjon vi har sendt på mail idag. Mvh, Boklisten.no",
         "Det er ikke registrert din fulle levering av skolebøker etter innsamlingsdagen. Du kan levere per post eller på stand i Oslo, frem til fristen 1. juli. Ødelagte og mistede bøker må erstattes - det er billigere før 1. juli. Med vennlig hilsen, Boklisten.no",
         "Boklisten har ikke registrert din fulle levering av skolebøker. Siste frist er 1. juli! Send bøker i posten eller kom innom i vårt telt. Sjekk nettsiden for mer informasjon. Mvh Boklisten.no"
       ],
