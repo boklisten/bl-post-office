@@ -43,6 +43,9 @@
     "twilio": "^3.30.0",
     "winston": "^3.2.1"
   },
+  "optionalDependencies": {
+    "fsevents": "^1.2.9"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
