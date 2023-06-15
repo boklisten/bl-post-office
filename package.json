@@ -1,6 +1,6 @@
 {
   "name": "@boklisten/bl-post-office",
-  "version": "0.5.44",
+  "version": "0.5.46",
   "description": "a single module for sending messages to a customer",
   "main": "dist/index.js",
   "scripts": {
@@ -42,6 +42,9 @@
     "reflect-metadata": "^0.1.13",
     "twilio": "^3.30.0",
     "winston": "^3.2.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "^1.2.9"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

@@ -20,7 +20,7 @@ export const EMAIL_SETTINGS: any = {
   subjects: {
     reminder: {
       rent: [
-        "Påminnelse om tilbakelevering av bøker",
+        "Unikt tilbud til deg som skal begynne i VG2 ST på Ullern videregående skole til høsten",
         "Siste påminnelse om tilbakelevering av bøker",
         "Informasjon om bøker fra Boklisten.no"
       ],

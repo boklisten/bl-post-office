@@ -6,7 +6,8 @@
 
   <mj-body css-class="bl-body">
     <bl-header-component></bl-header-component>
-    
+
+    <!--
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
@@ -21,45 +22,28 @@
     </mj-section>
 
     <bl-item-list-rent-component></bl-item-list-rent-component>
+    -->
 
     <mj-section css-class="bl-content">
       <mj-column>
         <mj-text>
-          <h4>Her er noen råd og svar på vanlige spørsmål rundt tilbakelevering av bøker:</h4>
+          <h2>Unikt tilbud: Få VG2-bøker allerede nå!</h2>
+          <p>Mange elever ønsker å ha muligheten til å se på neste års bøker allerede nå. Noen lurer på om de egentlig skal ta et fag, mens andre ønsker å forberede seg til høsten.</p>
+          <p>Boklisten.no lanserer nå en ny løsning der du som VG1-elev får muligheten til å få bøkene du skal bruke på VG2 allerede nå!</p>
+          <p>Hvis du ønsker dette, må du bestille bøker snarlig. Siste mulighet er fredag 16. juni klokken 23:59.</p>
+
+          <h3>Bestill dine VG2-bøker her: </h3>
+          <a href="https://www.boklisten.no/fastbuy/courses?branch=62ed2447a26632004868e122" target="_blank">https://www.boklisten.no/fastbuy/courses?branch=62ed2447a26632004868e122</a>
+
+          <h4>Praktisk informasjon</h4>
           <ul>
-
-            <li>
-              <i>Kan noen andre levere bøker for meg?</i>
-              <p>Du kan la andre levere bøkene dine hvis du ikke selv kan møte. Husk da at
-                de må si i fra hvem de leverer bøkene for.</p>
-            </li>
-
-            <li>
-              <i>Jeg har byttet bøker med andre elever i løpet av året. Kan jeg
-                levere disse?</i>
-              <p>Ja, lever inn de bøkene du har. Hver bok har en unik ID, men det er du som
-                er ansvarlig for boken du selv fikk utlevert i fjor høst. Dersom du har byttet
-                med noen andre, bør du forsikre deg om at de har levert din bok.</p>
-            </li>
-
-            <li>
-              <i>Kan jeg sende bøker i posten?</i>
-              <p>Du kan sende bøker i posten, men det er dyrt og anbefales ikke. Vår
-                adresse er Boklisten.no AS, Postboks 8, 1316 Eiksmarka. Husk å legge ved
-                et ark med ditt navn og kontaktinformasjon samt liste over bøkene du
-                sender. Det er lurt å ha sporing på pakken.</p>
-            </li>
-
-            <li>
-              <i>Hvordan kan jeg IKKE levere?</i>
-              <p>Du kan ikke levere boken til en lærer eller andre på skolen. I noen tilfeller
-                vil du kunne levere bøker til våre kontaktelever på skolene. Alle andre
-                bøker må leveres direkte til Boklisten.no</p>
-            </li>
-
+            <li>Tilbudet er gratis</li>
+            <li>Hvis du senere ikke vil ta et av fagene likevel, får du byttet bøker til høsten. Bestill derfor bøkene for de fagene du har meldt deg opp til, uten å bekymre deg for at du låser deg til noe</li>
+            <li>Hvis du bestiller nye bøker, vil du få VG2-bøkene 19. juni, og skal ikke levere inn dine VG1-bøker før sommeren</li>
+            <li>Du vil bli tildelt et oppmøtetidspunkt og få bøkene dine mellom kl. 11 og 12 den 19. juni.</li>
           </ul>
 
-          <p>Til slutt vil vi i Boklisten ønske deg en god sommer!</p>
+          <p>Vi håper du liker dette tilbudet – og gleder oss til å motta din bestilling!</p>
           <p>Med vennlig hilsen</p>
           <p>Boklisten.no</p>
         </mj-text>
