@@ -9,7 +9,7 @@
         <mj-section css-class="bl-content">
             <mj-column>
                 <mj-text>
-                    <h4>Hei {{ name }}</h4>
+                    <h4>Hei {{ name }},</h4>
                 </mj-text>
             </mj-column>
         </mj-section>
@@ -19,122 +19,41 @@
         <mj-section css-class="bl-content">
             <mj-column>
                 <mj-text>
-                    <h4>Vi kjøper tilbake bøker</h4>
+                    <h4>Ekstra informasjon til deg som ikke har levert enda i Oslo!</h4>
                     <p>
-                        Det begynner å nærme seg fristen for å betale andre avdrag på bøkene du
-                        har kjøpt fra oss i Boklisten.no. Siste frist er 1.juli.
-                        <i>Har du brukt boken din
-                            pent, kan du komme innom oss med denne for å få slettet andre avdrag!
-                        </i>
+                        Vi setter 21. juni opp telt utenfor Sonans Oslo, der alle våre kunder kan
+                        levere bøker. Åpningstider finner du her:
+                        <a href="https://www.boklisten.no/info/branch/5ec28bf21ffe48001c194bc7"
+                           target="_blank"
+                        >
+                            https://www.boklisten.no/info/branch/5ec28bf21ffe48001c194bc7
+                        </a>
                     </p>
 
                     <p>
-                        Dersom du ønsker å selge bøkene dine tilbake til oss, slipper du å betale
-                        andre avdrag – men pass på at du gjør dette før 1.juli. Da slipper du også
-                        fakturagebyret.
+                        <b>
+                            Det begynner å haste, så pass på at du ikke får en kjedelig erstatningsfaktura fra oss.
+                        </b>
+                    </p>
+
+                    <p>Aller siste åpningsdag er 30. juni, og etter dette tar vi ikke imot bøker.</p>
+
+                    <p>Dersom du har spørsmål, send dem gjerne til oss på
+                        <a href="mailto:info@boklisten.no">info@boklisten.no</a>!
                     </p>
 
                     <p>
-                        Andre kan levere bøkene dine for deg – alle våre bøker har unik ID.
-                    </p>
-
-                    <p>
-                        Kun Boklisten kan ta imot bøkene dine – du kan ikke levere til ansatte på
-                        de forskjellige skolene.
+                        Er du usikker på noe i denne mailen bør du sjekke vår første påminnelse sendt ut i slutten av mai.
                     </p>
 
                     <p>
                         <i>
-                            På skolene Sonans Oslo, Akademiet Oslo, Sonans Bergen, Metis Bergen og
-                            Sonans Trondheim kan du levere bøker også utenom vår åpningstid – i
-                            våre utsatte innsamlingsbokser. Tilbakesalget blir registrert neste gang vi
-                            er på skolen.
+                            Hvis du har sendt bøker i posten nylig kan du se bort fra denne mailen.
                         </i>
                     </p>
 
-                    <h4>Hvor er vi? Når er det åpent?</h4>
-
                     <p>
-                        Du finner oss på de fleste skolene vi har samarbeid med. Dersom du ikke
-                        finner åpningstider på din skole, sjekk den nærmeste naboskolen, eller
-                        avsnittet under om sending i posten.
-                    </p>
-
-                    <p>
-                        Du finner åpningstidene våre her:
-                        <a href="https://www.boklisten.no/info/branch" target="_blank">https://www.boklisten
-                            .no/info/branch</a>
-                    </p>
-
-                    <h4>Sende bøker i posten</h4>
-
-                    <p>
-                        Tilbakekjøp av bøker kan også skje hvis du sender dem til: <b>Boklisten.no
-                        AS, Postboks 8, 1316 Eiksmarka</b>. Husk å legge ved et ark hvor du
-                        skriver ditt navn, telefonnummer, og hvilke bøker du selger til oss. Du bør
-                        også sende en pakke med sporing, og beholde sporingen inntil leveringen
-                        er registrert. Vi krever at boken er i god nok stand til at vi kan bruke den
-                        igjen. Tror du boken din kanskje er i grenseland, kan du sende oss et bilde
-                        av den for godkjennelse før du sender boken.
-                    </p>
-
-                    <h4>Utsette betalingsfristen for andre avdrag</h4>
-
-                    <p>
-                        Dersom du ikke tidligere har utsatt betalingsfristen, kan du betale 50
-                        kroner for å utsette betalingsfristen til neste frist – altså 20. desember.
-                        Dette koster 50 kroner per bok. Forlengelse kan gjøres på nettsiden, eller
-                        ved å overføre 50 kroner til vårt Vipps-nummer 33415 og sende en mail
-                        om hvilke bøker det gjelder til <a href="mailto:info@boklisten.no"
-                                                           target="_blank">info@boklisten
-                        .no</a>.
-                    </p>
-
-                    <h4>Betale andre avdrag</h4>
-
-                    <p>
-                        Dersom du ønsker å beholde boken din, kan du betale andre avdrag nå.
-                        Dette kan du gjøre ved å logge deg inn på våre nettsider og betale der. Du
-                        kan også betale på stand, eller via Vipps-nummer 33415. Ønsker du å
-                        bruke Vipps, bør du sende oss en mail etter du har betalt. Andre avdrag er
-                        på 33% av bokens nypris, så lenge du betaler før fristen 1.juli. Sjekk «dine
-                        bøker» på nettsiden for nøyaktig sum.
-                    </p>
-
-                    <h4>Faktura</h4>
-
-                    <p>
-                        Dersom du ikke selger tilbake boken til oss eller betaler andre avdrag
-                        innen 1.juli, sender vi ut faktura for andre avdrag. Du vil da måtte betale
-                        både avdrag og fakturagebyr. Vi håper derfor du ordner opp før dette –
-                        gjerne ved å komme innom og selge boken tilbake til oss!
-                    </p>
-
-                    <h4>Spørsmål</h4>
-
-                    <p>
-                        Det er sikkert mange som har spørsmål i disse tider, og du er hjertelig
-                        velkommen til å spørre oss om alt! Vi foretrekker e-post til
-                        <a href="mailto:info@boklisten.no" target="_blank">info@boklisten.no</a>.
-                    </p>
-
-                    <p>
-                        Her er noen vanlige spørsmål som vi får inn under innsamlingen:
-                    </p>
-
-                    <ul>
-                        <li><i>Kan noen andre levere bøker for meg?</i></li>
-                        <li>Ja, det går fint!</li>
-                        <li><i>Kan jeg levere på en annen filial enn den jeg fikk boken på?</i></li>
-                        <li>Ja, du kan komme til alle Boklistens åpningssteder!</li>
-                        <li><i>Hva er kontonummeret jeg skal betale til?</i></li>
-                        <li>Du trenger ikke kontonummer. Logg deg inn på nettsiden vår og betal der!</li>
-                    </ul>
-
-                    <p>
-                        Vi kommer til å sende ytterligere e-post og SMS med påminnelser når
-                        fristen nærmer seg, men hvis du er ferdig med eksamen er det ikke noe å
-                        vente på – kom innom en stand nær deg!
+                        Hvis du mener å ikke ha flere utestående bøker fra oss, ta kontakt så snart som mulig, slik at vi kan undersøke saken før vi sender faktura.
                     </p>
 
                     <p>
