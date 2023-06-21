@@ -25,7 +25,7 @@ export const EMAIL_SETTINGS: any = {
         "Informasjon om bøker fra Boklisten.no"
       ],
       "partly-payment": [
-        "Informasjon til privatister med bøker med frist 1. juli 2023",
+        "Ekstra informasjon til deg som ikke har levert enda i Oslo!",
         "Andre påminnelse om bøker med frist 1. juli 2023",
         "Siste påminnelse om bøker fra Boklisten.no",
         "Informasjon fra Boklisten"
