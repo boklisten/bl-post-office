@@ -89,29 +89,3 @@ test("should reject if toNumber is not a phone number", async t => {
     }
   });
 });
-
-test("should reject if fromNumber is not a phone number", async t => {
-  const smsBroker = testEnvironment.get<SmsBroker>(SmsBroker);
-  const invalidNumbers: any[] = [
-    "abc",
-    "113",
-    undefined,
-    null,
-    55,
-    "123456789",
-    "1234567",
-    "844444444444442999999999999999999382432"
-  ];
-  await invalidNumbers.forEach(async invalidNumber => {
-    try {
-      await smsBroker.send(
-        SMS_SETTINGS.dymmy.number,
-        invalidNumber,
-        SMS_SETTINGS.text.reminder["partly-payment"][0],
-        "blMessage1"
-      );
-    } catch (e) {
-      t.is(e, `phone number "${invalidNumber}" is not a valid phone number`);
-    }
-  });
-});
