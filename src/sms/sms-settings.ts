@@ -1,7 +1,7 @@
 export const SMS_SETTINGS = {
   minLength: 5,
   maxLength: 280,
-  fromNumber: "+4759447665",
+  fromNumber: "Boklisten",
   dymmy: {
     number: "+4712345678"
   },
