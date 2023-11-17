@@ -1,6 +1,6 @@
 {
   "name": "@boklisten/bl-post-office",
-  "version": "0.5.49",
+  "version": "0.5.50",
   "description": "a single module for sending messages to a customer",
   "main": "dist/index.js",
   "scripts": {
