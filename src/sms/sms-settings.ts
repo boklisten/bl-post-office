@@ -15,10 +15,10 @@ export const SMS_SETTINGS = {
     },
     reminder: {
       "partly-payment": [
-        "Fristen for avdragsbøker 1. juli nærmer seg! Sjekk vår nettside www.boklisten.no for åpningstider, eller finn mer informasjon på mail vi har sendt ut i dag. Mvh Boklisten.no",
-        "Husk frist for bøkene dine 1.juli. I tillegg til våre stands og postsending, kan du bruke våre innsamlingsbokser. Hvis boka kun har én strekkode, legg inn post-it med navn og telefonnummer i boka. Ta gjerne kontakt med oss på info@boklisten.no om boksen er full. Mvh Boklisten.no",
-        "Siste påminnelse! Selg bøkene dine tilbake til Boklisten.no for å slippe andre avdrag. Bøker kan leveres der vi har åpent, eller sendes i posten frem til 1. juli. Se påminnelsesmailer for mer informasjon. Vi sender ut faktura med gebyr etter 1. juli! Mvh Boklisten.no",
-        ""
+        "Fristen for å levere eller betale avdragsbøker 20. desember nærmer seg! Sjekk vår nettside www.boklisten.no for åpningstider, eller finn mer informasjon på mail vi har sendt ut. Mvh Boklisten.no",
+        "Vi minner om fristen for bøkene dine 20. desember. I tillegg til stand og postsending, kan du på mange skoler levere i våre innsamlingsbokser. Pass på at du kun leverer bøker med unik ID. Kontakt oss på info@boklisten.no om boksen er full.",
+        "Siste påminnelse! Husk bøkene dine med frist 20.desember. Sjekk informasjonsmailer og nettside for å slippe unødvendige gebyrer. Mvh Boklisten.no",
+        "Vi åpner opp for forlengelse og utkjøp på vår nettside frem til 31. desember. Logg inn på nettsiden og betal. Du kan fortsatt selge bøkene tilbake til oss når vi har åpent i januar, men slipper gebyr om du betaler før nyttår. Mvh Boklisten.no"
       ],
       rent: [
         "Minner om muligheten for å motta VG2-bøker før sommeren. Hvis du ønsker dette må du gå inn på https://www.boklisten.no/fastbuy/courses?branch=62ed2447a26632004868e122 og bestille innen fredag. Mvh, Boklisten.no",
