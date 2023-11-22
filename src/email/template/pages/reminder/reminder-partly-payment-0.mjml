@@ -1,76 +1,103 @@
+
 <mjml>
-    <mj-head>
-        <mj-include path="../../styles/bl-style.mjml"/>
-    </mj-head>
+  <mj-head>
+    <mj-include path="../../styles/bl-style.mjml"/>
+  </mj-head>
 
-    <mj-body css-class="bl-body">
-        <bl-header-component></bl-header-component>
+  <mj-body css-class="bl-body">
+    <bl-header-component></bl-header-component>
 
-        <mj-section css-class="bl-content">
-            <mj-column>
-                <mj-text>
-                    <h4>Hei {{ name }},</h4>
-                </mj-text>
-            </mj-column>
-        </mj-section>
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+          <h4>Hei {{ name }}</h4>
+        </mj-text>
+      </mj-column>
+    </mj-section>
 
-        <bl-item-list-component></bl-item-list-component>
+    <bl-item-list-component></bl-item-list-component>
 
-        <mj-section css-class="bl-content">
-            <mj-column>
-                <mj-text>
-                    <h4>Ekstra informasjon til deg som ikke har levert enda i Oslo!</h4>
-                    <p>
-                        Vi setter 21. juni opp telt utenfor Sonans Oslo, der alle våre kunder kan
-                        levere bøker. Åpningstider finner du her:
-                        <a href="https://www.boklisten.no/info/branch/5ec28bf21ffe48001c194bc7"
-                           target="_blank"
-                        >
-                            https://www.boklisten.no/info/branch/5ec28bf21ffe48001c194bc7
-                        </a>
-                    </p>
+    <mj-section css-class="bl-content">
+      <mj-column>
+        <mj-text>
+            <p>Du har bøker fra Boklisten.no med frist 20. desember 2023. Du kan ordne opp på
+fire forskjellige måter:</p>
 
-                    <p>
-                        <b>
-                            Det begynner å haste, så pass på at du ikke får en kjedelig erstatningsfaktura fra oss.
-                        </b>
-                    </p>
+            <ol>
+                <li>Lever bøkene dine til oss før fristen. Da slipper du å betale noe mer.</li>
+                <li>Betal andre avdrag før fristen. Da beholder du bøkene.</li>
+                <li>Ikke gjør noe, og få et stort gebyr i tillegg på fakturaen for andre avdrag.</li>
+                <li>Forleng fristen frem til sommeren, for 50 kroner per bok.</li>
+            </ol>
 
-                    <p>Aller siste åpningsdag er 30. juni, og etter dette tar vi ikke imot bøker.</p>
+            <p>Vi anbefaler at du allerede nå tar stilling til hva du ønsker å gjøre, så du ikke får
+dårlig tid! Under finner du litt mer detaljert informasjon om hva du kan gjøre:</p>
 
-                    <p>Dersom du har spørsmål, send dem gjerne til oss på
-                        <a href="mailto:info@boklisten.no">info@boklisten.no</a>!
-                    </p>
+            <h4>Innlevering av bøker</h4>
 
-                    <p>
-                        Er du usikker på noe i denne mailen bør du sjekke vår første påminnelse sendt ut i slutten av mai.
-                    </p>
+            <p>Dersom du ikke trenger bøkene dine lenger, anbefaler vi at du leverer dem inn til
+oss. Vi tar imot alle bøker som er godt tatt vare på, etter betingelsene. Ved
+tilbakelevering sletter vi salgspantet vi har i bøkene du har fått fra oss – og du
+slipper dermed å betale andre avdrag. Siste frist for å levere bøker er 20.
+desember. Dersom du ønsker å levere bøker tilbake til oss bør du sjekke
+åpningstidene vi er tilstede på skolen din, eller finne frem adressen du kan sende
+pakke med bøker til. Både åpningstider og adresse finner du på
+ <a href="https://www.boklisten.no/info/branch">https://www.boklisten.no/</a>.</p>
 
-                    <p>
-                        <i>
-                            Hvis du har sendt bøker i posten nylig kan du se bort fra denne mailen.
-                        </i>
-                    </p>
+            <p>Både sending og innlevering på skolen kan skje frem til 20. desember (eller siste
+åpningsdag på skolen), men vi anbefaler at du ordner opp i god tid før fristen.</p>
 
-                    <p>
-                        Hvis du mener å ikke ha flere utestående bøker fra oss, ta kontakt så snart som mulig, slik at vi kan undersøke saken før vi sender faktura.
-                    </p>
+            <p>På noen skoler har vi også satt ut innsamlingsskap der du kan legge igjen bøkene
+dine også utenfor åpningstidene våre. Disse vil stå ute frem til 20. desember. Vi
+skanner og registrerer bøkene neste gang vi har åpent. Ta gjerne kontakt med
+oss dersom du opplever å finne et fullt innsamlingsskap, og ikke får plass til din
+bok.</p>
 
-                    <p>
-                        Med vennlig hilsen,
-                    </p>
+            <p><i>Skolene med innsamlingsboks i år er: Sonans Oslo, Akademiet Oslo, Sonans Bergen, Metis
+                Bergen og Sonans Trondheim.</i></p>
 
-                    <p>
-                        Boklisten.no
-                    </p>
+            <p>Dersom du ønsker å sende bøker i posten, anbefaler vi alltid at du sender pakke
+med sporing. Vi kan ikke ta ansvar for bøker som eventuelt ikke kommer frem til
+oss.</p>
 
-                </mj-text>
-            </mj-column>
-        </mj-section>
+            <h4>Betale andre avdrag</h4>
+            <p>Dersom du ønsker å beholde boken din, kan du betale andre avdrag nå. Dette
+kan du gjøre ved å logge deg inn på våre nettsider og betale der. Du kan også
+betale på stand, eller via Vipps-nummer 33415. Ønsker du å bruke Vipps, kan du
+sende oss en mail om dette. Andre avdrag er på 33% av bokens nypris, så lenge
+du betaler før fristen 20. desember.</p>
 
-        <bl-text-block-component></bl-text-block-component>
+            <h4>Utsette fristen</h4>
+            <p>Du kan utsette betalingsfristen til 1. juli ved å betale 50 kroner per bok. Du kan
+gjøre dette ved å logge deg inn på nettsiden og velge «Forleng» på bøkene dine,
+eller ved å overføre midler til vårt Vipps-nummer 33415 og sende oss en mail.
+Vippser du uten å sende mail, kan vi ikke garantere at forlengelsen blir registrert
+riktig. <i>Bøker som tidligere har blitt forlenget kan ikke forlenges igjen.</i></p>
 
-        <bl-footer-contact-component></bl-footer-contact-component>
-        <bl-footer-logo-component></bl-footer-logo-component>
-    </mj-body>
+            <h4>Faktura</h4>
+            <p>Dersom du ikke kommer innom med boken til oss eller betaler andre avdrag
+innen 20. desember, sender vi ut faktura for andre avdrag. Du vil da måtte betale
+både avdrag og fakturagebyr, noe vi ikke anbefaler. Vi håper derfor du ordner
+opp før dette – gjerne ved å komme innom med bøkene dine, eller sende dem i
+posten.</p>
+
+            <h4>Spørsmål</h4>
+            <p>Vi kommer til å sende ytterligere e-post og SMS med påminnelser når fristen
+nærmer seg, men hvis du er ferdig med eksamen er det ikke noe å vente på!</p>
+
+            <p>Hvis du har spørsmål eller lurer på hvorfor du fikk denne e-posten, kan du ta
+kontakt med Boklisten.no på e-post: <a href="mailto:info@boklisten.no">info@boklisten.no</a>
+                <p>Vi ønsker lykke til med de siste eksamenene!</p>
+
+          <p>Med vennlig hilsen,</p>
+          <p>Boklisten.no</p>
+          </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <bl-text-block-component></bl-text-block-component>
+
+    <bl-footer-contact-component></bl-footer-contact-component>
+    <bl-footer-logo-component></bl-footer-logo-component>
+  </mj-body>
 </mjml>

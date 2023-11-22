@@ -13,7 +13,6 @@ export class SmsBroker {
     blMessageId: string
   ): Promise<any> {
     this.validatePhoneNumber(toPhoneNumber);
-    this.validatePhoneNumber(fromPhoneNumber);
     this.validateText(text);
 
     return await this._connecter.send(
