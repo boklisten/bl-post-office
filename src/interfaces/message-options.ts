@@ -1,5 +1,6 @@
 export type MessageType =
   | "reminder"
+  | "custom-reminder"
   | "receipt"
   | "generic"
   | "match"
@@ -27,6 +28,7 @@ export interface MessageOptions {
   sequence_number?: number;
   mediums?: MessageMediums;
   htmlContent?: string;
+  customContent?: string;
   subject?: string;
   textBlocks?: TextBlock[];
 }

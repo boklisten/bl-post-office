@@ -31,13 +31,25 @@ export class SmsHandler implements DepartmentHandler {
     recipient: Recipient,
     messageOptions: MessageOptions
   ): Promise<any> {
-    let seqNum = messageOptions.sequence_number
-      ? messageOptions.sequence_number
-      : 0;
+    let text: string;
+
+    if (messageOptions.type === "custom-reminder") {
+      if (messageOptions.customContent == null) {
+        throw "custom-reminder type used but messageOptions.customContent not set";
+      }
+      text = messageOptions.customContent;
+    } else {
+      const seqNum = messageOptions.sequence_number
+        ? messageOptions.sequence_number
+        : 0;
+      text =
+        SMS_SETTINGS.text[messageOptions.type][messageOptions.subtype][seqNum];
+    }
+
     return await this._smsBroker.send(
       recipient.phone as string,
       SMS_SETTINGS.fromNumber,
-      SMS_SETTINGS.text[messageOptions.type][messageOptions.subtype][seqNum],
+      text,
       recipient.message_id
     );
   }

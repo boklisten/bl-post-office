@@ -83,6 +83,7 @@ export class PostOffice {
 
     switch (options.type) {
       case "reminder":
+      case "custom-reminder":
         return await this.delegateToDepartments(
           recipients,
           options,
