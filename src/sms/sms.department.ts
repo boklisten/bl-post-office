@@ -8,7 +8,7 @@ import { logger } from "../logger";
 
 @injectable()
 export class SmsDepartment implements Department {
-  private supportedTypes = ["reminder", "match"];
+  private supportedTypes = ["reminder", "custom-reminder", "match"];
   private supportedSubtypes = ["partly-payment", "rent", "loan", "none"];
 
   constructor(private _smsHandler: SmsHandler) {}
