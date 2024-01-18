@@ -3,6 +3,9 @@ export const POST_OFFICE_SETTINGS = {
     reminder: {
       mediums: ["email", "sms"]
     },
+    "custom-reminder": {
+      mediums: ["sms"]
+    },
     generic: {
       mediums: ["email"]
     },
@@ -13,5 +16,12 @@ export const POST_OFFICE_SETTINGS = {
       mediums: ["email"]
     }
   },
-  supportedTypes: ["receipt", "reminder", "generic", "match", "booking"]
+  supportedTypes: [
+    "receipt",
+    "reminder",
+    "custom-reminder",
+    "generic",
+    "match",
+    "booking"
+  ]
 };
